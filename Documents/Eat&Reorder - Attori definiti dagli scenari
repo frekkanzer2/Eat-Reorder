@@ -1,13 +1,8 @@
-Attori trovati in riferimento agli scenari presenti nel Problem Statement
-Marco - Utente registrato
-Pizza&Panini - Azienda registrata
-Giovanni - Proprietario Pizza&Panini -> Azienda registrata
-Rosario - Fattorino registrato
-Francesco - Amministratore
+Utenze del sistema
 
-Attori (formale)
-Amministratore
-Utente non registrato
-Utente registrato
-Azienda registrata
-Fattorino registrato
+	a. Utente registrato
+		a1. Cliente
+		a2. Azienda
+		a3. Fattorino
+		a4. Amministratore
+	b. Utente non registrato

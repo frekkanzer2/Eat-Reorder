@@ -70,14 +70,18 @@ prezzo_totale decimal not null,
 note varchar(150),
 stato varchar(20) not null,
 acquirente varchar(20), 
-email varchar(100), 
-foreign key (email, acquirente) references Cliente(email, nome)
+email_acquirente varchar(100), 
+foreign key (email_acquirente, acquirente) references Cliente(email, nome)
 on update cascade 
 on delete cascade,
-azienda varchar(20), foreign key (email, azienda) references Azienda(email, nome)
+azienda varchar(20),
+email_azienda varchar(100), 
+foreign key (email_azienda, azienda) references Azienda(email, nome)
 on update cascade 
 on delete set null,
-fattorino varchar(20), foreign key (email, fattorino) references Fattorino(email, nome)
+fattorino varchar(20), 
+email_fattorino varchar(100),
+foreign key (email, fattorino) references Fattorino(email, nome)
 on update cascade 
 on delete cascade,
 primary key(codice)

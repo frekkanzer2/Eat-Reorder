@@ -81,7 +81,7 @@ on update cascade
 on delete set null,
 fattorino varchar(20), 
 email_fattorino varchar(100),
-foreign key (email, fattorino) references Fattorino(email, nome)
+foreign key (email_fattorino, fattorino) references Fattorino(email, nome)
 on update cascade 
 on delete cascade,
 primary key(codice)

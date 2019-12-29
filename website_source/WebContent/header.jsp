@@ -29,10 +29,6 @@
 			<!--Logo-->
 			<a id="er-logo" class="navbar-brand" href="#">Eat &amp; Reorder</a>
 			<!--Toggle button for UtenteNonRegistrato-->
-			<% UtenteBean utente = null;
-	    	utente = (UtenteBean) session.getAttribute("email");
-					if(utente==null){
-			%>
 			<button id="toggle-cstyle" data-toggle="collapse"
 				class="navbar-toggler" data-target="#navcol-1">
 				<span class="sr-only"></span><span class="navbar-toggler-icon"></span>
@@ -46,6 +42,5 @@
 					<a class="btn btn-light header-button" role="button" href="#">Registrati</a>
 				</span>
 			</div>
-			<% } %>
 		</div>
 	</nav>

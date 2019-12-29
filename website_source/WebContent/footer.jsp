@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
+<!-- Footer -->
 <div class="border rounded-0 border-danger footer"
 	style="clear: both; position: relative; height: 200px; background-color: rgb(254, 182, 62); color: rgb(163, 20, 14);">
 	<footer>
 		<div class="container">
+			<!-- Logo -->
 			<div class="row">
 				<div class="col item social">
 					<a class="border rounded-circle border-danger" href="#"
@@ -21,12 +22,13 @@
 						class="icon ion-social-instagram"></i></a>
 				</div>
 			</div>
+			<!-- Logo -->
 			<p class="copyright"
 				style="font-size: 20px; font-style: normal; font-weight: bold;">Eat&amp;Reorder
 				© 2019</p>
 		</div>
 	</footer>
 </div>
-
+<!-- Footer -->
 </body>
 </html>

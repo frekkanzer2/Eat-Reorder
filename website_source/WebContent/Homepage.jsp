@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-W<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="header.jsp"></jsp:include>
 <div>
 	<!--IMAGE ON THE HOME-->
 	<img id="image-home" class="img-fluid d-block mx-auto"

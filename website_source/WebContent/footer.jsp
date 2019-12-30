@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
 <!-- Footer -->
-<div class="border rounded-0 border-danger footer"
-	style="position: fixed;bottom: 0; width: 100%; height:150px;background-color: rgb(254, 182, 62); color: rgb(163, 20, 14);">
+<div class="border rounded-0 border-danger footer "
+	style="position:absolute;bottom:0;height:150px;width:100%;margin-top:-200px;background-color: rgb(254,182,62);color: rgb(163,20,14);">
 	<footer>
 		<div class="container">
 			<!-- Logo -->

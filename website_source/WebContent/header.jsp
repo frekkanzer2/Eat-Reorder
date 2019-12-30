@@ -18,7 +18,7 @@
 			<span class="float-right navbar-text actions"> <!--Buttons-->
 				<a class="btn btn-light header-button" role="button"
 				href="Login.jsp">Accedi</a> <a class="btn btn-light header-button"
-				role="button" href="#">Registrati</a>
+				role="button" href="Registrazione.jsp">Registrati</a>
 			</span>
 		</div>
 	</div>

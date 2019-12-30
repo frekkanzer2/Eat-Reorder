@@ -32,6 +32,9 @@
 			style="width: 82px; height: 30px; font-size: 15px; background-color: rgb(254, 182, 62);">Cerca</button>
 	</div>
 </div>
+
 <jsp:include page="footer.jsp"></jsp:include>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

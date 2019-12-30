@@ -21,13 +21,13 @@
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 </head>
 
-<body class="alternative-background">
+<body>
 	<!--HEADER-->
 	<nav
 		class="navbar navbar-dark navbar-expand-md navigation-clean-button custom-border-red bg-yellow">
 		<div class="container">
 			<!--Logo-->
-			<a id="er-logo" class="navbar-brand custom-text-centered" href="#">Eat&amp;Reorder</a>
+			<a id="er-logo" class="navbar-brand custom-text-centered" href="Homepage.jsp">Eat&amp;Reorder</a>
 		</div>
 	</nav>
 
@@ -52,5 +52,7 @@
 		</form>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

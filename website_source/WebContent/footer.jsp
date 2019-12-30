@@ -4,7 +4,7 @@
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- Footer -->
 <div class="border rounded-0 border-danger footer"
-	style="position: fixed; bottom: 0; width: 100%; background-color: rgb(254, 182, 62); color: rgb(163, 20, 14);">
+	style="position: fixed;bottom: 0; width: 100%; height:150px;background-color: rgb(254, 182, 62); color: rgb(163, 20, 14);">
 	<footer>
 		<div class="container">
 			<!-- Logo -->

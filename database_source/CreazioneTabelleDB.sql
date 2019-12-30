@@ -115,5 +115,43 @@ primary key(prodotto,ordine)
 );
 
 
+/* Query GestoreOrdineDAOImpl */
 
+#creaOrdine(order : Ordine, user : AccountUtente, cart : Carrello)
+select Fattorino.email, Fattorino.nome, GiorniLavorativi.giorno, Fattorino.orario_inizio, Fattorino.orario_fine
+from Fattorino, GiorniLavorativi
+where Fattorino.citta_consegna='?' and GiorniLavorativi.giorno='?' and Fattorino.orario_inizio='?' and Fattorino.orario_fine='?';
 
+insert into Ordine (indirizzo_consegna, numero_carta, prezzo_totale, note, stato, acquirente, email_acquirente, azienda, email_azienda, fattorino, email_fattorino) values 
+("?","?",?,"?","?","?","?","?","?","?","?");
+
+insert into ProdottoOrdine (quantita, prodotto, ordine) values
+(?, "?", ?);
+
+#controlloEsistenzaOrdine(orderCode: Long)
+select *
+from Ordine 
+where Ordine.codice='?';  #codice dell'ordine
+
+#dammiOrdiniPreparazione(azienda : AccountAzienda)
+select *
+from Ordine
+where Ordine.stato='?';  #preparazione
+
+#dammiOrdine(codice : Long)
+select *
+from Ordine
+where Ordine.codice='?';
+
+#dammiConsegne(fattorino : AccountFattorino)
+select Ordine.codice, Fattorino.email, Fattorino.nome
+from Fattorino, Ordine
+where Fattorino.nome='?';
+
+#ordineSetRitirato(orderCode : Long)
+update Ordine
+set Ordine.stato='?';  #ritirato
+
+#ordineSetConsegnato(orderCode : Long)
+update Ordine
+set Ordine.stato='?';  #consegnato

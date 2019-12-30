@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- Footer -->
-<!--  Problemi col footer sui telefoni troppo piccoli -->
 <div class="border rounded-0 border-danger footer"
-	style="clear: both; position: relative; height: 220px; background-color: rgb(254, 182, 62); color: rgb(163, 20, 14);">
+	style="position: fixed; bottom: 0; width: 100%; background-color: rgb(254, 182, 62); color: rgb(163, 20, 14);">
 	<footer>
 		<div class="container">
 			<!-- Logo -->
@@ -33,6 +34,3 @@
 		</div>
 	</footer>
 </div>
-<!-- Footer -->
-</body>
-</html>

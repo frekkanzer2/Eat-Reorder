@@ -2,45 +2,55 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+
 <head>
+<!--Viewport for toggle-->
 <meta charset="utf-8">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--Title-->
 <title>Login</title>
+<!--Preset imports-->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
 <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
 <link rel="stylesheet" href="assets/css/footer.css">
+<!--Custom imports-->
+<link rel="stylesheet" href="css/eat-reorder-style.css">
 </head>
 
-<body>
-	<div class="login-clean"
-		style="background-color: rgb(223, 223, 223); filter: blur(0px) brightness(100%) grayscale(0%);">
-		<form class="border rounded" method="post" action="LoginServlet"
-			style="background-color: rgb(242, 206, 132); opacity: 1; filter: blur(0px);">
+<body class="alternative-background">
+	<!--HEADER-->
+	<nav
+		class="navbar navbar-dark navbar-expand-md navigation-clean-button custom-border-red bg-yellow">
+		<div class="container">
+			<!--Logo-->
+			<a id="er-logo" class="navbar-brand custom-text-centered" href="#">Eat&amp;Reorder</a>
+		</div>
+	</nav>
+
+	<!--Form for login-->
+	<div class="alternative-background container-form-floating">
+		<form class="custom-border-red login-form-style" method="post"
+			action="LoginServlet">
+			<!--Invisible title-->
 			<h2 class="sr-only">Login Form</h2>
-			<a href="Homepage.jsp"> <img
-				src="assets/img/LogomarcoIS%20PNG.png"
-				style="width: 250px; margin-bottom: 12px; margin-right: 0px;">
-			</a>
+			<!--Image on the form-->
+			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
+			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
-				<input class="border rounded border-warning form-control"
-					type="email" name="email" placeholder="Email"
-					style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
-			</div>
-			<div class="form-group">
-				<input class="border rounded border-warning form-control"
-					type="password" name="password" placeholder="Password"
-					style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
-			</div>
-			<div class="form-group">
-				<button class="btn btn-primary btn-block border rounded"
-					type="submit" style="background-color: rgb(163, 20, 14);">Accedi</button>
+				<input
+					class="custom-border-red border-rounded-small form-control input-style-login"
+					type="email" name="email" placeholder="Email"> <input
+					class="custom-border-red border-rounded-small form-control input-style-login"
+					type="password" name="password" placeholder="Password">
+				<button class="btn form-list-button bg-red border-rounded-small"
+					type="submit">Accedi</button>
 			</div>
 		</form>
 	</div>
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
-<jsp:include page="footer.jsp"></jsp:include>
+</html>

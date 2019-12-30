@@ -27,7 +27,8 @@
 		class="navbar navbar-dark navbar-expand-md bg-warning border-danger border rounded-0 navigation-clean-button">
 		<div class="container">
 			<!--Logo-->
-			<a id="er-logo" class="navbar-brand" href="Homepage.jsp">Eat &amp; Reorder</a>
+			<a id="er-logo" class="navbar-brand" href="Homepage.jsp">Eat
+				&amp; Reorder</a>
 			<!--Toggle button for UtenteNonRegistrato-->
 			<button id="toggle-cstyle" data-toggle="collapse"
 				class="navbar-toggler" data-target="#navcol-1">
@@ -38,8 +39,9 @@
 				<ul class="nav navbar-nav mr-auto"></ul>
 				<!--Span that contains buttons-->
 				<span class="float-right navbar-text actions"> <!--Buttons-->
-					<a class="btn btn-light header-button" role="button" href="#">Accedi</a>
-					<a class="btn btn-light header-button" role="button" href="#">Registrati</a>
+					<a class="btn btn-light header-button" role="button"
+					href="Login.jsp">Accedi</a> <a class="btn btn-light header-button"
+					role="button" href="#">Registrati</a>
 				</span>
 			</div>
 		</div>

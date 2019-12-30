@@ -5,7 +5,9 @@
 }
 
 /*CSS*/
-/*ids*/
+
+/*******************ID*******************/
+
 #er-logo{
     color: var(--preset_color_red);
 }
@@ -23,7 +25,12 @@
     margin-top: -1;
     margin-bottom: 25px;
 }
-/*classes*/
+#header-span-btns{
+    display: block;
+    float: right;
+}
+/*******************CLASSES*******************/
+
 .header-button{
     margin-right: 4px;
     margin-left: 4px;
@@ -36,19 +43,65 @@
     border: none;
 }
 
+.standard-button{
+    width: 82px;
+    height: 30px;
+    font-size: 15px;
+    background-color: var(--preset_color_yellow);
+}
+
 /*Responsiveness goes here*/
-@media only screen and (max-width: 968 px){
+@media (max-width: 968px){
+
     #search-field{
-        width: 100%;
+        width: 50%;
         margin-top: -1;
         margin-bottom: 25px;
     }
+    
 }
+@media (max-width: 768px){
 
+    #search-field{
+        width: 60%;
+        margin-top: -1;
+        margin-bottom: 25px;
+    }
+
+    #header-span-btns{
+        display: block;
+        float: left;
+        margin-top: -5px;
+        padding-bottom: 0px;
+    }
+
+    .header-button{
+        margin-right: 8px;
+        margin-left: 0px;
+        background-color: var(--preset_color_red);
+        border-radius: 12px;
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: none;
+        font-size: 14px;
+    }
+    
+}
+@media (max-width: 525px){
+
+    #search-field{
+        width: 70%;
+        margin-top: -1;
+        margin-bottom: 25px;
+    }
+    
+}
 
 /*Resizing preset*/
 /*
-    @media (max-width: X px) and (min-width: Y px){
+    @media (max-width: Xpx) and (min-width: Ypx){
         ...
     }
 */

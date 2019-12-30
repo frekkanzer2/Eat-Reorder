@@ -24,11 +24,10 @@
 <body>
 	<!--HEADER-->
 	<nav
-		class="navbar navbar-dark navbar-expand-md bg-warning border-danger border rounded-0 navigation-clean-button">
+		class="navbar navbar-dark navbar-expand-md navigation-clean-button custom-border-red bg-yellow">
 		<div class="container">
 			<!--Logo-->
-			<a id="er-logo" class="navbar-brand" href="Homepage.jsp">Eat
-				&amp; Reorder</a>
+			<a id="er-logo" class="navbar-brand" href="Homepage.jsp">Eat&amp;Reorder</a>
 			<!--Toggle button for UtenteNonRegistrato-->
 			<button id="toggle-cstyle" data-toggle="collapse"
 				class="navbar-toggler" data-target="#navcol-1">

@@ -2,6 +2,10 @@
 :root{
     --preset_color_red: #a3140e;
     --preset_color_yellow: #feb83e;
+    --preset_color_yellow_secondary: #ecc68c;
+    --preset_color_bg_alternative: #ececec;
+    --color_white: #ffffff;
+    --color_black: #000000;
 }
 
 /*CSS*/
@@ -16,9 +20,14 @@
 }
 #image-home{
     margin: 0px;
-    margin-top: 11px;
+    margin-top: 14px;
     margin-bottom: 18px;
     width: 650px;
+}
+#image-login-form{
+    width: 100%;
+    margin-bottom: 22px;
+    margin-right: 0px;
 }
 #search-field{
     width: 40%;
@@ -43,11 +52,75 @@
     border: none;
 }
 
+.form-list-button{
+    width: 100%;
+    text-align: center;
+    color: var(--color_white);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
 .standard-button{
     width: 82px;
     height: 30px;
     font-size: 15px;
     background-color: var(--preset_color_yellow);
+}
+
+.custom-text-centered{
+    width: 100%;
+    text-align: center;
+}
+
+.alternative-background{
+    background-color: var(--preset_color_bg_alternative);
+    filter: blur(0px) brightness(100%) grayscale(0%);
+}
+
+.custom-border-red{
+    border: 1px solid var(--preset_color_red)!important;
+}
+
+.custom-border-yellow{
+    border: 1px solid var(--preset_color_yellow)!important;
+}
+
+.border-rounded-small{
+    border-radius: 3px!important;
+}
+
+.border-rounded-medium{
+    border-radius: 6px!important;
+}
+
+.border-rounded-large{
+    border-radius: 10px!important;
+}
+
+.bg-red{
+    background-color: var(--preset_color_red)!important;
+}
+
+.bg-yellow{
+    background-color: var(--preset_color_yellow)!important;
+}
+
+.login-form-style{
+    background-color: var(--preset_color_yellow_secondary)!important;
+    opacity: 1;
+    filter: blur(0px);
+}
+
+.container-form-floating{
+    padding-top:5%;
+    padding-bottom:5%;
+}
+
+.input-style-login{
+    background-color: var(--color_white);
+    color: var(--color_black);
+    margin-bottom: 12px;
 }
 
 /*Responsiveness goes here*/

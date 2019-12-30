@@ -1,47 +1,123 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Registrazione Cliente</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+    <head>
+        <!--Viewport for toggle-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--Title-->
+        <title>Benvenuto in Eat&Reorder</title>
+        <!--Preset imports-->
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <!--Custom imports-->
+        <link rel="stylesheet" href="css/eat-reorder-style.css">
+    </head>
 
-<body>
-    <div class="text-center login-clean" style="background-color: rgb(223,223,223);filter: blur(0px) brightness(100%) grayscale(0%);">
-        <form class="border rounded" method="post" style="background-color: rgb(242,206,132);opacity: 1;filter: blur(0px);max-width: 600px;">
-            <h2 class="sr-only">Login Form</h2><img src="assets/img/LogoRegistrazione.png" style="width: 150px;background-color: #f2ce84;margin-bottom: -15px;margin-top: -38px;">
-            <p style="color: rgb(163,20,14);font-size: 36px;">Benvenuto in Eat &amp; Reorder</p>
-            <p class="text-center" style="color: rgb(163,20,14);font-size: 21px;">Automatizza le vendite e le consegne con noi</p>
-            <div class="form-group"><input class="border rounded border-warning form-control d-inline" type="email" name="email" placeholder="Email" style="background-color: rgb(255,255,255);color: rgb(0,0,0);max-width: 396px;"></div>
-            <div class="form-group"><input class="border rounded border-warning form-control d-inline" type="password" name="password" placeholder="Password" style="background-color: rgb(255,255,255);color: rgb(0,0,0);max-width: 396px;"></div>
-            <div class="form-group"><input class="border rounded border-warning form-control d-inline" type="password" name="NomeAttivita" placeholder="Nome dell'attività" style="background-color: rgb(255,255,255);color: rgb(0,0,0);max-width: 396px;"></div>
-            <div class="form-group"><input class="border rounded border-warning form-control d-inline" type="password" name="Telefono" placeholder="Numero di telefono" style="background-color: rgb(255,255,255);color: rgb(0,0,0);max-width: 396px;"></div>
-            <div class="form-group"><input class="border rounded border-warning form-control d-inline" type="password" name="Indirizzo" placeholder="Indirizzo" style="background-color: rgb(255,255,255);color: rgb(0,0,0);max-width: 396px;"></div>
-            <div class="form-group"><input class="border rounded border-warning form-control d-inline" type="password" name="NumeroCivico" placeholder="Numero civico" style="background-color: rgb(255,255,255);color: rgb(0,0,0);max-width: 396px;"></div>
-            <div class="form-group"><input class="border rounded border-warning form-control d-inline" type="password" name="Citta" placeholder="Città" style="background-color: rgb(255,255,255);color: rgb(0,0,0);max-width: 396px;"></div>
-            <div class="form-group"><input class="border rounded border-warning form-control d-inline" type="password" name="Provincia" placeholder="Provincia" style="background-color: rgb(255,255,255);color: rgb(0,0,0);max-width: 396px;"></div>
-            <div class="form-group"><input class="border rounded border-warning form-control d-inline" type="password" name="PartitaIva" placeholder="Partita Iva" style="background-color: rgb(255,255,255);color: rgb(0,0,0);max-width: 396px;"></div>
-            <p>Giorni lavorativi</p>
-            <div class="col">
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Lunedì</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Martedì</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Mercoledì</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4">Giovedì</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"><label class="form-check-label" for="formCheck-5">Venerdì</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-6"><label class="form-check-label" for="formCheck-6">Sabato</label></div>
-                <div class="form-check" style="margin-top: 0px;"><input class="form-check-input" type="checkbox" id="formCheck-7"><label class="form-check-label" for="formCheck-7">Domenica</label></div>
+    <!--Start of body-->
+    <body>
+        <!--HEADER-->
+        <nav class="navbar navbar-dark navbar-expand-md navigation-clean-button custom-border-red bg-yellow">
+            <div class="container">
+                <!--Logo-->
+                <a id="er-logo" class="navbar-brand custom-text-centered" href="#">Eat&amp;Reorder</a>
             </div>
-            <p class="float-left">Orario di apertura</p>
-            <p class="float-right">Orario di chiusura</p>
-            <div class="col" style="margin-top: 42px;"><input class="border rounded form-control float-left" type="time" style="width: 112px;"><input class="border rounded form-control float-right" type="time" style="width: 112px;"></div><button class="btn btn-primary btn-block border rounded d-inline"
-                type="submit" style="background-color: rgb(163,20,14);max-width: 396px;">Conferma</button></form>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
+        </nav>
+        
+        <!--Form for registration-->
+        <div class="container-form-floating">
+            <form class="custom-border-red login-form-style" method="post">
+                <!--Invisible title-->
+                <h2 class="sr-only">Login Form</h2>
+                <div class="registration-title">Benvenuto in Eat&amp;Reorder</div>
+                <div class="registration-description">Consegna piatti quando vuoi</div>
+                <!--Image on the form-->
+                <img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
+                <!--Form group that contains fields and confirm button-->
+                <div class="form-group">
+                    <input class="custom-border-red border-rounded-small form-control input-style-login" type="email" name="email" placeholder="Email">
+                    <input class="custom-border-red border-rounded-small form-control input-style-login" type="password" name="password" placeholder="Password">
+                    <input class="custom-border-red border-rounded-small form-control input-style-login" type="nome" name="nome" placeholder="Nome">
+                    <input class="custom-border-red border-rounded-small form-control input-style-login" type="cognome" name="cognome" placeholder="Cognome">
+                    <input class="custom-border-red border-rounded-small form-control input-style-login" type="telefono" name="telefono" placeholder="Telefono">
+                    <input class="custom-border-red border-rounded-small form-control input-style-login" type="citta" name="citta" placeholder="Città di consegna">
+                    <input class="custom-border-red border-rounded-small form-control input-style-login" type="provincia" name="provincia" placeholder="Provincia di consegna">
+                    <hr/>
+                    <!--List of checkboxes-->
+                    <div class="custom-text-centered text-red" style="margin-top:-6px; margin-bottom: 6px;">Giorni lavorativi</div>
+                    <div class="row" style="width: 100%; margin:0; padding:0;">
+                        <div class="col-sm-6 list-of-checkboxes">
+                            <!--New day-->
+                            <input class="form-check-input" type="checkbox" id="checkbox-day1">
+                            <label class="form-check-label" for="checkbox-day1">
+                                Lunedì
+                            </label>
+                            <br>
+                            <!--New day-->
+                            <input class="form-check-input" type="checkbox" id="checkbox-day2">
+                            <label class="form-check-label" for="checkbox-day2">
+                                Martedì
+                            </label>
+                            <br>
+                            <!--New day-->
+                            <input class="form-check-input" type="checkbox" id="checkbox-day3">
+                            <label class="form-check-label" for="checkbox-day3">
+                                Mercoledì
+                            </label>
+                            <br>
+                            <!--New day-->
+                            <input class="form-check-input" type="checkbox" id="checkbox-day4">
+                            <label class="form-check-label" for="checkbox-day4">
+                                Giovedì
+                            </label>
+                        </div>
+                        <div class="col-sm-6 list-of-checkboxes">
+                            <!--New day-->
+                            <input class="form-check-input" type="checkbox" id="checkbox-day5">
+                            <label class="form-check-label" for="checkbox-day5">
+                                Venerdì
+                            </label>
+                            <br>
+                            <!--New day-->
+                            <input class="form-check-input" type="checkbox" id="checkbox-day6">
+                            <label class="form-check-label" for="checkbox-day6">
+                                Sabato
+                            </label>
+                            <br>
+                            <!--New day-->
+                            <input class="form-check-input" type="checkbox" id="checkbox-day7">
+                            <label class="form-check-label" for="checkbox-day7">
+                                Domenica
+                            </label>
+                        </div>
+                    </div>
+                    <hr/>
+                    
+                    <!--List of hours-->
+                    <div class="custom-text-centered text-red" style="margin-top:-6px; margin-bottom: 6px;">Orario lavorativo</div>
+                    <div class="row" style="width: 100%; margin:0; padding:0;">
+                        <div class="col-sm-6">
+                            <div class="custom-text-centered text-red" style="margin-top:-6px; margin-bottom: 6px;">Inizio consegne</div>
+                            <input type="time" id="start-time" class="center-block custom-border-red border-rounded-medium" name="start-time" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="custom-text-centered text-red" style="margin-top:-6px; margin-bottom: 6px;">Fine consegne</div>
+                            <input type="time" id="end-time" class="center-block custom-border-red border-rounded-medium" name="end-time" required>
+                        </div>
+                    </div>
+                    <hr/>
+
+                    <!--Confirm button-->
+                    <button class="btn form-list-button bg-red border-rounded-small" type="submit">Registrati</button>
+                </div>
+            </form>
+        </div>
+
+        <!--FOOTER GOES HERE-->
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    </body>
 
 </html>

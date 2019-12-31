@@ -46,6 +46,10 @@
     width: 30%;
     padding: 30px;
 }
+#container-report-order{
+    padding-right: 10%;
+    margin-top: 10px;
+}
 
 /*******************CLASSES*******************/
 
@@ -81,6 +85,10 @@
 .custom-text-centered{
     width: 100%;
     text-align: center;
+}
+.custom-text-right{
+    width: 100%;
+    text-align: end;
 }
 
 .custom-border-red{
@@ -183,6 +191,18 @@ HR{
     padding: 0;
 }
 
+A{
+    text-decoration:none;
+    color: var(--preset_color_red);
+}
+
+A:hover, A:link A:visited, A:active{
+    text-decoration:none;
+    color: var(--preset_color_red);
+}
+
+
+
 /*******************MEDIA QUERIES*******************/
 
 @media (max-width: 968px){
@@ -221,6 +241,11 @@ HR{
         border: none;
         font-size: 14px;
     }
+
+    #container-report-order{
+        padding-right: 10%;
+        margin-top: 8px;
+    }
     
 }
 
@@ -228,6 +253,10 @@ HR{
 
     #start-time{
         margin-bottom: 16px;
+    }
+    #container-report-order{
+        padding-right: 10%;
+        margin-top: 5px;
     }
 
 }
@@ -238,6 +267,14 @@ HR{
         width: 70%;
         margin-top: -1;
         margin-bottom: 25px;
+    }
+    #container-report-order{
+        padding-right: 8%;
+        font-size: 14px;
+    }
+    #container-report-order{
+        padding-right: 10%;
+        margin-top: 0px;
     }
     
 }
@@ -314,6 +351,12 @@ HR{
         text-align: center;
         font-size: 14px;
         margin-bottom: 8px;
+    }
+
+    #container-report-order{
+        padding-right: 7%;
+        font-size: 12px;
+        margin-top: -10px;
     }
     
 }

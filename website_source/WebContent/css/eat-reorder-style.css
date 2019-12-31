@@ -337,6 +337,19 @@ A:hover, A:link A:visited, A:active{
         padding-right: 10%;
         margin-top: 0px;
     }
+    .header-button{
+        margin-right: 8px;
+        margin-left: 0px;
+        margin-top: 5px;
+        background-color: var(--preset_color_red);
+        border-radius: 12px;
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: none;
+        font-size: 14px;
+    }
     
 }
 @media (max-width: 425px){

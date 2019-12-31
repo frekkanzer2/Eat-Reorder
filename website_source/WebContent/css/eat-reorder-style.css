@@ -50,10 +50,26 @@
     padding-right: 10%;
     margin-top: 10px;
 }
+#container-display-orders{
+    margin-top: -10px;
+    width: 30%;
+}
 
 /*******************CLASSES*******************/
 
 .header-button{
+    margin-right: 4px;
+    margin-left: 4px;
+    background-color: var(--preset_color_red);
+    border-radius: 25px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: none;
+}
+
+.header-button-smaller{
     margin-right: 4px;
     margin-left: 4px;
     background-color: var(--preset_color_red);
@@ -205,12 +221,34 @@ A:hover, A:link A:visited, A:active{
 
 /*******************MEDIA QUERIES*******************/
 
+@media (max-width: 995px){
+
+    .header-button-smaller{
+        margin-right: 1px;
+        margin-left: 1px;
+        background-color: var(--preset_color_red);
+        border-radius: 25px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border: none;
+        font-size: 15px;
+    }
+
+}
+
 @media (max-width: 968px){
 
     #search-field{
         width: 50%;
         margin-top: -1;
         margin-bottom: 25px;
+    }
+
+    #container-display-orders{
+        margin-top: -10px;
+        width: 40%;
     }
     
 }
@@ -246,6 +284,25 @@ A:hover, A:link A:visited, A:active{
         padding-right: 10%;
         margin-top: 8px;
     }
+
+    .header-button-smaller{
+        margin-right: 1px;
+        margin-left: 1px;
+        margin-top: 6px;
+        background-color: var(--preset_color_red);
+        border-radius: 25px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border: none;
+        font-size: 15px;
+    }
+
+    #container-display-orders{
+        margin-top: -10px;
+        width: 50%;
+    }
     
 }
 
@@ -257,6 +314,10 @@ A:hover, A:link A:visited, A:active{
     #container-report-order{
         padding-right: 10%;
         margin-top: 5px;
+    }
+    #container-display-orders{
+        margin-top: -10px;
+        width: 60%;
     }
 
 }
@@ -317,6 +378,11 @@ A:hover, A:link A:visited, A:active{
         margin-right: 0px!important;
         margin-left: 0px!important;
     }
+
+    #container-display-orders{
+        margin-top: -15px;
+        width: 80%;
+    }
     
 }
 
@@ -357,6 +423,11 @@ A:hover, A:link A:visited, A:active{
         padding-right: 7%;
         font-size: 12px;
         margin-top: -10px;
+    }
+
+    #container-display-orders{
+        margin-top: -15px;
+        width: 90%;
     }
     
 }

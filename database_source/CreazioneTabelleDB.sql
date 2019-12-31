@@ -155,3 +155,110 @@ set Ordine.stato='?';  #ritirato
 #ordineSetConsegnato(orderCode : Long)
 update Ordine
 set Ordine.stato='?';  #consegnato
+
+
+
+/* Query GestoreUtenteDaoImpl */
+
+#controlloEsistenzaMail(email: String)
+select * 
+from UtenteRegistrato
+where UtenteRegistrato.email='?';
+
+#registrazioneCliente(cliente: AccountCliente)
+create table Cliente(
+nome varchar(20) not null,
+cognome varchar(20) not null,
+email varchar(100), foreign key (email) references UtenteRegistrato(email)
+on update cascade 
+on delete cascade,
+primary key(email, nome)
+);
+
+#registrazioneAzienda(azienda: AccountAzienda)
+create table Azienda(
+nome varchar(20) not null,
+via varchar(20) not null,
+numero_civico decimal(3) not null,
+citta varchar(15) not null,
+provincia character(2) not null,
+partita_iva character(11) not null,
+telefono varchar(10) not null,
+orario_apertura time not null,
+orario_chiusura time not null,
+email varchar(100), foreign key (email) references UtenteRegistrato(email) 
+on update cascade 
+on delete cascade,
+primary key(email, nome)
+);
+
+#registrazioneFattorino(fatt: AccountFattorino)
+create table Fattorino(
+nome varchar(20) not null, 
+cognome varchar(20) not null,
+telefono varchar(10) not null,
+citta_consegna varchar(20) not null,
+provincia character(2) not null,
+orario_inizio time not null,
+orario_fine time not null,
+email varchar(100), foreign key (email) references UtenteRegistrato(email) 
+on update cascade 
+on delete cascade,
+primary key(email,nome)
+);
+
+#controllaBan(email: String)
+select Azienda.email
+from Azienda
+where Azienda.email='?';
+
+#controllaEsistenzaAccount(user: String, pass: String)
+select * 
+from UtenteRegistrato
+where UtenteRegistrato.email='?' and UtenteRegistrato.password='?';
+
+#dammiUtente(email: String)
+select *
+from UtenteRegistrato
+where UtenteRegistrato.email='?';
+
+#aggiornaCliente(cliente: AccountCliente)		#DaRivedere
+update Cliente, UtenteRegistrato 
+set Cliente.nome='?', Cliente.cognome='?', UtenteRegistrato.password='?';
+
+#aggiornaAzienda(azienda: AccountAzienda)     	#DaRivedere
+update Azienda, UtenteRegistrato
+set Azienda.nome='?', Azienda.via='?', Azienda.numero_civico=?, Azienda.citta='?', Azienda.provincia='?', Azienda.partita_iva='?', Azienda.telefono='?', Azienda.orario_apertura='?', Azienda.orario_chiusura='?', UtenteRegistrato.password='?'; 
+
+#aggiornaFattorino(fatt: AccountFattorino)		#DaRivedere
+update Fattorino, UtenteRegistrato
+set Fattorino.nome='?', Fattorino.cognome='?', Fattorino.telefono='?', Fattorino.citta_consegna='?', Fattorino.provincia='?', Fattorino.orario_inizio='?', Fattorino.orario_fine='?', UtenteRegistrato.password='?';
+
+#dammiAziendaConOrdine(ordine: Ordine)
+select distinct Ordine.email_azienda, Ordine.azienda
+from Ordine
+where Ordine.email_azienda='?'; 
+
+#banAzienda(azienda: AccountAzienda)
+select Azienda.email
+from Azienda
+where Azienda.email='?';
+
+#dammiListaAziende(citta: String)
+select *
+from Azienda
+where Azienda.citta='?';
+
+#aggiungiAlListino(azienda: AccountAzienda, prod : Prodotto)
+select Prodotto.codice
+from Prodotto
+where Prodotto.codice='?' and Prodotto.email='?';
+
+#aggiornaProdotto(azienda: AccountAzienda, prod : Prodotto)
+update Prodotto
+set Prodotto.nome='?', Prodotto.descrizione='?', Prodotto.prezzo=?, Prodotto.path_immagine='?'
+where Prodotto.email='?';
+
+#rimuoviProdotto(azienda: AccountAzienda, prod : Prodotto)
+delete from Prodotto
+where Prodotto.codice='?' and Prodotto.email='?';   

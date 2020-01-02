@@ -28,7 +28,7 @@
 			</div>
 			<!-- Logo -->
 			<p class="copyright"
-				style="font-size: 20px; font-style: normal; font-weight: bold;">Eat&amp;Reorder
+				style="margin-top:-10px;font-size: 20px; font-style: normal; font-weight: bold;">Eat&amp;Reorder
 				© 2019</p>
 		</div>
 	</footer>

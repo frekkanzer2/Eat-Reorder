@@ -120,7 +120,7 @@ primary key(prodotto,ordine)
 #creaOrdine(order : Ordine, user : AccountUtente, cart : Carrello)
 select Fattorino.email, Fattorino.nome, GiorniLavorativi.giorno, Fattorino.orario_inizio, Fattorino.orario_fine
 from Fattorino, GiorniLavorativi
-where Fattorino.citta_consegna='?' and GiorniLavorativi.giorno='?' and Fattorino.orario_inizio='?' and Fattorino.orario_fine='?';
+where Fattorino.citta_consegna='?' and GiorniLavorativi.giorno='?' and Fattorino.orario_inizio<'?' and Fattorino.orario_fine>'?';
 
 insert into Ordine (indirizzo_consegna, numero_carta, prezzo_totale, note, stato, acquirente, email_acquirente, azienda, email_azienda, fattorino, email_fattorino) values 
 ("?","?",?,"?","?","?","?","?","?","?","?");
@@ -134,9 +134,9 @@ from Ordine
 where Ordine.codice='?';  #codice dell'ordine
 
 #dammiOrdiniPreparazione(azienda : AccountAzienda)
-select *
+select Ordine.codice, Ordine.stato
 from Ordine
-where Ordine.stato='?';  #preparazione
+where Ordine.stato='?' and Ordine.email_azienda='?';  #preparazione
 
 #dammiOrdine(codice : Long)
 select *
@@ -146,7 +146,7 @@ where Ordine.codice='?';
 #dammiConsegne(fattorino : AccountFattorino)
 select Ordine.codice, Fattorino.email, Fattorino.nome
 from Fattorino, Ordine
-where Fattorino.nome='?';
+where Fattorino.email='?';
 
 #ordineSetRitirato(orderCode : Long)
 update Ordine

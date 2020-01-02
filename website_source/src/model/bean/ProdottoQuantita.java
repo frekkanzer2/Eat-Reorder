@@ -1,6 +1,6 @@
 package model.bean;
 
-public class ProdottoCarrello_Bean {
+public class ProdottoQuantita {
 
 	private Prodotto_Bean prodotto;
 	private Integer qta;

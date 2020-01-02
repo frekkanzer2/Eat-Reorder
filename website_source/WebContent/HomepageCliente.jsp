@@ -37,7 +37,7 @@
 
 	<!--DIV that contains the link to the report of a company-->
 	<div id="container-report-order" class="custom-text-right">
-		<a href="#">Segnala un problema con un ordine</a>
+		<a href="Segnalazione.jsp">Segnala un problema con un ordine</a>
 	</div>
 
 	<!--FOOTER-->

@@ -3,7 +3,7 @@
 
 <!-- Footer -->
 <div class="border rounded-0 border-danger footer "
-	style="position:absolute;bottom:0;height:150px;width:100%;margin-top:-200px;background-color: rgb(254,182,62);color: rgb(163,20,14);">
+	style="position: absolute; bottom: 0; height: 150px; width: 100%; margin-top: -200px; background-color: rgb(254, 182, 62); color: rgb(163, 20, 14);">
 	<footer>
 		<div class="container">
 			<!-- Logo -->

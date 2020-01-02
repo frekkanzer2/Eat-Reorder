@@ -34,7 +34,8 @@
 
 	<!--Form for registration-->
 	<div class="container-form-floating">
-		<form class="custom-border-red login-form-style" method="post">
+		<form class="custom-border-red login-form-style" method="post"
+			action="RegistrazioneFattorinoServlet">
 			<!--Invisible title-->
 			<h2 class="sr-only">Login Form</h2>
 			<div class="registration-title">Benvenuto in Eat&amp;Reorder</div>
@@ -131,7 +132,6 @@
 			</div>
 		</form>
 	</div>
-	<jsp:include page="footer.jsp"></jsp:include>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 

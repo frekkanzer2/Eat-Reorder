@@ -54,6 +54,18 @@ public class Carrello {
 		}
 	}
 
+	/**
+	 * @return the currentAzienda
+	 */
+	public AccountAzienda_Bean getCurrentAzienda() {
+		return currentAzienda;
+	}
+
+	/**
+	 * @param currentAzienda the currentAzienda to set
+	 */
+	
+
 	public void svuota() {
 
 		prodotti.clear();

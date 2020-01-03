@@ -4,23 +4,37 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-import model.Carrello;
+import com.sun.org.apache.xerces.internal.impl.dv.xs.DayDV;
 
-public class GestoreOrdineDAOImpl {
+import interfaces.GestoreOrdineDao;
+import model.Carrello;
+import model.DBConnectionPool;
+
+public class GestoreOrdineDAOImpl implements GestoreOrdineDao{
 	
 	private Connection connect;
+	
+	public static void main(String args[]) {
+		
+		
+		
+		
+		
+	}
 	
 	public Ordine_Bean creaOrdine(Ordine_Bean order, AccountCliente_Bean user, Carrello cart) throws SQLException {
 		
 		connect= DBConnectionPool.getConnection();
 		
 		PreparedStatement stmt = connect.prepareStatement("select Fattorino.email, Fattorino.nome, GiorniLavorativi.giorno, Fattorino.orario_inizio, Fattorino.orario_fine from Fattorino, GiorniLavorativi where Fattorino.citta_consegna='?' and GiorniLavorativi.giorno='?' and Fattorino.orario_inizio<'?' and Fattorino.orario_fine>'?';");
+		
 		
 		ResultSet x= stmt.executeQuery();
 		
@@ -30,12 +44,19 @@ public class GestoreOrdineDAOImpl {
 		
 		return order;
 	}
+	/**
+	 * Metodo che consente di conoscere l'esistenza di un ordine in base all'ID
+	 * 
+	 * @param idOrdine
+	 * @return True se esiste un ordine con l'IdOrdine inserito altrimenti false
+	 * @throws SQLException
+	 */
 	
 	public boolean controlloEsistenzaOrdine(Long idOrdine) throws SQLException {
 		
 		connect= DBConnectionPool.getConnection();
 		
-		PreparedStatement stmt = connect.prepareStatement("select * from Ordine where Ordine.codice='?';");
+		PreparedStatement stmt = connect.prepareStatement("select * from Ordine where Ordine.codice=?");
 		stmt.setLong(1, idOrdine);
 		
 		ResultSet x= stmt.executeQuery();		
@@ -52,7 +73,7 @@ public class GestoreOrdineDAOImpl {
 		
 		connect= DBConnectionPool.getConnection();
 		
-		PreparedStatement stmt = connect.prepareStatement("select Ordine.codice, Ordine.stato from Ordine where Ordine.stato='?' and Ordine.email_azienda='?';");
+		PreparedStatement stmt = connect.prepareStatement("select Ordine.codice, Ordine.stato from Ordine where Ordine.stato=? and Ordine.email_azienda=?");
 		stmt.setString(1, Ordine_Bean.IN_PREPARAZIONE);
 		stmt.setString(2, azienda.getEmail());
 		
@@ -78,7 +99,7 @@ public class GestoreOrdineDAOImpl {
 		
 		connect= DBConnectionPool.getConnection();
 		
-		PreparedStatement stmt= connect.prepareStatement("select * from Ordine where Ordine.codice='?';");
+		PreparedStatement stmt= connect.prepareStatement("select * from Ordine where Ordine.codice=?");
 		stmt.setLong(1, idOrdine);
 		
 		ResultSet x= stmt.executeQuery();
@@ -98,7 +119,7 @@ public class GestoreOrdineDAOImpl {
 		
 		connect= DBConnectionPool.getConnection();
 		
-		PreparedStatement stmt = connect.prepareStatement("select Ordine.codice, Fattorino.email, Fattorino.nome from Fattorino, Ordine where Fattorino.email='?';");
+		PreparedStatement stmt = connect.prepareStatement("select Ordine.codice, Fattorino.email, Fattorino.nome from Fattorino, Ordine where Fattorino.email=?");
 		stmt.setString(1, fattorino.getEmail());
 		
 		List<Ordine_Bean> listaConsegneFattorino = new ArrayList<Ordine_Bean>();
@@ -121,7 +142,7 @@ public class GestoreOrdineDAOImpl {
 		
 		connect= DBConnectionPool.getConnection();
 		
-		PreparedStatement stmt= connect.prepareStatement("update Ordine set Ordine.stato='?';");
+		PreparedStatement stmt= connect.prepareStatement("update Ordine set Ordine.stato=?");
 		stmt.setString(1, Ordine_Bean.RITIRATO);
 		
 		ResultSet x= stmt.executeQuery();
@@ -134,7 +155,7 @@ public class GestoreOrdineDAOImpl {
 		
 		connect= DBConnectionPool.getConnection();
 		
-		PreparedStatement stmt= connect.prepareStatement("update Ordine set Ordine.stato='?';");
+		PreparedStatement stmt= connect.prepareStatement("update Ordine set Ordine.stato=?");
 		stmt.setString(1, Ordine_Bean.CONSEGNATO);
 		
 		ResultSet x= stmt.executeQuery();

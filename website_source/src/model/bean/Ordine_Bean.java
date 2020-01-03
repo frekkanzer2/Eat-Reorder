@@ -12,7 +12,104 @@ public class Ordine_Bean {
 	private AccountFattorino_Bean fattorino;
 	private AccountCliente_Bean cliente;
 	private List<ProdottoQuantita> prodottiOrdinati;
+	private String viaDiConsegna;
+	private int numConsegna;
+	private String cittaConsegna;
+	private String provinciaConsegna;
+	private String codiceCarta;
+	private Float prezzoTotal;
 	
+	/**
+	 * @return the codiceCarta
+	 */
+	public String getCodiceCarta() {
+		return codiceCarta;
+	}
+
+	/**
+	 * @param codiceCarta the codiceCarta to set
+	 */
+	public void setCodiceCarta(String codiceCarta) {
+		this.codiceCarta = codiceCarta;
+	}
+
+	/**
+	 * @return the prezzoTotal
+	 */
+	public Float getPrezzoTotal() {
+		return prezzoTotal;
+	}
+
+	/**
+	 * @param prezzoTotal the prezzoTotal to set
+	 */
+	public void setPrezzoTotal(Float prezzoTotal) {
+		this.prezzoTotal = prezzoTotal;
+	}
+
+	/**
+	 * @param stato the stato to set
+	 */
+	public void setStato(int stato) {
+		this.stato = stato;
+	}
+
+	/**
+	 * @return the viaDiConsegna
+	 */
+	public String getViaDiConsegna() {
+		return viaDiConsegna;
+	}
+
+	/**
+	 * @param viaDiConsegna the viaDiConsegna to set
+	 */
+	public void setViaDiConsegna(String viaDiConsegna) {
+		this.viaDiConsegna = viaDiConsegna;
+	}
+
+	/**
+	 * @return the numConsegna
+	 */
+	public int getNumConsegna() {
+		return numConsegna;
+	}
+
+	/**
+	 * @param numConsegna the numConsegna to set
+	 */
+	public void setNumConsegna(int numConsegna) {
+		this.numConsegna = numConsegna;
+	}
+
+	/**
+	 * @return the cittaConsegna
+	 */
+	public String getCittaConsegna() {
+		return cittaConsegna;
+	}
+
+	/**
+	 * @param cittaConsegna the cittaConsegna to set
+	 */
+	public void setCittaConsegna(String cittaConsegna) {
+		this.cittaConsegna = cittaConsegna;
+	}
+
+	/**
+	 * @return the provinciaConsegna
+	 */
+	public String getProvinciaConsegna() {
+		return provinciaConsegna;
+	}
+
+	/**
+	 * @param provinciaConsegna the provinciaConsegna to set
+	 */
+	public void setProvinciaConsegna(String provinciaConsegna) {
+		this.provinciaConsegna = provinciaConsegna;
+	}
+
 	private int stato;
 	
 	/**
@@ -44,6 +141,12 @@ public class Ordine_Bean {
 		this.stato = 0;
 		this.prodottiOrdinati= prodottiOrdinati;
 	}
+	
+	/**
+	 * Metodo che consente di settare lo stato dell'ordine 
+	 * @param status Stringa che rappresenta lo stato (Ordine_Bean.RITIRATO, Ordine_Bean.CONSEGNATO).
+	 * 
+	 */
 	
 	public void setStato(String status) {
 		

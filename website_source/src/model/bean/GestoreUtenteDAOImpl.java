@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import model.DBConnectionPool;
+
 public class GestoreUtenteDAOImpl {
 
 private Connection connect;

@@ -4,7 +4,7 @@ use eatreorder;
 
 create table UtenteRegistrato(
 email varchar(100) primary key,
-password varchar(20) not null,
+pass varchar(20) not null,
 tipologia varchar(10) not null,
 is_banned boolean not null
 );
@@ -180,10 +180,9 @@ insert into Cliente(nome, cognome, email) values (?,?,?);
 insert into Cliente(nome, cognome, email) values ("b","c","a");
 insert into UtenteRegistrato(email, password, tipologia, is_banned) values ("a","a","aaa", true);
 
-update Cliente 
+update Cliente JOIN UtenteRegistrato on Cliente.email=UtenteRegistrato.email
 set Cliente.nome="ddd", Cliente.cognome="ddd", UtenteRegistrato.password="ddd"
-from Cliente, UtenteRegistrato
-where Cliente.email=UtenteRegistrato.email;
+where Cliente.email="a" and UtenteRegistrato.email = "a"
 
 select * 
 from UtenteRegistrato;

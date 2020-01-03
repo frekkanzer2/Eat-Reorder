@@ -7,14 +7,13 @@ package model;
 
 import model.bean.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import model.bean.AccountAzienda_Bean;
-import model.bean.ProdottoQuantita;
-import model.bean.Prodotto_Bean;
 
 public class Carrello {
 
@@ -37,6 +36,11 @@ public class Carrello {
 				}
 			}
 		}
+	}
+	
+	public Collection<ProdottoQuantita> getProdotti(){
+		
+		return prodotti.values();
 	}
 
 	public void rimuoviProdotto(Prodotto_Bean prod) {

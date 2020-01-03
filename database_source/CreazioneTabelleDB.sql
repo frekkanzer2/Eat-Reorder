@@ -64,7 +64,7 @@ primary key(codice)
 
 create table Ordine(
 codice int AUTO_INCREMENT,
-indirizzo_consegna varchar(30) not null,
+indirizzo_consegna varchar(255) not null,
 numero_carta character(16) not null,
 prezzo_totale decimal not null,
 note varchar(150),
@@ -108,7 +108,7 @@ quantita decimal(2) not null,
 prodotto int, foreign key (prodotto) references Prodotto(codice)
 on update cascade 
 on delete cascade,
-ordine int, foreign key (prodotto) references Ordine(codice)
+ordine int, foreign key (ordine) references Ordine(codice)
 on update cascade 
 on delete cascade,
 primary key(prodotto,ordine)
@@ -180,9 +180,10 @@ insert into Cliente(nome, cognome, email) values (?,?,?);
 insert into Cliente(nome, cognome, email) values ("b","c","a");
 insert into UtenteRegistrato(email, password, tipologia, is_banned) values ("a","a","aaa", true);
 
+#query per aggiornamento di due tabelle insieme
 update Cliente JOIN UtenteRegistrato on Cliente.email=UtenteRegistrato.email
 set Cliente.nome="ddd", Cliente.cognome="ddd", UtenteRegistrato.password="ddd"
-where Cliente.email="a" and UtenteRegistrato.email = "a"
+where Cliente.email="a" and UtenteRegistrato.email = "a";
 
 select * 
 from UtenteRegistrato;

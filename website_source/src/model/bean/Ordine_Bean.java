@@ -2,11 +2,13 @@ package model.bean;
 
 import java.util.List;
 
+import model.ProdottoQuantita;
+
 public class Ordine_Bean {
 
-	static final String IN_PREPARAZIONE = "In preparazione";
-	static final String RITIRATO = "Ritirato";
-	static final String CONSEGNATO = "Consegnato";
+	public static final String IN_PREPARAZIONE = "In preparazione";
+	public static final String RITIRATO = "Ritirato";
+	public static final String CONSEGNATO = "Consegnato";
 	
 	private AccountAzienda_Bean azienda;
 	private AccountFattorino_Bean fattorino;
@@ -18,7 +20,36 @@ public class Ordine_Bean {
 	private String provinciaConsegna;
 	private String codiceCarta;
 	private Float prezzoTotal;
-	
+	private String note;
+	private Long codiceID;
+	/**
+	 * @return the codiceID
+	 */
+	public Long getCodiceID() {
+		return codiceID;
+	}
+
+	/**
+	 * @param codiceID the codiceID to set
+	 */
+	public void setCodiceID(Long codiceID) {
+		this.codiceID = codiceID;
+	}
+
+	/**
+	 * @return the note
+	 */
+	public String getNote() {
+		return note;
+	}
+
+	/**
+	 * @param note the note to set
+	 */
+	public void setNote(String note) {
+		this.note = note;
+	}
+
 	/**
 	 * @return the codiceCarta
 	 */
@@ -45,13 +76,6 @@ public class Ordine_Bean {
 	 */
 	public void setPrezzoTotal(Float prezzoTotal) {
 		this.prezzoTotal = prezzoTotal;
-	}
-
-	/**
-	 * @param stato the stato to set
-	 */
-	public void setStato(int stato) {
-		this.stato = stato;
 	}
 
 	/**

@@ -1,4 +1,6 @@
-package model.bean;
+package model;
+
+import model.bean.Prodotto_Bean;
 
 public class ProdottoQuantita {
 

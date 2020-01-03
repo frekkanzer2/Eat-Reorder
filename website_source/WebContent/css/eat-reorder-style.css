@@ -54,6 +54,9 @@
     margin-top: -10px;
     width: 30%;
 }
+#ban-form{
+    width:60%;
+}
 
 /*******************CLASSES*******************/
 
@@ -324,6 +327,10 @@ A:hover, A:link A:visited, A:active{
         width: 60%;
         padding: 30px;
     }
+
+    #ban-form{
+        width:80%;
+    }
     
     
 }
@@ -436,6 +443,10 @@ A:hover, A:link A:visited, A:active{
         padding: 20px;
         padding-left:0px;
         padding-right:0px;
+    }
+
+    #ban-form{
+        width:100%;
     }
     
 }

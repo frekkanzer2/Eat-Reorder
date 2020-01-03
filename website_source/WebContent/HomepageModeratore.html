@@ -33,21 +33,39 @@
                     <!--Span that contains buttons-->
                     <span id="header-span-btns" class="navbar-text actions">
                         <!--Buttons-->
-                        <a class="btn header-button" role="button" href="#">Accedi</a>
-                        <a class="btn header-button" role="button" href="#">Registrati</a>
+                        <a class="btn header-button" role="button" href="#">Logout</a>
                     </span>
                 </div>
             </div>
         </nav>
 
-        <div>
+        <!--DIV that contains the image and the searchbar-->
+        <div class="center-block">
             <!--IMAGE ON THE HOME-->
             <img id="image-home" class="img-fluid d-block mx-auto" src="assets/img/LogomarcoIS%20PNG.png">
             <!--Form for the research-->
-            <div class="d-flex justify-content-center" style="height: 100%;">
-                <input id="search-field" class="form-control-sm d-inline" type="search" placeholder="Inserisci la città">
-                <button class="standard-button border-rounded-small custom-border-red" type="submit">Cerca</button>
-            </div>
+            <form id="ban-form" class="form-horizontal center-block" action="">
+                <!--Form group for id order input-->
+                <div class="form-group">
+                    <label class="control-label col-sm-5 text-red" for="id_order">ID Ordine</label>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control custom-border-yellow" id="id_order" placeholder="Inserisci l'ID dell'ordine">
+                    </div>
+                </div>
+                <!--Form group for reason to ban-->
+                <div class="form-group">
+                    <label class="control-label col-sm-5 text-red" for="reason">Motivazione</label>
+                    <div class="col-sm-12">
+                        <textarea type="text" class="form-control custom-border-yellow" id="reason" rows="5" placeholder="Inserisci la motivazione del ban"></textarea>
+                    </div>
+                </div>
+                <!--Form group for confirm button-->
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <button type="submit" class="standard-button center-block border-rounded-medium custom-border-yellow" style="margin-top:20px;">Ban</button>
+                    </div>
+                </div>
+              </form>
         </div>
 
         <!--HERE GOES THE FOOTER-->

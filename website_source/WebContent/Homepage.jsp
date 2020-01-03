@@ -39,7 +39,7 @@
 	<!--Form for the research-->
 	<div class="d-flex justify-content-center" style="height: 100%;">
 		<input id="search-field" class="form-control-sm d-inline"
-			type="search" placeholder="Inserisci la città">
+			type="search" placeholder="Inserisci la cittï¿½">
 		<!--TO REFACTOR-->
 		<button class="btn btn-light btn-sm border-secondary" type="submit"
 			style="width: 82px; height: 30px; font-size: 15px; background-color: rgb(254, 182, 62);">Cerca</button>

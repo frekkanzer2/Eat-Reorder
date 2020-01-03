@@ -11,7 +11,7 @@ import model.bean.Ordine_Bean;
 
 public interface GestoreOrdineDao {
 
-	public Ordine_Bean creaOrdine(Ordine_Bean order, AccountCliente_Bean user, Carrello cart) throws SQLException;
+	public void creaOrdine(Ordine_Bean order) throws SQLException, Exception;
 
 	public boolean controlloEsistenzaOrdine(Long idOrdine) throws SQLException;
 

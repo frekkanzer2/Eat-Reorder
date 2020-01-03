@@ -34,10 +34,9 @@
 
 	<!--Form for registration-->
 	<div class="container-form-floating">
-		<form class="custom-border-red login-form-style" method="post"
-			action="RegistrazioneClienteServlet">
-			<!--Invisible title-->
-			<h2 class="sr-only">Login Form</h2>
+		<form class="custom-border-red login-form-style"
+			action="RegistrazioneClienteServlet" method="post"
+			onsubmit="return checkRegistration();">
 			<div class="registration-title">Benvenuto in Eat&amp;Reorder</div>
 			<div class="registration-description">Ordina comodamente da
 				casa</div>
@@ -47,20 +46,35 @@
 			<div class="form-group">
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="email" name="email" placeholder="Email"> <input
+					type="email" name="email" placeholder="Email" id="email"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="password" name="password" placeholder="Password"> <input
+					type="password" name="password" placeholder="Password"
+					id="password"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="nome" name="nome" placeholder="Nome"> <input
+					type="nome" name="nome" placeholder="Nome" id="nome"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="cognome" name="cognome" placeholder="Cognome">
+					type="cognome" name="cognome" placeholder="Cognome" id="cognome">
 				<button class="btn form-list-button bg-red border-rounded-small"
-					type="submit">Registrati</button>
+					type="submit" id="submit">Registrati</button>
 			</div>
 		</form>
 	</div>
 	<!-- Script -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function checkRegistration() {
+			var email = document.getElementById("email");
+			var password = document.getElementById("password");
+			var nome = document.getElementById("nome");
+			var cognome = document.getElementById("cognome");
+			if (email.value == "" || password.value == "" || nome.value == ""
+					|| cognome.value == "") {
+				alert("ATTENZIONE!Errore nella validazione dei campi!")
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>

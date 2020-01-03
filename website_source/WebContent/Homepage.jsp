@@ -1,5 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%!AccountUtenteRegistrato_Bean utente = null;%>
+<%
+	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+	if (utente == null) {
+	} else if (utente.getTipo().equals("Cliente"))
+		response.sendRedirect("HomepageCliente.jsp");
+	else if (utente.getTipo().equals("Azienda"))
+		response.sendRedirect("HomepageAzienda.jsp");
+	else if (utente.getTipo().equals("Fattorino"))
+		response.sendRedirect("HomepageFattorino.jsp");
+	/*else	response.sendRedirect("HomepageModeratore.jsp");*/
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +29,7 @@
 <link rel="stylesheet" href="assets/css/footer.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
+<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <div>

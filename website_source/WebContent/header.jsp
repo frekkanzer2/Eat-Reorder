@@ -15,9 +15,9 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navcol-1">
 			<%
-			utente = (AccountUtenteRegistrato_Bean) session.getAttribute("tipo");
-			if (utente== null) {
-		%>
+				utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+				if (utente == null) {
+			%>
 			<!--Bar that contains buttons or other things for Not User-->
 			<ul class="nav navbar-nav mr-auto"></ul>
 			<!--Span that contains buttons-->
@@ -27,8 +27,8 @@
 				role="button" href="Registrazione.jsp">Registrati</a>
 			</span>
 			<%
-			}else if(utente.getTipo().equals("Cliente")){
-		%>
+				} else if (utente.getTipo().equals("Cliente")) {
+			%>
 			<!--Bar that contains buttons or other things for Cliente-->
 			<ul class="nav navbar-nav mr-auto"></ul>
 			<!--Span that contains buttons-->
@@ -39,8 +39,8 @@
 				<a class="btn header-button" role="button" href="LogoutServlet">Logout</a>
 			</span>
 			<%
-		}else if(utente.getTipo().equals("Azienda")){
-		%>
+				} else if (utente.getTipo().equals("Azienda")) {
+			%>
 			<ul class="nav navbar-nav mr-auto"></ul>
 			<!--Span that contains buttons for Azienda-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
@@ -51,16 +51,20 @@
 					Prodotto</a> <a class="btn header-button-smaller" role="button"
 				href="LogoutServlet">Logout</a>
 			</span>
-			<%}else{
-				%>
+			<%
+				} else {
+			%>
 			<ul class="nav navbar-nav mr-auto"></ul>
 			<!--Span that contains buttons for Fattorino-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
 				<a class="btn header-button" role="button" href="#">Profilo</a> <a
 				class="btn header-button" role="button" href="#">Modifica
-					Profilo</a> <a class="btn header-button" role="button" href="LogoutServlet">Logout</a>
+					Profilo</a> <a class="btn header-button" role="button"
+				href="LogoutServlet">Logout</a>
 			</span>
-			<%} %>
+			<%
+				}
+			%>
 		</div>
 	</div>
 </nav>

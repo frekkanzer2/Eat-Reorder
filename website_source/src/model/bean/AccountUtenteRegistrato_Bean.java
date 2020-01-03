@@ -2,10 +2,10 @@ package model.bean;
 
 public abstract class AccountUtenteRegistrato_Bean {
 
-	static final String Azienda = "Azienda";
-	static final String Fattorino = "Fattorino";
-	static final String Cliente = "Cliente";
-	static final String Moderatore = "Moderatore";
+	public static final String Azienda = "Azienda";
+	public static final String Fattorino = "Fattorino";
+	public static final String Cliente = "Cliente";
+	public static final String Moderatore = "Moderatore";
 
 	private String email;
 

@@ -3,7 +3,8 @@
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente == null) response.sendRedirect("Homepage.jsp");
+	if (utente == null)
+		response.sendRedirect("Homepage.jsp");
 	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
 		response.sendRedirect("HomepageAzienda.jsp");
 	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino))
@@ -51,11 +52,8 @@
 	<div id="container-report-order" class="custom-text-right">
 		<a href="Segnalazione.jsp">Segnala un problema con un ordine</a>
 	</div>
-
-	<!--FOOTER-->
-	<jsp:include page="footer.jsp"></jsp:include>
+	<!-- Script -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
 </html>

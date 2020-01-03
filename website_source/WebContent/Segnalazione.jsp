@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -19,8 +19,9 @@
 
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<div class="contact-clean" style="margin-top:5px">
-		<form class="custom-border-red login-form-style" method="post" action="SegnalazioneServlet"
+	<div class="contact-clean" style="margin-top: 5px">
+		<form class="custom-border-red login-form-style" method="post"
+			action="SegnalazioneServlet"
 			style="background-color: rgb(242, 206, 132);">
 			<h2 class="text-left" style="margin-top: -19px; margin-bottom: 13px;">Eat
 				&amp; Reorder</h2>
@@ -28,9 +29,7 @@
 				style="font-size: 12px; margin-top: -5px; margin-bottom: -20px;">
 				Hai avuto un problema con un ordine? Non c'è problema,ti aiuta lo
 				staff Eat&amp;Reorder!<br>Contattaci descrivendo accuratamente
-				il problema nel form sottostante<br>
-				<br>
-				<br>
+				il problema nel form sottostante<br> <br> <br>
 			</p>
 			<div class="form-group">
 				<input class="border rounded form-control" type="text"
@@ -41,16 +40,13 @@
 					placeholder="Descrivi qui il problema" rows="6"></textarea>
 			</div>
 			<button class="btn form-list-button bg-red border-rounded-small"
-				type="button">Invia
-				segnalazione</button>
+				type="button">Invia segnalazione</button>
 			<p style="font-size: 11px;">Non sai dove trovare il numero
 				d'ordine? Controlla l'email ricevuta al completamento dell'ordine.</p>
 		</form>
 	</div>
-	<!-- Footer -->
-	<jsp:include page="footer.jsp"></jsp:include>
+	<!-- Script -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
 </html>

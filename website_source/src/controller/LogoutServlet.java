@@ -28,12 +28,9 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		session.removeAttribute("");//cliente
-		session.removeAttribute("");//azienda
-		session.removeAttribute("");//amministratore
-		session.removeAttribute("");//fattorino
+		session.removeAttribute(""); //attributo da inserire
 		session.invalidate();
-		response.sendRedirect("HomeServlet");
+		response.sendRedirect("Homepage.jsp");
 	}
 
 	/**

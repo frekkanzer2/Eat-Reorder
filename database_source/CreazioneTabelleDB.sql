@@ -178,14 +178,14 @@ primary key(email, nome)
 insert into Cliente(nome, cognome, email) values (?,?,?);
 
 insert into Cliente(nome, cognome, email) values ("b","c","a");
-insert into UtenteRegistrato(email, password, tipologia, is_banned) values ("a","a","aaa", true);
+insert into UtenteRegistrato(email, pass, tipologia, is_banned) values ("a","a","aaa", true);
 
 #query per aggiornamento di due tabelle insieme
 update Cliente JOIN UtenteRegistrato on Cliente.email=UtenteRegistrato.email
 set Cliente.nome="ddd", Cliente.cognome="ddd", UtenteRegistrato.password="ddd"
 where Cliente.email="a" and UtenteRegistrato.email = "a";
 
-select * 
+select *
 from UtenteRegistrato;
 
 #registrazioneAzienda(azienda: AccountAzienda)
@@ -240,16 +240,19 @@ from UtenteRegistrato
 where UtenteRegistrato.email=?;
 
 #aggiornaCliente(cliente: AccountCliente)		#DaRivedere
-update Cliente, UtenteRegistrato 
-set Cliente.nome=?, Cliente.cognome=?, UtenteRegistrato.password=?;
+update Cliente JOIN UtenteRegistrato on Cliente.email=UtenteRegistrato.email
+set Cliente.nome=?, Cliente.cognome=?, UtenteRegistrato.pass=?
+where Cliente.email=? and UtenteRegistrato.email=?;
 
 #aggiornaAzienda(azienda: AccountAzienda)     	#DaRivedere
-update Azienda, UtenteRegistrato
-set Azienda.nome=?, Azienda.via=?, Azienda.numero_civico=?, Azienda.citta=?, Azienda.provincia=?, Azienda.partita_iva=?, Azienda.telefono=?, Azienda.orario_apertura=?, Azienda.orario_chiusura=?, UtenteRegistrato.password=?; 
+update Azienda JOIN UtenteRegistrato on Azienda.email=UtenteRegistrato.email
+set Azienda.nome=?, Azienda.via=?, Azienda.numero_civico=?, Azienda.citta=?, Azienda.provincia=?, Azienda.partita_iva=?, Azienda.telefono=?, Azienda.orario_apertura=?, Azienda.orario_chiusura=?, UtenteRegistrato.pass=?
+where Azienda.email=? and UtenteRegistrato.email=? and GiorniLavorativi.email=?;
 
 #aggiornaFattorino(fatt: AccountFattorino)		#DaRivedere
-update Fattorino, UtenteRegistrato
-set Fattorino.nome=?, Fattorino.cognome=?, Fattorino.telefono=?, Fattorino.citta_consegna=?, Fattorino.provincia=?, Fattorino.orario_inizio=?, Fattorino.orario_fine=?, UtenteRegistrato.password=?;
+update Fattorino JOIN UtenteRegistrato on Fattorino.email=UtenteRegistrato.email
+set Fattorino.nome=?, Fattorino.cognome=?, Fattorino.telefono=?, Fattorino.citta_consegna=?, Fattorino.provincia=?, Fattorino.orario_inizio=?, Fattorino.orario_fine=?, UtenteRegistrato.pass=?
+where Fattorino.email=? and UtenteRegistrato.email=?;
 
 #dammiAziendaConOrdine(ordine: Ordine)
 select distinct Ordine.email_azienda, Ordine.azienda
@@ -257,8 +260,7 @@ from Ordine
 where Ordine.email_azienda=?; 
 
 #banAzienda(azienda: AccountAzienda)
-select Azienda.email
-from Azienda
+delete from Azienda
 where Azienda.email=?;
 
 #dammiListaAziende(citta: String)
@@ -272,9 +274,9 @@ from Prodotto
 where Prodotto.codice=? and Prodotto.email=?;
 
 #aggiornaProdotto(azienda: AccountAzienda, prod : Prodotto)
-update Prodotto
+update Prodotto JOIN Azienda on Prodotto.email=Azienda.email
 set Prodotto.nome=?, Prodotto.descrizione=?, Prodotto.prezzo=?, Prodotto.path_immagine=?
-where Prodotto.email=?;
+where Prodotto.email=? and Azienda.email=?;
 
 #rimuoviProdotto(azienda: AccountAzienda, prod : Prodotto)
 delete from Prodotto

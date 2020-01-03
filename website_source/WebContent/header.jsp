@@ -21,10 +21,9 @@
 			<!--Bar that contains buttons or other things for Not User-->
 			<ul class="nav navbar-nav mr-auto"></ul>
 			<!--Span that contains buttons-->
-			<span class="float-right navbar-text actions"> <!--Buttons-->
-				<a class="btn btn-light header-button" role="button"
-				href="Login.jsp">Accedi</a> <a class="btn btn-light header-button"
-				role="button" href="Registrazione.jsp">Registrati</a>
+			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
+				<a class="btn header-button" role="button" href="Login.jsp">Accedi</a> <a
+				class="btn header-button" role="button" href="Registrazione.jsp">Registrati</a>
 			</span>
 			<%
 				} else if (utente.getTipo().equals("Cliente")) {

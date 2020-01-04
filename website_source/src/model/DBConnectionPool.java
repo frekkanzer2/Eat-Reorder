@@ -23,7 +23,7 @@ public class DBConnectionPool {
 			p.setDriverClassName("com.mysql.cj.jdbc.Driver");
 			
 			p.setUsername("root");
-			p.setPassword("marco");
+			p.setPassword("password");
 			
 			p.setMaxActive(100);
 			p.setInitialSize(10);

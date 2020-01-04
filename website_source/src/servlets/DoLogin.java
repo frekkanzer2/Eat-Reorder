@@ -77,9 +77,7 @@ public class DoLogin extends HttpServlet {
 		} catch (SQLException e) {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
-			/*
-			 * COMPLETE HERE WITH A REDIRECTION TO AN ERROR PAGE
-			 * */
+			response.sendRedirect("ErrorPage.html");
 		}
 		
 	}

@@ -9,19 +9,18 @@ public class Ordine_Bean {
 	public static final String IN_PREPARAZIONE = "In preparazione";
 	public static final String RITIRATO = "Ritirato";
 	public static final String CONSEGNATO = "Consegnato";
-	
+
 	private AccountAzienda_Bean azienda;
 	private AccountFattorino_Bean fattorino;
 	private AccountCliente_Bean cliente;
 	private List<ProdottoQuantita> prodottiOrdinati;
-	private String viaDiConsegna;
-	private int numConsegna;
-	private String cittaConsegna;
-	private String provinciaConsegna;
+	private String indirizzoConsegna;
+
 	private String codiceCarta;
 	private Float prezzoTotal;
 	private String note;
 	private Long codiceID;
+
 	/**
 	 * @return the codiceID
 	 */
@@ -78,64 +77,34 @@ public class Ordine_Bean {
 		this.prezzoTotal = prezzoTotal;
 	}
 
+
+
+
+
+
+
 	/**
-	 * @return the viaDiConsegna
+	 * @return the indirizzoConsegna
 	 */
-	public String getViaDiConsegna() {
-		return viaDiConsegna;
+	public String getIndirizzoConsegna() {
+		return indirizzoConsegna;
 	}
 
 	/**
-	 * @param viaDiConsegna the viaDiConsegna to set
+	 * @param indirizzoConsegna the indirizzoConsegna to set
 	 */
-	public void setViaDiConsegna(String viaDiConsegna) {
-		this.viaDiConsegna = viaDiConsegna;
+	public void setIndirizzoConsegna(String indirizzoConsegna) {
+		this.indirizzoConsegna = indirizzoConsegna;
 	}
 
-	/**
-	 * @return the numConsegna
-	 */
-	public int getNumConsegna() {
-		return numConsegna;
-	}
 
-	/**
-	 * @param numConsegna the numConsegna to set
-	 */
-	public void setNumConsegna(int numConsegna) {
-		this.numConsegna = numConsegna;
-	}
 
-	/**
-	 * @return the cittaConsegna
-	 */
-	public String getCittaConsegna() {
-		return cittaConsegna;
-	}
 
-	/**
-	 * @param cittaConsegna the cittaConsegna to set
-	 */
-	public void setCittaConsegna(String cittaConsegna) {
-		this.cittaConsegna = cittaConsegna;
-	}
 
-	/**
-	 * @return the provinciaConsegna
-	 */
-	public String getProvinciaConsegna() {
-		return provinciaConsegna;
-	}
 
-	/**
-	 * @param provinciaConsegna the provinciaConsegna to set
-	 */
-	public void setProvinciaConsegna(String provinciaConsegna) {
-		this.provinciaConsegna = provinciaConsegna;
-	}
 
 	private int stato;
-	
+
 	/**
 	 * @return Lista di oggetti ProdottoQuantita
 	 */
@@ -150,40 +119,42 @@ public class Ordine_Bean {
 		this.prodottiOrdinati = prodottiOrdinati;
 	}
 
-	
 	/**
 	 * Costruttore pubblico per la Classe Ordine_Bean
-	 * @param azienda Account Dell'Azienda dei prodotti dell'ordine
+	 * 
+	 * @param azienda   Account Dell'Azienda dei prodotti dell'ordine
 	 * @param fattorino Account del fattorino a cui viene assegnato l'ordine
-	 * @param cliente Account del cliente che ha effettuato l'Ordine
+	 * @param cliente   Account del cliente che ha effettuato l'Ordine
 	 */
-	public Ordine_Bean(AccountAzienda_Bean azienda, AccountFattorino_Bean fattorino, AccountCliente_Bean cliente, List<ProdottoQuantita> prodottiOrdinati) {
+	public Ordine_Bean(AccountAzienda_Bean azienda, AccountFattorino_Bean fattorino, AccountCliente_Bean cliente,
+			List<ProdottoQuantita> prodottiOrdinati) {
 		super();
 		this.azienda = azienda;
 		this.fattorino = fattorino;
 		this.cliente = cliente;
 		this.stato = 0;
-		this.prodottiOrdinati= prodottiOrdinati;
+		this.prodottiOrdinati = prodottiOrdinati;
 	}
-	
+
 	/**
-	 * Metodo che consente di settare lo stato dell'ordine 
-	 * @param status Stringa che rappresenta lo stato (Ordine_Bean.RITIRATO, Ordine_Bean.CONSEGNATO).
+	 * Metodo che consente di settare lo stato dell'ordine
+	 * 
+	 * @param status Stringa che rappresenta lo stato (Ordine_Bean.RITIRATO,
+	 *               Ordine_Bean.CONSEGNATO).
 	 * 
 	 */
-	
+
 	public void setStato(String status) {
-		
-		if(stato == 0) {
+
+		if (stato == 0) {
 			if (status.equals(Ordine_Bean.RITIRATO))
-			stato = 1;
+				stato = 1;
 		}
-		if(stato == 1) {
+		if (stato == 1) {
 			if (status.equals(Ordine_Bean.CONSEGNATO))
-			stato = 2;
+				stato = 2;
 		}
-		
-		
+
 	}
 
 	public AccountAzienda_Bean getAzienda() {
@@ -211,16 +182,13 @@ public class Ordine_Bean {
 	}
 
 	public String getStato() {
-		
-		if(stato ==0)
+
+		if (stato == 0)
 			return Ordine_Bean.IN_PREPARAZIONE;
 		else if (stato == 1)
 			return Ordine_Bean.RITIRATO;
-		else return Ordine_Bean.CONSEGNATO;
+		else
+			return Ordine_Bean.CONSEGNATO;
 	}
 
-	
-	
-	
-	
 }

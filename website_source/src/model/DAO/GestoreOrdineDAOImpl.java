@@ -1,6 +1,8 @@
 package model.DAO;
 
 import java.beans.Statement;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,6 +26,7 @@ import org.javatuples.Pair;
 import com.sun.org.apache.xerces.internal.impl.dv.xs.DayDV;
 
 import interfaces.GestoreOrdineDao;
+import interfaces.GestoreUtenteDAO;
 import model.Carrello;
 import model.DBConnectionPool;
 import model.ProdottoQuantita;
@@ -31,14 +34,18 @@ import model.bean.AccountAzienda_Bean;
 import model.bean.AccountCliente_Bean;
 import model.bean.AccountFattorino_Bean;
 import model.bean.Ordine_Bean;
+import model.bean.Prodotto_Bean;
 
 public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 	private Connection connect;
 
+	// terminato
 	/**
 	 * Metodo che consente la creazione di Ordine a db.
-	 * @param order Ordine_Bean che contiene tutte le informazioni riguardante un ordine
+	 * 
+	 * @param order Ordine_Bean che contiene tutte le informazioni riguardante un
+	 *              ordine
 	 */
 	public void creaOrdine(Ordine_Bean order) throws SQLException, Exception {
 
@@ -47,6 +54,12 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 		Date date = new Date();
 		DayOfWeek x = DayOfWeek.of(date.getDay());
 		LocalTime time = LocalTime.now().truncatedTo(ChronoUnit.SECONDS);
+
+		AccountAzienda_Bean az = order.getAzienda();
+		if (!az.getGiorniDiApertura().contains(x))
+			throw new Exception("L'azienda è chiusa oggi e non può evadere il tuo ordine");
+		if (time.isAfter(az.getOrarioDiChiusura()) || time.isBefore(az.getOrarioDiApertura()))
+			throw new Exception("L'azienda è chiusa adesso e non può evadere il tuo ordine");
 
 		PreparedStatement stmt = connect.prepareStatement(
 				"select fattorino.email, fattorino.nome, giorniLavorativi.giorno, fattorino.orario_inizio, fattorino.orario_fine from fattorino, giorniLavorativi where fattorino.citta_consegna=? and giorniLavorativi.giorno=? and fattorino.orario_inizio< ? and fattorino.orario_fine > ?");
@@ -74,15 +87,13 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 		connect.setAutoCommit(false);
 		Savepoint save = connect.setSavepoint();
 
-
 		try {
 
 			stmt = connect.prepareStatement(
 					"insert into ordine (indirizzo_consegna, numero_carta, prezzo_totale, note, stato, acquirente, email_acquirente, azienda, email_azienda, fattorino, email_fattorino) values "
 							+ "(?,?,?,?,?,?,?,?,?,?,?)",
 					java.sql.Statement.RETURN_GENERATED_KEYS);
-			stmt.setString(1, order.getViaDiConsegna() + " " + order.getNumConsegna() + " " + order.getCittaConsegna()
-					+ " " + order.getProvinciaConsegna());
+			stmt.setString(1,order.getIndirizzoConsegna());
 			stmt.setString(2, order.getCodiceCarta());
 			stmt.setFloat(3, order.getPrezzoTotal());
 			stmt.setString(4, order.getNote());
@@ -114,10 +125,10 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 		} finally {
 			connect.setAutoCommit(true);
 		}
-		
 
 	}
 
+	// terminato
 	/**
 	 * Metodo che consente di conoscere l'esistenza di un ordine in base all'ID
 	 * 
@@ -143,31 +154,71 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 	}
 
+	//terminato
+	/**
+	 * Questo metodo restituisce gli ordini dell'azienda con all'interno solo i prodotti e le quantità. Non restituisce gli account associati.
+	 */
 	public List<Ordine_Bean> dammiOrdiniPreparazione(AccountAzienda_Bean azienda) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
 
-		PreparedStatement stmt = connect.prepareStatement(
-				"select Ordine.codice, Ordine.stato from Ordine where Ordine.stato=? and Ordine.email_azienda=?");
-		stmt.setString(1, Ordine_Bean.IN_PREPARAZIONE);
-		stmt.setString(2, azienda.getEmail());
-
-		List<Ordine_Bean> listaOrdiniPreparazione = new ArrayList<Ordine_Bean>();
+		PreparedStatement stmt = connect.prepareStatement("select * from Ordine where email_azienda = ? and stato ="+Ordine_Bean.IN_PREPARAZIONE);
+		stmt.setString(1, azienda.getEmail());
 
 		ResultSet x = stmt.executeQuery();
-
+		List<Ordine_Bean> lista = new ArrayList<Ordine_Bean>();
 		while (x.next()) {
-			Ordine_Bean ordine = new Ordine_Bean(azienda, null, null, null);
+			Long idOrdine = x.getLong("codice");
+			String indirizzoConsegna = x.getString("indirizzo_consegna");
+			String codiceCarta = x.getString("numero_carta");
+			Float prezzoTotale = x.getFloat("prezzo_totale");
+			String note = x.getString("note");
+			String stato = x.getString("stato");
 
-			ordine.setStato(x.getString("in preparazione"));
-			ordine.setAzienda(azienda);
+			List<ProdottoQuantita> prodottiOrdinati = new ArrayList<ProdottoQuantita>();
+			PreparedStatement stmt2 = connect.prepareStatement(
+					"SELECT * FROM eatreorder.prodottoordine join prodotto on prodotto.codice = prodottoordine.prodotto and prodottoordine.ordine = ?;");
+			stmt2.setLong(1, idOrdine);
+			ResultSet set = stmt2.executeQuery();
 
-			listaOrdiniPreparazione.add(ordine);
+			while (set.next()) {
+
+				Prodotto_Bean prod = new Prodotto_Bean();
+				prod.setCodice(set.getLong("codice"));
+				prod.setAzienda(azienda);
+				prod.setDescrizione(set.getString("descrizione"));
+				try {
+					prod.setImmagine(new URL(set.getString("path_immagine")));
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				prod.setNome(set.getString("nome"));
+				prod.setPrezzo(set.getFloat("prezzo"));
+				
+				ProdottoQuantita prodq = new ProdottoQuantita();
+				prodq.setProdotto(prod);
+				prodq.setQta(set.getInt("quantita"));
+
+				prodottiOrdinati.add(prodq);
+
+			}
+
+			Ordine_Bean ordine = new Ordine_Bean(null, null, null, prodottiOrdinati);
+			ordine.setCodiceID(idOrdine);
+			ordine.setCodiceCarta(codiceCarta);
+			ordine.setIndirizzoConsegna(indirizzoConsegna);
+			ordine.setNote(note);
+			ordine.setPrezzoTotal(prezzoTotale);
+			ordine.setStato(stato);
+			
+			lista.add(ordine);
 		}
 
-		return listaOrdiniPreparazione;
+		return lista;
 	}
 
+	//terminato
 	public Ordine_Bean dammiOrdine(Long idOrdine) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
@@ -177,39 +228,114 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 		ResultSet x = stmt.executeQuery();
 
-		while (x.next()) {
-			Ordine_Bean ordine = new Ordine_Bean(null, null, null, null);
+		if (x.next()) {
 
-			ordine.setStato("stato");
+			String indirizzoConsegna = x.getString("indirizzo_consegna");
+			String codiceCarta = x.getString("numero_carta");
+			Float prezzoTotale = x.getFloat("prezzo_totale");
+			String note = x.getString("note");
+			String stato = x.getString("stato");
 
+			String emAzienda = x.getString("email_azienda");
+			String emFattorino = x.getString("email_fattorino");
+			String emCliente = x.getString("email_acquirente");
+
+			GestoreUtenteDAO dao = new GestoreUtenteDAOImpl();
+
+			AccountAzienda_Bean azienda = (AccountAzienda_Bean) dao.dammiUtente(emAzienda);
+			AccountFattorino_Bean fattorino = (AccountFattorino_Bean) dao.dammiUtente(emFattorino);
+			AccountCliente_Bean cliente = (AccountCliente_Bean) dao.dammiUtente(emCliente);
+
+			List<ProdottoQuantita> prodottiOrdinati = new ArrayList<ProdottoQuantita>();
+			PreparedStatement stmt2 = connect.prepareStatement(
+					"SELECT * FROM eatreorder.prodottoordine join prodotto on prodotto.codice = prodottoordine.prodotto and prodottoordine.ordine = ?;");
+			stmt2.setLong(1, idOrdine);
+			ResultSet set = stmt2.executeQuery();
+
+			while (set.next()) {
+
+				Prodotto_Bean prod = new Prodotto_Bean();
+				prod.setCodice(set.getLong("codice"));
+				prod.setAzienda(azienda);
+				prod.setDescrizione(set.getString("descrizione"));
+				try {
+					prod.setImmagine(new URL(set.getString("path_immagine")));
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				prod.setNome(set.getString("nome"));
+				prod.setPrezzo(set.getFloat("prezzo"));
+				
+				ProdottoQuantita prodq = new ProdottoQuantita();
+				prodq.setProdotto(prod);
+				prodq.setQta(set.getInt("quantita"));
+
+				prodottiOrdinati.add(prodq);
+
+			}
+
+			Ordine_Bean ordine = new Ordine_Bean(azienda, fattorino, cliente, prodottiOrdinati);
+			ordine.setCodiceID(idOrdine);
+			ordine.setCodiceCarta(codiceCarta);
+			ordine.setIndirizzoConsegna(indirizzoConsegna);
+			ordine.setNote(note);
+			ordine.setPrezzoTotal(prezzoTotale);
+			ordine.setStato(stato);
+			
+			return ordine;
 		}
 
 		return null;
 	}
+	
+	//terminato
+	/**
+	 * Metodo che consente di avere la lista degli ordini da consegnare(in preparazione/ritirati). All'ordine sono associati tutti gli 
+	 * account ma non viene associato l'elenco dei prodotti contenuti. 
+	 */
 
 	public List<Ordine_Bean> dammiConsegne(AccountFattorino_Bean fattorino) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
 
-		PreparedStatement stmt = connect.prepareStatement(
-				"select Ordine.codice, Fattorino.email, Fattorino.nome from Fattorino, Ordine where Fattorino.email=?");
+		PreparedStatement stmt = connect.prepareStatement("select * from Ordine where email_fattorino = ? and (stato ="+Ordine_Bean.IN_PREPARAZIONE+"or stato = " + Ordine_Bean.RITIRATO+")");
 		stmt.setString(1, fattorino.getEmail());
 
-		List<Ordine_Bean> listaConsegneFattorino = new ArrayList<Ordine_Bean>();
-
 		ResultSet x = stmt.executeQuery();
-
+		List<Ordine_Bean> lista = new ArrayList<Ordine_Bean>();
 		while (x.next()) {
-			Ordine_Bean ordine = new Ordine_Bean(null, fattorino, null, null);
+			Long idOrdine = x.getLong("codice");
+			String indirizzoConsegna = x.getString("indirizzo_consegna");
+			String codiceCarta = x.getString("numero_carta");
+			Float prezzoTotale = x.getFloat("prezzo_totale");
+			String note = x.getString("note");
+			String stato = x.getString("stato");
+			String emAzienda = x.getString("email_azienda");
+			
+			String emCliente = x.getString("email_acquirente");
 
-			ordine.setFattorino(fattorino);
+			GestoreUtenteDAO dao = new GestoreUtenteDAOImpl();
 
-			listaConsegneFattorino.add(ordine);
+			AccountAzienda_Bean azienda = (AccountAzienda_Bean) dao.dammiUtente(emAzienda);
+			AccountCliente_Bean cliente = (AccountCliente_Bean) dao.dammiUtente(emCliente);
+
+
+			Ordine_Bean ordine = new Ordine_Bean(azienda, fattorino, cliente, null);
+			ordine.setCodiceID(idOrdine);
+			ordine.setCodiceCarta(codiceCarta);
+			ordine.setIndirizzoConsegna(indirizzoConsegna);
+			ordine.setNote(note);
+			ordine.setPrezzoTotal(prezzoTotale);
+			ordine.setStato(stato);
+			
+			lista.add(ordine);
 		}
 
-		return listaConsegneFattorino;
+		return lista;
 	}
 
+	//terminato
 	public void ordineSetRitirato(Long idOrdine) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
@@ -221,6 +347,8 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 		return;
 	}
+	
+	//terminato
 
 	public void ordineSetConsegnato(Long idOrdine) throws SQLException {
 

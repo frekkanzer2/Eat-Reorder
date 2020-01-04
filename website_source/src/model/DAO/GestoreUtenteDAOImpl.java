@@ -13,6 +13,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
+import interfaces.GestoreUtenteDAO;
 import model.DBConnectionPool;
 import model.bean.AccountAzienda_Bean;
 import model.bean.AccountCliente_Bean;
@@ -22,7 +23,7 @@ import model.bean.AccountUtenteRegistrato_Bean;
 import model.bean.Ordine_Bean;
 import model.bean.Prodotto_Bean;
 
-public class GestoreUtenteDAOImpl {
+public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 
 	private Connection connect;
 

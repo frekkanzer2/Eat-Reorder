@@ -131,7 +131,13 @@ public class GestoreUtenteDAOImpl {
 		stmt.setString(7, fattorino.getEmail());
 		stmt.executeUpdate();
 
-		return;
+		for (DayOfWeek day : fattorino.getGiorniDiConsegna()) {
+			stmt = connect.prepareStatement("insert into giornilavorativi (giorno,email) values (?,?)");
+			stmt.setString(1, day.toString());
+			stmt.setString(2, fattorino.getEmail());
+			stmt.executeUpdate();
+			
+		}
 	}
 
 	// terminato

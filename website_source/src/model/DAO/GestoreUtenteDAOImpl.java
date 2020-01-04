@@ -19,6 +19,7 @@ import model.bean.AccountCliente_Bean;
 import model.bean.AccountFattorino_Bean;
 import model.bean.AccountModeratore_Bean;
 import model.bean.AccountUtenteRegistrato_Bean;
+import model.bean.Ordine_Bean;
 import model.bean.Prodotto_Bean;
 
 public class GestoreUtenteDAOImpl {
@@ -444,25 +445,29 @@ public class GestoreUtenteDAOImpl {
 	}
 
 	//terminato
-	public List<AccountAzienda_Bean> dammiListaAziende(String citta) throws SQLException {
+	public AccountAzienda_Bean dammiAziendaConOrdine(Long codiceOrdine) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
 
-		PreparedStatement stmt = connect.prepareStatement("select * from Azienda where Azienda.citta=?");
-		stmt.setString(1, citta);
+		PreparedStatement stmt = connect.prepareStatement("select email_azienda from ordine where ordine.codice= ?");
+		stmt.setLong(1, codiceOrdine);
 
-		List<AccountAzienda_Bean> listaAziendeCitta = new ArrayList<AccountAzienda_Bean>();
+		ResultSet set = stmt.executeQuery();
 
-		ResultSet res = stmt.executeQuery();
+		if (set.next()) {
 
-		while (res.next()) {
-			
+			PreparedStatement stmt2 = connect.prepareStatement("select * from azienda where email = ?");
+			stmt2.setString(1, set.getString("email_azienda"));
+
+			ResultSet res = stmt2.executeQuery();
+
+			if (res.next()) {
 				String email = res.getString("email");
 				String nome = res.getString("nome");
 				String via = res.getString("via");
 				Integer numeroCivico = res.getInt("numero_civico");
 				String telefono = res.getString("telefono");
-				String city = res.getString("citta");
+				String citta = res.getString("citta");
 				String provincia = res.getString("provincia");
 				String partitaIVA = res.getString("partita_iva");
 				LocalTime apertura = LocalTime.parse(res.getString("orario_apertura"));
@@ -470,7 +475,7 @@ public class GestoreUtenteDAOImpl {
 
 				List<DayOfWeek> giorniDiApertura = new ArrayList<DayOfWeek>();
 
-				PreparedStatement stmt2 = connect.prepareStatement("select giorno from giornilavorativi where email = ?");
+				stmt2 = connect.prepareStatement("select giorno from giornilavorativi where email = ?");
 				stmt2.setString(1, email);
 
 				ResultSet x = stmt2.executeQuery();
@@ -481,7 +486,7 @@ public class GestoreUtenteDAOImpl {
 					giorniDiApertura.add(day);
 				}
 
-				AccountAzienda_Bean azienda = new AccountAzienda_Bean(email, "", nome, via, numeroCivico, city,
+				AccountAzienda_Bean azienda = new AccountAzienda_Bean(email, "", nome, via, numeroCivico, citta,
 						provincia, telefono, partitaIVA, apertura, chiusura, giorniDiApertura);
 
 				List<Prodotto_Bean> prodotti = new ArrayList<Prodotto_Bean>();
@@ -507,10 +512,81 @@ public class GestoreUtenteDAOImpl {
 
 				}
 
-				listaAziendeCitta.add(azienda);
+				return azienda;
+
 			}
 
-		
+		}
+		return null;
+
+	}
+
+	// terminato
+	public List<AccountAzienda_Bean> dammiListaAziende(String citta) throws SQLException {
+
+		connect = DBConnectionPool.getConnection();
+
+		PreparedStatement stmt = connect.prepareStatement("select * from Azienda where Azienda.citta=?");
+		stmt.setString(1, citta);
+
+		List<AccountAzienda_Bean> listaAziendeCitta = new ArrayList<AccountAzienda_Bean>();
+
+		ResultSet res = stmt.executeQuery();
+
+		while (res.next()) {
+
+			String email = res.getString("email");
+			String nome = res.getString("nome");
+			String via = res.getString("via");
+			Integer numeroCivico = res.getInt("numero_civico");
+			String telefono = res.getString("telefono");
+			String city = res.getString("citta");
+			String provincia = res.getString("provincia");
+			String partitaIVA = res.getString("partita_iva");
+			LocalTime apertura = LocalTime.parse(res.getString("orario_apertura"));
+			LocalTime chiusura = LocalTime.parse(res.getString("orario_chiusura"));
+
+			List<DayOfWeek> giorniDiApertura = new ArrayList<DayOfWeek>();
+
+			PreparedStatement stmt2 = connect.prepareStatement("select giorno from giornilavorativi where email = ?");
+			stmt2.setString(1, email);
+
+			ResultSet x = stmt2.executeQuery();
+
+			while (x.next()) {
+
+				DayOfWeek day = DayOfWeek.valueOf(x.getString("giorno"));
+				giorniDiApertura.add(day);
+			}
+
+			AccountAzienda_Bean azienda = new AccountAzienda_Bean(email, "", nome, via, numeroCivico, city, provincia,
+					telefono, partitaIVA, apertura, chiusura, giorniDiApertura);
+
+			List<Prodotto_Bean> prodotti = new ArrayList<Prodotto_Bean>();
+			stmt2 = connect.prepareStatement("select * from prodotto where email = ?");
+			ResultSet products = stmt2.executeQuery();
+
+			while (products.next()) {
+
+				Prodotto_Bean prod = new Prodotto_Bean();
+				prod.setAzienda(azienda);
+				prod.setCodice(products.getLong("codice"));
+				prod.setDescrizione(products.getString("descrizione"));
+				try {
+					prod.setImmagine(new URL(products.getString("path_immagine")));
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				prod.setNome(products.getString("nome"));
+				prod.setPrezzo(products.getFloat("prezzo"));
+
+				azienda.aggiungiProdotto(prod);
+
+			}
+
+			listaAziendeCitta.add(azienda);
+		}
 
 		return listaAziendeCitta;
 	}

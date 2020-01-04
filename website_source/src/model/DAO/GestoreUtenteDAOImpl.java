@@ -95,7 +95,14 @@ public class GestoreUtenteDAOImpl {
 		stmt.setString(10, azienda.getEmail());
 		stmt.executeUpdate();
 
-		return;
+		for (DayOfWeek day : azienda.getGiorniDiApertura()) {
+			stmt = connect.prepareStatement("insert into giornilavorativi (giorno,email) values (?,?)");
+			stmt.setString(1, day.toString());
+			stmt.setString(2, azienda.getEmail());
+			stmt.executeUpdate();
+			
+		}
+
 	}
 
 	// terminato

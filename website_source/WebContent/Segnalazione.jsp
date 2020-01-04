@@ -2,50 +2,65 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <title>Segnalazione</title>
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="assets/css/footer.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 </head>
-
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<div class="contact-clean" style="margin-top: 5px">
-		<form class="custom-border-red login-form-style" method="post"
-			action="SegnalazioneServlet"
-			style="background-color: rgb(242, 206, 132);">
-			<h2 class="text-left" style="margin-top: -19px; margin-bottom: 13px;">Eat
-				&amp; Reorder</h2>
-			<p class="text-left "
-				style="font-size: 12px; margin-top: -5px; margin-bottom: -20px;">
-				Hai avuto un problema con un ordine? Non c'� problema,ti aiuta lo
-				staff Eat&amp;Reorder!<br>Contattaci descrivendo accuratamente
-				il problema nel form sottostante<br> <br> <br>
-			</p>
-			<div class="form-group">
-				<input class="border rounded form-control" type="text"
-					name="NumeroOrdine" placeholder="Numero Ordine">
+	<div class="container-form-floating">
+		<div id="container-report"
+			class="custom-border-red bg-yellow center-block">
+
+			<div class="report-title" style="margin-bottom: 10px;">Hai
+				avuto un problema con un ordine?</div>
+			<div class="report-description" style="margin-bottom: 14px;">
+				Descrivi accuratamente il problema riscontrato.<br />Lo staff di
+				Eat&amp;Reorder ti aiuter&aacute; con piacere!
 			</div>
-			<div class="form-group">
-				<textarea class="border rounded form-control" name="Descrizione"
-					placeholder="Descrivi qui il problema" rows="6"></textarea>
+			<!--REPORT FORM-->
+			<form id="report-form" class="form-horizontal center-block" action="">
+				<!--Form group for id order input-->
+				<div class="form-group">
+					<div class="col-sm-12">
+						<input type="text" class="form-control custom-border-red"
+							id="id_order" placeholder="Inserisci l'ID dell'ordine"
+							pattern="[0-9]+">
+					</div>
+				</div>
+				<!--Form group for reason to ban (problemi con regular expression-->
+				<div class="form-group">
+					<div class="col-sm-12">
+						<textarea type="text" class="form-control custom-border-red"
+							id="reason" rows="5"
+							placeholder="Descrivi il problema riscontrato"
+							pattern="[a-zA-Z0-9\. ’àèìòù]{10,250}"></textarea>
+					</div>
+				</div>
+				<!--Form group for confirm button-->
+				<div class="form-group">
+					<div class="col-sm-12">
+						<button type="submit"
+							class="standard-button center-block border-rounded-medium custom-border-red bg-red text-yellow"
+							style="margin-top: 20px;">Invia</button>
+					</div>
+				</div>
+			</form>
+
+			<div class="report-description">
+				Non trovi l'ID dell'ordine?<br />Controlla la mail ricevuta al
+				momento dell'ordine!
 			</div>
-			<button class="btn form-list-button bg-red border-rounded-small"
-				type="button">Invia segnalazione</button>
-			<p style="font-size: 11px;">Non sai dove trovare il numero
-				d'ordine? Controlla l'email ricevuta al completamento dell'ordine.</p>
-		</form>
+
+		</div>
 	</div>
-	<!-- Script -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

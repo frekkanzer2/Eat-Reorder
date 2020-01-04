@@ -2,7 +2,6 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <!--Viewport for toggle-->
 <meta charset="utf-8">
@@ -12,14 +11,11 @@
 <title>Benvenuto in Eat&amp;Reorder</title>
 <!--Preset imports-->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="assets/css/footer.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 </head>
-
 <!--Start of body-->
 <body>
 	<!--HEADER-->
@@ -47,21 +43,26 @@
 			<div class="form-group">
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="email" name="email" placeholder="Email"> <input
+					type="email" name="email" placeholder="Email"
+					pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="password" name="password" placeholder="Password"> <input
+					type="password" name="password" placeholder="Password"
+					pattern="[a-zA-Z0-9]{7,20}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="nome" name="nome" placeholder="Nome"> <input
+					type="nome" name="nome" placeholder="Nome"
+					pattern="[a-zA-Z ‘àèìòù]{3,20}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="cognome" name="cognome" placeholder="Cognome"> <input
+					type="cognome" name="cognome" placeholder="Cognome"
+					pattern="[a-zA-Z ‘àèìòù]{3,20}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="telefono" name="telefono" placeholder="Telefono"> <input
+					type="telefono" name="telefono" placeholder="Telefono"
+					pattern="[0-9]{9,10}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="citta" name="citta" placeholder="Citt� di consegna">
-				<input
+					type="citta" name="citta" placeholder="Città di consegna"
+					pattern="[a-zA-Z ‘àèìòù]{4,20}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="provincia" name="provincia"
-					placeholder="Provincia di consegna">
+					placeholder="Provincia di consegna" pattern="[a-zA-Z]{2}">
 				<hr />
 				<!--List of checkboxes-->
 				<div class="custom-text-centered text-red"
@@ -72,25 +73,25 @@
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day1">
 						<label class="form-check-label" for="checkbox-day1">
-							Luned� </label> <br>
+							Lunedì </label> <br>
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day2">
 						<label class="form-check-label" for="checkbox-day2">
-							Marted� </label> <br>
+							Martedì </label> <br>
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day3">
 						<label class="form-check-label" for="checkbox-day3">
-							Mercoled� </label> <br>
+							Mercoledì </label> <br>
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day4">
 						<label class="form-check-label" for="checkbox-day4">
-							Gioved� </label>
+							Giovedì </label>
 					</div>
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day5">
 						<label class="form-check-label" for="checkbox-day5">
-							Venerd� </label> <br>
+							Venerdì </label> <br>
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day6">
 						<label class="form-check-label" for="checkbox-day6">
@@ -125,7 +126,6 @@
 					</div>
 				</div>
 				<hr />
-
 				<!--Confirm button-->
 				<button class="btn form-list-button bg-red border-rounded-small"
 					type="submit">Registrati</button>

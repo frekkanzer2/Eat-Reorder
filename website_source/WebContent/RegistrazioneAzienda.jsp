@@ -47,25 +47,31 @@
 			<div class="form-group">
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="email" name="email" placeholder="Email"> <input
+					type="email" name="email" placeholder="Email"
+					pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="password" name="password" placeholder="Password"> <input
+					type="password" name="password" placeholder="Password"
+					pattern="[a-zA-Z0-9]{7,20}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="nome" name="nome" placeholder="Nome dell'attivit�"> <input
+					type="nome" name="nome" placeholder="Nome dell'attività"
+					pattern="[a-zA-Z0-9 ‘àèìòù]{3,20}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="telefono" name="telefono" placeholder="Telefono"> <input
+					type="telefono" name="telefono" placeholder="Telefono"
+					pattern="[0-9]{9,10}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="indirizzo" name="indirizzo" placeholder="Indirizzo">
-				<input
+					type="indirizzo" name="indirizzo" placeholder="Indirizzo"
+					pattern="[a-zA-Z ‘àèìòù]{3,27}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="civico" name="civico" placeholder="Numero civico"> <input
+					type="civico" name="civico" placeholder="Numero civico"
+					pattern="[0-9]{1,3}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="citta" name="citta" placeholder="Citt�"> <input
+					type="citta" name="citta" placeholder="Città"
+					pattern="[a-zA-Z ‘àèìòù]{4,15}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="provincia" name="provincia" placeholder="Provincia">
-				<input
+					type="provincia" name="provincia" placeholder="Provincia"
+					pattern="[a-zA-Z]{2}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="iva" name="iva" placeholder="Partita IVA">
+					type="iva" name="iva" placeholder="Partita IVA" pattern="[0-9]{11}">
 				<hr />
 				<!--List of checkboxes-->
 				<div class="custom-text-centered text-red"
@@ -76,25 +82,25 @@
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day1">
 						<label class="form-check-label" for="checkbox-day1">
-							Luned� </label> <br>
+							Lunedì </label> <br>
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day2">
 						<label class="form-check-label" for="checkbox-day2">
-							Marted� </label> <br>
+							Martedì </label> <br>
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day3">
 						<label class="form-check-label" for="checkbox-day3">
-							Mercoled� </label> <br>
+							Mercoledì </label> <br>
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day4">
 						<label class="form-check-label" for="checkbox-day4">
-							Gioved� </label>
+							Giovedì </label>
 					</div>
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day5">
 						<label class="form-check-label" for="checkbox-day5">
-							Venerd� </label> <br>
+							Venerdì </label> <br>
 						<!--New day-->
 						<input class="form-check-input" type="checkbox" id="checkbox-day6">
 						<label class="form-check-label" for="checkbox-day6">

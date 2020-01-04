@@ -12,14 +12,11 @@
 <title>Benvenuto in Eat&amp;Reorder</title>
 <!--Preset imports-->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="assets/css/footer.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 </head>
-
 <!--Start of body-->
 <body>
 	<!--HEADER-->
@@ -46,14 +43,18 @@
 			<div class="form-group">
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="email" name="email" placeholder="Email" id="email"> <input
+					type="email" name="email" placeholder="Email" id="email"
+					pattern="[a-zA-Z0-9][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+"><input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="password" name="password" placeholder="Password"
-					id="password"> <input
+					type="password" maxlength="20" name="password"
+					placeholder="Password" id="password" pattern="[a-zA-Z0-9]{7,20}">
+				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="nome" name="nome" placeholder="Nome" id="nome"> <input
+					type="nome" name="nome" placeholder="Nome" id="nome"
+					pattern="[a-zA-Z ‘àèìòù]{3,20}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="cognome" name="cognome" placeholder="Cognome" id="cognome">
+					type="cognome" name="cognome" placeholder="Cognome" id="cognome"
+					pattern="[a-zA-Z ‘àèìòù]{3,20}">
 				<button class="btn form-list-button bg-red border-rounded-small"
 					type="submit" id="submit">Registrati</button>
 			</div>

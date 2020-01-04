@@ -9,8 +9,8 @@
 		response.sendRedirect("HomepageAzienda.jsp");
 	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino))
 		response.sendRedirect("HomepageFattorino.jsp");
-	/*else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
-		response.sendRedirect("HomepageModeratore.jsp");*/
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
+		response.sendRedirect("HomepageModeratore.jsp");
 %>
 <!DOCTYPE html>
 <html>
@@ -23,10 +23,8 @@
 <title>Home</title>
 <!--Preset imports-->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="assets/css/footer.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
@@ -43,7 +41,8 @@
 		<div class="d-flex justify-content-center" style="height: 100%;">
 			<input id="search-field" class="form-control-sm d-inline"
 				type="search" placeholder="Inserisci la citt�">
-			<button class="standard-button border-rounded-small custom-border-red"
+			<button
+				class="standard-button border-rounded-small custom-border-red"
 				type="submit">Cerca</button>
 		</div>
 	</div>

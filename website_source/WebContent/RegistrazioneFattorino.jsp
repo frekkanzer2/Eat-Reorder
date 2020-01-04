@@ -34,7 +34,6 @@
 				href="Homepage.jsp">Eat&amp;Reorder</a>
 		</div>
 	</nav>
-
 	<!--Form for registration-->
 	<div class="container-form-floating">
 		<form class="custom-border-red login-form-style" method="post"
@@ -110,7 +109,6 @@
 					</div>
 				</div>
 				<hr />
-
 				<!--List of hours-->
 				<div class="custom-text-centered text-red"
 					style="margin-top: -6px; margin-bottom: 6px;">Orario

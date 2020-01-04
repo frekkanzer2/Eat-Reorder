@@ -31,7 +31,6 @@
 </head>
 <!--BODY HERE-->
 <body>
-
 	<!--DIV that contains the image and the searchbar-->
 	<div>
 		<!--IMAGE ON THE HOME-->
@@ -46,7 +45,6 @@
 				type="submit">Cerca</button>
 		</div>
 	</div>
-
 	<!--DIV that contains the link to the report of a company-->
 	<div id="container-report-order" class="custom-text-right">
 		<a href="Segnalazione.jsp">Segnala un problema con un ordine</a>

@@ -29,10 +29,8 @@
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
-
 <!--BODY HERE-->
 <body>
-
 	<!--DIV that contains the image and the searchbar-->
 	<div>
 		<!--IMAGE ON THE HOME-->

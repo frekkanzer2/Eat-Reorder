@@ -48,7 +48,7 @@
 				href="LogoutServlet">Logout</a>
 			</span>
 			<%
-				} else if(utente.getTipo().equals("Fattorino")) {
+				} else if (utente.getTipo().equals("Fattorino")) {
 			%>
 			<!--Span that contains buttons for Fattorino-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
@@ -58,12 +58,14 @@
 				href="LogoutServlet">Logout</a>
 			</span>
 			<%
-				}else{
+				} else {
 			%>
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
 				<a class="btn header-button" role="button" href="LogoutServlet">Logout</a>
 			</span>
-			<%} %>
+			<%
+				}
+			%>
 		</div>
 	</div>
 </nav>

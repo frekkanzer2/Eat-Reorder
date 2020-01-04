@@ -60,14 +60,13 @@
 					</div>
 				</div>
 			</form>
-
 			<div class="report-description">
 				Non trovi l'ID dell'ordine?<br />Controlla la mail ricevuta al
 				momento dell'ordine!
 			</div>
-
 		</div>
 	</div>
+	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

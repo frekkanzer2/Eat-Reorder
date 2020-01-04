@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//WebContent/ModificaProfiloAzienda.jsp=UTF-8
+encoding//WebContent/ModificaProfiloCliente.jsp=UTF-8
+encoding//WebContent/ModificaProfiloFattorino.jsp=UTF-8
 encoding//WebContent/RegistrazioneAzienda.jsp=UTF-8
 encoding//WebContent/RegistrazioneCliente.jsp=UTF-8
 encoding//WebContent/RegistrazioneFattorino.jsp=UTF-8

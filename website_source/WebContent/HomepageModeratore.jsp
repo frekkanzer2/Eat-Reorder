@@ -29,7 +29,6 @@
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
-
 <!--BODY HERE-->
 <body>
 	<!--DIV that contains the image and the searchbar-->
@@ -67,6 +66,7 @@
 			</div>
 		</form>
 	</div>
+	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

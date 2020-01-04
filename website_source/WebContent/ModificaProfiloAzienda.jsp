@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%!AccountUtenteRegistrato_Bean utente = null;%>
+<%
+	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+	if (utente == null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
+		response.sendRedirect("Homepage.jsp");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +21,7 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
+<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <!--Form for registration-->
@@ -89,7 +96,6 @@
 				</div>
 			</div>
 			<hr />
-
 			<!--List of hours-->
 			<div class="row" style="width: 100%; margin: 0; padding: 0;">
 				<div class="col-sm-6">
@@ -110,13 +116,13 @@
 				</div>
 			</div>
 			<hr />
-
 			<!--Confirm button-->
 			<button class="btn form-list-button bg-red border-rounded-small"
 				type="submit">Modifica</button>
 		</div>
 	</form>
 </div>
+<!-- SCRIPT -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

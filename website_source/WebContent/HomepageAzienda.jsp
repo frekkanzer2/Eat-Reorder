@@ -32,7 +32,6 @@
 </head>
 <!--BODY HERE-->
 <body>
-
 	<!--DIV that contains the image and the searchbar-->
 	<div>
 		<!--IMAGE ON THE HOME-->

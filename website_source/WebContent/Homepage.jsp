@@ -3,8 +3,8 @@
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente == null){}
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
+	if (utente == null) {
+	} else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
 		response.sendRedirect("HomepageAzienda.jsp");
 	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino))
 		response.sendRedirect("HomepageFattorino.jsp");
@@ -22,10 +22,8 @@
 <title>Home</title>
 <!--Preset imports-->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <link rel="stylesheet" href="assets/css/styles.css">
-
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>

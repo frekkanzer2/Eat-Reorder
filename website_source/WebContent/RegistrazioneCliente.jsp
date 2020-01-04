@@ -70,7 +70,7 @@
 			var cognome = document.getElementById("cognome");
 			if (email.value == "" || password.value == "" || nome.value == ""
 					|| cognome.value == "") {
-				alert("ATTENZIONE!Errore nella validazione dei campi!")
+				alert("ATTENZIONE! Errore nella validazione dei campi!")
 				return false;
 			}
 			return true;

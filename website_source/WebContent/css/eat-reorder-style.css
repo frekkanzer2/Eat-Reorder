@@ -57,6 +57,10 @@
 #ban-form{
     width:60%;
 }
+#container-report{
+    width: 45%;
+    padding: 30px;
+}
 
 /*******************CLASSES*******************/
 
@@ -189,6 +193,20 @@
     margin-bottom: 8px;
 }
 
+.report-title{
+    color: var(--preset_color_red);
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 3px;
+}
+
+.report-description{
+    color: var(--preset_color_red);
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
 .list-of-checkboxes{
     padding-left:25px;
 }
@@ -268,7 +286,11 @@ A:hover, A:link A:visited, A:active{
         width: 50%;
         padding: 30px;
     }
-    
+
+    #container-report{
+        width: 60%;
+        padding: 30px;
+    }
     
 }
 @media (max-width: 768px){
@@ -331,8 +353,16 @@ A:hover, A:link A:visited, A:active{
     #ban-form{
         width:80%;
     }
+
+    #report-form{
+        width:100%;
+    }
     
-    
+    #container-report{
+        width: 80%;
+        padding: 30px;
+    }
+
 }
 
 @media (max-width: 575px){
@@ -352,7 +382,10 @@ A:hover, A:link A:visited, A:active{
         width: 80%;
         padding: 30px;
     }
-    
+    #container-report{
+        width: 90%;
+        padding: 30px;
+    }
 
 }
 
@@ -389,6 +422,27 @@ A:hover, A:link A:visited, A:active{
         padding: 20px;
         padding-left:0px;
         padding-right:0px;
+    }
+
+    #container-report{
+        width: 90%;
+        padding: 20px;
+        padding-top: 30px;
+    }
+
+    .report-title{
+        color: var(--preset_color_red);
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 3px;
+        font-weight: bold;
+    }
+    
+    .report-description{
+        color: var(--preset_color_red);
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 8px;
     }
     
 }
@@ -447,6 +501,27 @@ A:hover, A:link A:visited, A:active{
 
     #ban-form{
         width:100%;
+    }
+
+    #container-report{
+        width: 95%;
+        padding: 10px;
+        padding-top: 30px;
+    }
+
+    .report-title{
+        color: var(--preset_color_red);
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 3px;
+        font-weight: bold;
+    }
+    
+    .report-description{
+        color: var(--preset_color_red);
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 8px;
     }
     
 }

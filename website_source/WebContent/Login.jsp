@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%!AccountUtenteRegistrato_Bean utente = null;%>
+<%
+	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+	if (utente == null){}
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
+		response.sendRedirect("HomepageAzienda.jsp");
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino))
+		response.sendRedirect("HomepageFattorino.jsp");
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
+		response.sendRedirect("HomepageModeratore.jsp");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +27,7 @@
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
+<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
 <body>
 	<!--HEADER-->
@@ -30,8 +42,7 @@
 
 	<!--Form for login-->
 	<div class="alternative-background container-form-floating">
-		<form class="custom-border-red login-form-style" method="post"
-			action="LoginServlet">
+		<form class="custom-border-red login-form-style" method="post" action="DoLogin">
 			<!--Invisible title-->
 			<h2 class="sr-only">Login Form</h2>
 			<!--Image on the form-->
@@ -46,6 +57,15 @@
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="password" name="password" placeholder="Password"
 					pattern="[a-zA-Z0-9]{7,20}">
+				<p class = "errorText" style = "margin-top:20px;">
+					<%
+            			if (request.getAttribute("msg_error") != null){
+            		%>
+            			<%=request.getAttribute("msg_error") %>
+            		<%
+            			}
+            		%>
+				</p>
 				<button class="btn form-list-button bg-red border-rounded-small"
 					type="submit">Accedi</button>
 			</div>

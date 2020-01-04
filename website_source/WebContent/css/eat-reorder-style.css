@@ -64,6 +64,18 @@
 
 /*******************CLASSES*******************/
 
+.error{
+	border: solid red 2px;
+}
+
+.notDisplayed{
+	display: none;
+}
+
+.errorText{
+	color: red;
+}
+
 .header-button{
     margin-right: 4px;
     margin-left: 4px;

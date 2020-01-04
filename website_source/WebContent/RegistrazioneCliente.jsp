@@ -37,7 +37,7 @@
 	<!--Form for registration-->
 	<div class="container-form-floating">
 		<form class="custom-border-red login-form-style"
-			action="RegistrazioneClienteServlet" method="post"
+			action="DoRegistrazioneCliente" method="post"
 			onsubmit="return checkRegistration();">
 			<div class="registration-title">Benvenuto in Eat&amp;Reorder</div>
 			<div class="registration-description">Ordina comodamente da

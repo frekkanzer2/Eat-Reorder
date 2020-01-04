@@ -1,5 +1,6 @@
 package model.DAO;
 
+import java.beans.Statement;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Connection;
@@ -16,6 +17,7 @@ import model.DBConnectionPool;
 import model.bean.AccountAzienda_Bean;
 import model.bean.AccountCliente_Bean;
 import model.bean.AccountFattorino_Bean;
+import model.bean.AccountModeratore_Bean;
 import model.bean.AccountUtenteRegistrato_Bean;
 import model.bean.Prodotto_Bean;
 
@@ -100,7 +102,7 @@ public class GestoreUtenteDAOImpl {
 			stmt.setString(1, day.toString());
 			stmt.setString(2, azienda.getEmail());
 			stmt.executeUpdate();
-			
+
 		}
 
 	}
@@ -136,7 +138,7 @@ public class GestoreUtenteDAOImpl {
 			stmt.setString(1, day.toString());
 			stmt.setString(2, fattorino.getEmail());
 			stmt.executeUpdate();
-			
+
 		}
 	}
 
@@ -221,8 +223,25 @@ public class GestoreUtenteDAOImpl {
 
 			}
 
+			// caso utente = moderatore
+			else if (set.getString("tipologia").equals(AccountUtenteRegistrato_Bean.Moderatore)) {
+
+				PreparedStatement stmt2 = connect.prepareStatement("select * from moderatore where email = ?");
+				stmt2.setString(1, email);
+
+				ResultSet res = stmt2.executeQuery();
+
+				if (res.next()) {
+
+					AccountModeratore_Bean moderatore = new AccountModeratore_Bean(email, password, res.getLong("id"));
+					return moderatore;
+				} else
+					return null;
+
+			}
+
 			// caso utente = fattorino
-			if (set.getString("tipologia").equals(AccountUtenteRegistrato_Bean.Fattorino)) {
+			else if (set.getString("tipologia").equals(AccountUtenteRegistrato_Bean.Fattorino)) {
 
 				PreparedStatement stmt2 = connect.prepareStatement("select * from fattorino where email = ?");
 				stmt2.setString(1, email);
@@ -261,7 +280,7 @@ public class GestoreUtenteDAOImpl {
 			}
 
 			// caso utente = Azienda
-			if (set.getString("tipologia").equals(AccountUtenteRegistrato_Bean.Azienda)) {
+			else if (set.getString("tipologia").equals(AccountUtenteRegistrato_Bean.Azienda)) {
 
 				PreparedStatement stmt2 = connect.prepareStatement("select * from azienda where email = ?");
 				stmt2.setString(1, email);
@@ -331,6 +350,7 @@ public class GestoreUtenteDAOImpl {
 		return null;
 	}
 
+	// Terminato
 	public void aggiornaCliente(AccountCliente_Bean cliente) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
@@ -348,53 +368,82 @@ public class GestoreUtenteDAOImpl {
 		return;
 	}
 
-	//// DA FINIRE
+	// terminato
 	public void aggiornaAzienda(AccountAzienda_Bean azienda) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
 
+		// aggiorno dati azienda a database
 		PreparedStatement stmt = connect.prepareStatement(
 				"update Azienda JOIN UtenteRegistrato on Azienda.email=UtenteRegistrato.email set Azienda.nome=?, Azienda.via=?, Azienda.numero_civico=?, Azienda.citta=?, Azienda.provincia=?, Azienda.partita_iva=?, Azienda.telefono=?, Azienda.orario_apertura=?, Azienda.orario_chiusura=?, UtenteRegistrato.pass=? where Azienda.email=? and UtenteRegistrato.email=?");
 		stmt.setString(1, azienda.getNome());
 		stmt.setString(2, azienda.getVia());
-		stmt.setString(3, azienda.getNumeroCivico());
+		stmt.setInt(3, azienda.getNumeroCivico());
 		stmt.setString(4, azienda.getCitta());
 		stmt.setString(5, azienda.getProvincia());
 		stmt.setString(6, azienda.getPartitaIva());
 		stmt.setString(7, azienda.getTelefono());
-		stmt.setTime(8, azienda.getOrarioDiApertura());
-		stmt.setTime(9, azienda.getOrarioDiChiusura());
-		stmt.setString(5, azienda.getProvincia());
+		stmt.setString(8, azienda.getOrarioDiApertura().truncatedTo(ChronoUnit.SECONDS).toString());
+		stmt.setString(9, azienda.getOrarioDiChiusura().truncatedTo(ChronoUnit.SECONDS).toString());
+		stmt.setString(10, azienda.getPassword());
+		stmt.setString(11, azienda.getEmail());
+		stmt.setString(12, azienda.getEmail());
 
 		stmt.executeUpdate();
 
-		return;
+		// elimino i vecchi giorni lavorativi dell'azienda
+		stmt = connect.prepareStatement("delete from giornilavorativi where email = ?");
+		stmt.setString(1, azienda.getEmail());
+		stmt.executeUpdate();
+
+		// aggiungo i nuovi giorni lavorativi dell'azienda
+		stmt = connect.prepareStatement("insert into giornilavorativi (email,giorno) values (?,?)");
+		for (DayOfWeek day : azienda.getGiorniDiApertura()) {
+			stmt.setString(1, azienda.getEmail());
+			stmt.setString(2, day.toString());
+			stmt.executeUpdate();
+		}
+
 	}
 
-	//// DA FINIRE
+	// terminato
 	public void aggiornaFattorino(AccountFattorino_Bean fattorino) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
 
+		// aggiorno i dati del fattorino
 		PreparedStatement stmt = connect.prepareStatement(
-				"update Azienda JOIN UtenteRegistrato on Azienda.email=UtenteRegistrato.email set Azienda.nome=?, Azienda.via=?, Azienda.numero_civico=?, Azienda.citta=?, Azienda.provincia=?, Azienda.partita_iva=?, Azienda.telefono=?, Azienda.orario_apertura=?, Azienda.orario_chiusura=?, UtenteRegistrato.pass=? where Azienda.email=? and UtenteRegistrato.email=?");
-		stmt.setString(1, azienda.getNome());
-		stmt.setString(2, azienda.getVia());
-		stmt.setString(3, azienda.getNumeroCivico());
-		stmt.setString(4, azienda.getCitta());
-		stmt.setString(5, azienda.getProvincia());
-		stmt.setString(6, azienda.getPartitaIva());
-		stmt.setString(7, azienda.getTelefono());
-		stmt.setTime(8, azienda.getOrarioDiApertura());
-		stmt.setTime(9, azienda.getOrarioDiChiusura());
-		stmt.setString(5, azienda.getProvincia());
+				"update fattorino JOIN UtenteRegistrato on fattorino.email=UtenteRegistrato.email set UtenteRegistrato.pass=?,"
+						+ "fattorino.nome =?,fattorino.cognome=?,fattorino.telefono=?, fattorino.citta_consegna=?,fattorino.provincia = ?,"
+						+ " fattorino.orario_inizio=?,fattorino.orario_fine=? where fattorino.email=? and UtenteRegistrato.email=?");
+		stmt.setString(1, fattorino.getPassword());
+		stmt.setString(2, fattorino.getNome());
+		stmt.setString(3, fattorino.getCognome());
+		stmt.setString(4, fattorino.getTelefono());
+		stmt.setString(5, fattorino.getCittaConsegna());
+		stmt.setString(6, fattorino.getProvinciaConsegna());
+		stmt.setString(7, fattorino.getInizioConsegne().truncatedTo(ChronoUnit.SECONDS).toString());
+		stmt.setString(8, fattorino.getFineConsegne().truncatedTo(ChronoUnit.SECONDS).toString());
+		stmt.setString(9, fattorino.getEmail());
+		stmt.setString(10, fattorino.getEmail());
 
 		stmt.executeUpdate();
 
-		return;
+		// elimino i vecchi giorni lavorativi del fattorino
+		stmt = connect.prepareStatement("delete from giornilavorativi where email = ?");
+		stmt.setString(1, fattorino.getEmail());
+		stmt.executeUpdate();
+
+		// aggiungo i nuovi giorni lavorativi dell'azienda
+		stmt = connect.prepareStatement("insert into giornilavorativi (email,giorno) values (?,?)");
+		for (DayOfWeek day : fattorino.getGiorniDiConsegna()) {
+			stmt.setString(1, fattorino.getEmail());
+			stmt.setString(2, day.toString());
+			stmt.executeUpdate();
+		}
 	}
 
-	//// DA FINIRE
+	//terminato
 	public List<AccountAzienda_Bean> dammiListaAziende(String citta) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
@@ -404,24 +453,74 @@ public class GestoreUtenteDAOImpl {
 
 		List<AccountAzienda_Bean> listaAziendeCitta = new ArrayList<AccountAzienda_Bean>();
 
-		ResultSet x = stmt.executeQuery();
+		ResultSet res = stmt.executeQuery();
 
-		while (x.next()) {
-			AccountAzienda_Bean azienda = new AccountAzienda_Bean();
+		while (res.next()) {
+			
+				String email = res.getString("email");
+				String nome = res.getString("nome");
+				String via = res.getString("via");
+				Integer numeroCivico = res.getInt("numero_civico");
+				String telefono = res.getString("telefono");
+				String city = res.getString("citta");
+				String provincia = res.getString("provincia");
+				String partitaIVA = res.getString("partita_iva");
+				LocalTime apertura = LocalTime.parse(res.getString("orario_apertura"));
+				LocalTime chiusura = LocalTime.parse(res.getString("orario_chiusura"));
 
-			azienda.setCitta(citta);
+				List<DayOfWeek> giorniDiApertura = new ArrayList<DayOfWeek>();
 
-			listaAziendeCitta.add(azienda);
-		}
+				PreparedStatement stmt2 = connect.prepareStatement("select giorno from giornilavorativi where email = ?");
+				stmt2.setString(1, email);
+
+				ResultSet x = stmt2.executeQuery();
+
+				while (x.next()) {
+
+					DayOfWeek day = DayOfWeek.valueOf(x.getString("giorno"));
+					giorniDiApertura.add(day);
+				}
+
+				AccountAzienda_Bean azienda = new AccountAzienda_Bean(email, "", nome, via, numeroCivico, city,
+						provincia, telefono, partitaIVA, apertura, chiusura, giorniDiApertura);
+
+				List<Prodotto_Bean> prodotti = new ArrayList<Prodotto_Bean>();
+				stmt2 = connect.prepareStatement("select * from prodotto where email = ?");
+				ResultSet products = stmt2.executeQuery();
+
+				while (products.next()) {
+
+					Prodotto_Bean prod = new Prodotto_Bean();
+					prod.setAzienda(azienda);
+					prod.setCodice(products.getLong("codice"));
+					prod.setDescrizione(products.getString("descrizione"));
+					try {
+						prod.setImmagine(new URL(products.getString("path_immagine")));
+					} catch (MalformedURLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					prod.setNome(products.getString("nome"));
+					prod.setPrezzo(products.getFloat("prezzo"));
+
+					azienda.aggiungiProdotto(prod);
+
+				}
+
+				listaAziendeCitta.add(azienda);
+			}
+
+		
 
 		return listaAziendeCitta;
 	}
 
+	// terminato
 	public void banAzienda(AccountAzienda_Bean azienda) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
 
-		PreparedStatement stmt = connect.prepareStatement("delete from Azienda where Azienda.email=?");
+		PreparedStatement stmt = connect.prepareStatement("update utenteregistrato set is_banned=1 where email= ?");
 		stmt.setString(1, azienda.getEmail());
 
 		stmt.executeUpdate();
@@ -429,35 +528,49 @@ public class GestoreUtenteDAOImpl {
 		return;
 	}
 
-	/// DA FINIRE
+	// terminato
 	public void aggiungiAlListino(AccountAzienda_Bean azienda, Prodotto_Bean prodotto) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
 
-		PreparedStatement stmt = connect
-				.prepareStatement("select Prodotto.codice from Prodotto where Prodotto.codice=? and Prodotto.email=?");
+		PreparedStatement stmt = connect.prepareStatement(
+				"insert into prodotto (nome,descrizione,prezzo,path_immagine,azienda,email) values(?,?,?,?,?,?)",
+				java.sql.Statement.RETURN_GENERATED_KEYS);
 
-		return;
+		stmt.setString(1, prodotto.getNome());
+		stmt.setString(2, prodotto.getDescrizione());
+		stmt.setFloat(3, prodotto.getPrezzo());
+		stmt.setString(4, prodotto.getImmagine().toString());
+		stmt.setString(5, prodotto.getAzienda().getNome());
+		stmt.setString(6, prodotto.getAzienda().getEmail());
+
+		stmt.executeUpdate();
+		ResultSet st = stmt.getGeneratedKeys();
+		st.next();
+		prodotto.setCodice(st.getLong(1));
+
 	}
 
+	// terminato
 	public void aggiornaProdotto(AccountAzienda_Bean azienda, Prodotto_Bean prodotto) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
 
 		PreparedStatement stmt = connect.prepareStatement(
-				"update Prodotto JOIN Azienda on Prodotto.email=Azienda.email set Prodotto.nome=?, Prodotto.descrizione=?, Prodotto.prezzo=?, Prodotto.path_immagine=? where Prodotto.email=? and Azienda.email=?");
+				"update Prodotto set Prodotto.nome=?, Prodotto.descrizione=?, Prodotto.prezzo=?, Prodotto.path_immagine=? where Prodotto.email=? and prodotto.codice=?");
 		stmt.setString(1, prodotto.getNome());
 		stmt.setString(2, prodotto.getDescrizione());
 		stmt.setFloat(3, prodotto.getPrezzo());
 		stmt.setURL(4, prodotto.getImmagine());
-		stmt.setString(5, azienda.getEmail());
-		stmt.setString(6, azienda.getEmail());
+		stmt.setString(5, prodotto.getAzienda().getEmail());
+		stmt.setLong(6, prodotto.getCodice());
 
 		stmt.executeUpdate();
 
 		return;
 	}
 
+	// terminato
 	public void rimuoviProdotto(AccountAzienda_Bean azienda, Prodotto_Bean prodotto) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();

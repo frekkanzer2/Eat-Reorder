@@ -1,3 +1,5 @@
+use eatreorder;
+
 create table UtenteRegistrato(
 email varchar(100) primary key,
 pass varchar(20) not null,

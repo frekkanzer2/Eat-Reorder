@@ -39,10 +39,10 @@
 				href="Homepage.jsp">Eat&amp;Reorder</a>
 		</div>
 	</nav>
-
 	<!--Form for login-->
 	<div class="alternative-background container-form-floating">
-		<form class="custom-border-red login-form-style" method="post" action="DoLogin">
+		<form class="custom-border-red login-form-style" method="post"
+			action="DoLogin">
 			<!--Invisible title-->
 			<h2 class="sr-only">Login Form</h2>
 			<!--Image on the form-->
@@ -57,12 +57,12 @@
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="password" name="password" placeholder="Password"
 					pattern="[a-zA-Z0-9]{7,20}">
-				<p class = "errorText" style = "margin-top:20px;">
+				<p class="errorText" style="margin-top: 20px;">
 					<%
             			if (request.getAttribute("msg_error") != null){
             		%>
-            			<%=request.getAttribute("msg_error") %>
-            		<%
+					<%=request.getAttribute("msg_error") %>
+					<%
             			}
             		%>
 				</p>

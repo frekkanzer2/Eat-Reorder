@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%!AccountUtenteRegistrato_Bean utente = null;%>
+<%
+	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+	if (utente != null)
+		response.sendRedirect("Homepage.jsp");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +21,7 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
+<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
 <body>
 	<!--HEADER-->
@@ -26,12 +33,10 @@
 				href="Homepage.jsp">Eat&amp;Reorder</a>
 		</div>
 	</nav>
-
 	<!--Choose registration-->
 	<div class="container-form-floating">
 		<div id="container-choose-registration"
 			class="custom-border-red bg-yellow center-block">
-
 			<div class="registration-title" style="margin-bottom: 10px;">Come
 				vuoi registrarti?</div>
 			<form action="RegistrazioneCliente.jsp">

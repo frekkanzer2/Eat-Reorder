@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%!AccountUtenteRegistrato_Bean utente = null;%>
+<%
+	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+	if (utente != null)
+		response.sendRedirect("Homepage.jsp");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,13 +18,11 @@
 <!--Preset imports-->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="assets/css/footer.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
-<link rel="stylesheet" href="css/eat.reorder-style.css">
+<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
 <!--Start of body-->
 <body>

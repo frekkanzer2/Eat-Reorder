@@ -14,13 +14,13 @@
 			<span class="sr-only"></span><span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navcol-1">
-			<!--Bar that contains buttons or other things for Not User-->
+			<!--Bar that contains buttons or other things -->
 			<ul class="nav navbar-nav mr-auto"></ul>
 			<%
 				utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
 				if (utente == null) {
 			%>
-			<!--Span that contains buttons-->
+			<!--Span that contains buttons for NotUser-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
 				<a class="btn header-button" role="button" href="Login.jsp">Accedi</a>
 				<a class="btn header-button" role="button" href="Registrazione.jsp">Registrati</a>
@@ -28,10 +28,10 @@
 			<%
 				} else if (utente.getTipo().equals("Cliente")) {
 			%>
-			<!--Span that contains buttons-->
+			<!--Span that contains buttons for Cliente-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
 				<a class="btn header-button" role="button" href="#">Profilo</a> <a
-				class="btn header-button" role="button" href="#">Modifica
+				class="btn header-button" role="button" href="ModificaProfiloCliente.jsp">Modifica
 					Profilo</a> <a class="btn header-button" role="button" href="#">Carrello</a>
 				<a class="btn header-button" role="button" href="LogoutServlet">Logout</a>
 			</span>
@@ -41,7 +41,7 @@
 			<!--Span that contains buttons for Azienda-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
 				<a class="btn header-button-smaller" role="button" href="#">Profilo</a>
-				<a class="btn header-button-smaller" role="button" href="#">Modifica
+				<a class="btn header-button-smaller" role="button" href="ModificaProfiloAzienda.jsp">Modifica
 					Profilo</a> <a class="btn header-button-smaller" role="button" href="#">Listino</a>
 				<a class="btn header-button-smaller" role="button" href="#">Inserisci
 					Prodotto</a> <a class="btn header-button-smaller" role="button"
@@ -53,7 +53,7 @@
 			<!--Span that contains buttons for Fattorino-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
 				<a class="btn header-button" role="button" href="#">Profilo</a> <a
-				class="btn header-button" role="button" href="#">Modifica
+				class="btn header-button" role="button" href="ModificaProfiloFattorino.jsp">Modifica
 					Profilo</a> <a class="btn header-button" role="button"
 				href="LogoutServlet">Logout</a>
 			</span>

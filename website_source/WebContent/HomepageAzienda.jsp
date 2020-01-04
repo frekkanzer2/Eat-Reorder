@@ -3,14 +3,14 @@
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente.getTipo().equals("Azienda")) {
-	} else if (utente == null)
+	if (utente == null)
 		response.sendRedirect("Homepage.jsp");
-	else if (utente.getTipo().equals("Cliente"))
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente))
 		response.sendRedirect("HomepageCliente.jsp");
-	else if (utente.getTipo().equals("Fattorino"))
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino))
 		response.sendRedirect("HomepageFattorino.jsp");
-	/*else	response.sendRedirect("HomepageModeratore.jsp");*/
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
+		response.sendRedirect("HomepageModeratore.jsp");
 %>
 <!DOCTYPE html>
 <html>
@@ -26,7 +26,6 @@
 <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="assets/css/footer.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>

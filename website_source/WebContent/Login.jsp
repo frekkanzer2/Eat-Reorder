@@ -2,7 +2,6 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <!--Viewport for toggle-->
 <meta charset="utf-8">
@@ -15,12 +14,9 @@
 <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
 <link rel="stylesheet" href="assets/css/styles.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
-<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-<link rel="stylesheet" href="assets/css/footer.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 </head>
-
 <body>
 	<!--HEADER-->
 	<nav
@@ -44,9 +40,12 @@
 			<div class="form-group">
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="email" name="email" placeholder="Email"> <input
+					type="email" name="email" placeholder="Email"
+					pattern="[a-zA-Z0-9][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
+				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="password" name="password" placeholder="Password">
+					type="password" name="password" placeholder="Password"
+					pattern="[a-zA-Z0-9]{7,20}">
 				<button class="btn form-list-button bg-red border-rounded-small"
 					type="submit">Accedi</button>
 			</div>

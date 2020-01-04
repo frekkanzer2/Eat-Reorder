@@ -7,10 +7,10 @@
 		response.sendRedirect("Homepage.jsp");
 	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
 		response.sendRedirect("HomepageAzienda.jsp");
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino))
+		response.sendRedirect("HomepageFattorino.jsp");
 	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente))
 		response.sendRedirect("HomepageCliente.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
-		response.sendRedirect("HomepageModeratore.jsp");
 %>
 <!DOCTYPE html>
 <html>
@@ -32,19 +32,41 @@
 
 <!--BODY HERE-->
 <body>
-
 	<!--DIV that contains the image and the searchbar-->
-	<div>
+	<div class="center-block">
 		<!--IMAGE ON THE HOME-->
 		<img id="image-home" class="img-fluid d-block mx-auto"
 			src="assets/img/LogomarcoIS%20PNG.png">
-		<!--Button to see the orders commited by users-->
-		<div id="container-display-orders" class="center-block">
-			<a href="#" class="btn form-list-button bg-red border-rounded-small">Visualizza
-				consegne</a>
-		</div>
+		<!--Form for the research-->
+		<form id="ban-form" class="form-horizontal center-block" action="">
+			<!--Form group for id order input-->
+			<div class="form-group">
+				<label class="control-label col-sm-5 text-red" for="id_order">ID
+					Ordine</label>
+				<div class="col-sm-12">
+					<input type="text" class="form-control custom-border-yellow"
+						id="id_order" placeholder="Inserisci l'ID dell'ordine">
+				</div>
+			</div>
+			<!--Form group for reason to ban-->
+			<div class="form-group">
+				<label class="control-label col-sm-5 text-red" for="reason">Motivazione</label>
+				<div class="col-sm-12">
+					<textarea type="text" class="form-control custom-border-yellow"
+						id="reason" rows="5"
+						placeholder="Inserisci la motivazione del ban"></textarea>
+				</div>
+			</div>
+			<!--Form group for confirm button-->
+			<div class="form-group">
+				<div class="col-sm-12">
+					<button type="submit"
+						class="standard-button center-block border-rounded-medium custom-border-yellow"
+						style="margin-top: 20px;">Ban</button>
+				</div>
+			</div>
+		</form>
 	</div>
-	<!-- Script -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

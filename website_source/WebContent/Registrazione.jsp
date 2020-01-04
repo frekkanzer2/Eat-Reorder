@@ -2,7 +2,6 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <!--Viewport for toggle-->
 <meta charset="utf-8">
@@ -12,14 +11,11 @@
 <title>Benvenuto in Eat&amp;Reorder</title>
 <!--Preset imports-->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="assets/css/footer.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 </head>
-
 <body>
 	<!--HEADER-->
 	<nav
@@ -53,7 +49,6 @@
 					class="btn form-list-button bg-red border-rounded-small">Registrati
 					come fattorino</button>
 			</form>
-
 		</div>
 	</div>
 	<!-- Script -->

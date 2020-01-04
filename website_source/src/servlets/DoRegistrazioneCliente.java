@@ -39,9 +39,6 @@ public class DoRegistrazioneCliente extends HttpServlet {
 		String input_password = request.getParameter("password");
 		String input_nome = request.getParameter("nome");
 		String input_cognome = request.getParameter("cognome");
-		GestoreUtenteDAOImpl userManager = new GestoreUtenteDAOImpl();
-		boolean isUserBanned = true;
-		boolean doesUserExists = true;
 		try {
 			if (input_email != null) {
 				// CASE USER ALREADY EXISTS (FALSE)
@@ -49,27 +46,7 @@ public class DoRegistrazioneCliente extends HttpServlet {
 				// Redirection to an error page
 				request.setAttribute("msg_error", errmessage);
 				request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
-			}
-			// Checking if the user is banned
-			isUserBanned = userManager.controllaBan(input_email);
-			if (isUserBanned) {
-				// CASE USER BANNED (TRUE)
-				String errmessage = ("L'utente " + input_email + " è bannato.");
-				// Redirection to an error page
-				request.setAttribute("msg_error", errmessage);
-				request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
-				return;
-			}//CASE USER NOT BANNED (FALSE)
-			//Checking if the user exists
-			doesUserExists = userManager.controllaEsistenzaAccount(input_email, input_password);
-			if (!doesUserExists) {
-				//CASE USER NOT EXISTS (FALSE)
-				String errmessage=("I dati inseriti non sono corretti.");
-				//Redirection to an error page
-				request.setAttribute("msg_error", errmessage);
-	        	request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
-			} // CASE USER NOT BANNED(FALSE)
-			//CASE USER NOT EXISTS 
+			}//CASE USER NOT EXISTS 
 			//Checking if the data are correct
 			else {
 				if (!input_email.isEmpty()) {

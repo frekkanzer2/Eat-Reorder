@@ -71,9 +71,9 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 		Random randomizer = new Random();
 		Pair<String, String> fattorino = listOfEmailFattorino.get(randomizer.nextInt(listOfEmailFattorino.size()));
 
+		connect.setAutoCommit(false);
 		Savepoint save = connect.setSavepoint();
 
-		connect.setAutoCommit(false);
 
 		try {
 
@@ -217,7 +217,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 		PreparedStatement stmt = connect.prepareStatement("update Ordine set Ordine.stato=?");
 		stmt.setString(1, Ordine_Bean.RITIRATO);
 
-		ResultSet x = stmt.executeQuery();
+		stmt.executeUpdate();
 
 		return;
 	}
@@ -229,7 +229,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 		PreparedStatement stmt = connect.prepareStatement("update Ordine set Ordine.stato=?");
 		stmt.setString(1, Ordine_Bean.CONSEGNATO);
 
-		ResultSet x = stmt.executeQuery();
+		stmt.executeUpdate();
 
 		return;
 	}

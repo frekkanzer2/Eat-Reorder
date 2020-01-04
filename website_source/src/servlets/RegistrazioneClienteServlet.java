@@ -1,4 +1,4 @@
-package controller;
+package servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.DAO.GestoreUtenteDAOImpl;
 import model.bean.AccountCliente_Bean;
-import model.bean.GestoreUtenteDAOImpl;
 
 /**
  * Servlet implementation class RegistrazioneCliente

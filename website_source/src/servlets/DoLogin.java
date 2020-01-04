@@ -39,6 +39,13 @@ public class DoLogin extends HttpServlet {
 		boolean isUserBanned = true;
 		boolean doesUserExists = true;
 		try {
+			if (input_email == null || input_password == null) {
+				//CASE USER NOT EXISTS (FALSE)
+				String errmessage=("I dati inseriti non sono corretti.");
+				//Redirection to an error page
+				request.setAttribute("msg_error", errmessage);
+	        	request.getRequestDispatcher("Login.jsp").forward(request, response);
+			}
 			//Checking if the user is banned
 			isUserBanned = userManager.controllaBan(input_email);
 			if (isUserBanned) {
@@ -70,9 +77,7 @@ public class DoLogin extends HttpServlet {
 		} catch (SQLException e) {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
-			/*
-			 * COMPLETE HERE WITH A REDIRECTION TO AN ERROR PAGE
-			 * */
+			response.sendRedirect("ErrorPage.html");
 		}
 		
 	}

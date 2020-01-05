@@ -33,7 +33,7 @@
 				<a class="btn header-button" role="button" href="#">Profilo</a> <a
 				class="btn header-button" role="button" href="ModificaProfiloCliente.jsp">Modifica
 					Profilo</a> <a class="btn header-button" role="button" href="#">Carrello</a>
-				<a class="btn header-button" role="button" href="LogoutServlet">Logout</a>
+				<a class="btn header-button" role="button" href="DoLogout">Logout</a>
 			</span>
 			<%
 				} else if (utente.getTipo().equals("Azienda")) {
@@ -45,7 +45,7 @@
 					Profilo</a> <a class="btn header-button-smaller" role="button" href="#">Listino</a>
 				<a class="btn header-button-smaller" role="button" href="#">Inserisci
 					Prodotto</a> <a class="btn header-button-smaller" role="button"
-				href="LogoutServlet">Logout</a>
+				href="DoLogout">Logout</a>
 			</span>
 			<%
 				} else if (utente.getTipo().equals("Fattorino")) {
@@ -55,13 +55,13 @@
 				<a class="btn header-button" role="button" href="#">Profilo</a> <a
 				class="btn header-button" role="button" href="ModificaProfiloFattorino.jsp">Modifica
 					Profilo</a> <a class="btn header-button" role="button"
-				href="LogoutServlet">Logout</a>
+				href="DoLogout">Logout</a>
 			</span>
 			<%
 				} else {
 			%>
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
-				<a class="btn header-button" role="button" href="LogoutServlet">Logout</a>
+				<a class="btn header-button" role="button" href="DoLogout">Logout</a>
 			</span>
 			<%
 				}

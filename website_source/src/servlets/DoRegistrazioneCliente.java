@@ -39,37 +39,36 @@ public class DoRegistrazioneCliente extends HttpServlet {
 		String input_password = request.getParameter("password");
 		String input_nome = request.getParameter("nome");
 		String input_cognome = request.getParameter("cognome");
-		try {
-			if (input_email != null) {
-				// CASE USER ALREADY EXISTS (FALSE)
-				String errmessage = ("L'email già esiste.");
-				// Redirection to an error page
-				request.setAttribute("msg_error", errmessage);
-				request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
-			}//CASE USER NOT EXISTS 
-			//Checking if the data are correct
-			else {
-				if (!input_email.isEmpty()) {
-					if (!(input_password.length() >= 7) || !(input_password.length() <= 20)) {
-						if (!(input_nome.length() >= 3) || !(input_nome.length() <= 20)) {
-							if (!(input_cognome.length() >= 3 || !(input_cognome.length() <= 20))) {
-								AccountCliente_Bean nuovo = new AccountCliente_Bean(input_email, input_password,
-										input_nome, input_cognome);
-								GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
-								utente.registrazioneCliente(nuovo);
-								HttpSession newSession = request.getSession();
-								newSession.setAttribute("utente", nuovo);
-								response.sendRedirect("HomepageCliente.jsp");
-							}
-						}
-					}
+		// check if input are correct
+		boolean in_email = input_email.matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
+		boolean in_password = input_password.matches("[a-zA-Z0-9]{7,20}");
+		boolean in_nome = input_nome.matches("[a-zA-Z ‘àèìòù]{3,20}");
+		boolean in_cognome = input_cognome.matches("[a-zA-Z ‘àèìòù]{3,20}");
+		// if correct
+		if (in_email == true && in_password == true && in_nome == true && in_cognome == true) {
+			GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
+			try {
+				// Email already exists
+				if (gestore.controlloEsistenzaMail(input_email)) {
+					String errmessage = ("Email già presente.");
+					request.setAttribute("msg_error", errmessage);
+					request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
+				} else {
+					AccountCliente_Bean nuovo = new AccountCliente_Bean(input_email, input_password, input_nome,
+							input_cognome);
+					GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
+					utente.registrazioneCliente(nuovo);
+					request.getSession(true).setAttribute("utente", nuovo);
+					response.sendRedirect("Homepage.jsp");
 				}
+			} catch (SQLException e) {
+				System.err.println("ERROR DETECTED");
+				e.printStackTrace();
+				response.sendRedirect("ErrorPage.html");
 			}
-		} catch (SQLException e) {
-			System.err.println("ERROR DETECTED");
-			e.printStackTrace();
-			response.sendRedirect("ErrorPage.html");
+
 		}
+
 	}
 
 	/**

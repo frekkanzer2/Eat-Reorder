@@ -52,7 +52,7 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 		connect = DBConnectionPool.getConnection();
 
 		PreparedStatement stmt = connect
-				.prepareStatement("insert into utenteregistrato(email,pass,tipologia,isbanned) values (?,?,?,?)");
+				.prepareStatement("insert into utenteregistrato(email,pass,tipologia,is_banned) values (?,?,?,?)");
 		stmt.setString(1, cliente.getEmail());
 		stmt.setString(2, cliente.getPassword());
 		stmt.setString(3, AccountUtenteRegistrato_Bean.Cliente);
@@ -76,7 +76,7 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 		connect = DBConnectionPool.getConnection();
 
 		PreparedStatement stmt = connect
-				.prepareStatement("insert into utenteregistrato(email,pass,tipologia,isbanned) values (?,?,?,?)");
+				.prepareStatement("insert into utenteregistrato(email,pass,tipologia,is_banned) values (?,?,?,?)");
 		stmt.setString(1, azienda.getEmail());
 		stmt.setString(2, azienda.getPassword());
 		stmt.setString(3, AccountUtenteRegistrato_Bean.Azienda);
@@ -115,7 +115,7 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 		connect = DBConnectionPool.getConnection();
 
 		PreparedStatement stmt = connect
-				.prepareStatement("insert into utenteregistrato(email,pass,tipologia,isbanned) values (?,?,?,?)");
+				.prepareStatement("insert into utenteregistrato(email,pass,tipologia,is_banned) values (?,?,?,?)");
 		stmt.setString(1, fattorino.getEmail());
 		stmt.setString(2, fattorino.getPassword());
 		stmt.setString(3, AccountUtenteRegistrato_Bean.Fattorino);

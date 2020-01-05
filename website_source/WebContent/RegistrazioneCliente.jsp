@@ -60,6 +60,14 @@
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="cognome" name="cognome" placeholder="Cognome" id="cognome"
 					pattern="[a-zA-Z ‘àèìòù]{3,20}">
+					<%
+            			if (request.getAttribute("msg_error") != null){
+            		%>
+            		
+					<%= request.getAttribute("msg_error")%>
+					<%
+            			}
+            		%>
 				<button class="btn form-list-button bg-red border-rounded-small"
 					type="submit" id="submit">Registrati</button>
 			</div>

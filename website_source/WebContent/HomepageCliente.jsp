@@ -1,24 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente == null)
-		response.sendRedirect("Homepage.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
-		response.sendRedirect("HomepageAzienda.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino))
-		response.sendRedirect("HomepageFattorino.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
-		response.sendRedirect("HomepageModeratore.jsp");
+	if(utente==null) response.sendRedirect("Homepage.jsp");
+	else if(utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) response.sendRedirect("HomepageAzienda.jsp");
+	else if(utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) response.sendRedirect("HomepageFattorino.jsp");
+	else if(utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore)) response.sendRedirect("HomepageModeratore.jsp");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <!--Viewport for toggle-->
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--Title-->
 <title>Home</title>
 <!--Preset imports-->
@@ -27,22 +21,18 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
-<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
+<%@ page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
 <!--BODY HERE-->
 <body>
 	<!--DIV that contains the image and the searchbar-->
 	<div>
 		<!--IMAGE ON THE HOME-->
-		<img id="image-home" class="img-fluid d-block mx-auto"
-			src="assets/img/LogomarcoIS%20PNG.png">
+		<img id="image-home" class="img-fluid d-block mx-auto"src="assets/img/LogomarcoIS%20PNG.png">
 		<!--Form for the research-->
 		<div class="d-flex justify-content-center" style="height: 100%;">
-			<input id="search-field" class="form-control-sm d-inline"
-				type="search" placeholder="Inserisci la città">
-			<button
-				class="standard-button border-rounded-small custom-border-red"
-				type="submit">Cerca</button>
+			<input id="search-field" class="form-control-sm d-inline"type="search" placeholder="Inserisci la città">
+			<button class="standard-button border-rounded-small custom-border-red" type="submit">Cerca</button>
 		</div>
 	</div>
 	<!--DIV that contains the link to the report of a company-->

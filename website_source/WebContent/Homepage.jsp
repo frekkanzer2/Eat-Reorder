@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
@@ -31,14 +30,11 @@
 <jsp:include page="header.jsp"></jsp:include>
 <div>
 	<!--IMAGE ON THE HOME-->
-	<img id="image-home" class="img-fluid d-block mx-auto"
-		src="assets/img/LogomarcoIS%20PNG.png">
+	<img id="image-home" class="img-fluid d-block mx-auto" src="assets/img/LogomarcoIS%20PNG.png">
 	<!--Form for the research-->
 	<div class="d-flex justify-content-center" style="height: 100%;">
-		<input id="search-field" class="form-control-sm d-inline"
-			type="search" placeholder="Inserisci la città">
-		<button class="standard-button border-rounded-small custom-border-red"
-			type="submit">Cerca</button>
+		<input id="search-field" class="form-control-sm d-inline" type="search" placeholder="Inserisci la città">
+		<button class="standard-button border-rounded-small custom-border-red" type="submit">Cerca</button>
 	</div>
 </div>
 <!-- Script -->

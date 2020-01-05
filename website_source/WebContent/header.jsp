@@ -1,6 +1,5 @@
-<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page import="model.bean.AccountUtenteRegistrato_Bean"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <!--HEADER-->
 <nav
@@ -9,8 +8,7 @@
 		<!--Logo-->
 		<a id="er-logo" class="navbar-brand" href="Homepage.jsp">Eat&amp;Reorder</a>
 		<!--Toggle button for UtenteNonRegistrato-->
-		<button id="toggle-cstyle" data-toggle="collapse"
-			class="navbar-toggler" data-target="#navcol-1">
+		<button id="toggle-cstyle" data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
 			<span class="sr-only"></span><span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navcol-1">
@@ -30,9 +28,9 @@
 			%>
 			<!--Span that contains buttons for Cliente-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
-				<a class="btn header-button" role="button" href="#">Profilo</a> <a
-				class="btn header-button" role="button" href="ModificaProfiloCliente.jsp">Modifica
-					Profilo</a> <a class="btn header-button" role="button" href="#">Carrello</a>
+				<a class="btn header-button" role="button" href="#">Profilo</a> 
+				<a class="btn header-button" role="button" href="ModificaProfiloCliente.jsp">Modifica Profilo</a>
+				<a class="btn header-button" role="button" href="#">Carrello</a>
 				<a class="btn header-button" role="button" href="DoLogout">Logout</a>
 			</span>
 			<%
@@ -41,21 +39,19 @@
 			<!--Span that contains buttons for Azienda-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
 				<a class="btn header-button-smaller" role="button" href="#">Profilo</a>
-				<a class="btn header-button-smaller" role="button" href="ModificaProfiloAzienda.jsp">Modifica
-					Profilo</a> <a class="btn header-button-smaller" role="button" href="#">Listino</a>
-				<a class="btn header-button-smaller" role="button" href="#">Inserisci
-					Prodotto</a> <a class="btn header-button-smaller" role="button"
-				href="DoLogout">Logout</a>
+				<a class="btn header-button-smaller" role="button" href="ModificaProfiloAzienda.jsp">Modifica Profilo</a>
+				<a class="btn header-button-smaller" role="button" href="#">Listino</a>
+				<a class="btn header-button-smaller" role="button" href="#">Inserisci Prodotto</a>
+				<a class="btn header-button-smaller" role="button" href="DoLogout">Logout</a>
 			</span>
 			<%
 				} else if (utente.getTipo().equals("Fattorino")) {
 			%>
 			<!--Span that contains buttons for Fattorino-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
-				<a class="btn header-button" role="button" href="#">Profilo</a> <a
-				class="btn header-button" role="button" href="ModificaProfiloFattorino.jsp">Modifica
-					Profilo</a> <a class="btn header-button" role="button"
-				href="DoLogout">Logout</a>
+				<a class="btn header-button" role="button" href="#">Profilo</a>
+				<a class="btn header-button" role="button" href="ModificaProfiloFattorino.jsp">Modifica Profilo</a>
+				<a class="btn header-button" role="button" href="DoLogout">Logout</a>
 			</span>
 			<%
 				} else {
@@ -63,9 +59,7 @@
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
 				<a class="btn header-button" role="button" href="DoLogout">Logout</a>
 			</span>
-			<%
-				}
-			%>
+			<% } %>
 		</div>
 	</div>
 </nav>

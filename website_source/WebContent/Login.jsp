@@ -1,23 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%
-	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente == null){}
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
-		response.sendRedirect("HomepageAzienda.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino))
-		response.sendRedirect("HomepageFattorino.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
-		response.sendRedirect("HomepageModeratore.jsp");
+	utente=(AccountUtenteRegistrato_Bean)session.getAttribute("utente");
+	if(utente==null){}
+	else if(utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) response.sendRedirect("HomepageAzienda.jsp");
+	else if(utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) response.sendRedirect("HomepageFattorino.jsp");
+	else if(utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore)) response.sendRedirect("HomepageModeratore.jsp");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <!--Viewport for toggle-->
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--Title-->
 <title>Login</title>
 <!--Preset imports-->
@@ -35,39 +30,28 @@
 		class="navbar navbar-dark navbar-expand-md navigation-clean-button custom-border-red bg-yellow">
 		<div class="container">
 			<!--Logo-->
-			<a id="er-logo" class="navbar-brand custom-text-centered"
-				href="Homepage.jsp">Eat&amp;Reorder</a>
+			<a id="er-logo" class="navbar-brand custom-text-centered"href="Homepage.jsp">Eat&amp;Reorder</a>
 		</div>
 	</nav>
 	<!--Form for login-->
 	<div class="alternative-background container-form-floating">
-		<form class="custom-border-red login-form-style" method="post"
-			action="DoLogin">
+		<form class="custom-border-red login-form-style"method="post"action="DoLogin">
 			<!--Invisible title-->
 			<h2 class="sr-only">Login Form</h2>
 			<!--Image on the form-->
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
-				<input
-					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="email" name="email" placeholder="Email"
-					pattern="[a-zA-Z0-9][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
-				<input
-					class="custom-border-red border-rounded-small form-control input-style-login"
-					type="password" name="password" placeholder="Password"
-					pattern="[a-zA-Z0-9]{7,20}">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email"pattern="[a-zA-Z0-9][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
 				<p class="errorText" style="margin-top: 20px;">
 					<%
             			if (request.getAttribute("msg_error") != null){
             		%>
 					<%=request.getAttribute("msg_error") %>
-					<%
-            			}
-            		%>
+					<% } %>
 				</p>
-				<button class="btn form-list-button bg-red border-rounded-small"
-					type="submit">Accedi</button>
+				<button class="btn form-list-button bg-red border-rounded-small"type="submit">Accedi</button>
 			</div>
 		</form>
 	</div>

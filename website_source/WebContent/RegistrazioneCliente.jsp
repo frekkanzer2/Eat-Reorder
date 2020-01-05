@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente != null)
-		response.sendRedirect("Homepage.jsp");
+	if (utente != null) response.sendRedirect("Homepage.jsp");
 %>
 <!DOCTYPE html>
 <html>
@@ -60,14 +58,15 @@
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="cognome" name="cognome" placeholder="Cognome" id="cognome"
 					pattern="[a-zA-Z ‘àèìòù]{3,20}">
+					<p class="errorText" style="margin-top: 20px;">
 					<%
             			if (request.getAttribute("msg_error") != null){
             		%>
-            		
-					<%= request.getAttribute("msg_error")%>
+					<%=request.getAttribute("msg_error") %>
 					<%
             			}
             		%>
+				</p>
 				<button class="btn form-list-button bg-red border-rounded-small"
 					type="submit" id="submit">Registrati</button>
 			</div>

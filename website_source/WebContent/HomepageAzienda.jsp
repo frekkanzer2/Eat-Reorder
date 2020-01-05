@@ -1,24 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente == null)
-		response.sendRedirect("Homepage.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente))
-		response.sendRedirect("HomepageCliente.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino))
-		response.sendRedirect("HomepageFattorino.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
-		response.sendRedirect("HomepageModeratore.jsp");
+	if (utente == null) response.sendRedirect("Homepage.jsp");
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) response.sendRedirect("HomepageCliente.jsp");
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) response.sendRedirect("HomepageFattorino.jsp");
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore)) response.sendRedirect("HomepageModeratore.jsp");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <!--Viewport for toggle-->
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--Title-->
 <title>Home</title>
 <!--Preset imports-->
@@ -28,19 +22,17 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
-<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
+<%@ page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
 <!--BODY HERE-->
 <body>
 	<!--DIV that contains the image and the searchbar-->
 	<div>
 		<!--IMAGE ON THE HOME-->
-		<img id="image-home" class="img-fluid d-block mx-auto"
-			src="assets/img/LogomarcoIS%20PNG.png">
+		<img id="image-home" class="img-fluid d-block mx-auto" src="assets/img/LogomarcoIS%20PNG.png">
 		<!--Button to see the orders commited by users-->
 		<div id="container-display-orders" class="center-block">
-			<a href="#" class="btn form-list-button bg-red border-rounded-small">Visualizza
-				gli ordini</a>
+			<a href="#" class="btn form-list-button bg-red border-rounded-small">Visualizza gli ordini</a>
 		</div>
 	</div>
 	<!-- Script -->

@@ -9,7 +9,7 @@
 		response.sendRedirect("HomepageFattorino.jsp");
 	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
 		response.sendRedirect("HomepageModeratore.jsp");
-		else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente))
+	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente))
 		response.sendRedirect("HomepageCliente.jsp");
 %>
 <!DOCTYPE html>

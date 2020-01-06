@@ -17,11 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 import interfaces.GestoreOrdineDao;
 import model.Carrello;
 import model.ProdottoQuantita;
-import model.DAO.GestoreOrdineDAOImpl;
 import model.bean.AccountAzienda_Bean;
 import model.bean.AccountCliente_Bean;
 import model.bean.Ordine_Bean;
 import model.bean.Prodotto_Bean;
+import model.dao.GestoreOrdineDAOImpl;
 
 /**
  * Servlet implementation class TestGestoreUtenteDao

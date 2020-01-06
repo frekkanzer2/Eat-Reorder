@@ -8,11 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import model.dao.GestoreUtenteDAOImpl;
+import model.DAO.GestoreUtenteDAOImpl;
 import model.bean.AccountCliente_Bean;
-import model.bean.AccountUtenteRegistrato_Bean;
 
 /**
  * Servlet implementation class DoRegistrazioneCliente
@@ -59,7 +57,6 @@ public class DoRegistrazioneCliente extends HttpServlet {
 							input_cognome);
 					GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
 					utente.registrazioneCliente(nuovo);
-					request.getSession(true).setAttribute("utente", nuovo);
 					response.sendRedirect("Homepage.jsp");
 				}}else{
 					//did not fill in all the fields

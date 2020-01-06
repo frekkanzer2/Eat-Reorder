@@ -6,7 +6,9 @@ package model;
  */
 
 public class CheckFormato {
+		
 	
-	
-
+	public boolean formatoRegistrazioneCliente(String email,String password,String nome,String cognome) {
+		
+	}
 }

@@ -9,6 +9,8 @@
 		response.sendRedirect("HomepageFattorino.jsp");
 	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
 		response.sendRedirect("HomepageModeratore.jsp");
+		else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente))
+		response.sendRedirect("HomepageCliente.jsp");
 %>
 <!DOCTYPE html>
 <html>
@@ -27,13 +29,14 @@
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
+<body>
 <jsp:include page="header.jsp"></jsp:include>
 <div>
 	<!--IMAGE ON THE HOME-->
 	<img id="image-home" class="img-fluid d-block mx-auto" src="assets/img/LogomarcoIS%20PNG.png">
 	<!--Form for the research-->
 	<div class="d-flex justify-content-center" style="height: 100%;">
-		<input id="search-field" class="form-control-sm d-inline" type="search" placeholder="Inserisci la città">
+		<input id="search-field" class="form-control-sm d-inline" type="search" placeholder="Inserisci la cittï¿½">
 		<button class="standard-button border-rounded-small custom-border-red" type="submit">Cerca</button>
 	</div>
 </div>

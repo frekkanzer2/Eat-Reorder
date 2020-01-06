@@ -20,9 +20,10 @@
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
-<jsp:include page="header.jsp"></jsp:include>
+
 <!--Start of body-->
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<!--Form for registration-->
 	<div class="container-form-floating">
 		<form class="custom-border-red login-form-style" action="DoModificaProfiloCliente" method="post">

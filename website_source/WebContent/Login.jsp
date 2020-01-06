@@ -25,14 +25,7 @@
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 </head>
 <body>
-	<!--HEADER-->
-	<nav
-		class="navbar navbar-dark navbar-expand-md navigation-clean-button custom-border-red bg-yellow">
-		<div class="container">
-			<!--Logo-->
-			<a id="er-logo" class="navbar-brand custom-text-centered"href="Homepage.jsp">Eat&amp;Reorder</a>
-		</div>
-	</nav>
+	<jsp:include page="header.jsp"></jsp:include>
 	<!--Form for login-->
 	<div class="alternative-background container-form-floating">
 		<form class="custom-border-red login-form-style"method="post"action="DoLogin">

@@ -23,6 +23,7 @@
 </head>
 <!--Start of body-->
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<!--HEADER-->
 	<nav class="navbar navbar-dark navbar-expand-md navigation-clean-button custom-border-red bg-yellow">
 		<div class="container">

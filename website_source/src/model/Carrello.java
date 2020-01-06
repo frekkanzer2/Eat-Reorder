@@ -59,6 +59,18 @@ public class Carrello {
 
 		return prodotti.values();
 	}
+	
+	/**
+	 * Restituisce un ProdottoQuantita associato al codice passato come
+	 * parametro
+	 * @param codice del prodotto nel carrello
+	 * @return ProdottoQuantita del prodotto con il codice inserito o null se il codice non esiste
+	 */
+	
+	public ProdottoQuantita getProdotto(long codice) {
+		
+		return prodotti.get(codice);
+	}
 
 	/**
 	 * Rimuove un prodotto dal carrello. Il prodotto viene rimosso solo se il

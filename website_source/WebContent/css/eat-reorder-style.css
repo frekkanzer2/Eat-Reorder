@@ -73,7 +73,19 @@
 }
 
 .errorText{
-	color: red;
+	clear:left!important;
+	text-align: center!important;
+	color: red!important;
+}
+
+.confirm{
+	border: solid green 2px;
+}
+
+.confirmText{
+	clear:left!important;
+	text-align: center!important;
+	color: green!important;
 }
 
 .header-button{

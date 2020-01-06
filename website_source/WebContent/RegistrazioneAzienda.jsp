@@ -24,13 +24,6 @@
 <!--Start of body-->
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<!--HEADER-->
-	<nav class="navbar navbar-dark navbar-expand-md navigation-clean-button custom-border-red bg-yellow">
-		<div class="container">
-			<!--Logo-->
-			<a id="er-logo" class="navbar-brand custom-text-centered"href="Homepage.jsp">Eat&amp;Reorder</a>
-		</div>
-	</nav>
 	<!--Form for registration-->
 	<div class="container-form-floating">
 		<form class="custom-border-red login-form-style" method="post"action="RegistrazioneAziendaServlet">

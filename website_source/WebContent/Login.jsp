@@ -39,7 +39,9 @@
             			if (request.getAttribute("msg_error") != null){
             		%>
 					<%=request.getAttribute("msg_error") %>
-					<% } %>
+					<% 
+						} 
+					%>
 				</p>
 				<button class="btn form-list-button bg-red border-rounded-small"type="submit">Accedi</button>
 			</div>

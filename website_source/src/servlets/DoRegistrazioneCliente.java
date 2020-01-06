@@ -57,19 +57,24 @@ public class DoRegistrazioneCliente extends HttpServlet {
 							input_cognome);
 					GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
 					utente.registrazioneCliente(nuovo);
-					response.sendRedirect("Homepage.jsp");
-				}}else{
-					//did not fill in all the fields
-					String errmessage=("Compilare tutti i campi correttamente.");
-					//Redirection to an error page
-					request.setAttribute("msg_error", errmessage);
-		        	request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
-				}}catch (SQLException e) {
-					System.err.println("ERROR DETECTED");
-					e.printStackTrace();
-					response.sendRedirect("ErrorPage.html");
+					String confirmMessage=("Registrazione avvenuta. Puoi loggare.");
+					//Confirm the registration
+					request.setAttribute("msg_confirm", confirmMessage);
+		        	request.getRequestDispatcher("Homepage.jsp").forward(request, response);
 				}
+			}else{
+				//did not fill in all the fields
+				String errmessage=("Compilare tutti i campi correttamente.");
+				//Redirection to an error page
+				request.setAttribute("msg_error", errmessage);
+		        request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
+			}
+		}catch (SQLException e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
 		}
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

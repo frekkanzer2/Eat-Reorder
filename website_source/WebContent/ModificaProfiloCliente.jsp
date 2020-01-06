@@ -34,9 +34,9 @@
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome" name="nome" placeholder="Nome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="cognome" name="cognome" placeholder="Cognome"pattern="[a-zA-Z ‘àèìòù]{3,20}"> 
 				<input class="custom-border-red border-rounded-small form-control input-style-login" type="password" name="password" placeholder="Password" id="password" pattern="[a-zA-Z0-9]{7,20}">
-					<p class="errorText" style="margin-top: 20px;">
+				<p class="errorText" style="margin-top: 20px;">
 					<% if (request.getAttribute("msg_error") != null){ %>
-					<%=request.getAttribute("msg_error") %>
+						<%=request.getAttribute("msg_error") %>
 					<% } %>
 				</p>
 				<button class="btn form-list-button bg-red border-rounded-small"type="submit">Modifica</button>

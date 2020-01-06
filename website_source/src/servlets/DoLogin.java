@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.DAO.GestoreUtenteDAOImpl;
+import model.dao.GestoreUtenteDAOImpl;
 import model.bean.AccountUtenteRegistrato_Bean;
 
 /**

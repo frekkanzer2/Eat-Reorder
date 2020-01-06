@@ -1,4 +1,4 @@
-package model.DAO;
+package model.dao;
 
 import java.beans.Statement;
 import java.net.MalformedURLException;

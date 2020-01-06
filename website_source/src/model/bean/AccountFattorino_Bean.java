@@ -50,6 +50,14 @@ public class AccountFattorino_Bean extends AccountUtenteRegistrato_Bean {
 			
 	}
 	
+	/**
+	 *  Metodo che consente la modifica dei parametri della classe AccountFattorino_Bean.
+	 * I dati attuali verranno modificati e sostituiti con i parametri
+	 * dell'istanza passata al metodo. Non vengono modificati email e tipo di
+	 * account.
+	 * 
+	 * @param newAccountInforma {@link AccountFattorino_Bean}
+	 */
 	public void modificaDati(AccountFattorino_Bean newAccountInforma) {
 
 		if (newAccountInforma != null) {
@@ -69,7 +77,7 @@ public class AccountFattorino_Bean extends AccountUtenteRegistrato_Bean {
 	}
 
 	/**
-	 * @return Ilnome del Fattorino
+	 * @return Il nome del Fattorino
 	 */
 	public String getNome() {
 		return nome;

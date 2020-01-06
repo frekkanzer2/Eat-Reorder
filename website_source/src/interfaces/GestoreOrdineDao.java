@@ -9,6 +9,10 @@ import model.bean.AccountCliente_Bean;
 import model.bean.AccountFattorino_Bean;
 import model.bean.Ordine_Bean;
 
+/*
+ * Interfaccia per il GestoreOrdineDao
+ */
+
 public interface GestoreOrdineDao {
 
 	public void creaOrdine(Ordine_Bean order) throws SQLException, Exception;

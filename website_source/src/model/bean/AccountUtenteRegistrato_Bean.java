@@ -2,6 +2,7 @@ package model.bean;
 
 public abstract class AccountUtenteRegistrato_Bean {
 
+
 	public static final String Azienda = "Azienda";
 	public static final String Fattorino = "Fattorino";
 	public static final String Cliente = "Cliente";

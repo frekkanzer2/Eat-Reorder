@@ -12,7 +12,7 @@ public class AccountCliente_Bean extends AccountUtenteRegistrato_Bean {
 	 * @param password password dell'Account Cliente
 	 * @param nome nome del Cliente
 	 * @param cognome cognome del Cliente
-	 * @throws
+	 * 
 	 */
 	public AccountCliente_Bean(String email, String password, String nome, String cognome) {
 		super(email, password, AccountUtenteRegistrato_Bean.Cliente);

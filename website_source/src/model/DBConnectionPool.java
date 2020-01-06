@@ -7,9 +7,21 @@ import java.util.TimeZone;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
 
+/**
+ * Classe che gestisce il pool di connessioni al database.
+ * @author Rosario Gagliardi
+ *
+ */
+
 public class DBConnectionPool {
 	
 	private static DataSource datasource;
+	
+	/**
+	 * Consente di ottenere una connessione al database
+	 * @return {@link Connection} 
+	 * @throws SQLException 
+	 */
 
 	public static Connection getConnection() throws SQLException {
 		if (datasource == null) {

@@ -20,6 +20,9 @@ import model.bean.AccountUtenteRegistrato_Bean;
 import model.bean.Ordine_Bean;
 import model.bean.Prodotto_Bean;
 
+	/*
+	 * Interfaccia per il gestore Utente Dao
+	 */
 public interface GestoreUtenteDAO {
 
 	public boolean controlloEsistenzaMail(String email) throws SQLException;

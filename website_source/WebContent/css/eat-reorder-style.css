@@ -88,6 +88,10 @@
 	color: green!important;
 }
 
+.std-img{
+	width = 50%;
+}
+
 .header-button{
     margin-right: 4px;
     margin-left: 4px;
@@ -386,6 +390,10 @@ A:hover, A:link A:visited, A:active{
         width: 80%;
         padding: 30px;
     }
+    
+    .std-img{
+		width = 70%;
+	}
 
 }
 
@@ -468,6 +476,10 @@ A:hover, A:link A:visited, A:active{
         font-size: 14px;
         margin-bottom: 8px;
     }
+    
+    .std-img{
+		width = 90%;
+	}
     
 }
 

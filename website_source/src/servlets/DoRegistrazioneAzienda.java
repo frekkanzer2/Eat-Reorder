@@ -2,6 +2,12 @@ package servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.DayOfWeek;
+import java.time.LocalTime;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.DAO.GestoreUtenteDAOImpl;
+import model.CheckFormato;
+import model.dao.GestoreUtenteDAOImpl;
 import model.bean.AccountAzienda_Bean;
 import model.bean.AccountCliente_Bean;
 
@@ -39,15 +46,23 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 				String input_telefono=request.getParameter("telefono");
 				String input_indirizzo=request.getParameter("indirizzo");
 				String input_civico=request.getParameter("civico");
+				int input_Civico=Integer.parseInt(input_civico);
 				String input_citta=request.getParameter("citta");
 				String input_provincia=request.getParameter("provincia");
 				String input_iva=request.getParameter("iva");
-				
-				// check if input are correct
+				LocalTime input_startime=LocalTime.parse(request.getParameter("start_time"));
+				LocalTime input_endtime=LocalTime.parse(request.getParameter("end_time"));
+				String [] day=request.getParameterValues("checkbox");
+				List<DayOfWeek> giorni=new List<DayOfWeek>();
+				for(int i=0;i<day.length;i++) {
+					String value=request.getParameter(day[i]);
+					if(value!=null)
+						giorni.add(DayOfWeek.valueOf(value));
+				}
 				
 				// if correct
 				try {
-					if () {
+					if (CheckFormato.formatoRegistrazioneAzienda(input_email, input_password, input_nome, input_indirizzo,input_Civico, input_citta, input_provincia, input_telefono,input_iva)) {
 						GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
 						// Email already exists
 						if (gestore.controllaEsistenzaAccount(input_email,input_password)) {
@@ -56,11 +71,7 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 							request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
 						}//create new account client 
 						else {
-							AccountAzienda_Bean nuovo=new AccountAzienda_Bean(email, password, nome, via, numeroCivico, citta, provincia, telefono, partitaIva, orarioDiApertura, orarioDiChiusura, giorniDiApertura);
-							GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
-							utente.registrazioneAzienda(nuovo);
-							request.getSession(true).setAttribute("utente", nuovo);
-							response.sendRedirect("Homepage.jsp");
+							
 						}}else{
 							//did not fill in all the fields
 							String errmessage=("Compilare tutti i campi correttamente.");

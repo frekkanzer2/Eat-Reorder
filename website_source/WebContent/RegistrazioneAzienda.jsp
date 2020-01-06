@@ -50,27 +50,27 @@
 				<div class="row"style="width:100%; margin;0;padding:0;">
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day1">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day1">
 						<label class="form-check-label"for="checkbox-day1">Lunedì</label><br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox" id="checkbox-day2">
+						<input name="checkbox" class="form-check-input"type="checkbox" id="checkbox-day2">
 						<label class="form-check-label"for="checkbox-day2">Martedì</label><br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox" id="checkbox-day3">
+						<input name="checkbox" class="form-check-input"type="checkbox" id="checkbox-day3">
 						<label class="form-check-label"for="checkbox-day3">Mercoledì</label><br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day4">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day4">
 						<label class="form-check-label"for="checkbox-day4">Giovedì</label>
 					</div>
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day5">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day5">
 						<label class="form-check-label"for="checkbox-day5">Venerdì</label><br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day6">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6">
 						<label class="form-check-label"for="checkbox-day6">Sabato</label><br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day7">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day7">
 						<label class="form-check-label"for="checkbox-day7">Domenica</label>
 					</div>
 				</div>

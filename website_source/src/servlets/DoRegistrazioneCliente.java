@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.DAO.GestoreUtenteDAOImpl;
 import model.bean.AccountCliente_Bean;
+import model.dao.GestoreUtenteDAOImpl;
 
 /**
  * Servlet implementation class DoRegistrazioneCliente

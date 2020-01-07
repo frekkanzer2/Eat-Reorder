@@ -34,6 +34,15 @@
 				casa</div>
 			<!--Image on the form-->
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
+			<p class="errorText" style="margin-top: 20px;">
+					<%
+            			if (request.getAttribute("msg_error") != null){
+            		%>
+					<%=request.getAttribute("msg_error") %>
+					<%
+            			}
+            		%>
+				</p>
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
 				<input

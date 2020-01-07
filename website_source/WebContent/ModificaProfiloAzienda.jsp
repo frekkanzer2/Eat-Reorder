@@ -24,11 +24,20 @@
 	<jsp:include page="header.jsp"></jsp:include>
 <!--Form for registration-->
 <div class="container-form-floating">
-	<form class="custom-border-red login-form-style"method="post">
+	<form class="custom-border-red login-form-style"method="post" action="DoModificaProfiloAzienda"onsubmit="return checkModifica();">
 		<div class="registration-title">Modifica il tuo profilo</div>
 		<div class="registration-description">Saranno modificati solo i	campi inseriti</div>
 		<!--Image on the form-->
 		<img id="image-login-form"src="assets/img/LogomarcoIS%20PNG.png">
+		<p class="errorText" style="margin-top: 20px;">
+					<%
+            			if (request.getAttribute("msg_error") != null){
+            		%>
+					<%=request.getAttribute("msg_error") %>
+					<%
+            			}
+            		%>
+				</p>
 		<!--Form group that contains fields and confirm button-->
 		<div class="form-group">
 			<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"placeholder="Nome dell'attivit&agrave"pattern="[a-zA-Z0-9 ‘àèìòù]{3,20}">
@@ -44,27 +53,27 @@
 			<div class="row"style="width:100%;margin:0;padding:0;">
 				<div class="col-sm-6 list-of-checkboxes">
 					<!--New day-->
-					<input class="form-check-input"type="checkbox"id="checkbox-day1">
+					<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day1">
 					<label class="form-check-label"for="checkbox-day1">Luned&igrave</label><br>
 					<!--New day-->
-					<input class="form-check-input"type="checkbox"id="checkbox-day2">
+					<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day2">
 					<label class="form-check-label"for="checkbox-day2">Marted&igrave</label><br>
 					<!--New day-->
-					<input class="form-check-input"type="checkbox"id="checkbox-day3">
+					<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day3">
 					<label class="form-check-label"for="checkbox-day3">Mercoled&igrave</label><br>
 					<!--New day-->
-					<input class="form-check-input"type="checkbox" id="checkbox-day4">
+					<input name="checkbox" class="form-check-input"type="checkbox" id="checkbox-day4">
 					<label class="form-check-label"for="checkbox-day4">Gioved&igrave</label>
 				</div>
 				<div class="col-sm-6 list-of-checkboxes">
 					<!--New day-->
-					<input class="form-check-input"type="checkbox"id="checkbox-day5">
+					<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day5">
 					<label class="form-check-label"for="checkbox-day5">Venerd&igrave</label><br>
 					<!--New day-->
-					<input class="form-check-input"type="checkbox"id="checkbox-day6">
+					<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6">
 					<label class="form-check-label"for="checkbox-day6">Sabato</label><br>
 					<!--New day-->
-					<input class="form-check-input"type="checkbox"id="checkbox-day7">
+					<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day7">
 					<label class="form-check-label"for="checkbox-day7">Domenica</label>
 				</div>
 			</div>
@@ -89,5 +98,21 @@
 <!-- SCRIPT -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+		function checkModifica() {
+			var nome = document.getElementById("nome");
+			var telefono=document.getElementById("telefono");
+			var indirizzo=document.getElementById("indirizzo");
+			var civico=document.getElementById("civico");
+			var citta=document.getElementById("citta");
+			var provincia=document.getElementById("provincia");
+			var password=document.getElementById("password");
+			if (nome.value == "" || telefono.value == ""||indirizzo.value == ""|| civico.value == ""||citta==""||provincia==""||password=="") {
+				alert("ATTENZIONE! Errore nella validazione dei campi!")
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>

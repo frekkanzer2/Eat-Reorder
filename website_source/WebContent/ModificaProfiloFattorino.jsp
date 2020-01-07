@@ -24,7 +24,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--Form for registration-->
 	<div class="container-form-floating">
-		<form class="custom-border-red login-form-style" method="post">
+		<form class="custom-border-red login-form-style" method="post" action="DoModificaProfiloFattorino"onsubmit="return checkModifica();">
 			<div class="registration-title">Modifica il tuo profilo</div>
 			<div class="registration-description">Saranno modificati solo i campi inseriti</div>
 			<!--Image on the form-->
@@ -56,7 +56,7 @@
 						<label class="form-check-label"for="checkbox-day1">Luned&igrave</label> <br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day2">
-						<label class="form-check-label"for="checkbox-day2">Marted&igrave/label> <br>
+						<label class="form-check-label"for="checkbox-day2">Marted&igrave</label> <br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day3">
 						<label class="form-check-label"for="checkbox-day3">Mercoled&igrave</label> <br>
@@ -98,5 +98,20 @@
 	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function checkModifica() {
+			var password = document.getElementById("password");
+			var nome = document.getElementById("nome");
+			var cognome = document.getElementById("cognome");
+			var telefono=document.getElementById("telefono");
+			var citta=document.getElementById("citta");
+			var provincia=document.getElementById("provincia");
+			if (password.value == "" || nome.value == ""||cognome.value == ""|| telefono.value == ""||citta==""||provincia=="") {
+				alert("ATTENZIONE! Errore nella validazione dei campi!")
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>

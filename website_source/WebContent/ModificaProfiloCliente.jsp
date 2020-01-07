@@ -26,7 +26,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--Form for registration-->
 	<div class="container-form-floating">
-		<form class="custom-border-red login-form-style" action="DoModificaProfiloCliente" method="post">
+		<form class="custom-border-red login-form-style" action="DoModificaProfiloCliente" method="post"onsubmit="return checkModifica();">
 			<div class="registration-title">Modifica il tuo profilo</div>
 			<!--Image on the form-->
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
@@ -47,5 +47,17 @@
 	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function checkModifica() {
+			var password = document.getElementById("password");
+			var nome = document.getElementById("nome");
+			var cognome = document.getElementById("cognome");
+			if (password.value == "" || nome.value == ""||cognome.value == "") {
+				alert("ATTENZIONE! Errore nella validazione dei campi!")
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>

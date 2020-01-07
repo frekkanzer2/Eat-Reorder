@@ -44,6 +44,7 @@ public class DoModificaProfiloCliente extends HttpServlet {
 					if (CheckFormato.formatoModificaCliente(input_nome, input_cognome, input_password)) {
 						AccountCliente_Bean nuovo = new AccountCliente_Bean(email, input_password, input_nome, input_cognome);
 						GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
+						//Confirm the changes
 						utente.aggiornaCliente(nuovo);
 						request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 					} else {

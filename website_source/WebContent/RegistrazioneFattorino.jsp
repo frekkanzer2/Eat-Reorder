@@ -32,6 +32,15 @@
 			<div class="registration-description">Consegna piatti quando vuoi</div>
 			<!--Image on the form-->
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
+			<p class="errorText" style="margin-top: 20px;">
+					<%
+            			if (request.getAttribute("msg_error") != null){
+            		%>
+					<%=request.getAttribute("msg_error") %>
+					<%
+            			}
+            		%>
+				</p>
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"id="email"placeholder="Email"pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
@@ -102,7 +111,7 @@
 			var telefono=document.getElementById("telefono");
 			var citta=document.getElementById("citta");
 			var provincia=document.getElementById("provincia");
-			if (email.value == "" || password.value == "" || nome.value == ""||nome.value == ""|| telefono.value == ""||citta==""||provincia=="") {
+			if (email.value == "" || password.value == "" || nome.value == ""||cognome.value == ""|| telefono.value == ""||citta==""||provincia=="") {
 				alert("ATTENZIONE! Errore nella validazione dei campi!")
 				return false;
 			}

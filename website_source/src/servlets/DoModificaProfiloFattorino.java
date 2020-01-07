@@ -16,19 +16,20 @@ import javax.servlet.http.HttpSession;
 
 import model.CheckFormato;
 import model.bean.AccountAzienda_Bean;
+import model.bean.AccountFattorino_Bean;
 import model.dao.GestoreUtenteDAOImpl;
 
 /**
- * Servlet implementation class DoModificaProfiloAzienda
+ * Servlet implementation class DoModificaProfiloFattorino
  */
-@WebServlet("/DoModificaProfiloAzienda")
-public class DoModificaProfiloAzienda extends HttpServlet {
+@WebServlet("/DoModificaProfiloFattorino")
+public class DoModificaProfiloFattorino extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DoModificaProfiloAzienda() {
+    public DoModificaProfiloFattorino() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,19 +39,16 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		AccountAzienda_Bean utenteloggato = (AccountAzienda_Bean)session.getAttribute("utente");
+		AccountFattorino_Bean utenteloggato = (AccountFattorino_Bean)session.getAttribute("utente");
 		String email=utenteloggato.getEmail();
 		String input_nome = request.getParameter("nome");
+		String input_cognome = request.getParameter("cognome");
 		String input_telefono=request.getParameter("telefono");
-		String input_indirizzo=request.getParameter("indirizzo");
-		String input_civico=request.getParameter("civico");
-		int input_Civico=Integer.parseInt(input_civico);
 		String input_citta=request.getParameter("citta");
 		String input_provincia=request.getParameter("provincia");
+		String input_password = request.getParameter("password");
 		LocalTime input_startime=LocalTime.parse(request.getParameter("start-time"));
 		LocalTime input_endtime=LocalTime.parse(request.getParameter("end-time"));
-		String input_password = request.getParameter("password");
-		String iva=utenteloggato.getPartitaIva();
 		String [] day=request.getParameterValues("checkbox");
 		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
 		for(int i=0;i<day.length;i++) {
@@ -58,22 +56,22 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 			if(value!=null)
 				giorni.add(DayOfWeek.valueOf(value));
 		}
-		
-		// if correct
 		try {
-			if (CheckFormato.formatoModificaAzienda(input_nome, input_indirizzo, input_Civico, input_citta, input_provincia, input_telefono, input_password)) {
-					AccountAzienda_Bean nuovo=new AccountAzienda_Bean(email, input_password, input_nome, input_indirizzo, input_Civico, input_citta, input_provincia, input_telefono,iva, input_startime, input_endtime,giorni);
-					GestoreUtenteDAOImpl utente= new GestoreUtenteDAOImpl();
-					//Confirm the changes
-					utente.aggiornaAzienda(nuovo);
-		        	request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
+			//use CheckFormato for test the parameter
+			if(CheckFormato.formatoRegistrazioneFattorino(email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia)) {
+				GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
+				AccountFattorino_Bean nuovo=new AccountFattorino_Bean(email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia, input_startime, input_endtime, giorni);
+				//Confirm the changes
+				utente.aggiornaFattorino(nuovo);
+	        	request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 				}else{
 					//did not fill in all the fields
 					String errmessage=("Compilare tutti i campi correttamente.");
 					//Redirection to an error page
 					request.setAttribute("msg_error", errmessage);
-		        	request.getRequestDispatcher("ModificaProfiloAzienda.jsp").forward(request, response);
-				}}catch (SQLException e) {
+		        	request.getRequestDispatcher("ModificaProfiloFattorino.jsp").forward(request, response);
+				}
+			}catch (SQLException e) {
 					System.err.println("ERROR DETECTED");
 					e.printStackTrace();
 					response.sendRedirect("ErrorPage.html");

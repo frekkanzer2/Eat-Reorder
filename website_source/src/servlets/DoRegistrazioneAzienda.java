@@ -5,10 +5,7 @@ import java.sql.SQLException;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import model.CheckFormato;
 import model.dao.GestoreUtenteDAOImpl;
 import model.bean.AccountAzienda_Bean;
-import model.bean.AccountCliente_Bean;
 
 /**
  * Servlet implementation class DoRegistrazioneAzienda

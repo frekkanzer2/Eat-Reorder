@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.CheckFormato;
-import model.bean.AccountAzienda_Bean;
 import model.bean.AccountFattorino_Bean;
 import model.dao.GestoreUtenteDAOImpl;
 
@@ -38,6 +37,7 @@ public class DoModificaProfiloFattorino extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Getting data from ModificaProfiloFattorino.jsp
 		HttpSession session = request.getSession();
 		AccountFattorino_Bean utenteloggato = (AccountFattorino_Bean)session.getAttribute("utente");
 		String email=utenteloggato.getEmail();
@@ -61,9 +61,17 @@ public class DoModificaProfiloFattorino extends HttpServlet {
 			if(CheckFormato.formatoRegistrazioneFattorino(email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia)) {
 				System.err.println("1");
 				GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
-				AccountFattorino_Bean nuovo=new AccountFattorino_Bean(email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia, input_startime, input_endtime, giorni);
+				utenteloggato.setPassword(input_password);
+				utenteloggato.setNome(input_nome);
+				utenteloggato.setCognome(input_cognome);
+				utenteloggato.setTelefono(input_telefono);
+				utenteloggato.setCittaConsegna(input_citta);
+				utenteloggato.setProvinciaConsegna(input_provincia);
+				utenteloggato.setInizioConsegne(input_startime);
+				utenteloggato.setFineConsegne(input_endtime);
+				utenteloggato.setGiorniDiConsegna(giorni);
 				//Confirm the changes
-				utente.aggiornaFattorino(nuovo);
+				utente.aggiornaFattorino(utenteloggato);
 	        	request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 				}else{
 					System.err.println("2");

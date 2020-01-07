@@ -103,13 +103,11 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 	}
 
 	/**
-	 * @return Map dei prodotti. 
+	 * @return Map dei prodotti.
 	 */
 	public Map<Long, Prodotto_Bean> getProdotti() {
 		return prodotti;
 	}
-
-	
 
 	/**
 	 * Metodo che consente di ricevere in output un prodotto appartenente al listino
@@ -167,7 +165,7 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 		if (p != null)
 			prodotti.remove(p.getCodice());
 	}
-	
+
 	/**
 	 * 
 	 * @return nome dell'Azienda
@@ -224,7 +222,7 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 	public String getCitta() {
 		return citta;
 	}
-	
+
 	/**
 	 * 
 	 * @param citta Città dell'Azienda
@@ -249,7 +247,7 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 	public void setProvincia(String provincia) {
 		this.provincia = provincia;
 	}
-	
+
 	/**
 	 * 
 	 * @return telefono dell'Azienda
@@ -266,7 +264,7 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	
+
 	/**
 	 * 
 	 * @return partita IVA dell'Azienda
@@ -275,7 +273,7 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 	public String getPartitaIva() {
 		return partitaIva;
 	}
-	
+
 	/**
 	 * 
 	 * @param partitaIva Partita IVA dell'Azienda
@@ -292,7 +290,7 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 	public LocalTime getOrarioDiApertura() {
 		return orarioDiApertura;
 	}
-	
+
 	/**
 	 * 
 	 * @param orarioDiApertura LocalTime indicato con HH:MM:SS
@@ -309,7 +307,7 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 	public LocalTime getOrarioDiChiusura() {
 		return orarioDiChiusura;
 	}
-	
+
 	/**
 	 * 
 	 * @param orarioDiChiusura LocalTime indicato con HH:MM:SS
@@ -318,7 +316,7 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 	public void setOrarioDiChiusura(LocalTime orarioDiChiusura) {
 		this.orarioDiChiusura = orarioDiChiusura;
 	}
-	
+
 	/**
 	 * 
 	 * @return Set di DayOfWeek corrispondenti ai giorni di apertura dell'Azienda
@@ -328,14 +326,17 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 		return giorniDiApertura;
 	}
 
-	
 	/**
 	 * 
-	 * @param giorniDiApertura Set di DayOfWeek che rappresentano i giorni di apertura
+	 * @param giorniDiApertura Set di DayOfWeek che rappresentano i giorni di
+	 *                         apertura
 	 */
-	public void setGiorniDiApertura(Set<DayOfWeek> giorniDiApertura) {
-		if(giorniDiApertura!= null)
-		this.giorniDiApertura = giorniDiApertura;
-	}
+	public void setGiorniDiApertura(List<DayOfWeek> giorniDiApertura) {
+		if (giorniDiApertura != null) {
+			this.giorniDiApertura.clear();
+			for (DayOfWeek x : giorniDiApertura)
+				this.giorniDiApertura.add(x);
+		}
 
+	}
 }

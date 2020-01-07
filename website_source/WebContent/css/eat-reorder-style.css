@@ -365,6 +365,23 @@
     margin-top: 5px;
 }
 
+.company-presentation-card{
+    width: 60%;
+    border: solid 1px var(--preset_color_red);
+    background-color: var(--preset_color_yellow);
+    text-align: center;
+    color: var(--preset_color_red)!important;
+    font-size: 30px;
+    border-radius: 6px!important;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.company-presentation-card:hover, .company-presentation-card:link .company-presentation-card:visited, .company-presentation-card:active{
+    color: var(--preset_color_red);
+}
+
 /*******************TAGS*******************/
 
 HR{
@@ -625,6 +642,19 @@ A:hover, A:link A:visited, A:active{
         max-width: 170px;
     }
 
+    .company-presentation-card{
+        width: 80%;
+        border: solid 1px var(--preset_color_red);
+        background-color: var(--preset_color_yellow);
+        text-align: center;
+        color: var(--preset_color_red)!important;
+        font-size: 30px;
+        border-radius: 6px!important;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
 }
 
 @media (max-width: 575px){
@@ -717,6 +747,19 @@ A:hover, A:link A:visited, A:active{
         margin-top: 0px;
     }
 
+    .company-presentation-card{
+        width: 85%;
+        border: solid 1px var(--preset_color_red);
+        background-color: var(--preset_color_yellow);
+        text-align: center;
+        color: var(--preset_color_red)!important;
+        font-size: 26px;
+        border-radius: 6px!important;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
 }
 
 @media (max-width: 525px){
@@ -773,6 +816,19 @@ A:hover, A:link A:visited, A:active{
         text-align: center;
         font-size: 14px;
         margin-bottom: 8px;
+    }
+
+    .company-presentation-card{
+        width: 90%;
+        border: solid 1px var(--preset_color_red);
+        background-color: var(--preset_color_yellow);
+        text-align: center;
+        color: var(--preset_color_red)!important;
+        font-size: 26px;
+        border-radius: 6px!important;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-transform: uppercase;
     }
     
 }
@@ -924,6 +980,19 @@ A:hover, A:link A:visited, A:active{
         margin-top: 0px;
     }
     
+    .company-presentation-card{
+        width: 90%;
+        border: solid 1px var(--preset_color_red);
+        background-color: var(--preset_color_yellow);
+        text-align: center;
+        color: var(--preset_color_red)!important;
+        font-size: 22px;
+        border-radius: 6px!important;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
 }
 
 @media (max-width: 320px){

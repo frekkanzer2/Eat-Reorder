@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Savepoint;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
@@ -50,61 +51,90 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 	public void registrazioneCliente(AccountCliente_Bean cliente) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
+		connect.setAutoCommit(false);
 
-		PreparedStatement stmt = connect
-				.prepareStatement("insert into utenteregistrato(email,pass,tipologia,is_banned) values (?,?,?,?)");
-		stmt.setString(1, cliente.getEmail());
-		stmt.setString(2, cliente.getPassword());
-		stmt.setString(3, AccountUtenteRegistrato_Bean.Cliente);
-		stmt.setBoolean(4, false);
+		Savepoint save = connect.setSavepoint();
 
-		stmt.executeUpdate();
+		try {
+			PreparedStatement stmt = connect
+					.prepareStatement("insert into utenteregistrato(email,pass,tipologia,is_banned) values (?,?,?,?)");
+			stmt.setString(1, cliente.getEmail());
+			stmt.setString(2, cliente.getPassword());
+			stmt.setString(3, AccountUtenteRegistrato_Bean.Cliente);
+			stmt.setBoolean(4, false);
 
-		stmt = connect.prepareStatement("insert into Cliente(nome, cognome, email) values (?,?,?)");
+			stmt.executeUpdate();
 
-		stmt.setString(1, cliente.getNome());
-		stmt.setString(2, cliente.getCognome());
-		stmt.setString(3, cliente.getEmail());
-		stmt.executeUpdate();
+			stmt = connect.prepareStatement("insert into Cliente(nome, cognome, email) values (?,?,?)");
 
-		return;
+			stmt.setString(1, cliente.getNome());
+			stmt.setString(2, cliente.getCognome());
+			stmt.setString(3, cliente.getEmail());
+			stmt.executeUpdate();
+
+			connect.commit();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+			connect.rollback(save);
+			throw new SQLException(e.getMessage());
+		} finally {
+			connect.setAutoCommit(true);
+		}
+
 	}
 
 	// terminato
 	public void registrazioneAzienda(AccountAzienda_Bean azienda) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
+		connect.setAutoCommit(false);
 
-		PreparedStatement stmt = connect
-				.prepareStatement("insert into utenteregistrato(email,pass,tipologia,is_banned) values (?,?,?,?)");
-		stmt.setString(1, azienda.getEmail());
-		stmt.setString(2, azienda.getPassword());
-		stmt.setString(3, AccountUtenteRegistrato_Bean.Azienda);
-		stmt.setBoolean(4, false);
+		Savepoint save = connect.setSavepoint();
 
-		stmt.executeUpdate();
+		try {
+			PreparedStatement stmt = connect
+					.prepareStatement("insert into utenteregistrato(email,pass,tipologia,is_banned) values (?,?,?,?)");
+			stmt.setString(1, azienda.getEmail());
+			stmt.setString(2, azienda.getPassword());
+			stmt.setString(3, AccountUtenteRegistrato_Bean.Azienda);
+			stmt.setBoolean(4, false);
 
-		stmt = connect.prepareStatement(
-				"insert into Azienda(nome, via, numero_civico, citta, provincia, partita_iva, telefono, orario_apertura, orario_chiusura, email) values (?,?,?,?,?,?,?,?,?,?)");
-
-		stmt.setString(1, azienda.getNome());
-		stmt.setString(2, azienda.getVia());
-		stmt.setInt(3, azienda.getNumeroCivico());
-		stmt.setString(4, azienda.getCitta());
-		stmt.setString(5, azienda.getProvincia());
-		stmt.setString(6, azienda.getPartitaIva());
-		stmt.setString(7, azienda.getTelefono());
-		stmt.setString(8, azienda.getOrarioDiApertura().truncatedTo(ChronoUnit.SECONDS).toString());
-		stmt.setString(9, azienda.getOrarioDiChiusura().truncatedTo(ChronoUnit.SECONDS).toString());
-		stmt.setString(10, azienda.getEmail());
-		stmt.executeUpdate();
-
-		for (DayOfWeek day : azienda.getGiorniDiApertura()) {
-			stmt = connect.prepareStatement("insert into giornilavorativi (giorno,email) values (?,?)");
-			stmt.setString(1, day.toString());
-			stmt.setString(2, azienda.getEmail());
 			stmt.executeUpdate();
 
+			stmt = connect.prepareStatement(
+					"insert into Azienda(nome, via, numero_civico, citta, provincia, partita_iva, telefono, orario_apertura, orario_chiusura, email) values (?,?,?,?,?,?,?,?,?,?)");
+
+			stmt.setString(1, azienda.getNome());
+			stmt.setString(2, azienda.getVia());
+			stmt.setInt(3, azienda.getNumeroCivico());
+			stmt.setString(4, azienda.getCitta());
+			stmt.setString(5, azienda.getProvincia());
+			stmt.setString(6, azienda.getPartitaIva());
+			stmt.setString(7, azienda.getTelefono());
+			stmt.setString(8, azienda.getOrarioDiApertura().truncatedTo(ChronoUnit.SECONDS).toString());
+			stmt.setString(9, azienda.getOrarioDiChiusura().truncatedTo(ChronoUnit.SECONDS).toString());
+			stmt.setString(10, azienda.getEmail());
+			stmt.executeUpdate();
+
+			for (DayOfWeek day : azienda.getGiorniDiApertura()) {
+				stmt = connect.prepareStatement("insert into giornilavorativi (giorno,email) values (?,?)");
+				stmt.setString(1, day.toString());
+				stmt.setString(2, azienda.getEmail());
+				stmt.executeUpdate();
+
+			}
+
+			connect.commit();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+			connect.rollback(save);
+			throw new SQLException(e.getMessage());
+		} finally {
+			connect.setAutoCommit(true);
 		}
 
 	}
@@ -113,7 +143,11 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 	public void registrazioneFattorino(AccountFattorino_Bean fattorino) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
+		connect.setAutoCommit(false);
 
+		Savepoint save = connect.setSavepoint();
+
+		try {
 		PreparedStatement stmt = connect
 				.prepareStatement("insert into utenteregistrato(email,pass,tipologia,is_banned) values (?,?,?,?)");
 		stmt.setString(1, fattorino.getEmail());
@@ -143,6 +177,17 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 			stmt.executeUpdate();
 
 		}
+		connect.commit();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+			connect.rollback(save);
+			throw new SQLException(e.getMessage());
+		} finally {
+			connect.setAutoCommit(true);
+		}
+
 	}
 
 	// terminato
@@ -304,7 +349,7 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 
 					List<DayOfWeek> giorniDiApertura = new ArrayList<DayOfWeek>();
 
-					//ERROR HERE!!!
+					// ERROR HERE!!!
 					stmt2 = connect.prepareStatement("select giorno from giornilavorativi where email = ?");
 					stmt2.setString(1, email);
 
@@ -448,7 +493,7 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 		}
 	}
 
-	//terminato
+	// terminato
 	public AccountAzienda_Bean dammiAziendaConOrdine(Long codiceOrdine) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();

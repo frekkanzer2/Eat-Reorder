@@ -29,7 +29,7 @@
 <!--L'AZIENDA DEVE POSSEDERE IN SESSIONE UN PIATTO-->
 <!--IL PIATTO SELEZIONATO PER LA MODIFICA DEVE TROVARSI SOTTO ATTRIBUTO "prodottoSelezionato"-->
 
-<body>
+<body>;
     <jsp:include page="header.jsp"></jsp:include>
     <!--DIV that contains the image and the searchbar-->
 	<div class="center-block">
@@ -39,6 +39,7 @@
             <!--IMAGE ON THE HOME-->
             <img id="image-home" class="img-fluid d-block mx-auto"src="assets/img/LogomarcoIS%20PNG.png">
             <!--FORM INPUTS-->
+            <input type="hidden" name="id" value="<%=piattoSelezionato.getCodice()%>">
 			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"placeholder="Nome del piatto">
 			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="prezzo"placeholder="Prezzo del piatto">
             <input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="img_path"placeholder="URL dell'immagine da caricare">

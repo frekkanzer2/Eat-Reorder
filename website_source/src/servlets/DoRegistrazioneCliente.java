@@ -8,11 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import model.DAO.GestoreUtenteDAOImpl;
+import model.CheckFormato;
 import model.bean.AccountCliente_Bean;
-import model.bean.AccountUtenteRegistrato_Bean;
+import model.dao.GestoreUtenteDAOImpl;
 
 /**
  * Servlet implementation class DoRegistrazioneCliente
@@ -39,40 +38,40 @@ public class DoRegistrazioneCliente extends HttpServlet {
 		String input_password = request.getParameter("password");
 		String input_nome = request.getParameter("nome");
 		String input_cognome = request.getParameter("cognome");
-		// check if input are correct
-		boolean in_email = input_email.matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
-		boolean in_password = input_password.matches("[a-zA-Z0-9]{7,20}");
-		boolean in_nome = input_nome.matches("[a-zA-Z ‘אטלעש]{3,20}");
-		boolean in_cognome = input_cognome.matches("[a-zA-Z ‘אטלעש]{3,20}");
 		// if correct
 		try {
-			if (in_email == true && in_password == true && in_nome == true && in_cognome == true) {
+			//use CheckFormato for test the parameter
+			if (CheckFormato.formatoRegistrazioneCliente(input_email, input_password, input_nome, input_cognome)) {
 				GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
 				// Email already exists
 				if (gestore.controlloEsistenzaMail(input_email)) {
 					String errmessage = ("Email giא presente.");
 					request.setAttribute("msg_error", errmessage);
 					request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
-				}//create new account client 
+				}//create new client account
 				else {
 					AccountCliente_Bean nuovo = new AccountCliente_Bean(input_email, input_password, input_nome,
 							input_cognome);
 					GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
 					utente.registrazioneCliente(nuovo);
-					request.getSession(true).setAttribute("utente", nuovo);
-					response.sendRedirect("Homepage.jsp");
-				}}else{
-					//did not fill in all the fields
-					String errmessage=("Compilare tutti i campi correttamente.");
-					//Redirection to an error page
-					request.setAttribute("msg_error", errmessage);
-		        	request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
-				}}catch (SQLException e) {
-					System.err.println("ERROR DETECTED");
-					e.printStackTrace();
-					response.sendRedirect("ErrorPage.html");
+					String confirmMessage=("Registrazione avvenuta. Puoi loggare.");
+					//Confirm the registration
+					request.setAttribute("msg_confirm", confirmMessage);
+		        	request.getRequestDispatcher("Homepage.jsp").forward(request, response);
 				}
+			}else{
+				//did not fill in all the fields
+				String errmessage=("Compilare tutti i campi correttamente.");
+				//Redirection to an error page
+				request.setAttribute("msg_error", errmessage);
+		        request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
+			}
+		}catch (SQLException e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
 		}
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

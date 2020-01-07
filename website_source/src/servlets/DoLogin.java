@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.DAO.GestoreUtenteDAOImpl;
+import model.dao.GestoreUtenteDAOImpl;
+import model.Carrello;
 import model.bean.AccountUtenteRegistrato_Bean;
 
 /**
@@ -70,6 +71,8 @@ public class DoLogin extends HttpServlet {
 					AccountUtenteRegistrato_Bean loggedUser = userManager.dammiUtente(input_email);
 					HttpSession newSession = request.getSession();
 					newSession.setAttribute("utente", loggedUser);
+					Carrello cart = new Carrello();
+					newSession.setAttribute("carrello", cart);
 					response.sendRedirect("Homepage.jsp");
 			    	return;
 				}

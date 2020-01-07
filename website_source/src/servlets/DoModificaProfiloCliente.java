@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.DAO.GestoreUtenteDAOImpl;
+import model.dao.GestoreUtenteDAOImpl;
+import model.CheckFormato;
 import model.bean.AccountCliente_Bean;
 
 /**
@@ -38,13 +39,9 @@ public class DoModificaProfiloCliente extends HttpServlet {
 				String input_password = request.getParameter("password");
 				String input_nome = request.getParameter("nome");
 				String input_cognome = request.getParameter("cognome");
-				// check if input are correct
-				boolean in_password = input_password.matches("[a-zA-Z0-9]{7,20}");
-				boolean in_nome = input_nome.matches("[a-zA-Z ‘אטלעש]{3,20}");
-				boolean in_cognome = input_cognome.matches("[a-zA-Z ‘אטלעש]{3,20}");
 				try {
-					//if all input are ok
-					if (in_password == true && in_nome == true && in_cognome == true) {
+					//use CheckFormato for test the parameter
+					if (CheckFormato.formatoModificaCliente(input_nome, input_cognome, input_password)) {
 						AccountCliente_Bean nuovo = new AccountCliente_Bean(email, input_password, input_nome, input_cognome);
 						GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
 						utente.aggiornaCliente(nuovo);
@@ -55,6 +52,7 @@ public class DoModificaProfiloCliente extends HttpServlet {
 						String errmessage = ("Compilare tutti i campi correttamente.");
 						// Redirection to an error page
 						request.setAttribute("msg_error", errmessage);
+						//DA CAMBIARE REDIRECT AL PROFILO CLIENTE
 						request.getRequestDispatcher("ModificaProfiloCliente.jsp").forward(request, response);
 					}
 				} catch (SQLException e) {

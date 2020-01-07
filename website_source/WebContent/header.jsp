@@ -28,7 +28,7 @@
 			%>
 			<!--Span that contains buttons for Cliente-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
-				<a class="btn header-button" role="button" href="#">Profilo</a> 
+				<a class="btn header-button" role="button" href="VisualizzaProfilo.jsp">Profilo</a> 
 				<a class="btn header-button" role="button" href="ModificaProfiloCliente.jsp">Modifica Profilo</a>
 				<a class="btn header-button" role="button" href="#">Carrello</a>
 				<a class="btn header-button" role="button" href="DoLogout">Logout</a>
@@ -38,10 +38,10 @@
 			%>
 			<!--Span that contains buttons for Azienda-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
-				<a class="btn header-button-smaller" role="button" href="#">Profilo</a>
+				<a class="btn header-button-smaller" role="button" href="VisualizzaProfilo.jsp">Profilo</a>
 				<a class="btn header-button-smaller" role="button" href="ModificaProfiloAzienda.jsp">Modifica Profilo</a>
 				<a class="btn header-button-smaller" role="button" href="#">Listino</a>
-				<a class="btn header-button-smaller" role="button" href="#">Inserisci Prodotto</a>
+				<a class="btn header-button-smaller" role="button" href="NuovoProdotto.jsp">Inserisci Prodotto</a>
 				<a class="btn header-button-smaller" role="button" href="DoLogout">Logout</a>
 			</span>
 			<%
@@ -49,7 +49,7 @@
 			%>
 			<!--Span that contains buttons for Fattorino-->
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
-				<a class="btn header-button" role="button" href="#">Profilo</a>
+				<a class="btn header-button" role="button" href="VisualizzaProfilo.jsp">Profilo</a>
 				<a class="btn header-button" role="button" href="ModificaProfiloFattorino.jsp">Modifica Profilo</a>
 				<a class="btn header-button" role="button" href="DoLogout">Logout</a>
 			</span>

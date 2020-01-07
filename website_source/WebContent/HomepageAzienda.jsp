@@ -26,6 +26,7 @@
 </head>
 <!--BODY HERE-->
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<!--DIV that contains the image and the searchbar-->
 	<div>
 		<!--IMAGE ON THE HOME-->

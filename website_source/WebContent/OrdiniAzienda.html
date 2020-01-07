@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!--Viewport for toggle-->
+<meta charset="utf-8">
+<meta name="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--Title-->
+<title>Listino</title>
+<!--Preset imports-->
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+<!--Custom imports-->
+<link rel="stylesheet" href="css/eat-reorder-style.css">
+</head>
+
+<body>
+    <!--External container-->
+    <div class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
+        <div class="registration-title">Ordini di </div> <!--REFACTORIZZARE CON JSP INSERENDO IL NOME DELL'AZIENDA-->
+		<div class="registration-description">Visualizza le ordinazioni per la tua azienda</div>
+        <img class="std-img center-block" src="assets/img/LogomarcoIS%20PNG.png">
+
+        <!--HERE STARTS THE CARD OF THE ORDER-->
+
+        <!--CARD OF THE ORDER-->
+        <div class="bg-yellow custom-border-red border-rounded-small padding-medium" style="overflow: auto;">
+            <div id=""><!--Insert into ID the id of the product via scriptlet--></div>
+            <div class="row">
+                <!--First column contains ID and price-->
+                <div class="col-sm-7">
+                    <p id="order-id" class="title-in-card">
+                        Order 056123 <!--Sample ID, use scriptlet also here!-->
+                    </p>
+                    <p id="order-totalprice" class="description-in-card">
+                        $25.80 <!--Sample PRICE, use scriptlet also here!-->
+                    </p>
+                </div>
+                <!--Second column that contains notes for status of the order-->
+                <div class="col-sm-5">
+                    <p id="str-do-not-edit" class="description-in-card-text">
+                        Stato dell'ordine <!--DO NOT CHANGE WITH SCRIPTLET-->
+                    </p>
+                    <p id="order-status" class="description-in-card-text">
+                        Preparazione <!--Sample STATUS, use scriptlet also here!-->
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!--END OF ORDER'S CARD-->
+
+    </div>
+
+</body>
+
+</html>

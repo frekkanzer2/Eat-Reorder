@@ -355,6 +355,16 @@
     color: var(--color_white);
 }
 
+.description-in-card-text{
+    display: inline-block;
+    width: 100%;
+    color: var(--preset_color_red);
+    font-size: 18px;
+    margin: 0px;
+    text-align: end;
+    margin-top: 5px;
+}
+
 /*******************TAGS*******************/
 
 HR{
@@ -697,6 +707,16 @@ A:hover, A:link A:visited, A:active{
         max-width: 170px;
     }
 
+    .description-in-card-text{
+        display: inline-block;
+        width: 49%;
+        color: var(--preset_color_red);
+        font-size: 18px;
+        margin: 0px;
+        text-align: start;
+        margin-top: 0px;
+    }
+
 }
 
 @media (max-width: 525px){
@@ -892,6 +912,16 @@ A:hover, A:link A:visited, A:active{
         border: none;
         text-align: center;
         max-width: 170px;
+    }
+
+    .description-in-card-text{
+        display: inline-block;
+        width: 100%;
+        color: var(--preset_color_red);
+        font-size: 18px;
+        margin: 0px;
+        text-align: start;
+        margin-top: 0px;
     }
     
 }

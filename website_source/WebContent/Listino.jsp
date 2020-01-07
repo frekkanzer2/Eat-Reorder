@@ -1,3 +1,12 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="model.bean.AccountAzienda_Bean"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%!AccountUtenteRegistrato_Bean utente = null;%>
+<%
+	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+	if (utente==null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) response.sendRedirect("Homepage.jsp");
+%>
 <!DOCTYPE html>
 <html>
 
@@ -14,6 +23,8 @@
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
+<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
+<%@page import="model.bean.Prodotto_Bean"%>
 </head>
 
 <body>
@@ -22,6 +33,13 @@
         <div class="registration-title">Listino di </div> <!--REFACTORIZZARE CON JSP INSERENDO IL NOME DELL'AZIENDA-->
 		<div class="registration-description">Gestisci comodamente i prodotti della tua azienda</div>
         <img class="std-img center-block" src="assets/img/LogomarcoIS%20PNG.png">
+
+		<%!AccountAzienda_Bean azienda = null;%>
+		<%!List<String> productList = new ArrayList<String>();%>
+		<%
+			azienda = (AccountAzienda_Bean) utente;
+			productList.addAll(...)
+		%>
 
         <!--HERE STARTS THE CARD OF THE PRODUCT-->
 

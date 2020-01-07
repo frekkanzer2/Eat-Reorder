@@ -28,7 +28,7 @@
     <!--DIV that contains the image and the searchbar-->
 	<div class="center-block">
 		<!--Form for the research-->
-		<form class="custom-border-red generic-form-style partial-container-form-floating" action="">
+		<form class="custom-border-red generic-form-style partial-container-form-floating" method="POST" action="DoInserimentoProdotto">
             <div class="registration-title">Inserisci un nuovo piatto!</div>
             <!--IMAGE ON THE HOME-->
             <img id="image-home" class="img-fluid d-block mx-auto"src="assets/img/LogomarcoIS%20PNG.png">

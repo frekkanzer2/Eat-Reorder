@@ -46,7 +46,7 @@ public class DoInserimentoProdotto extends HttpServlet {
 		String in_descr=request.getParameter("descrizione");
 		try {
 			//use CheckFormato for test the parameter
-			if(CheckFormato.formatoInserisciProdotto(in_prodotto, in_descr, costo)) {
+			if(CheckFormato.checkProdotto(in_prodotto, path, in_descr, costo)) {
 				//create new Product
 				Prodotto_Bean nuovo=new Prodotto_Bean();
 				nuovo.setAzienda(utenteloggato);

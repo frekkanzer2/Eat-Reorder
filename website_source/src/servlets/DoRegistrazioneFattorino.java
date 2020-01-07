@@ -53,9 +53,10 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 			if(value!=null)
 				giorni.add(DayOfWeek.valueOf(value));
 		}
+		AccountFattorino_Bean nuovo=new AccountFattorino_Bean(input_email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia, input_startime, input_endtime, giorni);
 		try {
 			//use CheckFormato for test the parameter
-			if(CheckFormato.formatoRegistrazioneFattorino(input_email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia)) {
+			if(CheckFormato.checkFattorino(nuovo)) {
 				GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
 				// Email already exists
 				if (gestore.controllaEsistenzaAccount(input_email,input_password)) {
@@ -64,7 +65,6 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 					request.getRequestDispatcher("RegistrazioneFattorino.jsp").forward(request, response);
 				}//create new delivery man account
 				else {
-					AccountFattorino_Bean nuovo=new AccountFattorino_Bean(input_email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia, input_startime, input_endtime, giorni);
 					GestoreUtenteDAOImpl utente=new GestoreUtenteDAOImpl();
 					utente.registrazioneFattorino(nuovo);
 					String confirmMessage=("Registrazione avvenuta. Puoi loggare.");

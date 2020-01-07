@@ -38,9 +38,11 @@ public class DoRegistrazioneCliente extends HttpServlet {
 		String input_password = request.getParameter("password");
 		String input_nome = request.getParameter("nome");
 		String input_cognome = request.getParameter("cognome");
+		AccountCliente_Bean nuovo = new AccountCliente_Bean(input_email, input_password, input_nome,
+				input_cognome);
 		try {
 			//use CheckFormato for test the parameter
-			if (CheckFormato.formatoRegistrazioneCliente(input_email, input_password, input_nome, input_cognome)) {
+			if (CheckFormato.checkCliente(nuovo)) {
 				GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
 				// Email already exists
 				if (gestore.controlloEsistenzaMail(input_email)) {
@@ -49,8 +51,6 @@ public class DoRegistrazioneCliente extends HttpServlet {
 					request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
 				}//create new client account
 				else {
-					AccountCliente_Bean nuovo = new AccountCliente_Bean(input_email, input_password, input_nome,
-							input_cognome);
 					GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
 					utente.registrazioneCliente(nuovo);
 					String confirmMessage=("Registrazione avvenuta. Puoi loggare.");

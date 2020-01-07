@@ -25,7 +25,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--Form for registration-->
 	<div class="container-form-floating">
-		<form class="custom-border-red login-form-style"method="post"action="DoRegistrazioneFattorino">
+		<form class="custom-border-red login-form-style"method="post"action="DoRegistrazioneFattorino"onsubmit="return checkRegistration();">
 			<!--Invisible title-->
 			<h2 class="sr-only">Login Form</h2>
 			<div class="registration-title">Benvenuto in Eat&amp;Reorder</div>
@@ -34,13 +34,13 @@
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email"pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"placeholder="Nome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="cognome"name="cognome"placeholder="Cognome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"placeholder="Citt&agrave di consegna"pattern="[a-zA-Z ‘àèìòù]{4,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia" name="provincia"placeholder="Provincia di consegna" pattern="[a-zA-Z]{2}">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"id="email"placeholder="Email"pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"id="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"id="nome"placeholder="Nome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="cognome"name="cognome"id="cognome"placeholder="Cognome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"id="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"id="citta"placeholder="Citt&agrave di consegna"pattern="[a-zA-Z ‘àèìòù]{4,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia" name="provincia"id="provincia"placeholder="Provincia di consegna" pattern="[a-zA-Z]{2}">
 				<hr />
 				<!--List of checkboxes-->
 				<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Giorni lavorativi</div>
@@ -93,5 +93,21 @@
 	<!-- Script -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function checkRegistration() {
+			var email = document.getElementById("email");
+			var password = document.getElementById("password");
+			var nome = document.getElementById("nome");
+			var cognome = document.getElementById("cognome");
+			var telefono=document.getElementById("telefono");
+			var citta=document.getElementById("citta");
+			var provincia=document.getElementById("provincia");
+			if (email.value == "" || password.value == "" || nome.value == ""||nome.value == ""|| telefono.value == ""||citta==""||provincia=="") {
+				alert("ATTENZIONE! Errore nella validazione dei campi!")
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>

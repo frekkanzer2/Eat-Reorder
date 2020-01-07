@@ -26,7 +26,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--Form for registration-->
 	<div class="container-form-floating">
-		<form class="custom-border-red login-form-style" method="post"action="DoRegistrazioneAzienda">
+		<form class="custom-border-red login-form-style" onsubmit="return checkRegistration();"method="post"action="DoRegistrazioneAzienda">
 			<!--Invisible title-->
 			<h2 class="sr-only">Login Form</h2>
 			<div class="registration-title">Benvenuto in Eat&amp;Reorder</div>
@@ -44,15 +44,15 @@
 				</p>
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email"pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"placeholder="Nome dell'attivit&agrave"pattern="[a-zA-Z0-9 ‘àèìòù]{3,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="indirizzo"name="indirizzo"placeholder="Indirizzo"pattern="[a-zA-Z ‘àèìòù]{3,27}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="civico"name="civico"placeholder="Numero civico"pattern="[0-9]{1,3}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"placeholder="Citt&agrave"pattern="[a-zA-Z ‘àèìòù]{4,15}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia"name="provincia"placeholder="Provincia"pattern="[a-zA-Z]{2}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="iva"name="iva"placeholder="Partita IVA"pattern="[0-9]{11}">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"id="email"placeholder="Email"pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"id="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"id="nome"placeholder="Nome dell'attivit&agrave"pattern="[a-zA-Z0-9 ‘àèìòù]{3,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"id="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="indirizzo"name="indirizzo"id="indirizzo"placeholder="Indirizzo"pattern="[a-zA-Z ‘àèìòù]{3,27}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="civico"name="civico"id="civico"placeholder="Numero civico"pattern="[0-9]{1,3}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"id="civico"placeholder="Citt&agrave"pattern="[a-zA-Z ‘àèìòù]{4,15}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia"name="provincia"id="civico"placeholder="Provincia"pattern="[a-zA-Z]{2}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="iva"name="iva"id="iva"placeholder="Partita IVA"pattern="[0-9]{11}">
 				<hr />
 				<!--List of checkboxes-->
 				<div class="custom-text-centered text-red"style="margin-top:-6px; margin-bottom:6px;">Giorni lavorativi</div>
@@ -104,5 +104,23 @@
 	<!-- Script -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function checkRegistration() {
+			var email = document.getElementById("email");
+			var password = document.getElementById("password");
+			var nome = document.getElementById("nome");
+			var telefono=document.getElementById("telefono");
+			var indirizzo=document.getElementById("indirizzo");
+			var civico=document.getElementById("civico");
+			var citta=document.getElementById("citta");
+			var provincia=document.getElementById("provincia");
+			var iva=document.getElementById("iva");
+			if (email.value == "" || password.value == "" || nome.value == ""|| telefono.value == ""||indirizzo==""||civico==""||citta==""||provincia==""||iva=="") {
+				alert("ATTENZIONE! Errore nella validazione dei campi!")
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>

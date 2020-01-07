@@ -59,12 +59,14 @@ public class DoModificaProfiloFattorino extends HttpServlet {
 		try {
 			//use CheckFormato for test the parameter
 			if(CheckFormato.formatoRegistrazioneFattorino(email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia)) {
+				System.err.println("1");
 				GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
 				AccountFattorino_Bean nuovo=new AccountFattorino_Bean(email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia, input_startime, input_endtime, giorni);
 				//Confirm the changes
 				utente.aggiornaFattorino(nuovo);
 	        	request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 				}else{
+					System.err.println("2");
 					//did not fill in all the fields
 					String errmessage=("Compilare tutti i campi correttamente.");
 					//Redirection to an error page

@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
+<%!AccountCliente_Bean cliente = null;%>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
 	if (utente == null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) response.sendRedirect("Homepage.jsp");
+	cliente = (AccountCliente_Bean) utente;
 %>
 <!DOCTYPE html>
 <html>
@@ -19,6 +21,7 @@
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
+<%@page import="model.bean.AccountCliente_Bean"%>
 </head>
 
 <!--Start of body-->
@@ -32,9 +35,9 @@
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome" name="nome" placeholder="Nome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="cognome" name="cognome" placeholder="Cognome"pattern="[a-zA-Z ‘àèìòù]{3,20}"> 
-				<input class="custom-border-red border-rounded-small form-control input-style-login" type="password" name="password" placeholder="Password" id="password" pattern="[a-zA-Z0-9]{7,20}">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="nome" placeholder="Nome"pattern="[a-zA-Z ‘àèìòù]{3,20}"  value="<%=cliente.getNome()%>">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="cognome" placeholder="Cognome"pattern="[a-zA-Z ‘àèìòù]{3,20}" value="<%=cliente.getCognome()%>"> 
+				<input class="custom-border-red border-rounded-small form-control input-style-login" type="password" name="password" placeholder="Password" id="password" pattern="[a-zA-Z0-9]{7,20}"  value="<%=cliente.getPassword()%>">
 				<p class="errorText" style="margin-top: 20px;">
 					<% if (request.getAttribute("msg_error") != null){ %>
 						<%=request.getAttribute("msg_error") %>

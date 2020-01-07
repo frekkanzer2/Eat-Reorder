@@ -45,14 +45,12 @@ public class DoModificaProfiloCliente extends HttpServlet {
 						AccountCliente_Bean nuovo = new AccountCliente_Bean(email, input_password, input_nome, input_cognome);
 						GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
 						utente.aggiornaCliente(nuovo);
-						request.setAttribute("utente",nuovo);
-						response.sendRedirect("Homepage.jsp");
+						request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 					} else {
 						// did not fill in all the fields
 						String errmessage = ("Compilare tutti i campi correttamente.");
 						// Redirection to an error page
 						request.setAttribute("msg_error", errmessage);
-						//DA CAMBIARE REDIRECT AL PROFILO CLIENTE
 						request.getRequestDispatcher("ModificaProfiloCliente.jsp").forward(request, response);
 					}
 				} catch (SQLException e) {

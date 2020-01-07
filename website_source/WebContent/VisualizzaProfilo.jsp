@@ -91,7 +91,7 @@
 			<div class="registration-description">Nome: <%= utenteAzienda.getNome() %></div>
 			<div class="registration-description">Telefono: <%= utenteAzienda.getTelefono() %></div>
 			<div class="registration-description">Indirizzo: <%= utenteAzienda.getVia() %>, <%= utenteAzienda.getNumeroCivico() %></div>
-			<div class="registration-description">Città: <%= utenteAzienda.getCitta() %></div>
+			<div class="registration-description">Citt&agrave: <%= utenteAzienda.getCitta() %></div>
 			<div class="registration-description">Provincia: <%= utenteAzienda.getProvincia() %></div>
 			<div class="registration-description">Partita IVA: <%= utenteAzienda.getPartitaIva() %></div>
 			<div class="registration-description">Email: <%= utenteAzienda.getEmail() %></div>
@@ -105,7 +105,7 @@
 			<div class="registration-description">Nome: <%= utenteFattorino.getNome() %></div>
 			<div class="registration-description">Cognome: <%= utenteFattorino.getCognome() %></div>
 			<div class="registration-description">Telefono: <%= utenteFattorino.getTelefono() %></div>
-			<div class="registration-description">Città: <%= utenteFattorino.getCittaConsegna() %></div>
+			<div class="registration-description">Citt&agrave: <%= utenteFattorino.getCittaConsegna() %></div>
 			<div class="registration-description">Provincia: <%= utenteFattorino.getProvinciaConsegna() %></div>
 			<%
 				}

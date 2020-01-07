@@ -37,11 +37,11 @@
 			<div class="form-group">
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email"pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"placeholder="Nome dell'attività"pattern="[a-zA-Z0-9 ‘àèìòù]{3,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"placeholder="Nome dell'attivit&agrave"pattern="[a-zA-Z0-9 ‘àèìòù]{3,20}">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="indirizzo"name="indirizzo"placeholder="Indirizzo"pattern="[a-zA-Z ‘àèìòù]{3,27}">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="civico"name="civico"placeholder="Numero civico"pattern="[0-9]{1,3}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"placeholder="Città"pattern="[a-zA-Z ‘àèìòù]{4,15}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"placeholder="Citt&agrave"pattern="[a-zA-Z ‘àèìòù]{4,15}">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia"name="provincia"placeholder="Provincia"pattern="[a-zA-Z]{2}">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="iva"name="iva"placeholder="Partita IVA"pattern="[0-9]{11}">
 				<hr />
@@ -51,21 +51,21 @@
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day1">
-						<label class="form-check-label"for="checkbox-day1">Lunedì</label><br>
+						<label class="form-check-label"for="checkbox-day1">Luned&igrave</label><br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox" id="checkbox-day2">
-						<label class="form-check-label"for="checkbox-day2">Martedì</label><br>
+						<label class="form-check-label"for="checkbox-day2">Marted&igrave</label><br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox" id="checkbox-day3">
-						<label class="form-check-label"for="checkbox-day3">Mercoledì</label><br>
+						<label class="form-check-label"for="checkbox-day3">Mercoled&igrave</label><br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day4">
-						<label class="form-check-label"for="checkbox-day4">Giovedì</label>
+						<label class="form-check-label"for="checkbox-day4">Gioved&igrave</label>
 					</div>
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day5">
-						<label class="form-check-label"for="checkbox-day5">Venerdì</label><br>
+						<label class="form-check-label"for="checkbox-day5">Venerd&igrave</label><br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6">
 						<label class="form-check-label"for="checkbox-day6">Sabato</label><br>

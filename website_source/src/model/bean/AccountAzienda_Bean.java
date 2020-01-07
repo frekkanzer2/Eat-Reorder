@@ -103,6 +103,15 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 	}
 
 	/**
+	 * @return Map dei prodotti. 
+	 */
+	public Map<Long, Prodotto_Bean> getProdotti() {
+		return prodotti;
+	}
+
+	
+
+	/**
 	 * Metodo che consente di ricevere in output un prodotto appartenente al listino
 	 * dell'azienda. Il parametro in input è il codice del prodotto.
 	 * 

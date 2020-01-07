@@ -303,6 +303,7 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 
 					List<DayOfWeek> giorniDiApertura = new ArrayList<DayOfWeek>();
 
+					//ERROR HERE!!!
 					stmt2 = connect.prepareStatement("select giorno from giornilavorativi where email = ?");
 					stmt2.setString(1, email);
 

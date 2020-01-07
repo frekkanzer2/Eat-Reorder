@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -50,10 +51,10 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 				String input_citta=request.getParameter("citta");
 				String input_provincia=request.getParameter("provincia");
 				String input_iva=request.getParameter("iva");
-				LocalTime input_startime=LocalTime.parse(request.getParameter("start_time"));
-				LocalTime input_endtime=LocalTime.parse(request.getParameter("end_time"));
+				LocalTime input_startime=LocalTime.parse(request.getParameter("start-time"));
+				LocalTime input_endtime=LocalTime.parse(request.getParameter("end-time"));
 				String [] day=request.getParameterValues("checkbox");
-				List<DayOfWeek> giorni=new List<DayOfWeek>();
+				List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
 				for(int i=0;i<day.length;i++) {
 					String value=request.getParameter(day[i]);
 					if(value!=null)
@@ -71,8 +72,16 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 							request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
 						}//create new account client 
 						else {
-							
-						}}else{
+							AccountAzienda_Bean newAccount = new AccountAzienda_Bean(input_email, input_password, input_nome, input_indirizzo,
+									input_Civico, input_citta, input_provincia, input_telefono, input_iva, input_startime, input_endtime, giorni);
+							GestoreUtenteDAOImpl userManager = new GestoreUtenteDAOImpl();
+							userManager.registrazioneAzienda(newAccount);
+							String confirmMessage=("Registrazione avvenuta. Puoi loggare.");
+							//Confirm the registration
+							request.setAttribute("msg_confirm", confirmMessage);
+				        	request.getRequestDispatcher("Homepage.jsp").forward(request, response);
+						}
+					}else{
 							//did not fill in all the fields
 							String errmessage=("Compilare tutti i campi correttamente.");
 							//Redirection to an error page

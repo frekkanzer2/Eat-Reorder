@@ -89,7 +89,7 @@
 }
 
 .std-img{
-	width = 50%;
+	width: 50%;
 }
 
 .header-button{
@@ -194,6 +194,22 @@
     margin-left: -200px!important;
 }
 
+.generic-form-style{
+    background-color: var(--preset_color_yellow_secondary)!important;
+    opacity: 1;
+    filter: blur(0px);
+    margin-right: 0px!important;
+    width: 800px;
+    border-radius: 5px;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 25px;
+    position: absolute;
+    left: 50%;
+    margin-left: -400px!important;
+}
+
 .container-form-floating{
     margin-top:50px;
     margin-bottom:50px;
@@ -243,6 +259,10 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.generic-form{
+    width:70%;
 }
 
 /*******************TAGS*******************/
@@ -392,8 +412,12 @@ A:hover, A:link A:visited, A:active{
     }
     
     .std-img{
-		width = 70%;
-	}
+		width: 70%;
+    }
+    
+    .generic-form{
+        width:85%;
+    }
 
 }
 
@@ -478,7 +502,7 @@ A:hover, A:link A:visited, A:active{
     }
     
     .std-img{
-		width = 90%;
+		width: 90%;
 	}
     
 }
@@ -536,6 +560,10 @@ A:hover, A:link A:visited, A:active{
     }
 
     #ban-form{
+        width:100%;
+    }
+
+    .generic-form{
         width:100%;
     }
 

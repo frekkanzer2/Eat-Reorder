@@ -26,7 +26,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--Form for registration-->
 	<div class="container-form-floating">
-		<form class="custom-border-red login-form-style" method="post"action="RegistrazioneAziendaServlet">
+		<form class="custom-border-red login-form-style" method="post"action="DoRegistrazioneAzienda">
 			<!--Invisible title-->
 			<h2 class="sr-only">Login Form</h2>
 			<div class="registration-title">Benvenuto in Eat&amp;Reorder</div>
@@ -79,11 +79,11 @@
 				<div class="row" style="width:100%;margin:0;padding:0;">
 					<div class="col-sm-6">
 						<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Orario di apertura</div>
-						<input type="time"id="start-time"class="center-block custom-border-red border-rounded-medium"name="start-time"required>
+						<input type="time"id="start-time"class="center-block custom-border-red border-rounded-medium" name="start-time" value="12:00" required>
 					</div>
 					<div class="col-sm-6">
 						<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Orario di chiusura</div>
-						<input type="time"id="end-time"class="center-block custom-border-red border-rounded-medium"name="end-time" required>
+						<input type="time"id="end-time"class="center-block custom-border-red border-rounded-medium" name="end-time" value="15:00" required>
 					</div>
 				</div>
 				<hr />

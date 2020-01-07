@@ -29,7 +29,7 @@
 <!--L'AZIENDA DEVE POSSEDERE IN SESSIONE UN PIATTO-->
 <!--IL PIATTO SELEZIONATO PER LA MODIFICA DEVE TROVARSI SOTTO ATTRIBUTO "prodottoSelezionato"-->
 
-<body>;
+<body>
     <jsp:include page="header.jsp"></jsp:include>
     <!--DIV that contains the image and the searchbar-->
 	<div class="center-block">
@@ -40,10 +40,10 @@
             <img id="image-home" class="img-fluid d-block mx-auto"src="assets/img/LogomarcoIS%20PNG.png">
             <!--FORM INPUTS-->
             <input type="hidden" name="id" value="<%=piattoSelezionato.getCodice()%>">
-			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"placeholder="Nome del piatto">
-			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="prezzo"placeholder="Prezzo del piatto">
-            <input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="img_path"placeholder="URL dell'immagine da caricare">
-            <textarea type="text"class="custom-border-red border-rounded-small form-control input-style-login"id="description"name="description"rows="3"placeholder="Descrizione del piatto"></textarea>
+			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"placeholder="Nome del piatto" value="<%=piattoSelezionato.getNome()%>">
+			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="prezzo"placeholder="Prezzo del piatto" value="<%=piattoSelezionato.getPrezzo().toString()%>">
+            <input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="img_path"placeholder="URL dell'immagine da caricare" value="<%=piattoSelezionato.getImmagine().toString()%>">
+            <textarea type="text"class="custom-border-red border-rounded-small form-control input-style-login"id="description"name="description"rows="3"placeholder="Descrizione del piatto"  value="<%=piattoSelezionato.getDescrizione()%>"></textarea>
             <button class="btn form-list-button bg-red border-rounded-small"type="submit">Conferma</button>
 		</form>
 	</div>

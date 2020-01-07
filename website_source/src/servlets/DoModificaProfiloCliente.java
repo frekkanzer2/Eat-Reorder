@@ -35,17 +35,18 @@ public class DoModificaProfiloCliente extends HttpServlet {
 		// Getting data from ModificaProfiloCliente.jsp
 				HttpSession session = request.getSession();
 				AccountCliente_Bean utenteloggato = (AccountCliente_Bean)session.getAttribute("utente");
-				String email=utenteloggato.getEmail();
 				String input_password = request.getParameter("password");
 				String input_nome = request.getParameter("nome");
 				String input_cognome = request.getParameter("cognome");
 				try {
 					//use CheckFormato for test the parameter
 					if (CheckFormato.formatoModificaCliente(input_nome, input_cognome, input_password)) {
-						AccountCliente_Bean nuovo = new AccountCliente_Bean(email, input_password, input_nome, input_cognome);
 						GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
+						utenteloggato.setNome(input_nome);
+						utenteloggato.setCognome(input_cognome);
+						utenteloggato.setPassword(input_password);
 						//Confirm the changes
-						utente.aggiornaCliente(nuovo);
+						utente.aggiornaCliente(utenteloggato);
 						request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 					} else {
 						// did not fill in all the fields

@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
+<%!AccountFattorino_Bean fattorino = null;%>
 <%
 	utente=(AccountUtenteRegistrato_Bean) session.getAttribute("utente");
 	if(utente==null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) response.sendRedirect("Homepage.jsp");
+	fattorino = (AccountFattorino_Bean) utente;
 %>
 <!DOCTYPE html>
 <html>
@@ -19,6 +21,7 @@
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
+<%@page import="model.bean.AccountFattorino_Bean"%>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -40,12 +43,12 @@
 				</p>
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"placeholder="Nome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="cognome"name="cognome"placeholder="Cognome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"placeholder="Citt&agrave di consegna"pattern="[a-zA-Z ‘àèìòù]{4,15}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia"name="provincia"placeholder="Provincia di consegna"pattern="[a-zA-Z]{2}">
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"placeholder="Nome"pattern="[a-zA-Z ‘àèìòù]{3,20}" value="<%=fattorino.getNome()%>">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="cognome"name="cognome"placeholder="Cognome"pattern="[a-zA-Z ‘àèìòù]{3,20}" value="<%=fattorino.getCognome()%>">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}" value="<%=fattorino.getTelefono()%>">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"placeholder="Citt&agrave di consegna"pattern="[a-zA-Z ‘àèìòù]{4,15}" value="<%=fattorino.getCittaConsegna()%>">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia"name="provincia"placeholder="Provincia di consegna"pattern="[a-zA-Z]{2}" value="<%=fattorino.getProvinciaConsegna()%>">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}" value="<%=fattorino.getPassword()%>">
 				<hr />
 				<!--List of checkboxes-->
 				<div class="custom-text-centered text-red"style="margin-top:-6px; margin-bottom:6px;">Giorni lavorativi</div>
@@ -69,7 +72,7 @@
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day5">
 						<label class="form-check-label"for="checkbox-day5">Venerd&igrave</label> <br>
 						<!--New day-->
-						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6" checked>
 						<label class="form-check-label"for="checkbox-day6">Sabato</label> <br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day7">

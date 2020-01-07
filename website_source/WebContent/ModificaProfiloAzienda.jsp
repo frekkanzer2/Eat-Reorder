@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
+<%!AccountAzienda_Bean azienda = null;%>
 <%
 	utente=(AccountUtenteRegistrato_Bean)session.getAttribute("utente");
 	if(utente==null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) response.sendRedirect("Homepage.jsp");
+	azienda = (AccountAzienda_Bean) utente;
 %>
 <!DOCTYPE html>
 <html>
@@ -19,6 +21,7 @@
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
+<%@page import="model.bean.AccountAzienda_Bean"%>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -40,13 +43,13 @@
 				</p>
 		<!--Form group that contains fields and confirm button-->
 		<div class="form-group">
-			<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"placeholder="Nome dell'attivit&agrave"pattern="[a-zA-Z0-9 ‘àèìòù]{3,20}">
-			<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
-			<input class="custom-border-red border-rounded-small form-control input-style-login"type="indirizzo"name="indirizzo"placeholder="Indirizzo"pattern="[a-zA-Z ‘àèìòù]{3,27}">
-			<input class="custom-border-red border-rounded-small form-control input-style-login"type="civico"name="civico"placeholder="Numero civico"pattern="[0-9]{1,3}">
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta" name="citta" placeholder="Citt&agrave"pattern="[a-zA-Z ‘àèìòù]{4,15}">
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia" name="provincia" placeholder="Provincia"pattern="[a-zA-Z]{2}">
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
+			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"placeholder="Nome dell'attivit&agrave"pattern="[a-zA-Z0-9 ‘àèìòù]{3,20}" value="<%=azienda.getNome()%>">
+			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}" value="<%=azienda.getTelefono()%>">
+			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="indirizzo"placeholder="Indirizzo"pattern="[a-zA-Z ‘àèìòù]{3,27}" value="<%=azienda.getVia()%>">
+			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="civico"placeholder="Numero civico"pattern="[0-9]{1,3}" value="<%=azienda.getNumeroCivico()%>">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="citta" placeholder="Citt&agrave"pattern="[a-zA-Z ‘àèìòù]{4,15}" value="<%=azienda.getCitta()%>">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="provincia" placeholder="Provincia"pattern="[a-zA-Z]{2}" value="<%=azienda.getProvincia()%>">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}" value="<%=azienda.getPassword()%>">
 			<hr />
 			<!--List of checkboxes-->
 			<div class="custom-text-centered text-red"style="margin-top: -6px; margin-bottom: 6px;">Giorni lavorativi</div>
@@ -70,7 +73,7 @@
 					<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day5">
 					<label class="form-check-label"for="checkbox-day5">Venerd&igrave</label><br>
 					<!--New day-->
-					<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6">
+					<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6" checked>
 					<label class="form-check-label"for="checkbox-day6">Sabato</label><br>
 					<!--New day-->
 					<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day7">
@@ -82,11 +85,11 @@
 			<div class="row" style="width: 100%; margin: 0; padding: 0;">
 				<div class="col-sm-6">
 					<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Orario di apertura</div>
-					<input type="time"id="start-time"class="center-block custom-border-red border-rounded-medium"name="start-time"required>
+					<input type="time"id="start-time"class="center-block custom-border-red border-rounded-medium"name="start-time"value="12:00"required>
 				</div>
 				<div class="col-sm-6">
-					<div class="custom-text-centered text-red"style="margin-top;-6px;margin-bottom:6px;">Orario di chiusura</div>
-					<input type="time"id="end-time"class="center-block custom-border-red border-rounded-medium"name="end-time"required>
+					<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Orario di chiusura</div>
+					<input type="time"id="end-time"class="center-block custom-border-red border-rounded-medium"name="end-time"value="15:00"required>
 				</div>
 			</div>
 			<hr />

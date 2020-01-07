@@ -36,11 +36,7 @@
 		<div class="registration-description">Gestisci comodamente i prodotti della tua azienda</div>
         <img class="std-img center-block" src="assets/img/LogomarcoIS%20PNG.png">
 
-		<%!AccountAzienda_Bean azienda = null;%>
-		<%
-			azienda = (AccountAzienda_Bean) utente;
-			
-		%>
+		<%!AccountAzienda_Bean azienda = (AccountAzienda_Bean) utente;%>
 		<%!Collection<Prodotto_Bean> productList = azienda.getProdotti().values();%>
 
         <!--HERE STARTS THE CARD OF THE PRODUCT-->

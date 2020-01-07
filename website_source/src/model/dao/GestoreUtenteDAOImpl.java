@@ -124,15 +124,16 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 		stmt.executeUpdate();
 
 		stmt = connect.prepareStatement(
-				"insert into Fattorino(nome, cognome, telefono, citta_consegna, orario_inizio, orario_fine, email) values (?,?,?,?,?,?,?)");
+				"insert into Fattorino(nome, cognome, telefono, citta_consegna, provincia , orario_inizio, orario_fine, email) values (?,?,?,?,?,?,?,?)");
 
 		stmt.setString(1, fattorino.getNome());
 		stmt.setString(2, fattorino.getCognome());
 		stmt.setString(3, fattorino.getTelefono());
 		stmt.setString(4, fattorino.getCittaConsegna());
-		stmt.setString(5, fattorino.getInizioConsegne().truncatedTo(ChronoUnit.SECONDS).toString());
-		stmt.setString(6, fattorino.getFineConsegne().truncatedTo(ChronoUnit.SECONDS).toString());
-		stmt.setString(7, fattorino.getEmail());
+		stmt.setString(5, fattorino.getProvinciaConsegna());
+		stmt.setString(6, fattorino.getInizioConsegne().truncatedTo(ChronoUnit.SECONDS).toString());
+		stmt.setString(7, fattorino.getFineConsegne().truncatedTo(ChronoUnit.SECONDS).toString());
+		stmt.setString(8, fattorino.getEmail());
 		stmt.executeUpdate();
 
 		for (DayOfWeek day : fattorino.getGiorniDiConsegna()) {

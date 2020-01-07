@@ -37,9 +37,9 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Getting data from ModificaProfiloAzienda.jsp
 		HttpSession session = request.getSession();
 		AccountAzienda_Bean utenteloggato = (AccountAzienda_Bean)session.getAttribute("utente");
-		String email=utenteloggato.getEmail();
 		String input_nome = request.getParameter("nome");
 		String input_telefono=request.getParameter("telefono");
 		String input_indirizzo=request.getParameter("indirizzo");
@@ -50,7 +50,6 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 		LocalTime input_startime=LocalTime.parse(request.getParameter("start-time"));
 		LocalTime input_endtime=LocalTime.parse(request.getParameter("end-time"));
 		String input_password = request.getParameter("password");
-		String iva=utenteloggato.getPartitaIva();
 		String [] day=request.getParameterValues("checkbox");
 		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
 		for(int i=0;i<day.length;i++) {
@@ -58,14 +57,22 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 			if(value!=null)
 				giorni.add(DayOfWeek.valueOf(value));
 		}
-		
 		// if correct
 		try {
 			if (CheckFormato.formatoModificaAzienda(input_nome, input_indirizzo, input_Civico, input_citta, input_provincia, input_telefono, input_password)) {
-					AccountAzienda_Bean nuovo=new AccountAzienda_Bean(email, input_password, input_nome, input_indirizzo, input_Civico, input_citta, input_provincia, input_telefono,iva, input_startime, input_endtime,giorni);
 					GestoreUtenteDAOImpl utente= new GestoreUtenteDAOImpl();
+					utenteloggato.setNome(input_nome);
+					utenteloggato.setVia(input_indirizzo);
+					utenteloggato.setNumeroCivico(input_Civico);
+					utenteloggato.setCitta(input_citta);
+					utenteloggato.setProvincia(input_provincia);
+					utenteloggato.setTelefono(input_telefono);
+					utenteloggato.setPassword(input_password);
+					utenteloggato.setOrarioDiApertura(input_startime);
+					utenteloggato.setOrarioDiChiusura(input_endtime);
+					utenteloggato.setGiorniDiApertura(giorni);
 					//Confirm the changes
-					utente.aggiornaAzienda(nuovo);
+					utente.aggiornaAzienda(utenteloggato);
 		        	request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 				}else{
 					//did not fill in all the fields

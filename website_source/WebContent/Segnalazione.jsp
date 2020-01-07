@@ -24,7 +24,7 @@
 			<div class="report-title" tyle="margin-bottom: 10px;">Hai avuto un problema con un ordine?</div>
 			<div class="report-description"style="margin-bottom:14px;">Descrivi accuratamente il problema riscontrato.<br />Lo staff di Eat&amp;Reorder ti aiuter&aacute; con piacere!</div>
 			<!--REPORT FORM-->
-			<form id="report-form"class="form-horizontal center-block"action="">
+			<form id="report-form"class="form-horizontal center-block"action="" onsubmit="return checkSegnalazione();">
 				<!--Form group for id order input-->
 				<div class="form-group">
 					<div class="col-sm-12">
@@ -34,7 +34,7 @@
 				<!--Form group for reason to ban (problemi con regular expression-->
 				<div class="form-group">
 					<div class="col-sm-12">
-						<textarea type="text"class="form-control custom-border-red"id="reason"rows="5"placeholder="Descrivi il problema riscontrato"pattern="[a-zA-Z0-9\. ’àèìòù]{10,250}"></textarea>
+						<textarea type="text"class="form-control custom-border-red"id="reason"rows="5"placeholder="Descrivi il problema riscontrato" pattern="[a-zA-Z0-9\\. ’àèìòù]{10,250}"></textarea>
 					</div>
 				</div>
 				<!--Form group for confirm button-->
@@ -50,5 +50,16 @@
 	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function checkSegnalazione() {
+			var ordine = document.getElementById("id_order");
+			var ragione = document.getElementById("reason");
+			if (ordine.value == ""||ragione.value=="") {
+				alert("ATTENZIONE! Errore nella validazione dei campi!")
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>

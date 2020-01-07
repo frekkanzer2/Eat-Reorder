@@ -45,10 +45,10 @@
 			<div class="form-group">
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"id="email"placeholder="Email"pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"id="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"id="nome"placeholder="Nome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="cognome"name="cognome"id="cognome"placeholder="Cognome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"id="nome"placeholder="Nome"pattern="[a-zA-Z ‘àèìòù]{3,40}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="cognome"name="cognome"id="cognome"placeholder="Cognome"pattern="[a-zA-Z ‘àèìòù]{3,40}">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"id="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"id="citta"placeholder="Citt&agrave di consegna"pattern="[a-zA-Z ‘àèìòù]{4,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"id="citta"placeholder="Citt&agrave di consegna"pattern="[a-zA-Z ‘àèìòù]{4,45}">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia" name="provincia"id="provincia"placeholder="Provincia di consegna" pattern="[a-zA-Z]{2}">
 				<hr />
 				<!--List of checkboxes-->

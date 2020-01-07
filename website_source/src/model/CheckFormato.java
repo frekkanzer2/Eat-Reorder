@@ -42,7 +42,7 @@ public class CheckFormato {
 	public static boolean checkFattorino(AccountFattorino_Bean fattorino) {
 		boolean c_email=fattorino.getEmail().matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
 		boolean c_password=fattorino.getPassword().matches("[a-zA-Z0-9]{7,20}");
-		boolean c_nome=fattorino.getNome().matches("[a-zA-Z ‘אטלעש]{3,40}}");
+		boolean c_nome=fattorino.getNome().matches("[a-zA-Z ‘אטלעש]{3,40}");
 		boolean c_cognome=fattorino.getCognome().matches("[a-zA-Z ‘אטלעש]{3,40}");
 		boolean c_telefono=fattorino.getTelefono().matches("[0-9]{9,10}");
 		boolean c_citta=fattorino.getCittaConsegna().matches("[a-zA-Z ‘אטלעש]{4,45}");

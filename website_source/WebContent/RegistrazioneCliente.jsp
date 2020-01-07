@@ -46,10 +46,10 @@
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="nome" name="nome" placeholder="Nome" id="nome"
-					pattern="[a-zA-Z ‘àèìòù]{3,20}"> <input
+					pattern="[a-zA-Z ‘àèìòù]{4,45}"> <input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="cognome" name="cognome" placeholder="Cognome" id="cognome"
-					pattern="[a-zA-Z ‘àèìòù]{3,20}">
+					pattern="[a-zA-Z ‘àèìòù]{4,45}">
 					<p class="errorText" style="margin-top: 20px;">
 					<%
             			if (request.getAttribute("msg_error") != null){

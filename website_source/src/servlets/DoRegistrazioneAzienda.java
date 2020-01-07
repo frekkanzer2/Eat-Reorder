@@ -60,9 +60,8 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 					if(value!=null)
 						giorni.add(DayOfWeek.valueOf(value));
 				}
-				
-				// if correct
 				try {
+					//use CheckFormato for test the parameter
 					if (CheckFormato.formatoRegistrazioneAzienda(input_email, input_password, input_nome, input_indirizzo,input_Civico, input_citta, input_provincia, input_telefono,input_iva)) {
 						GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
 						// Email already exists
@@ -70,7 +69,7 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 							String errmessage = ("Email già presente.");
 							request.setAttribute("msg_error", errmessage);
 							request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
-						}//create new account client 
+						}//create new company account
 						else {
 							AccountAzienda_Bean newAccount = new AccountAzienda_Bean(input_email, input_password, input_nome, input_indirizzo,
 									input_Civico, input_citta, input_provincia, input_telefono, input_iva, input_startime, input_endtime, giorni);

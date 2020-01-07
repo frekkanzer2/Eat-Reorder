@@ -33,6 +33,15 @@
 			<div class="registration-description">Automatizza vendite e consegne</div>
 			<!--Image on the form-->
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
+			<p class="errorText" style="margin-top: 20px;">
+					<%
+            			if (request.getAttribute("msg_error") != null){
+            		%>
+					<%=request.getAttribute("msg_error") %>
+					<%
+            			}
+            		%>
+				</p>
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email"pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">

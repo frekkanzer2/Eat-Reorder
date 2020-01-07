@@ -25,7 +25,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--Form for registration-->
 	<div class="container-form-floating">
-		<form class="custom-border-red login-form-style"method="post"action="RegistrazioneFattorinoServlet">
+		<form class="custom-border-red login-form-style"method="post"action="DoRegistrazioneFattorino">
 			<!--Invisible title-->
 			<h2 class="sr-only">Login Form</h2>
 			<div class="registration-title">Benvenuto in Eat&amp;Reorder</div>
@@ -47,27 +47,27 @@
 				<div class="row"style="width:100%;margin:0;padding:0;">
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day1">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day1">
 						<label class="form-check-label"for="checkbox-day1">Luned&igrave</label><br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day2">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day2">
 						<label class="form-check-label"for="checkbox-day2">Marted&igrave</label><br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day3">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day3">
 						<label class="form-check-label"for="checkbox-day3">Mercoled&igrave</label><br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day4">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day4">
 						<label class="form-check-label"for="checkbox-day4">Gioved&igrave</label>
 					</div>
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
-						<input class="form-check-input"type="checkbox" id="checkbox-day5">
+						<input name="checkbox" class="form-check-input"type="checkbox" id="checkbox-day5">
 						<label class="form-check-label"for="checkbox-day5">Venerd&igrave</label><br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day6">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6">
 						<label class="form-check-label"for="checkbox-day6">Sabato</label><br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day7">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day7">
 						<label class="form-check-label"for="checkbox-day7">Domenica</label>
 					</div>
 				</div>
@@ -77,11 +77,11 @@
 				<div class="row" style="width: 100%; margin: 0; padding: 0;">
 					<div class="col-sm-6">
 						<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Inizio consegne</div>
-						<input type="time" d="start-time"class="center-block custom-border-red border-rounded-medium"name="start-time"required>
+						<input type="time" id="start-time"class="center-block custom-border-red border-rounded-medium"value="12:00"name="start-time"required>
 					</div>
 					<div class="col-sm-6">
 						<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Fine consegne</div>
-						<input type="time"id="end-time"lass="center-block custom-border-red border-rounded-medium"name="end-time"required>
+						<input type="time"id="end-time"class="center-block custom-border-red border-rounded-medium"value="15:00"name="end-time"required>
 					</div>
 				</div>
 				<hr />

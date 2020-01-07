@@ -29,12 +29,21 @@
 			<div class="registration-description">Saranno modificati solo i campi inseriti</div>
 			<!--Image on the form-->
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
+			<p class="errorText" style="margin-top: 20px;">
+					<%
+            			if (request.getAttribute("msg_error") != null){
+            		%>
+					<%=request.getAttribute("msg_error") %>
+					<%
+            			}
+            		%>
+				</p>
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"placeholder="Nome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="cognome"name="cognome"placeholder="Cognome"pattern="[a-zA-Z ‘àèìòù]{3,20}">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"placeholder="Città di consegna"pattern="[a-zA-Z ‘àèìòù]{4,15}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"placeholder="Citt&agrave di consegna"pattern="[a-zA-Z ‘àèìòù]{4,15}">
 					<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia"name="provincia"placeholder="Provincia di consegna"pattern="[a-zA-Z]{2}">
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
 				<hr />
@@ -43,27 +52,27 @@
 				<div class="row"style="width: 100%;margin:0;padding:0;">
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day1">
-						<label class="form-check-label"for="checkbox-day1">Lunedì</label> <br>
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day1">
+						<label class="form-check-label"for="checkbox-day1">Luned&igrave</label> <br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day2">
-						<label class="form-check-label"for="checkbox-day2">Martedì</label> <br>
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day2">
+						<label class="form-check-label"for="checkbox-day2">Marted&igrave/label> <br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day3">
-						<label class="form-check-label"for="checkbox-day3">Mercoledì</label> <br>
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day3">
+						<label class="form-check-label"for="checkbox-day3">Mercoled&igrave</label> <br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day4">
-						<label class="form-check-label"for="checkbox-day4">Giovedì</label>
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day4">
+						<label class="form-check-label"for="checkbox-day4">Gioved&igrave</label>
 					</div>
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day5">
-						<label class="form-check-label"for="checkbox-day5">Venerdì</label> <br>
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day5">
+						<label class="form-check-label"for="checkbox-day5">Venerd&igrave</label> <br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day6">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6">
 						<label class="form-check-label"for="checkbox-day6">Sabato</label> <br>
 						<!--New day-->
-						<input class="form-check-input"type="checkbox"id="checkbox-day7">
+						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day7">
 						<label class="form-check-label"for="checkbox-day7">Domenica</label>
 					</div>
 				</div>
@@ -73,11 +82,11 @@
 				<div class="row"style="width:100%; margin: 0; padding: 0;">
 					<div class="col-sm-6">
 						<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Inizio	consegne</div>
-						<input type="time"id="start-time"class="center-block custom-border-red border-rounded-medium"name="start-time"required>
+						<input type="time"id="start-time"class="center-block custom-border-red border-rounded-medium"value="12:00"name="start-time"required>
 					</div>
 					<div class="col-sm-6">
 						<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Fine consegne</div>
-						<input type="time"id="end-time"class="center-block custom-border-red border-rounded-medium"name="end-time"required>
+						<input type="time"id="end-time"class="center-block custom-border-red border-rounded-medium"value="15:00"name="end-time"required>
 					</div>
 				</div>
 				<hr />

@@ -38,7 +38,6 @@ public class DoRegistrazioneCliente extends HttpServlet {
 		String input_password = request.getParameter("password");
 		String input_nome = request.getParameter("nome");
 		String input_cognome = request.getParameter("cognome");
-		// if correct
 		try {
 			//use CheckFormato for test the parameter
 			if (CheckFormato.formatoRegistrazioneCliente(input_email, input_password, input_nome, input_cognome)) {

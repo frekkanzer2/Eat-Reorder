@@ -319,6 +319,7 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 
 					List<Prodotto_Bean> prodotti = new ArrayList<Prodotto_Bean>();
 					stmt2 = connect.prepareStatement("select * from prodotto where email = ?");
+					stmt2.setString(1, email);
 					ResultSet products = stmt2.executeQuery();
 
 					while (products.next()) {

@@ -39,7 +39,7 @@ public class DoVaiModificaProdotto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		AccountAzienda_Bean azienda = (AccountAzienda_Bean) request.getAttribute("utente");
+		AccountAzienda_Bean azienda = (AccountAzienda_Bean) session.getAttribute("utente");
 		
 		if(azienda==null)
 			response.sendRedirect("Login.jsp");

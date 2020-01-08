@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import interfaces.GestoreUtenteDAO;
 import model.dao.GestoreUtenteDAOImpl;
 import model.Carrello;
 import model.bean.AccountUtenteRegistrato_Bean;
@@ -20,61 +21,63 @@ import model.bean.AccountUtenteRegistrato_Bean;
 @WebServlet("/DoLogin")
 public class DoLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public DoLogin() {
-        super();
-    }
-
+	private GestoreUtenteDAO userManager = new GestoreUtenteDAOImpl();
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public DoLogin() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doPost(request, response);
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Getting data from JSP Login.jsp
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// Getting data from JSP Login.jsp
 		String input_email = request.getParameter("email");
 		String input_password = request.getParameter("password");
-		GestoreUtenteDAOImpl userManager = new GestoreUtenteDAOImpl();
+		
 		boolean isUserBanned = true;
 		boolean doesUserExists = true;
 		try {
 			if (input_email == null || input_password == null) {
-				//CASE USER NOT EXISTS (FALSE)
-				String errmessage=("I dati inseriti non sono corretti.");
-				//Redirection to an error page
+				// CASE USER NOT EXISTS (FALSE)
+				String errmessage = ("I dati inseriti non sono corretti.");
+				// Redirection to an error page
 				request.setAttribute("msg_error", errmessage);
-	        	request.getRequestDispatcher("Login.jsp").forward(request, response);
+				request.getRequestDispatcher("Login.jsp").forward(request, response);
 			}
-			//Checking if the user is banned
+			// Checking if the user is banned
 			isUserBanned = userManager.controllaBan(input_email);
 			if (isUserBanned) {
-				//CASE USER BANNED (TRUE)
-				String errmessage=("L'utente " + input_email + " è bannato.");
-				//Redirection to an error page
-	        	request.setAttribute("msg_error", errmessage);
-	        	request.getRequestDispatcher("Login.jsp").forward(request, response);
-	        	return;
+				// CASE USER BANNED (TRUE)
+				String errmessage = ("L'utente " + input_email + " è bannato.");
+				// Redirection to an error page
+				request.setAttribute("msg_error", errmessage);
+				request.getRequestDispatcher("Login.jsp").forward(request, response);
+				return;
 			} else {
-				//CASE USER NOT BANNED (FALSE)
-				//Checking if the user exists
+				// CASE USER NOT BANNED (FALSE)
+				// Checking if the user exists
 				doesUserExists = userManager.controllaEsistenzaAccount(input_email, input_password);
 				if (!doesUserExists) {
-					//CASE USER NOT EXISTS (FALSE)
-					String errmessage=("I dati inseriti non sono corretti.");
-					//Redirection to an error page
+					// CASE USER NOT EXISTS (FALSE)
+					String errmessage = ("I dati inseriti non sono corretti.");
+					// Redirection to an error page
 					request.setAttribute("msg_error", errmessage);
-		        	request.getRequestDispatcher("Login.jsp").forward(request, response);
+					request.getRequestDispatcher("Login.jsp").forward(request, response);
 				} else {
-					//CASE USER EXISTS (TRUE)
+					// CASE USER EXISTS (TRUE)
 					AccountUtenteRegistrato_Bean loggedUser = userManager.dammiUtente(input_email);
 					HttpSession newSession = request.getSession();
 					newSession.setAttribute("utente", loggedUser);
-					Carrello cart = new Carrello();
-					newSession.setAttribute("carrello", cart);
+					if (loggedUser.getTipo().contentEquals(AccountUtenteRegistrato_Bean.Cliente)) {
+						Carrello cart = new Carrello();
+						newSession.setAttribute("carrello", cart);
+					}
 					response.sendRedirect("Homepage.jsp");
-			    	return;
+					return;
 				}
 			}
 		} catch (SQLException e) {
@@ -82,7 +85,7 @@ public class DoLogin extends HttpServlet {
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
 		}
-		
+
 	}
 
 }

@@ -52,7 +52,7 @@ public class DoModificaProdotto extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		// prendo l'account azienda dalla sessione
-		AccountAzienda_Bean azienda = (AccountAzienda_Bean) request.getAttribute("utente");
+		AccountAzienda_Bean azienda = (AccountAzienda_Bean) session.getAttribute("utente");
 
 		// se non esiste l'account azienda rimando alla pagina di login
 		if (azienda == null) {
@@ -83,6 +83,8 @@ public class DoModificaProdotto extends HttpServlet {
 			try {
 				
 				dao.aggiornaProdotto(azienda, newProdotto);
+				prodInListino.modificaDati(newProdotto);
+				request.getRequestDispatcher("Listino.jsp").forward(request, response);
 			} catch (SQLException e) {
 
 				System.err.println("ERROR DETECTED");
@@ -91,8 +93,6 @@ public class DoModificaProdotto extends HttpServlet {
 				return;
 			}
 
-			prodInListino.modificaDati(newProdotto);
-			request.getRequestDispatcher("Listino.jsp").forward(request, response);
 
 		} else {
 			// errore con il formato dei parametri

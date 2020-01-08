@@ -70,7 +70,7 @@ public class DoModificaProfiloFattorino extends HttpServlet {
 			if(value!=null)
 				giorni.add(DayOfWeek.valueOf(value));
 		}
-		AccountFattorino_Bean newInformation= new AccountFattorino_Bean("",inputPassword,inputNome,inputCognome,inputTelefono,inputCitta, inputProvincia,inputStarTime,inputEndTime,giorni); 
+		AccountFattorino_Bean newInformation= new AccountFattorino_Bean(utenteLoggato.getEmail(),inputPassword,inputNome,inputCognome,inputTelefono,inputCitta, inputProvincia,inputStarTime,inputEndTime,giorni); 
 		try {
 			//use CheckFormato for test the parameter
 			if(CheckFormato.checkFattorino(newInformation)) {

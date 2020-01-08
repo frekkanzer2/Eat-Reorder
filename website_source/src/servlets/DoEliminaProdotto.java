@@ -44,7 +44,7 @@ public class DoEliminaProdotto extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		// prendo l'account azienda dalla sessione
-		AccountAzienda_Bean azienda = (AccountAzienda_Bean) request.getAttribute("utente");
+		AccountAzienda_Bean azienda = (AccountAzienda_Bean) session.getAttribute("utente");
 
 		// se non esiste l'account azienda rimando alla pagina di login
 		if (azienda == null) {
@@ -58,6 +58,8 @@ public class DoEliminaProdotto extends HttpServlet {
 		try {
 			
 			dao.rimuoviProdotto(azienda, prodottoAzienda);
+			azienda.rimuoviProdotto(prodottoAzienda);
+			request.getRequestDispatcher("Listino.jsp").forward(request, response);
 		} catch (SQLException e) {
 
 			System.err.println("ERROR DETECTED");
@@ -66,8 +68,6 @@ public class DoEliminaProdotto extends HttpServlet {
 			return;
 		}
 		
-		azienda.rimuoviProdotto(prodottoAzienda);
-		request.getRequestDispatcher("Listino.jsp").forward(request, response);
 		
 		
 		

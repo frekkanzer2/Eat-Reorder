@@ -36,24 +36,17 @@ public class DoModificaProfiloCliente extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Getting data from ModificaProfiloCliente.jsp
 		HttpSession session = request.getSession();
-		AccountCliente_Bean utenteLoggato= null;
-		//check if the user is Client or not
-		try {
-			utenteLoggato = (AccountCliente_Bean)session.getAttribute("utente");
-		}//not Client get to Homepage
-		catch (ClassCastException e) {
-			e.printStackTrace();
-			response.sendRedirect("Homepage.jsp");
-			return;
-		}//if isn't logged 
+		AccountCliente_Bean utenteLoggato= (AccountCliente_Bean)session.getAttribute("utente");
+		
 		if(utenteLoggato==null) {
 			response.sendRedirect("Homepage.jsp");
 			return;
 		}
+		
 		String inputPassword = request.getParameter("password");
 		String inputNome = request.getParameter("nome");
 		String inputCognome = request.getParameter("cognome");
-		AccountCliente_Bean newInformation=new AccountCliente_Bean("",inputPassword,inputNome,inputCognome);
+		AccountCliente_Bean newInformation=new AccountCliente_Bean(utenteLoggato.getEmail(),inputPassword,inputNome,inputCognome);
 			try {
 			//use CheckFormato for test the parameter
 			if (CheckFormato.checkCliente(newInformation)) {

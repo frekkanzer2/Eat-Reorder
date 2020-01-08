@@ -1,3 +1,4 @@
+<%@page import="java.time.temporal.ChronoUnit"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%!AccountFattorino_Bean fattorino = null;%>
@@ -51,32 +52,78 @@
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}" value="<%=fattorino.getPassword()%>">
 				<hr />
 				<!--List of checkboxes-->
-				<div class="custom-text-centered text-red"style="margin-top:-6px; margin-bottom:6px;">Giorni lavorativi</div>
-				<div class="row"style="width: 100%;margin:0;padding:0;">
+				<%Set<DayOfWeek> giorni = fattorino.getGiorniDiConsegna()();%>
+				<div class="custom-text-centered text-red"
+					style="margin-top: -6px; margin-bottom: 6px;">Giorni
+					lavorativi</div>
+				<div class="row" style="width: 100%; margin: 0; padding: 0;">
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
-						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day1">
-						<label class="form-check-label"for="checkbox-day1">Luned&igrave</label> <br>
+						<%if(giorni.contains(DayOfWeek.MONDAY)){ %>
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							id="checkbox-day1" value = "MONDAY"checked><%}else {%>
+						
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							value = "MONDAY" id="checkbox-day1">
+							<%} %>
+						<label class="form-check-label"
+							for="checkbox-day1">Luned&igrave</label><br>
 						<!--New day-->
-						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day2">
-						<label class="form-check-label"for="checkbox-day2">Marted&igrave</label> <br>
+						<%if(giorni.contains(DayOfWeek.TUESDAY)){ %>
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							id="checkbox-day2" value = "TUESDAY"checked><%}else {%>
+						
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							value = "TUESDAY" id="checkbox-day2"><%} %>
+						<label class="form-check-label"
+							for="checkbox-day2">Marted&igrave</label><br>
 						<!--New day-->
-						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day3">
-						<label class="form-check-label"for="checkbox-day3">Mercoled&igrave</label> <br>
+						<%if(giorni.contains(DayOfWeek.WEDNESDAY)){ %>
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							id="checkbox-day3" value = "WEDNESDAY" checked><%}else {%>
+					
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							value = "WEDNESDAY" id="checkbox-day3" >	<%} %>
+					    <label class="form-check-label"
+							for="checkbox-day3">Mercoled&igrave</label><br>
 						<!--New day-->
-						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day4">
-						<label class="form-check-label"for="checkbox-day4">Gioved&igrave</label>
+						<%if(giorni.contains(DayOfWeek.THURSDAY)){ %>
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							id="checkbox-day4" value = "THURSDAY"checked><%}else {%>
+						
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							value = "THURSDAY" id="checkbox-day4"><%} %>
+							 <label class="form-check-label"
+							for="checkbox-day4">Gioved&igrave</label>
 					</div>
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
-						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day5">
-						<label class="form-check-label"for="checkbox-day5">Venerd&igrave</label> <br>
+						<%if(giorni.contains(DayOfWeek.FRIDAY)){%>
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							id="checkbox-day5" value = "FRIDAY" checked><%}else {%>
+						
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							id="checkbox-day5" value = "FRIDAY">	<%} %>
+						<label class="form-check-label"
+							for="checkbox-day5">Venerd&igrave</label><br>
 						<!--New day-->
-						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6" checked>
-						<label class="form-check-label"for="checkbox-day6">Sabato</label> <br>
+						<%if(giorni.contains(DayOfWeek.SATURDAY)){ %>
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							id="checkbox-day6" value = "SATURDAY"checked><%}else {%>
+						
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							id="checkbox-day6" value = "SATURDAY"><%} %>
+							 <label
+							class="form-check-label" for="checkbox-day6">Sabato</label><br>
 						<!--New day-->
-						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day7">
-						<label class="form-check-label"for="checkbox-day7">Domenica</label>
+						<%if(giorni.contains(DayOfWeek.SUNDAY)){ %>
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							id="checkbox-day7" value = "SUNDAY" checked><%}else {%>
+							
+						<input name="checkbox" class="form-check-input" type="checkbox"
+							id="checkbox-day7" value="SUNDAY"><%} %>
+						<label class="form-check-label"
+							for="checkbox-day7">Domenica</label>
 					</div>
 				</div>
 				<hr />
@@ -85,11 +132,11 @@
 				<div class="row"style="width:100%; margin: 0; padding: 0;">
 					<div class="col-sm-6">
 						<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Inizio	consegne</div>
-						<input type="time"id="start-time"class="center-block custom-border-red border-rounded-medium"value="12:00"name="start-time"required>
+						<input type="time"id="start-time"class="center-block custom-border-red border-rounded-medium"value="<%=fattorino.getInizioConsegne().truncatedTo(ChronoUnit.MINUTES).toString()%>"name="start-time"required>
 					</div>
 					<div class="col-sm-6">
 						<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Fine consegne</div>
-						<input type="time"id="end-time"class="center-block custom-border-red border-rounded-medium"value="15:00"name="end-time"required>
+						<input type="time"id="end-time"class="center-block custom-border-red border-rounded-medium"value="<%=fattorino.getFineConsegne().truncatedTo(ChronoUnit.MINUTES).toString()%>"name="end-time"required>
 					</div>
 				</div>
 				<hr />

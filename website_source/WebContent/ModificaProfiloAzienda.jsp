@@ -53,29 +53,37 @@
 			</p>
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
+				<label class="std-label">Nome dell'azienda</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="nome" placeholder="Nome dell'attivit&agrave"
 					pattern="[a-zA-Z 'àèìòù]{3,40}" value="<%=azienda.getNome()%>">
+				<label class="std-label">Telefono</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="telefono" placeholder="Telefono"
-					pattern="[0-9]{9,10}" value="<%=azienda.getTelefono()%>"> <input
+					pattern="[0-9]{9,10}" value="<%=azienda.getTelefono()%>">
+				<label class="std-label">Indirizzo</label>
+				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="indirizzo" placeholder="Indirizzo"
 					pattern="[a-zA-Z 'àèìòù]{3,80}" value="<%=azienda.getVia()%>">
+				<label class="std-label">Numero civico</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="civico" placeholder="Numero civico"
 					pattern="[0-9]{1,3}" value="<%=azienda.getNumeroCivico()%>">
+				<label class="std-label">Citt&agrave</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="citta" placeholder="Citt&agrave"
 					pattern="[a-zA-Z 'àèìòù]{4,45}" value="<%=azienda.getCitta()%>">
+				<label class="std-label">Provincia</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="provincia" placeholder="Provincia"
 					pattern="[a-zA-Z]{2}" value="<%=azienda.getProvincia()%>">
+				<label class="std-label">Password</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="password" name="password" placeholder="Password"

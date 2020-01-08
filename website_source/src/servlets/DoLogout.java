@@ -30,6 +30,7 @@ public class DoLogout extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		response.sendRedirect("Homepage.jsp");
+		return;
 	}
 
 	/**

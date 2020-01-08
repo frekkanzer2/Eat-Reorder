@@ -43,11 +43,11 @@
 				</p>
 		<!--Form group that contains fields and confirm button-->
 		<div class="form-group">
-			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"placeholder="Nome dell'attivit&agrave"pattern="[a-zA-Z ‘àèìòù]{3,40}" value="<%=azienda.getNome()%>">
+			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"placeholder="Nome dell'attivit&agrave"pattern="[a-zA-Z 'àèìòù]{3,40}" value="<%=azienda.getNome()%>">
 			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}" value="<%=azienda.getTelefono()%>">
-			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="indirizzo"placeholder="Indirizzo"pattern="[a-zA-Z ‘àèìòù]{3,80}" value="<%=azienda.getVia()%>">
+			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="indirizzo"placeholder="Indirizzo"pattern="[a-zA-Z 'àèìòù]{3,80}" value="<%=azienda.getVia()%>">
 			<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="civico"placeholder="Numero civico"pattern="[0-9]{1,3}" value="<%=azienda.getNumeroCivico()%>">
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="citta" placeholder="Citt&agrave"pattern="[a-zA-Z ‘àèìòù]{4,45}" value="<%=azienda.getCitta()%>">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="citta" placeholder="Citt&agrave"pattern="[a-zA-Z 'àèìòù]{4,45}" value="<%=azienda.getCitta()%>">
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="provincia" placeholder="Provincia"pattern="[a-zA-Z]{2}" value="<%=azienda.getProvincia()%>">
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}" value="<%=azienda.getPassword()%>">
 			<hr />

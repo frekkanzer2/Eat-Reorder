@@ -77,7 +77,7 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 	 * Metodo che consente la modifica dei parametri della classe AccountAzienda. I
 	 * dati I dati attuali verranno modificati e sostituiti con i parametri
 	 * dell'istanza passata al metodo. Non vengono modificati email e tipo di
-	 * account.
+	 * account e partita iva.
 	 * 
 	 * @param newAccountInforma Account di tipo Azienda con le nuove informazioni
 	 */
@@ -93,7 +93,7 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 			this.citta = newAccountInforma.getCitta();
 			this.provincia = newAccountInforma.getProvincia();
 			this.telefono = newAccountInforma.getTelefono();
-			this.partitaIva = newAccountInforma.partitaIva;
+		
 			this.orarioDiApertura = newAccountInforma.getOrarioDiApertura();
 			this.orarioDiChiusura = newAccountInforma.getOrarioDiChiusura();
 

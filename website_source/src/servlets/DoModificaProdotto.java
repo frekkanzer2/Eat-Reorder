@@ -76,7 +76,7 @@ public class DoModificaProdotto extends HttpServlet {
 		newProdotto.setDescrizione(descrizione);
 		newProdotto.setImmagine(path);
 		newProdotto.setPrezzo(prezzo);
-		if (CheckFormato.formatoModificaProdotto(nome, descrizione, prezzo)) {
+		if (CheckFormato.checkProdotto(nome, path, descrizione, prezzo)) {
 			//prendo il prodotto con il codice id dal listino dell'azienda
 			Prodotto_Bean prodInListino = azienda.dammiProdotto(id);
 
@@ -95,7 +95,7 @@ public class DoModificaProdotto extends HttpServlet {
 			request.getRequestDispatcher("Listino.jsp").forward(request, response);
 
 		} else {
-			// did not fill in all the fields
+			// errore con il formato dei parametri
 			String errmessage = ("Compilare tutti i campi correttamente.");
 			// Redirection to an error page
 			request.setAttribute("msg_error", errmessage);

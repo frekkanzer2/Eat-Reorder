@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import interfaces.GestoreUtenteDAO;
 import model.CheckFormato;
 import model.dao.GestoreUtenteDAOImpl;
 import model.bean.AccountAzienda_Bean;
@@ -26,12 +27,14 @@ import model.bean.AccountUtenteRegistrato_Bean;
 @WebServlet("/DoRegistrazioneAzienda")
 public class DoRegistrazioneAzienda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private GestoreUtenteDAO gestore = new GestoreUtenteDAOImpl();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public DoRegistrazioneAzienda() {
         super();
+        
         // TODO Auto-generated constructor stub
     }
 
@@ -41,6 +44,7 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Getting data from RegistrazioneCliente.jsp
 		HttpSession session = request.getSession();
+		
 		AccountUtenteRegistrato_Bean utenteLoggato=(AccountUtenteRegistrato_Bean)session.getAttribute("utente");
 		//check if the user is logged or not
 		//if is logged 
@@ -48,6 +52,7 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 			response.sendRedirect("Homepage.jsp");
 			return;
 		}
+		
 		String inputEmail=request.getParameter("email");
 		String inputPassword = request.getParameter("password");
 		String inputNome = request.getParameter("nome");
@@ -63,24 +68,23 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 		String [] inputDay=request.getParameterValues("checkbox");
 		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
 		for(int i=0;i<inputDay.length;i++) {
-			String value=request.getParameter(inputDay[i]);
-			if(value!=null)
-				giorni.add(DayOfWeek.valueOf(value));
+			
+				giorni.add(DayOfWeek.valueOf(inputDay[i]));
 		}
 		AccountAzienda_Bean newAccount = new AccountAzienda_Bean(inputEmail,inputPassword,inputNome,inputIndirizzo,newCivico,inputCitta,inputProvincia,inputTelefono,inputIva,inputStarTime,inputEndTime,giorni);
 		try {
 			//use CheckFormato for test the parameter
 			if (CheckFormato.checkAzienda(newAccount)) {
-				GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
+				
 				// Email already exists
-				if (gestore.controllaEsistenzaAccount(inputEmail,inputPassword)) {
+				if (gestore.controlloEsistenzaMail(inputEmail)) {
 					String errmessage = ("Email già presente.");
 					request.setAttribute("msg_error", errmessage);
 					request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
 				}//create new company account
 				 else {
-					GestoreUtenteDAOImpl userManager = new GestoreUtenteDAOImpl();
-					userManager.registrazioneAzienda(newAccount);
+					
+					gestore.registrazioneAzienda(newAccount);
 					String confirmMessage=("Registrazione avvenuta. Puoi loggare.");
 					//Confirm the registration
 					request.setAttribute("msg_confirm", confirmMessage);

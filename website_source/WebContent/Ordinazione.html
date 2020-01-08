@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Ordinazione</title>
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<!--Custom imports-->
+<link rel="stylesheet" href="css/eat-reorder-style.css">
+</head>
+<body>
+	<div class="container-form-floating">
+		<div id="container-report"class="custom-border-red bg-yellow center-block border-rounded-large">
+			<div class="report-title" style="margin-bottom: 10px;">Ci siamo quasi...</div>
+			<div class="report-description"style="margin-bottom:14px;">Compila i campi per completare l'ordine!</div>
+			<!--ORDER FORM-->
+			<form class="form-horizontal center-block" action="">
+                    <label class="std-label">Indirizzo di destinazione</label>
+                    <!--INPUT DELL'INDIRIZZO-->
+					<input type="text"class="form-control custom-border-red"id="id_order"placeholder="Indirizzo">
+                    <label class="std-label">Note per l'azienda</label>
+                    <!--INPUT DELLE NOTE PER L'AZIENDA-->
+                    <textarea type="text"class="form-control custom-border-red"id="reason"rows="5"placeholder="Note per l'azienda"></textarea>
+                    <label class="std-label">Carta di credito</label>
+                    <!--INPUT PER LA CARTA DI CREDITO-->
+                    <input type="text"class="form-control custom-border-red"id="id_order"placeholder="XXXX-XXXX-XXXX-XXXX">
+                    <!--PULSANTE DI SUBMIT-->
+                    <button type="submit"class="standard-button center-block border-rounded-medium custom-border-red bg-red text-yellow"style="margin-top:20px; margin-bottom: 10px;">Ordina!</button>
+            </form>
+            <div class="report-description">Controlla la tua mail!<br />Riceverai un resoconto dell'ordine via mail</div>
+		</div>
+	</div>
+</body>
+</html>

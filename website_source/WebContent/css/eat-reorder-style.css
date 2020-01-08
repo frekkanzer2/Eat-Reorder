@@ -436,6 +436,12 @@
     padding-right: 5px;
 }
 
+.std-label{
+    margin-top: 5px;
+    margin-bottom: 1px;
+    color: var(--preset_color_red);
+}
+
 /*******************TAGS*******************/
 
 HR{

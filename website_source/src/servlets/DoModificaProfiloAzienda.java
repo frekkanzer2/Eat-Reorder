@@ -43,11 +43,11 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 			throws ServletException, IOException {
 		// Getting data from ModificaProfiloAzienda.jsp
 		HttpSession session = request.getSession();
-		AccountAzienda_Bean utenteLoggato= null;
-		//check if the user is Company or not
+		AccountAzienda_Bean utenteLoggato = null;
+		// check if the user is Company or not
 		try {
-			utenteLoggato = (AccountAzienda_Bean)session.getAttribute("utente");
-		}//not Company get to Homepage
+			utenteLoggato = (AccountAzienda_Bean) session.getAttribute("utente");
+		} // not Company get to Homepage
 		catch (ClassCastException e) {
 			e.printStackTrace();
 			response.sendRedirect("Homepage.jsp");
@@ -81,7 +81,7 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 				inputStarTime, inputEndTime, giorni);
 		// if correct
 		try {
-			//use CheckFormato for test the parameter
+			// use CheckFormato for test the parameter
 			if (CheckFormato.checkAzienda(newInformation)) {
 
 				// Confirm the changes
@@ -90,6 +90,10 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 			} else {
 				// did not fill in all the fields
 				String errMessage = ("Compilare tutti i campi correttamente.");
+				// Redirection to an error page
+				request.setAttribute("msg_error", errMessage);
+				request.getRequestDispatcher("ModificaProfiloCliente.jsp").forward(request, response);
+			}
 		} catch (SQLException e) {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();

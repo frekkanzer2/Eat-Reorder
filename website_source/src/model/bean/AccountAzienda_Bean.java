@@ -98,7 +98,10 @@ public class AccountAzienda_Bean extends AccountUtenteRegistrato_Bean {
 			this.orarioDiChiusura = newAccountInforma.getOrarioDiChiusura();
 
 			if (newAccountInforma.getGiorniDiApertura() != null)
-				this.giorniDiApertura = newAccountInforma.getGiorniDiApertura();
+				giorniDiApertura.clear();
+				for (DayOfWeek x : newAccountInforma.getGiorniDiApertura()) {
+					this.giorniDiApertura.add(x);
+				}
 		}
 	}
 

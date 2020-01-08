@@ -25,7 +25,8 @@ import model.dao.GestoreUtenteDAOImpl;
 @WebServlet("/DoModificaProfiloAzienda")
 public class DoModificaProfiloAzienda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private GestoreUtenteDAO utenteDao= new GestoreUtenteDAOImpl();
+	private GestoreUtenteDAO utenteDao = new GestoreUtenteDAOImpl();
+
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -35,62 +36,69 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// Getting data from ModificaProfiloAzienda.jsp
 		HttpSession session = request.getSession();
-		AccountAzienda_Bean utenteLoggato= null;
-		//check if the user is Company or not
+		AccountAzienda_Bean utenteLoggato = null;
+		// check if the user is Company or not
 		try {
-			utenteLoggato = (AccountAzienda_Bean)session.getAttribute("utente");
-		}//not Company get to Homepage
+			utenteLoggato = (AccountAzienda_Bean) session.getAttribute("utente");
+		} // not Company get to Homepage
 		catch (ClassCastException e) {
 			e.printStackTrace();
 			response.sendRedirect("Homepage.jsp");
 			return;
 		}
-		//if isn't logged 
-		if(utenteLoggato==null) {
-			response.sendRedirect("Homepage.jsp");
+
+		if (utenteLoggato == null) {
+			response.sendRedirect("Login.jsp");
 			return;
 		}
+
 		String inputNome = request.getParameter("nome");
-		String inputTelefono=request.getParameter("telefono");
-		String inputIndirizzo=request.getParameter("indirizzo");
-		int inputCivico=Integer.parseInt(request.getParameter("civico"));
-		String inputCitta=request.getParameter("citta");
-		String inputProvincia=request.getParameter("provincia");
-		LocalTime inputStarTime=LocalTime.parse(request.getParameter("start-time"));
-		LocalTime inputEndTime=LocalTime.parse(request.getParameter("end-time"));
+		String inputTelefono = request.getParameter("telefono");
+		String inputIndirizzo = request.getParameter("indirizzo");
+
+		int inputCivico = Integer.parseInt(request.getParameter("civico"));
+		String inputCitta = request.getParameter("citta");
+		String inputProvincia = request.getParameter("provincia");
+		LocalTime inputStarTime = LocalTime.parse(request.getParameter("start-time"));
+		LocalTime inputEndTime = LocalTime.parse(request.getParameter("end-time"));
 		String inputPassword = request.getParameter("password");
-		String [] day=request.getParameterValues("checkbox");
-		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
-		for(int i=0;i<day.length;i++) {
-			String value=request.getParameter(day[i]);
-			if(value!=null)
-				giorni.add(DayOfWeek.valueOf(value));
+		String[] day = request.getParameterValues("checkbox");
+		List<DayOfWeek> giorni = new ArrayList<DayOfWeek>();
+		for (int i = 0; i < day.length; i++) {
+
+			giorni.add(DayOfWeek.valueOf(day[i]));
 		}
-		AccountAzienda_Bean newInformation = new AccountAzienda_Bean("", inputPassword, inputNome, inputIndirizzo,
-				inputCivico, inputCitta, inputProvincia, inputTelefono, "", inputStarTime, inputEndTime, giorni);
+
+		AccountAzienda_Bean newInformation = new AccountAzienda_Bean(utenteLoggato.getEmail(), inputPassword, inputNome,
+				inputIndirizzo, inputCivico, inputCitta, inputProvincia, inputTelefono, utenteLoggato.getPartitaIva(),
+				inputStarTime, inputEndTime, giorni);
+		// if correct
 		try {
-			//use CheckFormato for test the parameter
+			// use CheckFormato for test the parameter
 			if (CheckFormato.checkAzienda(newInformation)) {
-					//Confirm the changes
-					utenteDao.aggiornaAzienda(utenteLoggato);
-					utenteLoggato.modificaDati(newInformation);
-		        	request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
-				}else{
-					//did not fill in all the fields
-					String errMessage=("Compilare tutti i campi correttamente.");
-					//Redirection to an error page
-					request.setAttribute("msg_error", errMessage);
-		        	request.getRequestDispatcher("ModificaProfiloAzienda.jsp").forward(request, response);
-				}}catch (SQLException e) {
-					System.err.println("ERROR DETECTED");
-					e.printStackTrace();
-					response.sendRedirect("ErrorPage.html");
-				}
+
+				// Confirm the changes
+				utenteDao.aggiornaAzienda(utenteLoggato);
+				request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
+			} else {
+				// did not fill in all the fields
+				String errMessage = ("Compilare tutti i campi correttamente.");
+				// Redirection to an error page
+				request.setAttribute("msg_error", errMessage);
+				request.getRequestDispatcher("ModificaProfiloCliente.jsp").forward(request, response);
+			}
+		} catch (SQLException e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+		}
 	}
 
 	/**

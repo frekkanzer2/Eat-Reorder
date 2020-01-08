@@ -447,8 +447,8 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 		stmt.executeUpdate();
 
 		// aggiungo i nuovi giorni lavorativi dell'azienda
-		stmt = connect.prepareStatement("insert into giornilavorativi (email,giorno) values (?,?)");
 		for (DayOfWeek day : azienda.getGiorniDiApertura()) {
+			stmt = connect.prepareStatement("insert into giornilavorativi (email,giorno) values (?,?)");
 			stmt.setString(1, azienda.getEmail());
 			stmt.setString(2, day.toString());
 			stmt.executeUpdate();

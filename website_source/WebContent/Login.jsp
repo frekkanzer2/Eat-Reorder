@@ -32,7 +32,9 @@
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
+				<label class="std-label">Email</label>
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email"pattern="[a-zA-Z0-9][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
+				<label class="std-label">Password</label>
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
 				<p class="errorText" style="margin-top: 20px;">
 					<%

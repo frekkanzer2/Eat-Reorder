@@ -32,7 +32,7 @@
 <body>
     <jsp:include page="header.jsp"></jsp:include>
     <!--DIV that contains the image and the searchbar-->
-	<div class="center-block">
+	<div class="container-form-floating">
 		<!--Form for the research-->
 		<form method="POST" class="custom-border-red generic-form-style" action="DoModificaProdotto" onsubmit="return checkProdotto();">
             <div class="registration-title">Modifica il piatto selezionato</div>
@@ -40,9 +40,13 @@
             <img id="image-home" class="img-fluid d-block mx-auto"src="assets/img/LogomarcoIS%20PNG.png">
             <!--FORM INPUTS-->
             <input type="hidden" name="id" value="<%=piattoSelezionato.getCodice()%>">
+            <label class="std-label">Nome del piatto</label>
 			<input class="custom-border-red border-rounded-small form-control input-style-login"id="nome"type="text"name="nome"placeholder="Nome del piatto" pattern="[a-zA-Z 'àèìòù]{1,45}" value="<%=piattoSelezionato.getNome()%>">
+			<label class="std-label">Prezzo</label>
 			<input class="custom-border-red border-rounded-small form-control input-style-login"id="prezzo"type="text"name="prezzo"placeholder="Prezzo del piatto" pattern="[0-9]+,[0-9]{2}"value="<%=piattoSelezionato.getPrezzo().toString().replace(".",",")%>">
+            <label class="std-label">URL dell'immagine</label>
             <input class="custom-border-red border-rounded-small form-control input-style-login"id="img"type="text"name="img_path"placeholder="URL dell'immagine da caricare" pattern="(?:([A-Za-z]+):)?(\\/{0,3})([0-9.\\-A-Za-z]+)(?::(\\d+))?(?:\\/([^?#]*))?(?:\\?([^#]*))?(?:#(.*))?"value="<%=piattoSelezionato.getImmagine().toString()%>">
+            <label class="std-label">Descrizione del piatto</label>
             <textarea class="custom-border-red border-rounded-small form-control input-style-login"id="description"name="descrizione"rows="3"placeholder="Descrizione del piatto" pattern="[a-zA-Z0-9\\. 'àèìòù]{10,250}"><%=piattoSelezionato.getDescrizione()%></textarea>
             <button class="btn form-list-button bg-red border-rounded-small"type="submit">Conferma</button>
 		</form>

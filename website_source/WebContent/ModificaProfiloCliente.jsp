@@ -35,8 +35,11 @@
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
+				<label class="std-label">Nome</label>
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="nome" placeholder="Nome"pattern="[a-zA-Z 'àèìòù]{3,40}"  value="<%=cliente.getNome()%>">
+				<label class="std-label">Cognome</label>
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="cognome" placeholder="Cognome"pattern="[a-zA-Z 'àèìòù]{3,40}" value="<%=cliente.getCognome()%>"> 
+				<label class="std-label">Password</label>
 				<input class="custom-border-red border-rounded-small form-control input-style-login" type="password" name="password" placeholder="Password" id="password" pattern="[a-zA-Z0-9]{7,20}"  value="<%=cliente.getPassword()%>">
 				<p class="errorText" style="margin-top: 20px;">
 					<% if (request.getAttribute("msg_error") != null){ %>

@@ -351,7 +351,25 @@
     max-width: 170px;
 }
 
+.cart-standard-button-restyle{
+    margin-bottom: 4px;
+    background-color: var(--preset_color_red);
+    color: var(--color_white);
+    border-radius: 25px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: none;
+    text-align: center;
+    max-width: 170px;
+}
+
 .standard-button-restyle:hover, .standard-button-restyle:link .standard-button-restyle:visited, .standard-button-restyle:active{
+    color: var(--color_white);
+}
+
+.cart-standard-button-restyle:hover, .cart-standard-button-restyle:link .cart-standard-button-restyle:visited, .cart-standard-button-restyle:active{
     color: var(--color_white);
 }
 
@@ -380,6 +398,33 @@
 
 .company-presentation-card:hover, .company-presentation-card:link .company-presentation-card:visited, .company-presentation-card:active{
     color: var(--preset_color_red);
+}
+
+.cart-title-in-card{
+    display: inline-block;
+    width: 100%;
+    color: var(--preset_color_red);
+    font-weight: bold;
+    font-size: 28px;
+    margin: 0px;
+}
+
+.cart-description-in-card{
+    display: inline-block;
+    width: 100%;
+    color: var(--preset_color_red);
+    font-size: 18px;
+    margin: 0px;
+}
+
+.cart-quantity-in-card{
+    display: inline-block;
+    width: 60%!important;
+    color: var(--preset_color_red);
+    font-size: 18px;
+    margin: 0px;
+    text-align: end;
+    padding-right: 5px;
 }
 
 /*******************TAGS*******************/
@@ -437,6 +482,23 @@ A:hover, A:link A:visited, A:active{
     }
     
     .description-in-card{
+        display: inline-block;
+        width: 100%;
+        color: var(--preset_color_red);
+        font-size: 17px;
+        margin: 0px;
+    }
+
+    .cart-title-in-card{
+        display: inline-block;
+        width: 100%;
+        color: var(--preset_color_red);
+        font-weight: bold;
+        font-size: 26px;
+        margin: 0px;
+    }
+    
+    .cart-description-in-card{
         display: inline-block;
         width: 100%;
         color: var(--preset_color_red);
@@ -517,6 +579,10 @@ A:hover, A:link A:visited, A:active{
 @media (max-width: 768px){
 
     #buttons-column-edits{
+        padding-left: 0px;
+    }
+
+    #cart-buttons-column-edits{
         padding-left: 0px;
     }
 
@@ -626,6 +692,23 @@ A:hover, A:link A:visited, A:active{
         font-size: 16px;
         margin: 0px;
     }
+
+    .cart-title-in-card{
+        display: inline-block;
+        width: 100%;
+        color: var(--preset_color_red);
+        font-weight: bold;
+        font-size: 24px;
+        margin: 0px;
+    }
+    
+    .cart-description-in-card{
+        display: inline-block;
+        width: 100%;
+        color: var(--preset_color_red);
+        font-size: 16px;
+        margin: 0px;
+    }
     
     .standard-button-restyle{
         margin-bottom: 4px;
@@ -722,6 +805,41 @@ A:hover, A:link A:visited, A:active{
         margin: 0px;
         margin-bottom: 10px;
     }
+
+    .cart-title-in-card{
+        display: inline-block;
+        width: 100%;
+        color: var(--preset_color_red);
+        font-weight: bold;
+        font-size: 20px;
+        margin: 0px;
+        text-align: center;
+    }
+    
+    .cart-description-in-card{
+        display: inline-block;
+        width: 100%;
+        color: var(--preset_color_red);
+        font-size: 14px;
+        margin: 0px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .cart-standard-button-restyle{
+        margin-bottom: 4px;
+        background-color: var(--preset_color_red);
+        color: var(--color_white);
+        border-radius: 20px;
+        padding-right: 5px;
+        padding-left: 5px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border: none;
+        text-align: center;
+        max-width: 140px;
+        font-size: 14px;
+    }
     
     .standard-button-restyle{
         margin-top: 6px;
@@ -758,6 +876,21 @@ A:hover, A:link A:visited, A:active{
         font-weight: bold;
         margin-bottom: 10px;
         text-transform: uppercase;
+    }
+
+    #cart-buttons-column-edits{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .cart-quantity-in-card{
+        display: inline-block;
+        width: 56%!important;
+        color: var(--preset_color_red);
+        font-size: 18px;
+        margin: 0px;
+        text-align: end;
+        padding-right: 5px;
     }
 
 }
@@ -1057,6 +1190,14 @@ A:hover, A:link A:visited, A:active{
         text-align: right;
         font-size: 16px;
         width: 70%!important;
+    }
+
+}
+
+@media (min-width: 577px){
+
+    #major-padding-column{
+        padding-left: 4%;
     }
 
 }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!--Viewport for toggle-->
+<meta charset="utf-8">
+<meta name="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--Title-->
+<title>Carrello</title>
+<!--Preset imports-->
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+<!--Custom imports-->
+<link rel="stylesheet" href="css/eat-reorder-style.css">
+
+</head>
+
+<body>
+    <!--External container-->
+    <div class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
+        <div class="registration-title">Carrello</div>
+		<div class="registration-description">Acquista comodamente da casa</div>
+        <img class="std-img center-block" src="assets/img/LogomarcoIS%20PNG.png">
+
+        <!--GENERATE HERE ALL PRODUCTS IN THE CART-->
+
+        <!--HERE STARTS THE CARD OF THE PRODUCT-->
+        <!--CARD OF THE PRODUCT-->
+        <div class="bg-yellow custom-border-red border-rounded-small padding-medium" style="overflow: auto;">
+            <div id=""><!--Insert into ID the id of the product via scriptlet--></div>
+            <div class="row">
+                <!--First column that contains title and price-->
+                <div id="major-padding-column" class="col-sm-8">
+                    <p id="product-name" class="cart-title-in-card">
+                        Pippo<!--Sample title, use scriptlet also here! Product name goes here-->
+                    </p>
+                    <p id="product-price" class="cart-description-in-card">
+                        $ 500<!--Sample price, use scriptlet also here! Product price goes here-->
+                    </p>
+                </div>
+                <!--Second column that contains buttons for editing-->
+                <div id="cart-buttons-column-edits" class="col-sm-4">
+                    <!--Here goes quantity and remove button-->
+                    <span class = "center-block" style="width: 100%; margin-bottom: 4px;">
+                        <!--FORM FOR THE EDITING OF THE QUANTITY-->
+                        <!--There's a form to set the new product quantity in the cart-->
+                        <form class="form-inline" action="" method="">
+                            <!--QT TEXT, DO NOT EDIT!!!-->
+                            <p class = "cart-quantity-in-card">
+                                Quantità:
+                            </p>
+                            <!--EDIT HERE (INPUT)-->
+                            <!--EDIT WITH SCRIPTLET THE INITIAL INPUT-->
+                            <input type="number" class="custom-border-red border-rounded-medium text-red" name="product-quantity" min="1" max="50" value="1" style = "width: 40px;">
+                        </form>
+                    </span>
+                    <a href="#" class="cart-standard-button-restyle center-block">Rimuovi</a> <!--BUTTON FOR DELETE-->
+                </div>
+            </div>
+        </div>
+        <!--END OF PRODUCT'S CARD-->
+
+    </div>
+
+</body>
+
+</html>

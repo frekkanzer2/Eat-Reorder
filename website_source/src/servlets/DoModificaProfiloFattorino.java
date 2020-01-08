@@ -44,7 +44,7 @@ public class DoModificaProfiloFattorino extends HttpServlet {
 		//check if the user is Delivery or not
 		try {
 			utenteLoggato = (AccountFattorino_Bean)session.getAttribute("utente");
-		}//not user get to login
+		}//not Delivery get to Homepage
 		catch (ClassCastException e) {
 				e.printStackTrace();
 				response.sendRedirect("Homepage.jsp");

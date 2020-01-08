@@ -34,7 +34,7 @@
 				<!--Form group for reason to ban (problemi con regular expression-->
 				<div class="form-group">
 					<div class="col-sm-12">
-						<textarea type="text"class="form-control custom-border-red"id="reason"rows="5"placeholder="Descrivi il problema riscontrato" pattern="[a-zA-Z0-9\\. 'àèìòù]{10,250}"></textarea>
+						<textarea type="text"class="form-control custom-border-red"id="reason"rows="5"placeholder="Descrivi il problema riscontrato" pattern="[a-zA-Z0-9\\. ,'àèìòù]{0,150}"></textarea>
 					</div>
 				</div>
 				<!--Form group for confirm button-->

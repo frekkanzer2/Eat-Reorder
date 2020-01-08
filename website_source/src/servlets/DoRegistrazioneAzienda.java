@@ -12,10 +12,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.CheckFormato;
 import model.dao.GestoreUtenteDAOImpl;
 import model.bean.AccountAzienda_Bean;
+import model.bean.AccountFattorino_Bean;
+import model.bean.AccountUtenteRegistrato_Bean;
 
 /**
  * Servlet implementation class DoRegistrazioneAzienda
@@ -37,56 +40,64 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Getting data from RegistrazioneCliente.jsp
-				String input_email = request.getParameter("email");
-				String input_password = request.getParameter("password");
-				String input_nome = request.getParameter("nome");
-				String input_telefono=request.getParameter("telefono");
-				String input_indirizzo=request.getParameter("indirizzo");
-				String input_civico=request.getParameter("civico");
-				int input_Civico=Integer.parseInt(input_civico);
-				String input_citta=request.getParameter("citta");
-				String input_provincia=request.getParameter("provincia");
-				String input_iva=request.getParameter("iva");
-				LocalTime input_startime=LocalTime.parse(request.getParameter("start-time"));
-				LocalTime input_endtime=LocalTime.parse(request.getParameter("end-time"));
-				String [] day=request.getParameterValues("checkbox");
-				List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
-				for(int i=0;i<day.length;i++) {
-					String value=request.getParameter(day[i]);
-					if(value!=null)
-						giorni.add(DayOfWeek.valueOf(value));
-				}
-				AccountAzienda_Bean newAccount = new AccountAzienda_Bean(input_email, input_password, input_nome, input_indirizzo,
-						input_Civico, input_citta, input_provincia, input_telefono, input_iva, input_startime, input_endtime, giorni);
-				try {
-					//use CheckFormato for test the parameter
-					if (CheckFormato.checkAzienda(newAccount)) {
-						GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
-						// Email already exists
-						if (gestore.controllaEsistenzaAccount(input_email,input_password)) {
-							String errmessage = ("Email già presente.");
-							request.setAttribute("msg_error", errmessage);
-							request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
-						}//create new company account
-						else {
-							GestoreUtenteDAOImpl userManager = new GestoreUtenteDAOImpl();
-							userManager.registrazioneAzienda(newAccount);
-							String confirmMessage=("Registrazione avvenuta. Puoi loggare.");
-							//Confirm the registration
-							request.setAttribute("msg_confirm", confirmMessage);
-				        	request.getRequestDispatcher("Homepage.jsp").forward(request, response);
-						}
-					}else{
-							//did not fill in all the fields
-							String errmessage=("Compilare tutti i campi correttamente.");
-							//Redirection to an error page
-							request.setAttribute("msg_error", errmessage);
-				        	request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
-						}}catch (SQLException e) {
-							System.err.println("ERROR DETECTED");
-							e.printStackTrace();
-							response.sendRedirect("ErrorPage.html");
-						}
+		HttpSession session = request.getSession();
+		AccountUtenteRegistrato_Bean utenteLoggato=(AccountUtenteRegistrato_Bean)session.getAttribute("utente");
+		//check if the user is logged or not
+		//if is logged 
+		if(utenteLoggato!=null) {
+			response.sendRedirect("Homepage.jsp");
+			return;
+		}
+		String inputEmail=request.getParameter("email");
+		String inputPassword = request.getParameter("password");
+		String inputNome = request.getParameter("nome");
+		String inputTelefono=request.getParameter("telefono");
+		String inputIndirizzo=request.getParameter("indirizzo");
+		String inputCivico=request.getParameter("civico");
+		int newCivico=Integer.parseInt(inputCivico);
+		String inputCitta=request.getParameter("citta");
+		String inputProvincia=request.getParameter("provincia");
+		String inputIva=request.getParameter("iva");
+		LocalTime inputStarTime=LocalTime.parse(request.getParameter("start-time"));
+		LocalTime inputEndTime=LocalTime.parse(request.getParameter("end-time"));
+		String [] inputDay=request.getParameterValues("checkbox");
+		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
+		for(int i=0;i<inputDay.length;i++) {
+			String value=request.getParameter(inputDay[i]);
+			if(value!=null)
+				giorni.add(DayOfWeek.valueOf(value));
+		}
+		AccountAzienda_Bean newAccount = new AccountAzienda_Bean(inputEmail,inputPassword,inputNome,inputIndirizzo,newCivico,inputCitta,inputProvincia,inputTelefono,inputIva,inputStarTime,inputEndTime,giorni);
+		try {
+			//use CheckFormato for test the parameter
+			if (CheckFormato.checkAzienda(newAccount)) {
+				GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
+				// Email already exists
+				if (gestore.controllaEsistenzaAccount(inputEmail,inputPassword)) {
+					String errmessage = ("Email già presente.");
+					request.setAttribute("msg_error", errmessage);
+					request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
+				}//create new company account
+				 else {
+					GestoreUtenteDAOImpl userManager = new GestoreUtenteDAOImpl();
+					userManager.registrazioneAzienda(newAccount);
+					String confirmMessage=("Registrazione avvenuta. Puoi loggare.");
+					//Confirm the registration
+					request.setAttribute("msg_confirm", confirmMessage);
+				      	request.getRequestDispatcher("Homepage.jsp").forward(request, response);
+			    }
+		      }else{
+					//did not fill in all the fields
+					String errmessage=("Compilare tutti i campi correttamente.");
+					//Redirection to an error page
+					request.setAttribute("msg_error", errmessage);
+				    request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
+			  }
+		}catch (SQLException e) {
+					System.err.println("ERROR DETECTED");
+					e.printStackTrace();
+					response.sendRedirect("ErrorPage.html");
+		}
 	}
 
 	/**

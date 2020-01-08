@@ -13,80 +13,79 @@ import model.bean.Ordine_Bean;
  * @author Rosario
  *
  */
-
 public class CheckFormato {
 	public static boolean checkCliente(AccountCliente_Bean cliente) {
-		boolean c_email=cliente.getEmail().matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
-		boolean c_password=cliente.getPassword().matches("[a-zA-Z0-9]{7,20}");
-		boolean c_nome=cliente.getNome().matches("[a-zA-Z ‘אטלעש]{3,40}");
-		boolean c_cognome=cliente.getCognome().matches("[a-zA-Z ‘אטלעש]{3,40}");
-		if(c_email==true&&c_password==true&&c_nome==true&&c_cognome==true)
+		boolean inputEmail=cliente.getEmail().matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
+		boolean inputPassword=cliente.getPassword().matches("[a-zA-Z0-9]{7,20}");
+		boolean inputNome=cliente.getNome().matches("[a-zA-Z'אטלעש]{3,40}");
+		boolean inputCognome=cliente.getCognome().matches("[a-zA-Z'אטלעש]{3,40}");
+		if(inputEmail==true&&inputPassword==true&&inputNome==true&&inputCognome==true)
 			return true;
 		return false;
 	}
 	public static boolean checkAzienda(AccountAzienda_Bean azienda) {
-		boolean c_email=azienda.getEmail().matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
-		boolean c_password=azienda.getPassword().matches("[a-zA-Z0-9]{7,20}");
-		boolean c_nome=azienda.getNome().matches("[a-zA-Z ‘אטלעש]{3,40}");
-		boolean c_via=azienda.getVia().matches("[a-zA-Z ‘אטלעש]{3,80}");
-		boolean c_civico=(azienda.getNumeroCivico()>0&&azienda.getNumeroCivico()<1000)?true:false;
-		boolean c_citta=azienda.getCitta().matches("[a-zA-Z ‘אטלעש]{4,45}");
-		boolean c_provincia=azienda.getProvincia().matches("[a-zA-Z]{2}");
-		boolean c_telefono=azienda.getTelefono().matches("[0-9]{9,10}");
-		boolean c_iva=azienda.getPartitaIva().matches("[0-9]{11}");
-		if(c_email==true&&c_password==true&&c_nome==true&&c_via==true&&c_civico==true&&c_citta==true&&c_provincia==true&&c_telefono==true&&c_iva==true)
+		boolean inputEmail=azienda.getEmail().matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
+		boolean inputPassword=azienda.getPassword().matches("[a-zA-Z0-9]{7,20}");
+		boolean inputNome=azienda.getNome().matches("[a-zA-Z'אטלעש]{3,40}");
+		boolean inputVia=azienda.getVia().matches("[a-zA-Z'אטלעש]{3,80}");
+		boolean inputCivico=(azienda.getNumeroCivico()>0&&azienda.getNumeroCivico()<1000)?true:false;
+		boolean inputCitta=azienda.getCitta().matches("[a-zA-Z'אטלעש]{4,45}");
+		boolean inputProvincia=azienda.getProvincia().matches("[a-zA-Z]{2}");
+		boolean inputTelefono=azienda.getTelefono().matches("[0-9]{9,10}");
+		boolean inputIva=azienda.getPartitaIva().matches("[0-9]{11}");
+		if(inputEmail==true&&inputPassword==true&&inputNome==true&&inputVia==true&&inputCivico==true&&inputCitta==true&&inputProvincia==true&&inputTelefono==true&&inputIva==true)
 			return true;
 		return false;
 		
 	}
 	public static boolean checkFattorino(AccountFattorino_Bean fattorino) {
-		boolean c_email=fattorino.getEmail().matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
-		boolean c_password=fattorino.getPassword().matches("[a-zA-Z0-9]{7,20}");
-		boolean c_nome=fattorino.getNome().matches("[a-zA-Z ‘אטלעש]{3,40}");
-		boolean c_cognome=fattorino.getCognome().matches("[a-zA-Z ‘אטלעש]{3,40}");
-		boolean c_telefono=fattorino.getTelefono().matches("[0-9]{9,10}");
-		boolean c_citta=fattorino.getCittaConsegna().matches("[a-zA-Z ‘אטלעש]{4,45}");
-		boolean c_provincia=fattorino.getProvinciaConsegna().matches("[a-zA-Z]{2}");
-		if(c_email==true&&c_password==true&&c_nome==true&&c_cognome==true&&c_telefono==true&&c_citta==true&&c_provincia==true)
+		boolean inputEmail=fattorino.getEmail().matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
+		boolean inputPassword=fattorino.getPassword().matches("[a-zA-Z0-9]{7,20}");
+		boolean inputNome=fattorino.getNome().matches("[a-zA-Z'אטלעש]{3,40}");
+		boolean inputCognome=fattorino.getCognome().matches("[a-zA-Z'אטלעש]{3,40}");
+		boolean inputTelefono=fattorino.getTelefono().matches("[0-9]{9,10}");
+		boolean inputCitta=fattorino.getCittaConsegna().matches("[a-zA-Z'אטלעש]{4,45}");
+		boolean inputProvincia=fattorino.getProvinciaConsegna().matches("[a-zA-Z]{2}");
+		if(inputEmail==true&&inputPassword==true&&inputNome==true&&inputCognome==true&&inputTelefono==true&&inputCitta==true&&inputProvincia==true)
 			return true;
 		return false;
 	}
 	public static boolean checkSegnalazione(int ordine,String descrizione) {
-		boolean in_ordine=(ordine>0)?true:false;
-		boolean in_descrizione=descrizione.matches(" [a-zA-Z0-9\\. ’אטלעש]{10,250}");
-		if(in_ordine==true&&in_descrizione==true)
+		boolean inputOrdine=(ordine>0)?true:false;
+		boolean inputDescrizione=descrizione.matches("[a-zA-Z0-9\\.אטלעש]{10,250}");
+		if(inputOrdine==true&&inputDescrizione==true)
 			return true;
 		return false;
 	}
 	public static boolean checkQuantitא(int quantita) {
-		boolean in_quantita=(quantita>0&&quantita<51)?true:false;
-		if(in_quantita==true)
+		boolean inputQuantita=(quantita>0&&quantita<51)?true:false;
+		if(inputQuantita==true)
 			return true;
 		return false;
 	}
 		public static boolean checkOrdine(Ordine_Bean ordine) {
-			boolean c_indirizzo=ordine.getIndirizzoConsegna().matches("[a-zA-Z ‘אטלעש]{1,80}, [0-9]{1,3}");
-			boolean c_carta=ordine.getCodiceCarta().matches("[0-9]{16}");
-			boolean c_note=ordine.getNote().matches("[a-zA-Z0-9\\. ,‘אטלעש]{0,150}");
-			if(c_indirizzo==true&&c_carta==true&&c_note==true)
+			boolean inputIndirizzo=ordine.getIndirizzoConsegna().matches("[a-zA-Z'אטלעש]{1,80}, [0-9]{1,3}");
+			boolean inputCarta=ordine.getCodiceCarta().matches("[0-9]{16}");
+			boolean inputNote=ordine.getNote().matches("[a-zA-Z0-9\\. ,'אטלעש]{0,150}");
+			if(inputIndirizzo==true&&inputCarta==true&&inputNote==true)
 				return true;
 			return false;
 		}
 		public static boolean checkProdotto(String prodotto,URL img,String descrizione,double prezzo) {
-			boolean c_prodotto=prodotto.matches("[a-zA-Z ‘אטלעש]{1,45}");
-			boolean c_descrizione=descrizione.matches("[a-zA-Z0-9\\. ‘אטלעש]{10,250}");
-			String s_img=img.toString();
-			boolean c_img=s_img.matches("(?:([A-Za-z]+):)?(\\/{0,3})([0-9.\\-A-Za-z]+)(?::(\\d+))?(?:\\/([^?#]*))?(?:\\?([^#]*))?(?:#(.*))?");
-			boolean c_prezzo=(prezzo>=0)?true:false;
+			boolean inputProdotto=prodotto.matches("[a-zA-Z 'אטלעש]{1,45}");
+			boolean inputDescrizione=descrizione.matches("[a-zA-Z0-9\\. 'אטלעש]{10,250}");
+			String inImg=img.toString();
+			boolean inputImg=inImg.matches("(?:([A-Za-z]+):)?(\\/{0,3})([0-9.\\-A-Za-z]+)(?::(\\d+))?(?:\\/([^?#]*))?(?:\\?([^#]*))?(?:#(.*))?");
+			boolean inputPrezzo=(prezzo>=0)?true:false;
 			
-			if(c_prodotto==true&&c_descrizione==true&&c_img==true&&c_prezzo==true)
+			if(inputProdotto==true&&inputDescrizione==true&&inputImg==true&&inputPrezzo==true)
 				return true;
 			return false;
 		}
 	public static boolean checkUtenteRegistrato(AccountUtenteRegistrato_Bean utente){
-		boolean c_email=utente.getEmail().matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
-		boolean c_password=utente.getPassword().matches("[a-zA-Z0-9]{7,20}");
-		if(c_email==true&&c_password==true)
+		boolean inputEmail=utente.getEmail().matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
+		boolean inputPassword=utente.getPassword().matches("[a-zA-Z0-9]{7,20}");
+		if(inputEmail==true&&inputPassword==true)
 			return true;
 		return false;
 	}

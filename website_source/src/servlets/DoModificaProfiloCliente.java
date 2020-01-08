@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import interfaces.GestoreUtenteDAO;
 import model.dao.GestoreUtenteDAOImpl;
 import model.CheckFormato;
 import model.bean.AccountCliente_Bean;
@@ -19,7 +21,7 @@ import model.bean.AccountCliente_Bean;
 @WebServlet("/DoModificaProfiloCliente")
 public class DoModificaProfiloCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private GestoreUtenteDAO utenteDao= new GestoreUtenteDAOImpl();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,20 +35,31 @@ public class DoModificaProfiloCliente extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Getting data from ModificaProfiloCliente.jsp
-				HttpSession session = request.getSession();
-				AccountCliente_Bean utenteloggato = (AccountCliente_Bean)session.getAttribute("utente");
-				String input_password = request.getParameter("password");
-				String input_nome = request.getParameter("nome");
-				String input_cognome = request.getParameter("cognome");
-				try {
-					//use CheckFormato for test the parameter
-					if (CheckFormato.formatoModificaCliente(input_nome, input_cognome, input_password)) {
-						GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
-						utenteloggato.setNome(input_nome);
-						utenteloggato.setCognome(input_cognome);
-						utenteloggato.setPassword(input_password);
+		HttpSession session = request.getSession();
+		AccountCliente_Bean utenteLoggato= null;
+		//check if the user is Client or not
+		try {
+			utenteLoggato = (AccountCliente_Bean)session.getAttribute("utente");
+		}//not Client get to Homepage
+		catch (ClassCastException e) {
+			e.printStackTrace();
+			response.sendRedirect("Homepage.jsp");
+			return;
+		}//if isn't logged 
+		if(utenteLoggato==null) {
+			response.sendRedirect("Homepage.jsp");
+			return;
+		}
+		String inputPassword = request.getParameter("password");
+		String inputNome = request.getParameter("nome");
+		String inputCognome = request.getParameter("cognome");
+		AccountCliente_Bean newInformation=new AccountCliente_Bean("",inputPassword,inputNome,inputCognome);
+			try {
+			//use CheckFormato for test the parameter
+			if (CheckFormato.checkCliente(newInformation)) {
 						//Confirm the changes
-						utente.aggiornaCliente(utenteloggato);
+						utenteDao.aggiornaCliente(newInformation);
+						utenteLoggato.modificaDati(newInformation);
 						request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 					} else {
 						// did not fill in all the fields

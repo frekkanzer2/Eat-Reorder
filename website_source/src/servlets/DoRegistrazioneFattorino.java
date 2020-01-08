@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import interfaces.GestoreUtenteDAO;
 import model.CheckFormato;
 import model.bean.AccountFattorino_Bean;
 import model.dao.GestoreUtenteDAOImpl;
@@ -23,7 +24,7 @@ import model.dao.GestoreUtenteDAOImpl;
 @WebServlet("/DoRegistrazioneFattorino")
 public class DoRegistrazioneFattorino extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private GestoreUtenteDAO gestore = new GestoreUtenteDAOImpl();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -49,24 +50,24 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 		String [] day=request.getParameterValues("checkbox");
 		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
 		for(int i=0;i<day.length;i++) {
-			String value=request.getParameter(day[i]);
-			if(value!=null)
-				giorni.add(DayOfWeek.valueOf(value));
+			
+				giorni.add(DayOfWeek.valueOf(day[i]));
 		}
+		
 		AccountFattorino_Bean nuovo=new AccountFattorino_Bean(input_email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia, input_startime, input_endtime, giorni);
 		try {
 			//use CheckFormato for test the parameter
 			if(CheckFormato.checkFattorino(nuovo)) {
-				GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
+				
 				// Email already exists
-				if (gestore.controllaEsistenzaAccount(input_email,input_password)) {
+				if (gestore.controlloEsistenzaMail(input_email)) {
 					String errmessage = ("Email già presente.");
 					request.setAttribute("msg_error", errmessage);
 					request.getRequestDispatcher("RegistrazioneFattorino.jsp").forward(request, response);
 				}//create new delivery man account
 				else {
-					GestoreUtenteDAOImpl utente=new GestoreUtenteDAOImpl();
-					utente.registrazioneFattorino(nuovo);
+					
+					gestore.registrazioneFattorino(nuovo);
 					String confirmMessage=("Registrazione avvenuta. Puoi loggare.");
 					//Confirm the registration
 					request.setAttribute("msg_confirm", confirmMessage);

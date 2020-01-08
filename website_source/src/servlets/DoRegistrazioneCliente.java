@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import interfaces.GestoreUtenteDAO;
 import model.CheckFormato;
 import model.bean.AccountCliente_Bean;
 import model.dao.GestoreUtenteDAOImpl;
@@ -19,17 +20,19 @@ import model.dao.GestoreUtenteDAOImpl;
 @WebServlet("/DoRegistrazioneCliente")
 public class DoRegistrazioneCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DoRegistrazioneCliente() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	private GestoreUtenteDAO gestore = new GestoreUtenteDAOImpl();
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public DoRegistrazioneCliente() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -38,34 +41,33 @@ public class DoRegistrazioneCliente extends HttpServlet {
 		String input_password = request.getParameter("password");
 		String input_nome = request.getParameter("nome");
 		String input_cognome = request.getParameter("cognome");
-		AccountCliente_Bean nuovo = new AccountCliente_Bean(input_email, input_password, input_nome,
-				input_cognome);
+		AccountCliente_Bean nuovo = new AccountCliente_Bean(input_email, input_password, input_nome, input_cognome);
 		try {
-			//use CheckFormato for test the parameter
+			// use CheckFormato for test the parameter
 			if (CheckFormato.checkCliente(nuovo)) {
-				GestoreUtenteDAOImpl gestore = new GestoreUtenteDAOImpl();
+
 				// Email already exists
 				if (gestore.controlloEsistenzaMail(input_email)) {
 					String errmessage = ("Email già presente.");
 					request.setAttribute("msg_error", errmessage);
 					request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
-				}//create new client account
+				} // create new client account
 				else {
-					GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
-					utente.registrazioneCliente(nuovo);
-					String confirmMessage=("Registrazione avvenuta. Puoi loggare.");
-					//Confirm the registration
+
+					gestore.registrazioneCliente(nuovo);
+					String confirmMessage = ("Registrazione avvenuta. Puoi loggare.");
+					// Confirm the registration
 					request.setAttribute("msg_confirm", confirmMessage);
-		        	request.getRequestDispatcher("Homepage.jsp").forward(request, response);
+					request.getRequestDispatcher("Homepage.jsp").forward(request, response);
 				}
-			}else{
-				//did not fill in all the fields
-				String errmessage=("Compilare tutti i campi correttamente.");
-				//Redirection to an error page
+			} else {
+				// did not fill in all the fields
+				String errmessage = ("Compilare tutti i campi correttamente.");
+				// Redirection to an error page
 				request.setAttribute("msg_error", errmessage);
-		        request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
+				request.getRequestDispatcher("RegistrazioneCliente.jsp").forward(request, response);
 			}
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
@@ -73,9 +75,11 @@ public class DoRegistrazioneCliente extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

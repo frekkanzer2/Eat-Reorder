@@ -41,25 +41,23 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 		// Getting data from ModificaProfiloAzienda.jsp
 		HttpSession session = request.getSession();
 		AccountAzienda_Bean utenteLoggato= null;
-		
+		//check if the user is Company or not
 		try {
-		utenteLoggato = (AccountAzienda_Bean)session.getAttribute("utente");}
+			utenteLoggato = (AccountAzienda_Bean)session.getAttribute("utente");
+		}//not Company get to Homepage
 		catch (ClassCastException e) {
 			e.printStackTrace();
-			response.sendRedirect("Login.jsp");
-			return;
-					}
-		
-		if(utenteLoggato==null) {
-			response.sendRedirect("Login.jsp");
+			response.sendRedirect("Homepage.jsp");
 			return;
 		}
-		
-		
+		//if isn't logged 
+		if(utenteLoggato==null) {
+			response.sendRedirect("Homepage.jsp");
+			return;
+		}
 		String inputNome = request.getParameter("nome");
 		String inputTelefono=request.getParameter("telefono");
 		String inputIndirizzo=request.getParameter("indirizzo");
-		
 		int inputCivico=Integer.parseInt(request.getParameter("civico"));
 		String inputCitta=request.getParameter("citta");
 		String inputProvincia=request.getParameter("provincia");
@@ -73,14 +71,11 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 			if(value!=null)
 				giorni.add(DayOfWeek.valueOf(value));
 		}
-		
 		AccountAzienda_Bean newInformation = new AccountAzienda_Bean("", inputPassword, inputNome, inputIndirizzo,
 				inputCivico, inputCitta, inputProvincia, inputTelefono, "", inputStarTime, inputEndTime, giorni);
-		// if correct
 		try {
+			//use CheckFormato for test the parameter
 			if (CheckFormato.checkAzienda(newInformation)) {
-					
-					
 					//Confirm the changes
 					utenteDao.aggiornaAzienda(utenteLoggato);
 					utenteLoggato.modificaDati(newInformation);

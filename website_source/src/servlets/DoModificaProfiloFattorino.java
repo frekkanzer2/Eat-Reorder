@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import interfaces.GestoreUtenteDAO;
 import model.CheckFormato;
 import model.bean.AccountFattorino_Bean;
 import model.dao.GestoreUtenteDAOImpl;
@@ -24,7 +25,7 @@ import model.dao.GestoreUtenteDAOImpl;
 @WebServlet("/DoModificaProfiloFattorino")
 public class DoModificaProfiloFattorino extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private GestoreUtenteDAO utenteDao= new GestoreUtenteDAOImpl();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -39,42 +40,45 @@ public class DoModificaProfiloFattorino extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Getting data from ModificaProfiloFattorino.jsp
 		HttpSession session = request.getSession();
-		AccountFattorino_Bean utenteloggato = (AccountFattorino_Bean)session.getAttribute("utente");
-		String email=utenteloggato.getEmail();
-		String input_nome = request.getParameter("nome");
-		String input_cognome = request.getParameter("cognome");
-		String input_telefono=request.getParameter("telefono");
-		String input_citta=request.getParameter("citta");
-		String input_provincia=request.getParameter("provincia");
-		String input_password = request.getParameter("password");
-		LocalTime input_startime=LocalTime.parse(request.getParameter("start-time"));
-		LocalTime input_endtime=LocalTime.parse(request.getParameter("end-time"));
-		String [] day=request.getParameterValues("checkbox");
+		AccountFattorino_Bean utenteLoggato= null;
+		//check if the user is Delivery or not
+		try {
+			utenteLoggato = (AccountFattorino_Bean)session.getAttribute("utente");
+		}//not user get to login
+		catch (ClassCastException e) {
+				e.printStackTrace();
+				response.sendRedirect("Homepage.jsp");
+				return;
+		}
+		//if isn't logged 
+		if(utenteLoggato==null) {
+			response.sendRedirect("Homepage.jsp");
+			return;
+		}
+		String inputNome = request.getParameter("nome");
+		String inputCognome = request.getParameter("cognome");
+		String inputTelefono=request.getParameter("telefono");
+		String inputCitta=request.getParameter("citta");
+		String inputProvincia=request.getParameter("provincia");
+		String inputPassword = request.getParameter("password");
+		LocalTime inputStarTime=LocalTime.parse(request.getParameter("start-time"));
+		LocalTime inputEndTime=LocalTime.parse(request.getParameter("end-time"));
+		String [] inputDay=request.getParameterValues("checkbox");
 		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
-		for(int i=0;i<day.length;i++) {
-			String value=request.getParameter(day[i]);
+		for(int i=0;i<inputDay.length;i++) {
+			String value=request.getParameter(inputDay[i]);
 			if(value!=null)
 				giorni.add(DayOfWeek.valueOf(value));
 		}
+		AccountFattorino_Bean newInformation= new AccountFattorino_Bean("",inputPassword,inputNome,inputCognome,inputTelefono,inputCitta, inputProvincia,inputStarTime,inputEndTime,giorni); 
 		try {
 			//use CheckFormato for test the parameter
-			if(CheckFormato.formatoRegistrazioneFattorino(email, input_password, input_nome, input_cognome, input_telefono, input_citta, input_provincia)) {
-				System.err.println("1");
-				GestoreUtenteDAOImpl utente = new GestoreUtenteDAOImpl();
-				utenteloggato.setPassword(input_password);
-				utenteloggato.setNome(input_nome);
-				utenteloggato.setCognome(input_cognome);
-				utenteloggato.setTelefono(input_telefono);
-				utenteloggato.setCittaConsegna(input_citta);
-				utenteloggato.setProvinciaConsegna(input_provincia);
-				utenteloggato.setInizioConsegne(input_startime);
-				utenteloggato.setFineConsegne(input_endtime);
-				utenteloggato.setGiorniDiConsegna(giorni);
+			if(CheckFormato.checkFattorino(newInformation)) {
 				//Confirm the changes
-				utente.aggiornaFattorino(utenteloggato);
+				utenteDao.aggiornaFattorino(newInformation);
+				utenteLoggato.modificaDati(newInformation);
 	        	request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 				}else{
-					System.err.println("2");
 					//did not fill in all the fields
 					String errmessage=("Compilare tutti i campi correttamente.");
 					//Redirection to an error page

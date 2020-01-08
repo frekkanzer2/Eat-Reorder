@@ -50,7 +50,8 @@ public class DoInserimentoProdotto extends HttpServlet {
 		}
 
 		String in_prodotto = request.getParameter("nome");
-		String in_cost = request.getParameter("costo");
+		String in_cost = request.getParameter("costo").replace(",", ".");
+		
 		float costo = Float.parseFloat(in_cost);
 		String in_path = request.getParameter("img_path");
 		URL path = new URL(in_path);

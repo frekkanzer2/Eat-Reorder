@@ -3,7 +3,7 @@
 <%!Prodotto_Bean piattoSelezionato = null;%>
 <%
     utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-    piattoSelezionato = (Prodotto_Bean) session.getAttribute("prodottoSelezionato");
+    piattoSelezionato = (Prodotto_Bean) request.getAttribute("piattoSelezionato");
 	if (utente==null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda) || piattoSelezionato == null) response.sendRedirect("Homepage.jsp");
 %>
 <!DOCTYPE html>
@@ -34,16 +34,16 @@
     <!--DIV that contains the image and the searchbar-->
 	<div class="center-block">
 		<!--Form for the research-->
-		<form class="custom-border-red generic-form-style" action="DoModificaProdotto" onsubmit="return checkProdotto();">
+		<form method="POST" class="custom-border-red generic-form-style" action="DoModificaProdotto" onsubmit="return checkProdotto();">
             <div class="registration-title">Modifica il piatto selezionato</div>
             <!--IMAGE ON THE HOME-->
             <img id="image-home" class="img-fluid d-block mx-auto"src="assets/img/LogomarcoIS%20PNG.png">
             <!--FORM INPUTS-->
             <input type="hidden" name="id" value="<%=piattoSelezionato.getCodice()%>">
-			<input class="custom-border-red border-rounded-small form-control input-style-login"id="nome"type="text"name="nome"placeholder="Nome del piatto" pattern="[a-zA-Z'àèìòù]{1,45}" value="<%=piattoSelezionato.getNome()%>">
-			<input class="custom-border-red border-rounded-small form-control input-style-login"id="prezzo"type="text"name="prezzo"placeholder="Prezzo del piatto" pattern="[0-9]+,[0-9]{2}"value="<%=piattoSelezionato.getPrezzo().toString()%>">
+			<input class="custom-border-red border-rounded-small form-control input-style-login"id="nome"type="text"name="nome"placeholder="Nome del piatto" pattern="[a-zA-Z 'àèìòù]{1,45}" value="<%=piattoSelezionato.getNome()%>">
+			<input class="custom-border-red border-rounded-small form-control input-style-login"id="prezzo"type="text"name="prezzo"placeholder="Prezzo del piatto" pattern="[0-9]+,[0-9]{2}"value="<%=piattoSelezionato.getPrezzo().toString().replace(".",",")%>">
             <input class="custom-border-red border-rounded-small form-control input-style-login"id="img"type="text"name="img_path"placeholder="URL dell'immagine da caricare" pattern="(?:([A-Za-z]+):)?(\\/{0,3})([0-9.\\-A-Za-z]+)(?::(\\d+))?(?:\\/([^?#]*))?(?:\\?([^#]*))?(?:#(.*))?"value="<%=piattoSelezionato.getImmagine().toString()%>">
-            <textarea type="text"class="custom-border-red border-rounded-small form-control input-style-login"id="description"name="description"rows="3"placeholder="Descrizione del piatto" pattern="[a-zA-Z0-9\\. 'àèìòù]{10,250}" value="<%=piattoSelezionato.getDescrizione()%>"></textarea>
+            <textarea class="custom-border-red border-rounded-small form-control input-style-login"id="description"name="descrizione"rows="3"placeholder="Descrizione del piatto" pattern="[a-zA-Z0-9\\. 'àèìòù]{10,250}"><%=piattoSelezionato.getDescrizione()%></textarea>
             <button class="btn form-list-button bg-red border-rounded-small"type="submit">Conferma</button>
 		</form>
 	</div>

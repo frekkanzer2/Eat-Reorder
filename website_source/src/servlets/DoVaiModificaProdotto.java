@@ -47,7 +47,7 @@ public class DoVaiModificaProdotto extends HttpServlet {
 		Long id = Long.parseLong(request.getParameter("idProdotto"));
 		Prodotto_Bean prodotto = azienda.dammiProdotto(id);
 		
-		request.setAttribute("prodotto", prodotto);
+		request.setAttribute("piattoSelezionato", prodotto);
 		request.getRequestDispatcher("ModificaProdotto.jsp").forward(request, response);
 				
 		

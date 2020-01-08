@@ -1,5 +1,9 @@
 <%@page import="java.time.temporal.ChronoUnit"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
+<%@page import="model.bean.AccountFattorino_Bean"%>
+<%@page import="java.time.DayOfWeek"%>
+<%@page import="java.util.Set"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%!AccountFattorino_Bean fattorino = null;%>
 <%
@@ -21,8 +25,6 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
-<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
-<%@page import="model.bean.AccountFattorino_Bean"%>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -52,7 +54,7 @@
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}" value="<%=fattorino.getPassword()%>">
 				<hr />
 				<!--List of checkboxes-->
-				<%Set<DayOfWeek> giorni = fattorino.getGiorniDiConsegna()();%>
+				<% Set<DayOfWeek> giorni = fattorino.getGiorniDiConsegna();%>
 				<div class="custom-text-centered text-red"
 					style="margin-top: -6px; margin-bottom: 6px;">Giorni
 					lavorativi</div>

@@ -40,7 +40,7 @@
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
 				<a class="btn header-button-smaller" role="button" href="VisualizzaProfilo.jsp">Profilo</a>
 				<a class="btn header-button-smaller" role="button" href="ModificaProfiloAzienda.jsp">Modifica Profilo</a>
-				<a class="btn header-button-smaller" role="button" href="#">Listino</a>
+				<a class="btn header-button-smaller" role="button" href="Listino.jsp">Listino</a>
 				<a class="btn header-button-smaller" role="button" href="NuovoProdotto.jsp">Inserisci Prodotto</a>
 				<a class="btn header-button-smaller" role="button" href="DoLogout">Logout</a>
 			</span>

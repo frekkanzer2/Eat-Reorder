@@ -63,7 +63,7 @@ public class DoModificaProdotto extends HttpServlet {
 		//prendo i parametri dalla richiesta
 		Long id = Long.parseLong(request.getParameter("id"));
 		String nome = request.getParameter("nome");
-		Float prezzo = Float.parseFloat(request.getParameter("prezzo"));
+		Float prezzo = Float.parseFloat(request.getParameter("prezzo").replace(",", "."));
 
 		URL path = new URL(request.getParameter("img_path"));
 		String descrizione = request.getParameter("descrizione");

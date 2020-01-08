@@ -66,9 +66,8 @@ public class DoModificaProfiloFattorino extends HttpServlet {
 		String [] inputDay=request.getParameterValues("checkbox");
 		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
 		for(int i=0;i<inputDay.length;i++) {
-			String value=request.getParameter(inputDay[i]);
-			if(value!=null)
-				giorni.add(DayOfWeek.valueOf(value));
+			
+				giorni.add(DayOfWeek.valueOf(inputDay[i]));
 		}
 		AccountFattorino_Bean newInformation= new AccountFattorino_Bean(utenteLoggato.getEmail(),inputPassword,inputNome,inputCognome,inputTelefono,inputCitta, inputProvincia,inputStarTime,inputEndTime,giorni); 
 		try {

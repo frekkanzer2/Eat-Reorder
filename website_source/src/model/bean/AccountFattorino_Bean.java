@@ -72,7 +72,10 @@ public class AccountFattorino_Bean extends AccountUtenteRegistrato_Bean {
 			
 
 			if (newAccountInforma.getGiorniDiConsegna()!= null)
-				this.giorniDiConsegna = newAccountInforma.getGiorniDiConsegna();
+				giorniDiConsegna.clear();
+			for (DayOfWeek x : newAccountInforma.getGiorniDiConsegna()) {
+				this.giorniDiConsegna.add(x);
+			}
 		}
 	}
 

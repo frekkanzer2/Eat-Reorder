@@ -85,7 +85,7 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 			if (CheckFormato.checkAzienda(newInformation)) {
 
 				// Confirm the changes
-				utenteDao.aggiornaAzienda(utenteLoggato);
+				utenteDao.aggiornaAzienda(newInformation);
 				utenteLoggato.modificaDati(newInformation);
 				request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 			} else {

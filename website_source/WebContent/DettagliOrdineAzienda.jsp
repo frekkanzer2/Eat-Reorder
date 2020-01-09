@@ -10,7 +10,7 @@
 	AccountUtenteRegistrato_Bean user = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
 	if (user == null || !user.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
 		response.sendRedirect("Homepage.jsp");
-	else order = request.getAttribute("ordineSelezionato");
+	else order = (Ordine_Bean) request.getAttribute("ordineSelezionato");
 %>
 <!DOCTYPE html>
 <html>

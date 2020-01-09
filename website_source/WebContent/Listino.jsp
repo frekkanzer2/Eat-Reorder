@@ -49,6 +49,16 @@
 			prodotti della tua azienda</div>
 		<img class="std-img center-block"
 			src="assets/img/LogomarcoIS%20PNG.png">
+			
+			<%
+		    	if (request.getAttribute("msg_error") != null){
+    		%>
+				<p class="errorText" style="margin-top: 20px;">
+					<%=request.getAttribute("msg_error") %>
+				</p>
+			<% 
+				} 
+			%>
 
 
 		<%

@@ -96,10 +96,10 @@ public class DoModificaProdotto extends HttpServlet {
 
 		} else {
 			// errore con il formato dei parametri
-			String errmessage = ("Compilare tutti i campi correttamente.");
+			String errmessage = ("I dati inseriti nella modifica del prodotto non sono corretti");
 			// Redirection to an error page
 			request.setAttribute("msg_error", errmessage);
-			request.getRequestDispatcher("ModificaProdotto.jsp").forward(request, response);
+			request.getRequestDispatcher("Listino.jsp").forward(request, response);
 		}
 	}
 

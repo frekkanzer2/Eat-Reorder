@@ -35,15 +35,15 @@
 	<!--IMAGE ON THE HOME-->
 	<img id="image-home" class="img-fluid d-block mx-auto" src="assets/img/LogomarcoIS%20PNG.png">
 	
-	<p class="confirmText" style="margin-top: 20px;">
-		<%
-          	if (request.getAttribute("msg_confirm") != null){
-        %>
-			<%=request.getAttribute("msg_confirm") %>
-		<% 
-			} 
-		%>
-	</p>
+	<%
+    	if (request.getAttribute("msg_error") != null){
+    %>
+		<p class="errorText" style="margin-top: 20px;">
+			<%=request.getAttribute("msg_error") %>
+		</p>
+	<% 
+		} 
+	%>
 	
 	<!--Form for the research-->
 	<div class="d-flex justify-content-center" style="height: 100%;">

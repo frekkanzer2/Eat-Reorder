@@ -41,51 +41,40 @@
 		<%
 			if (utente != null) {
 				
-				System.out.println("DEBUG_CONSOLE_BY_ABBY: Utente is not NULL, his type is: " + utente.getTipo());
 
 				if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) {
-					System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the presentation title of Cliente");
 					utenteCliente = (AccountCliente_Bean) utente;
 		%>
-		<div class="registration-title">
-			Benvenuto
-			<%=utenteCliente.getNome()%></div>
+					<div class="registration-title">Benvenuto <%=utenteCliente.getNome()%></div>
 		<%
-			}
+				}
 		%>
 		<!-- CASE AZIENDA -->
 		<%
-			if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) {
-				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the presentation title of Azienda");
-				utenteAzienda = (AccountAzienda_Bean) utente;
+				if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) {
+					utenteAzienda = (AccountAzienda_Bean) utente;
 		%>
-		<div class="registration-title">
-			Benvenuto
-			<%=utenteAzienda.getNome()%></div>
+					<div class="registration-title">Benvenuto <%=utenteAzienda.getNome()%></div>
 		<%
-			}
+				}
 		%>
 		<!-- CASE FATTORINO -->
 		<%
-			if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) {
-				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the presentation title of Fattorino");
-				utenteFattorino = (AccountFattorino_Bean) utente;
+				if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) {
+					utenteFattorino = (AccountFattorino_Bean) utente;
 		%>
-		<div class="registration-title">
-			Benvenuto
-			<%=utenteFattorino.getNome()%></div>
+					<div class="registration-title">Benvenuto <%=utenteFattorino.getNome()%></div>
 		<%
-			}
+				}
 		%>
 		<!-- CASE MODERATORE -->
 		<%
-			if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore)) {
-				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the presentation title of Moderatore");
-				utenteModeratore = (AccountModeratore_Bean) utente;
+				if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore)) {
+					utenteModeratore = (AccountModeratore_Bean) utente;
 		%>
-		<div class="registration-title">Benvenuto Moderatore</div>
+					<div class="registration-title">Benvenuto Moderatore</div>
 		<%
-			}
+				}
 			}
 		%>
 		<!--Image on the form-->
@@ -94,8 +83,7 @@
 		<!-- DISPLAYING DATAS -->
 		<!-- CASE CLIENTE -->
 		<%
-			if (utenteCliente != null) {
-				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the output layer of Cliente");
+			if (utenteCliente != null && utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) {
 		%>
 		<div class="registration-description">
 			Nome:
@@ -111,8 +99,7 @@
 		%>
 		<!-- CASE AZIENDA -->
 		<%
-			if (utenteAzienda != null) {
-				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the output layer of Azienda");
+			if (utenteAzienda != null && utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) {
 		%>
 		<div class="registration-description">
 			Nome:
@@ -194,8 +181,7 @@
 		%>
 		<!-- CASE FATTORINO -->
 		<%
-			if (utenteFattorino != null) {
-				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the output layer of Fattorino");
+			if (utenteFattorino != null && utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) {
 		%>
 		<div class="registration-description">
 			Nome:
@@ -270,8 +256,7 @@
 		%>
 		<!-- CASE MODERATORE -->
 		<%
-			if (utenteModeratore != null) {
-				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the output layer of Moderatore");
+			if (utenteModeratore != null && utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore)) {
 		%>
 		<div class="registration-description">
 			Email:

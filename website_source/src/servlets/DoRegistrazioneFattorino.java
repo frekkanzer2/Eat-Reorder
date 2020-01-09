@@ -49,6 +49,13 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 		LocalTime input_endtime=LocalTime.parse(request.getParameter("end-time"));
 		String [] day=request.getParameterValues("checkbox");
 		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
+		if (day == null) {
+			//did not fill in all the fields
+			String errmessage=("Inserire almeno un giorno lavorativo");
+			//Redirection to an error page
+			request.setAttribute("msg_error", errmessage);
+		    request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
+		}
 		for(int i=0;i<day.length;i++) {
 			
 				giorni.add(DayOfWeek.valueOf(day[i]));

@@ -37,7 +37,7 @@
             <hr/>
             <div class="registration-description"><%=prodotto.getPrezzo()%>&euro;<!--Add PRODUCT PRICE here with scriptlet--></div>
             <!--EDIT A TAG TO REDIRECT TO BUY ITEM SERVLET-->
-            <a class="btn form-list-button bg-red border-rounded-small text-white" href="#">Aggiungi al carrello</a>
+            <a class="btn form-list-button bg-red border-rounded-small text-white" href="DoAggiungiAlCarrello?id=<%=prodotto.getCodice()%>&azienda=<%=prodotto.getAzienda().getEmail()%>">Aggiungi al carrello</a>
         </div>
 	</div>
 	<!-- SCRIPT -->

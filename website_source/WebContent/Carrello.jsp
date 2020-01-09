@@ -81,7 +81,7 @@
                             <input type="number" class="custom-border-red border-rounded-medium text-red" name="product-quantity" min="1" max="50" value="<%=product.getQta() %>>" style = "width: 40px;">
                         </form>
                     </span>
-                    <a href="#" class="cart-standard-button-restyle center-block">Rimuovi</a> <!--BUTTON FOR DELETE-->
+                    <a href="DoRimuoviDalCarrello?id=<%=product.getProdotto().getCodice()%>" class="cart-standard-button-restyle center-block">Rimuovi</a> <!--BUTTON FOR DELETE-->
                 </div>
             </div>
         </div>

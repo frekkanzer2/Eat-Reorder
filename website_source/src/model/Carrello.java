@@ -10,10 +10,10 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Classe che permette la gestione del carrello.
- * Il carrello permette di inserire prodotti di tipo{@link Prodotto_Bean}.
- * Una volta inserito il primo prodotto, l'azienda associata al carrello diventa uguale
- * a quella del prodotto aggiunto per primo. Tutti i prodotti aggiunti successivamente
+ * Classe che permette la gestione del carrello. Il carrello permette di
+ * inserire prodotti di tipo{@link Prodotto_Bean}. Una volta inserito il primo
+ * prodotto, l'azienda associata al carrello diventa uguale a quella del
+ * prodotto aggiunto per primo. Tutti i prodotti aggiunti successivamente
  * dovranno appartenere alla stessa azienda altrimenti non verranno aggiunti.
  * 
  * @author Rosario Gagliardi
@@ -59,16 +59,17 @@ public class Carrello {
 
 		return prodotti.values();
 	}
-	
+
 	/**
-	 * Restituisce un ProdottoQuantita associato al codice passato come
-	 * parametro
+	 * Restituisce un ProdottoQuantita associato al codice passato come parametro
+	 * 
 	 * @param codice del prodotto nel carrello
-	 * @return ProdottoQuantita del prodotto con il codice inserito o null se il codice non esiste
+	 * @return ProdottoQuantita del prodotto con il codice inserito o null se il
+	 *         codice non esiste
 	 */
-	
+
 	public ProdottoQuantita getProdotto(long codice) {
-		
+
 		return prodotti.get(codice);
 	}
 
@@ -121,7 +122,9 @@ public class Carrello {
 	public boolean checkAziendaCarrello(Prodotto_Bean prod) {
 
 		if (prod != null) {
-			if (prod.getAzienda().getEmail().equals(currentAzienda.getEmail()))
+			if (this.prodotti.isEmpty())
+				return true;
+			else if (prod.getAzienda().getEmail().equals(currentAzienda.getEmail()))
 
 				return true;
 
@@ -134,6 +137,7 @@ public class Carrello {
 
 	/**
 	 * Verifica se un prodotto è già presente nel carrello
+	 * 
 	 * @param prod prodotto da verificare
 	 * @return true se il prodotto è già presente, false altrimenti
 	 */
@@ -145,10 +149,11 @@ public class Carrello {
 	}
 
 	/**
-	 * Aggiunge un prodotto al carrello. Se il carrello non è vuoto, il prodotto viene
-	 * aggiunto solo se l'azienda associata al carrello è la stessa azienda del prodotto
-	 * Nel caso il carrello sia vuoto, il prodotto viene aggiunto e l'azienda associata
-	 * al carrello diventa l'azienda del prodotto aggiunto.
+	 * Aggiunge un prodotto al carrello. Se il carrello non è vuoto, il prodotto
+	 * viene aggiunto solo se l'azienda associata al carrello è la stessa azienda
+	 * del prodotto Nel caso il carrello sia vuoto, il prodotto viene aggiunto e
+	 * l'azienda associata al carrello diventa l'azienda del prodotto aggiunto.
+	 * 
 	 * @param prod prodotto da aggiungere al carrello
 	 */
 	public void aggiungiProdotto(Prodotto_Bean prod) {

@@ -29,6 +29,10 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private GestoreUtenteDAO gestore = new GestoreUtenteDAOImpl();
        
+	public void setGestore(GestoreUtenteDAO gestore) {
+		this.gestore = gestore;
+	}
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -41,7 +45,7 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Getting data from RegistrazioneCliente.jsp
 		HttpSession session = request.getSession();
 		

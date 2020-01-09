@@ -13,7 +13,10 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/dbunit-2.4.8.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="C:/Users/Marco/Downloads/spring-test-5.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marco/Downloads/spring-core-5.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marco/Downloads/commons-logging-1.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

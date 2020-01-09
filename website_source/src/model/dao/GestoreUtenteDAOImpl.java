@@ -540,6 +540,7 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 
 				List<Prodotto_Bean> prodotti = new ArrayList<Prodotto_Bean>();
 				stmt2 = connect.prepareStatement("select * from prodotto where email = ?");
+				stmt2.setString(1, email);
 				ResultSet products = stmt2.executeQuery();
 
 				while (products.next()) {
@@ -574,9 +575,11 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 	public List<AccountAzienda_Bean> dammiListaAziende(String citta) throws SQLException {
 
 		connect = DBConnectionPool.getConnection();
-
-		PreparedStatement stmt = connect.prepareStatement("select * from Azienda where Azienda.citta=?");
-		stmt.setString(1, citta);
+		String newCitta= citta;
+		
+				
+		PreparedStatement stmt = connect.prepareStatement("select * from Azienda where LOWER(Azienda.citta)=LOWER(?)");
+		stmt.setString(1, newCitta);
 
 		List<AccountAzienda_Bean> listaAziendeCitta = new ArrayList<AccountAzienda_Bean>();
 
@@ -613,6 +616,7 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 
 			List<Prodotto_Bean> prodotti = new ArrayList<Prodotto_Bean>();
 			stmt2 = connect.prepareStatement("select * from prodotto where email = ?");
+			stmt2.setString(1,azienda.getEmail());
 			ResultSet products = stmt2.executeQuery();
 
 			while (products.next()) {

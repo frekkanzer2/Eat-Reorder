@@ -1,3 +1,11 @@
+<%@page import="model.bean.Prodotto_Bean"%>
+<%@page import="model.bean.AccountAzienda_Bean"%>
+<%@page import="java.util.List"%>
+<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
+<%AccountAzienda_Bean azienda = (AccountAzienda_Bean)request.getAttribute("azienda");%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +22,7 @@
         <link rel="stylesheet" href="css/eat-reorder-style.css">
     </head>
     <body>
+    <jsp:include page="header.jsp"></jsp:include>
         <!--Here goes the header-->
         <!--Info container-->
 	    <div class="container-form-floating">
@@ -21,7 +30,7 @@
             <!--PER COMPILARE, È NECESSARIO AVER SCELTO UN'AZIENDA DALLA SELEZIONE NELLA PAGINA Ricerca-->
             <!--UTILIZZARE SCRIPTLET-->
             
-            <div class="registration-title">Pizza And Panini<!--INSERT COMPANY NAME HERE--></div>
+            <div class="registration-title"><%=azienda.getNome()%><!--INSERT COMPANY NAME HERE--></div>
             <div class="registration-description" style="margin-bottom: 12px;">Listino dei prodotti<!--DO NOT CHANGE HERE--></div>
             
             <!--HERE STARTS THE LIST OF ALL COMPANY PRODUCTS-->
@@ -29,28 +38,29 @@
             <div class="product-card-container center-block custom-border-red border-rounded-small bg-yellow-alt">
     
                 <!--APPEND HERE ALL PRODUCT CARDS-->
-
+				<%for(Prodotto_Bean prod: azienda.getProdotti().values()){ %>
                 <!-- HERE STARTS THE CARD OF THE PRODUCT -->
-                <a href="#"> <!--There is the A tag to make the div clickable-->
+                <a href="DoVisualizzaProdotto?prod=<%=prod.getCodice()%>&azienda=<%=azienda.getEmail()%>"> <!--There is the A tag to make the div clickable-->
                     <div class="bg-yellow custom-border-red border-rounded-small padding-medium" style="overflow: auto;">
-                        <div id=""><!--Insert into ID the id of the product via scriptlet--></div>
+                        
                         <div class="row">
                             <!--First column that contains img-->
                             <div class="col-sm-3">
-                                <img id="product-image" class = "custom-border-red border-rounded-medium img-preview-in-card center-block" src = "https://www.casaegiardino.it/images/2017/12/spaghetti-alla-marinara-img-5198-800x600.jpg"><!--Use scriptlet to add the url of the image-->
+                                <img id="product-image" class = "custom-border-red border-rounded-medium img-preview-in-card center-block" src = "<%=prod.getImmagine().toString()%>"><!--Use scriptlet to add the url of the image-->
                             </div>
                             <!--Second column that contains title and description-->
                             <div class="col-sm-9">
                                 <p id="product-name" class="title-in-card">
-                                    Spaghetti buoni<!--Sample title, use scriptlet also here!-->
+                                    <%=prod.getNome()%><!--Sample title, use scriptlet also here!-->
                                 </p>
                                 <p id="product-price" class="description-in-card">
-                                    $1000 <!--Sample PRICE, use scriptlet also here!-->
+                                    <%=prod.getPrezzo()%>&euro; <!--Sample PRICE, use scriptlet also here!-->
                                 </p>
                             </div>
                         </div>
-                    </div>
+                
                 </a>
+                <%} %>
                 <!--END OF PRODUCT'S CARD-->
     
             </div>

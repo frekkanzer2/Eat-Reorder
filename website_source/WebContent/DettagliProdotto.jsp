@@ -1,3 +1,6 @@
+<%@page import="model.bean.Prodotto_Bean"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8"%>
+<%Prodotto_Bean prodotto = (Prodotto_Bean)request.getAttribute("prodotto"); %>
 <!DOCTYPE html>
 <html>
 
@@ -17,24 +20,24 @@
 </head>
 
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 	<div class="center-block">
 		<!--DIV THAT CONTAINS PRODUCT DETAILS-->
 		<div class="custom-border-red generic-form-style partial-container-form-floating">
             <!--EDIT THE TITLE OF THE PRODUCT WITH SCRIPTLET-->
-            <div class="registration-title">Product Sample<!--Add PRODUCT TITLE here with scriptlet--></div>
+            <div class="registration-title"><%=prodotto.getNome()%><!--Add PRODUCT TITLE here with scriptlet--></div>
             <!--PRODUCT IMAGE-->
             <!--Change with scriptlet image's src-->
-            <img id="details-img" class="img-fluid d-block mx-auto custom-border-red border-rounded-large" src="https://img.sunset02.com/sites/default/files/spaghetti-chorizo-toasted-paprika-breadcrumbs-su.jpg">
+            <img id="details-img" class="img-fluid d-block mx-auto custom-border-red border-rounded-large" src="<%=prodotto.getImmagine().toString()%>">
             <!--DETAILS (CHANGE ALSO HERE!!!)-->
             <div class="registration-description">
                 <!--Add PRODUCT DESCRIPTION here with scriptlet-->
-                Faccio una descrizione molto lunga perchè mi piace parlare e devo anche testare il div, porcodiv.
-                Oggi è una bella giornata e nulla me la rovinerà perchè div è un figlio di block.
+               <%=prodotto.getDescrizione() %>
             </div>
             <hr/>
-            <div class="registration-description">Product price<!--Add PRODUCT PRICE here with scriptlet--></div>
+            <div class="registration-description"><%=prodotto.getPrezzo()%>&euro;<!--Add PRODUCT PRICE here with scriptlet--></div>
             <!--EDIT A TAG TO REDIRECT TO BUY ITEM SERVLET-->
-            <a class="btn form-list-button bg-red border-rounded-small text-white" href="#">Acquista</a>
+            <a class="btn form-list-button bg-red border-rounded-small text-white" href="#">Aggiungi al carrello</a>
         </div>
 	</div>
 	<!-- SCRIPT -->

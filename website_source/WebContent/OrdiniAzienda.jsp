@@ -42,7 +42,7 @@
 <body>
     <!--External container-->
     <div class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
-        <div class="registration-title">Ordini di </div> <!--REFACTORIZZARE CON JSP INSERENDO IL NOME DELL'AZIENDA-->
+        <div class="registration-title">Ordini di <%=azienda.getNome() %></div> <!--REFACTORIZZARE CON JSP INSERENDO IL NOME DELL'AZIENDA-->
 		<div class="registration-description">Visualizza le ordinazioni per la tua azienda</div>
         <img class="std-img center-block" src="assets/img/LogomarcoIS%20PNG.png">
 

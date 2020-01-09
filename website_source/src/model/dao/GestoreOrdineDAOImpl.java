@@ -162,8 +162,9 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 		connect = DBConnectionPool.getConnection();
 
-		PreparedStatement stmt = connect.prepareStatement("select * from Ordine where email_azienda = ? and stato ="+Ordine_Bean.IN_PREPARAZIONE);
+		PreparedStatement stmt = connect.prepareStatement("select * from Ordine where email_azienda = ? and stato = ?");
 		stmt.setString(1, azienda.getEmail());
+		stmt.setString(2, Ordine_Bean.IN_PREPARAZIONE);
 
 		ResultSet x = stmt.executeQuery();
 		List<Ordine_Bean> lista = new ArrayList<Ordine_Bean>();
@@ -299,8 +300,10 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 		connect = DBConnectionPool.getConnection();
 
-		PreparedStatement stmt = connect.prepareStatement("select * from Ordine where email_fattorino = ? and (stato ="+Ordine_Bean.IN_PREPARAZIONE+"or stato = " + Ordine_Bean.RITIRATO+")");
+		PreparedStatement stmt = connect.prepareStatement("select * from Ordine where email_fattorino = ? and (stato = ? or stato = ?)");
 		stmt.setString(1, fattorino.getEmail());
+		stmt.setString(2, Ordine_Bean.IN_PREPARAZIONE);
+		stmt.setString(3, Ordine_Bean.RITIRATO);
 
 		ResultSet x = stmt.executeQuery();
 		List<Ordine_Bean> lista = new ArrayList<Ordine_Bean>();

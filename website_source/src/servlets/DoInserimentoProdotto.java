@@ -71,12 +71,14 @@ public class DoInserimentoProdotto extends HttpServlet {
 				utente.aggiungiAlListino(utenteloggato, nuovo);
 				utenteloggato.aggiungiProdotto(nuovo);
 				request.getRequestDispatcher("Listino.jsp").forward(request, response);
+				return;
 			} else {
 				// did not fill in all the fields
 				String errmessage = ("Compilare tutti i campi correttamente.");
 				// Redirection to an error page
 				request.setAttribute("msg_error", errmessage);
 				request.getRequestDispatcher("NuovoProdotto.jsp").forward(request, response);
+				return;
 			}
 		} catch (SQLException e) {
 			System.err.println("ERROR DETECTED");

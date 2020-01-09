@@ -32,6 +32,15 @@
             <div class="registration-title">Inserisci un nuovo piatto!</div>
             <!--IMAGE ON THE HOME-->
             <img id="image-home" class="img-fluid d-block mx-auto"src="assets/img/LogomarcoIS%20PNG.png">
+            <%
+		    	if (request.getAttribute("msg_error") != null){
+    		%>
+				<p class="errorText" style="margin-top: 20px;">
+					<%=request.getAttribute("msg_error") %>
+				</p>
+			<% 
+				} 
+			%>
             <!--FORM INPUTS-->
 			<input class="custom-border-red border-rounded-small form-control input-style-login"id="nome"type="text"name="nome"placeholder="Nome del piatto"pattern="[a-zA-Z 'àèìòù]{1,45}">
 			<input class="custom-border-red border-rounded-small form-control input-style-login"id="prezzo"type="text"name="costo"placeholder="Prezzo del piatto"pattern="[0-9]+,[0-9]{2}">

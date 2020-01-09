@@ -30,7 +30,7 @@
 			<span id="header-span-btns" class="navbar-text actions"> <!--Buttons-->
 				<a class="btn header-button" role="button" href="VisualizzaProfilo.jsp">Profilo</a> 
 				<a class="btn header-button" role="button" href="ModificaProfiloCliente.jsp">Modifica Profilo</a>
-				<a class="btn header-button" role="button" href="#">Carrello</a>
+				<a class="btn header-button" role="button" href="Carrello.jsp">Carrello</a>
 				<a class="btn header-button" role="button" href="DoLogout">Logout</a>
 			</span>
 			<%

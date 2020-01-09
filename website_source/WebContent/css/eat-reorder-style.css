@@ -1301,6 +1301,10 @@ A:hover, A:link A:visited, A:active{
         padding-left: 4%;
     }
 
+    .pvt-fix-spacing{
+        margin-top: 10px;
+    }
+
 }
 
 /*Resizing preset*/

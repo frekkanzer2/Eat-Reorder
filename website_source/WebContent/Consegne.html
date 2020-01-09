@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--Title-->
-<title>Ordini</title>
+<title>Consegne</title>
 <!--Preset imports-->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
@@ -19,8 +19,8 @@
 <body>
     <!--External container-->
     <div class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
-        <div class="registration-title">Ordini di </div> <!--REFACTORIZZARE CON JSP INSERENDO IL NOME DELL'AZIENDA-->
-		<div class="registration-description">Visualizza le ordinazioni per la tua azienda</div>
+        <div class="registration-title">Bentornato, </div> <!--REFACTORIZZARE CON JSP INSERENDO IL NOME DEL FATTORINO-->
+		<div class="registration-description">È ora di fare consegne!</div>
         <img class="std-img center-block" src="assets/img/LogomarcoIS%20PNG.png">
 
         <!--HERE STARTS THE CARD OF THE ORDER-->
@@ -28,19 +28,16 @@
         <!--CARD OF THE ORDER-->
         <a href = "#"> <!--THIS A TAG WILL REDIRECT YOU TO THE ORDER DETAILS-->
         <div class="bg-yellow custom-border-red border-rounded-small padding-medium" style="overflow: auto;">
-            <div id=""><!--Insert into ID the id of the product via scriptlet--></div>
+            <div id=""><!--Insert into ID the id of the order via scriptlet--></div>
             <div class="row">
-                <!--First column contains ID and price-->
-                <div class="col-sm-7">
-                    <p id="order-id" class="title-in-card">
+                <!--First column contains ID-->
+                <div class="col-sm-6">
+                    <p id="order-id" class="title-in-card pvt-fix-spacing">
                         Order 056123 <!--Sample ID, use scriptlet also here!-->
-                    </p>
-                    <p id="order-totalprice" class="description-in-card">
-                        $25.80 <!--Sample PRICE, use scriptlet also here!-->
                     </p>
                 </div>
                 <!--Second column that contains notes for status of the order-->
-                <div class="col-sm-5">
+                <div class="col-sm-6">
                     <p id="str-do-not-edit" class="description-in-card-text">
                         Stato dell'ordine <!--DO NOT CHANGE WITH SCRIPTLET-->
                     </p>

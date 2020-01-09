@@ -50,7 +50,7 @@ public class CheckFormato {
 			return true;
 		return false;
 	}
-	public static boolean checkSegnalazione(int ordine,String descrizione) {
+	public static boolean checkSegnalazione(Long ordine,String descrizione) {
 		boolean inputOrdine=(ordine>0)?true:false;
 		boolean inputDescrizione=descrizione.matches("[a-zA-Z0-9\\. ,'אטלעש]{0,150}");
 		if(inputOrdine==true&&inputDescrizione==true)

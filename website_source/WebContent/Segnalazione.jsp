@@ -24,17 +24,17 @@
 			<div class="report-title" style="margin-bottom: 10px;">Hai avuto un problema con un ordine?</div>
 			<div class="report-description"style="margin-bottom:14px;">Descrivi accuratamente il problema riscontrato.<br />Lo staff di Eat&amp;Reorder ti aiuter&aacute; con piacere!</div>
 			<!--REPORT FORM-->
-			<form id="report-form"class="form-horizontal center-block"action="" onsubmit="return checkSegnalazione();">
+			<form id="report-form"class="form-horizontal center-block"action="DoCreaSegnalazione" method="POST" onsubmit="return checkSegnalazione();">
 				<!--Form group for id order input-->
 				<div class="form-group">
 					<div class="col-sm-12">
-						<input type="text"class="form-control custom-border-red"id="id_order"placeholder="Inserisci l'ID dell'ordine"pattern="[0-9]+">
+						<input type="text"class="form-control custom-border-red"name="id-order"placeholder="Inserisci l'ID dell'ordine"pattern="[0-9]+">
 					</div>
 				</div>
 				<!--Form group for reason to ban (problemi con regular expression-->
 				<div class="form-group">
 					<div class="col-sm-12">
-						<textarea type="text"class="form-control custom-border-red"id="reason"rows="5"placeholder="Descrivi il problema riscontrato" pattern="[a-zA-Z0-9\\. ,'àèìòù]{0,150}"></textarea>
+						<textarea type="text"class="form-control custom-border-red"name="reason"rows="5"placeholder="Descrivi il problema riscontrato" pattern="[a-zA-Z0-9\\. ,'àèìòù]{0,150}"></textarea>
 					</div>
 				</div>
 				<!--Form group for confirm button-->
@@ -44,6 +44,15 @@
 					</div>
 				</div>
 			</form>
+			<%
+          		if (request.getAttribute("msg_error") != null){
+       		 %>
+			<p class="errorText" style="margin-top: 20px;">
+				<%=request.getAttribute("msg_error") %>
+			</p>
+			<% 
+				} 
+			%>
 			<div class="report-description">Non trovi l'ID dell'ordine?<br />Controlla la mail ricevuta al momento dell'ordine!</div>
 		</div>
 	</div>

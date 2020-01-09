@@ -40,8 +40,11 @@
 		<!-- CASE CLIENTE -->
 		<%
 			if (utente != null) {
+				
+				System.out.println("DEBUG_CONSOLE_BY_ABBY: Utente is not NULL, his type is: " + utente.getTipo());
 
 				if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) {
+					System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the presentation title of Cliente");
 					utenteCliente = (AccountCliente_Bean) utente;
 		%>
 		<div class="registration-title">
@@ -53,7 +56,8 @@
 		<!-- CASE AZIENDA -->
 		<%
 			if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) {
-					utenteAzienda = (AccountAzienda_Bean) utente;
+				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the presentation title of Azienda");
+				utenteAzienda = (AccountAzienda_Bean) utente;
 		%>
 		<div class="registration-title">
 			Benvenuto
@@ -64,7 +68,8 @@
 		<!-- CASE FATTORINO -->
 		<%
 			if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) {
-					utenteFattorino = (AccountFattorino_Bean) utente;
+				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the presentation title of Fattorino");
+				utenteFattorino = (AccountFattorino_Bean) utente;
 		%>
 		<div class="registration-title">
 			Benvenuto
@@ -75,7 +80,8 @@
 		<!-- CASE MODERATORE -->
 		<%
 			if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore)) {
-					utenteModeratore = (AccountModeratore_Bean) utente;
+				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the presentation title of Moderatore");
+				utenteModeratore = (AccountModeratore_Bean) utente;
 		%>
 		<div class="registration-title">Benvenuto Moderatore</div>
 		<%
@@ -89,6 +95,7 @@
 		<!-- CASE CLIENTE -->
 		<%
 			if (utenteCliente != null) {
+				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the output layer of Cliente");
 		%>
 		<div class="registration-description">
 			Nome:
@@ -105,6 +112,7 @@
 		<!-- CASE AZIENDA -->
 		<%
 			if (utenteAzienda != null) {
+				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the output layer of Azienda");
 		%>
 		<div class="registration-description">
 			Nome:
@@ -187,6 +195,7 @@
 		<!-- CASE FATTORINO -->
 		<%
 			if (utenteFattorino != null) {
+				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the output layer of Fattorino");
 		%>
 		<div class="registration-description">
 			Nome:
@@ -262,6 +271,7 @@
 		<!-- CASE MODERATORE -->
 		<%
 			if (utenteModeratore != null) {
+				System.out.println("DEBUG_CONSOLE_BY_ABBY: I'm in the output layer of Moderatore");
 		%>
 		<div class="registration-description">
 			Email:

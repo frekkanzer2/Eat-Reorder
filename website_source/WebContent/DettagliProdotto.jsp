@@ -1,6 +1,6 @@
 <%@page import="model.bean.Prodotto_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8"%>
-<%Prodotto_Bean prodotto = (Prodotto_Bean)request.getAttribute("prodotto"); %>
+<%Prodotto_Bean prodotto = (Prodotto_Bean) request.getAttribute("prodotto"); %>
 <!DOCTYPE html>
 <html>
 

@@ -41,9 +41,9 @@ List<Ordine_Bean> ordini = (List<Ordine_Bean>)request.getAttribute("ordini");
         <!--HERE STARTS THE CARD OF THE ORDER-->
 
         <!--CARD OF THE ORDER-->
+        <%for(Ordine_Bean ordine : ordini){%>
         <a href = "#"> <!--THIS A TAG WILL REDIRECT YOU TO THE ORDER DETAILS-->
         <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix" style="overflow: auto;">
-           <%for(Ordine_Bean ordine : ordini){%>
             <div class="row">
                 <!--First column contains ID-->
                 <div class="col-sm-6">
@@ -61,9 +61,9 @@ List<Ordine_Bean> ordini = (List<Ordine_Bean>)request.getAttribute("ordini");
                     </p>
                 </div>
             </div>
-            <%} %>
         </div>
         </a>
+        <%} %>
         <!--END OF ORDER'S CARD-->
 
     </div>

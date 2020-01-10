@@ -49,23 +49,23 @@ public class DoInserimentoProdotto extends HttpServlet {
 			return;
 		}
 
-		String in_prodotto = request.getParameter("nome");
-		String in_cost = request.getParameter("costo").replace(",", ".");
+		String inProdotto = request.getParameter("nome");
+		String inCost = request.getParameter("costo").replace(",", ".");
 		
-		float costo = Float.parseFloat(in_cost);
-		String in_path = request.getParameter("img_path");
-		URL path = new URL(in_path);
-		String in_descr = request.getParameter("descrizione");
+		float costo = Float.parseFloat(inCost);
+		String inPath = request.getParameter("img_path");
+		URL path = new URL(inPath);
+		String inDescr = request.getParameter("descrizione");
 		try {
 			// use CheckFormato for test the parameter
-			if (CheckFormato.checkProdotto(in_prodotto, path, in_descr, costo)) {
+			if (CheckFormato.checkProdotto(inProdotto, path, inDescr, costo)) {
 				// create new Product
 				Prodotto_Bean nuovo = new Prodotto_Bean();
 				nuovo.setAzienda(utenteloggato);
-				nuovo.setNome(in_prodotto);
+				nuovo.setNome(inProdotto);
 				nuovo.setPrezzo(costo);
 				nuovo.setImmagine(path);
-				nuovo.setDescrizione(in_descr);
+				nuovo.setDescrizione(inDescr);
 
 				// Confirm the update
 				utente.aggiungiAlListino(utenteloggato, nuovo);

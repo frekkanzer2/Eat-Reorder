@@ -25,6 +25,7 @@ import org.javatuples.Pair;
 
 import com.sun.org.apache.xerces.internal.impl.dv.xs.DayDV;
 
+import exception.AziendaChiusaException;
 import exception.FattorinoNonDisponibileException;
 import interfaces.GestoreOrdineDao;
 import interfaces.GestoreUtenteDAO;
@@ -47,8 +48,9 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 	 * 
 	 * @param order Ordine_Bean che contiene tutte le informazioni riguardante un
 	 *              ordine
+	 * @throws FattorinoNonDisponibileException 
 	 */
-	public void creaOrdine(Ordine_Bean order) throws SQLException, Exception {
+	public void creaOrdine(Ordine_Bean order) throws SQLException, AziendaChiusaException, FattorinoNonDisponibileException  {
 
 		connect = DBConnectionPool.getConnection();
 
@@ -58,9 +60,9 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 		AccountAzienda_Bean az = order.getAzienda();
 		if (!az.getGiorniDiApertura().contains(x))
-			throw new Exception("L'azienda è chiusa oggi e non può evadere il tuo ordine");
+			throw new AziendaChiusaException("L'azienda è chiusa oggi e non può evadere il tuo ordine");
 		if (time.isAfter(az.getOrarioDiChiusura()) || time.isBefore(az.getOrarioDiApertura()))
-			throw new Exception("L'azienda è chiusa adesso e non può evadere il tuo ordine");
+			throw new AziendaChiusaException("L'azienda è chiusa adesso e non può evadere il tuo ordine");
 
 		PreparedStatement stmt = connect.prepareStatement(
 				"select fattorino.email, fattorino.nome, giorniLavorativi.giorno, fattorino.orario_inizio, fattorino.orario_fine from fattorino, giorniLavorativi where fattorino.citta_consegna=? and giorniLavorativi.giorno=? and fattorino.orario_inizio< ? and fattorino.orario_fine > ?");

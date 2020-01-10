@@ -74,6 +74,14 @@ public class Carrello {
 	}
 
 	/**
+	 * Metodo che restituisce se il carrello è vuoto
+	 * @return true se il carrello è vuoto false altrimenti
+	 */
+	public boolean isEmpty() {
+		return prodotti.isEmpty();
+	}
+
+	/**
 	 * Rimuove un prodotto dal carrello. Il prodotto viene rimosso solo se il
 	 * prodotto è presente nel carrello. In caso il prodotto rimosso fosse l'ultimo,
 	 * viene settata a null l'azienda associata al carrello

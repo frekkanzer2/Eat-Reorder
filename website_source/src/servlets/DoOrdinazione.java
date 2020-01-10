@@ -54,11 +54,17 @@ public class DoOrdinazione extends HttpServlet {
 			response.sendRedirect("Login.jsp");
 			return;
 		}
+		
 		AccountCliente_Bean user = (AccountCliente_Bean) utenteloggato;
 		String address = request.getParameter("address");
 		String notes = request.getParameter("notes");
 		String creditCard = request.getParameter("credit-card");
 		Carrello cart = (Carrello) session.getAttribute("carrello");
+		if(cart==null || cart.isEmpty()) {
+			
+			response.sendRedirect("Carrello.jsp");
+			return;
+		}
 		ArrayList<ProdottoQuantita> listOfProducts = new ArrayList<ProdottoQuantita>(cart.getProdotti());
 		Ordine_Bean order = new Ordine_Bean(cart.getCurrentAzienda(), null, user, listOfProducts);
 		order.setIndirizzoConsegna(address);
@@ -110,7 +116,7 @@ public class DoOrdinazione extends HttpServlet {
 			request.setAttribute("msg_error", mailErrorMessage);
 		}
 		//Confirm order creation
-		//Redirection to an error page
+		
 		request.setAttribute("watchingOrder", order);
 	    request.getRequestDispatcher("DettagliOrdineCliente.jsp").forward(request, response);
 	    return;

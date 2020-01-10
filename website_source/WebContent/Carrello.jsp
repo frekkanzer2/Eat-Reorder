@@ -43,8 +43,6 @@
         <div class="registration-title">Carrello di <%=cliente.getNome() %></div>
 		<div class="registration-description">Acquista comodamente da casa</div>
         <img class="std-img center-block" src="assets/img/LogomarcoIS%20PNG.png">
-
-        <div class="bg-yellow custom-border-red border-rounded-small padding-medium" style="overflow: auto;">
         
         <!--GENERATE HERE ALL PRODUCTS IN THE CART-->
 
@@ -55,6 +53,7 @@
 
         <!--HERE STARTS THE CARD OF THE PRODUCT-->
         <!--CARD OF THE PRODUCT-->
+        <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix" style="overflow: auto;">
             <div class="row">
                 <!--First column that contains title and price-->
                 <div id="major-padding-column" class="col-sm-8">
@@ -64,6 +63,9 @@
                     <p id="product-price" class="cart-description-in-card">
                         <%=product.getProdotto().getPrezzo()%> &euro;<!--Sample price, use scriptlet also here! Product price goes here-->
                     </p>
+                    <p id="product-qt" class="cart-description-in-card">
+                        Qt. <%=product.getQta()%><!--Sample price, use scriptlet also here! Product price goes here-->
+                    </p>
                 </div>
                 <!--Second column that contains buttons for editing-->
                 <div id="cart-buttons-column-edits" class="col-sm-4">
@@ -71,14 +73,10 @@
                     <span class = "center-block" style="width: 100%; margin-bottom: 4px;">
                         <!--FORM FOR THE EDITING OF THE QUANTITY-->
                         <!--There's a form to set the new product quantity in the cart-->
-                        <form class="form-inline" action="" method="">
-                            <!--QT TEXT, DO NOT EDIT!!!-->
-                            <p class = "cart-quantity-in-card">
-                                Quantit&agrave; :
-                            </p>
-                            <!--EDIT HERE (INPUT)-->
+                        <form class="form-inline center-block control-form-qt" action="" method=""">
+                        	<button class="cart-standard-button-restyle" type="submit">Nuova qt.</button>
                             <!--EDIT WITH SCRIPTLET THE INITIAL INPUT-->
-                            <input type="number" class="custom-border-red border-rounded-medium text-red" name="product-quantity" min="1" max="50" value="<%=product.getQta() %>>" style = "width: 40px;">
+                            <input type="number" class="custom-border-red border-rounded-medium text-red" name="product-quantity" min="1" max="50" value="<%=product.getQta() %>" style = "width: 40px;">
                         </form>
                     </span>
                     <a href="DoRimuoviDalCarrello?id=<%=product.getProdotto().getCodice()%>" class="cart-standard-button-restyle center-block">Rimuovi</a> <!--BUTTON FOR DELETE-->

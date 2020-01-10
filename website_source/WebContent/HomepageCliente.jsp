@@ -34,7 +34,7 @@
 		<form action="DoRicercaAzienda" method="POST">
 			<div class="d-flex justify-content-center" style="height: 100%;">
 				<input id="search-field" name="ricerca" class="form-control-sm d-inline"
-					type="search" placeholder="Inserisci la citt�">
+					type="search" placeholder="Inserisci la citt&agrave;">
 				<button
 					class="standard-button border-rounded-small custom-border-red"
 					type="submit">Cerca</button>

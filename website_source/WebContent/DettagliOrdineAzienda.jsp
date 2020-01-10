@@ -51,8 +51,7 @@
         <!--HERE STARTS THE CARD OF THE PRODUCT-->
 
         <!--CARD OF THE PRODUCT-->
-        <div class="bg-yellow custom-border-red border-rounded-small padding-medium" style="overflow: auto;">
-            <div id=""><!--Insert into ID the id of the product via scriptlet--></div>
+        <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix" style="overflow: auto;">
             <div class="row">
                 <!--First column that contains img and price-->
                 <div class="col-sm-2">

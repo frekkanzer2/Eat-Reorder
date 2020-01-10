@@ -41,7 +41,7 @@
     <div class = "partial-container-form-floating">
 	<%for(AccountAzienda_Bean az: aziende){ %>
         <!--HERE STARTS THE CARD-->
-        <a class = "company-presentation-card center-block" href="DoVisualizzaListinoAzienda?id=<%=az.getEmail()%>">
+        <a class = "company-presentation-card center-block card-spacing-fix" href="DoVisualizzaListinoAzienda?id=<%=az.getEmail()%>">
             <%=az.getNome()%> <!--CHANGE NAME WITH COMPANY NAME WITH SCRIPTLET-->
         </a>
        <%} %> <!--HERE ENDS THE CARD-->

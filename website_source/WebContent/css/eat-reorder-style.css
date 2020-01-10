@@ -69,6 +69,10 @@
 
 /*******************CLASSES*******************/
 
+.card-spacing-fix{
+	margin-bottom: 14px;
+}
+
 .error{
 	border: solid red 2px;
 }
@@ -314,7 +318,7 @@
 }
 
 .img-preview-in-card{
-    max-width:80%;
+    max-width:60%;
     margin-bottom: 5px;
 }
 
@@ -420,7 +424,7 @@
 
 .cart-description-in-card{
     display: inline-block;
-    width: 100%;
+    width: 30%!important;
     color: var(--preset_color_red);
     font-size: 18px;
     margin: 0px;
@@ -440,6 +444,11 @@
     margin-top: 5px;
     margin-bottom: 1px;
     color: var(--preset_color_red);
+}
+
+.control-form-qt{
+	margin-left: 18%;
+	display:inline-block;
 }
 
 /*******************TAGS*******************/
@@ -473,6 +482,11 @@ A:hover, A:link A:visited, A:active{
         width: 40%;
         padding: 30px;
     }
+    
+    .control-form-qt{
+		margin-left: 4px;
+		display:inline-block;
+	}
 
     .std-img{
         width: 70%;
@@ -483,7 +497,7 @@ A:hover, A:link A:visited, A:active{
     }
 
     .img-preview-in-card{
-        max-width:90%;
+        max-width:70%;
         margin-bottom: 5px;
     }
     
@@ -515,7 +529,6 @@ A:hover, A:link A:visited, A:active{
     
     .cart-description-in-card{
         display: inline-block;
-        width: 100%;
         color: var(--preset_color_red);
         font-size: 17px;
         margin: 0px;
@@ -735,7 +748,6 @@ A:hover, A:link A:visited, A:active{
     
     .cart-description-in-card{
         display: inline-block;
-        width: 100%;
         color: var(--preset_color_red);
         font-size: 16px;
         margin: 0px;
@@ -865,7 +877,7 @@ A:hover, A:link A:visited, A:active{
     
     .cart-description-in-card{
         display: inline-block;
-        width: 100%;
+        width: 49%!important;
         color: var(--preset_color_red);
         font-size: 14px;
         margin: 0px;
@@ -955,6 +967,11 @@ A:hover, A:link A:visited, A:active{
         left: 50%;
         margin-left: -200px!important;
     }
+    
+    .control-form-qt{
+		display:inline-block;
+		margin-left: 36%;
+	}
 
 }
 
@@ -1307,6 +1324,14 @@ A:hover, A:link A:visited, A:active{
 
 }
 
+@media (min-width: 1700px){
+
+	.control-form-qt{
+		margin-left: 25%;
+		display:inline-block;
+	}
+
+}
 /*Resizing preset*/
 /*
     @media (max-width: Xpx) and (min-width: Ypx){

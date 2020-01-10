@@ -62,8 +62,17 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 		String inputNome = request.getParameter("nome");
 		String inputTelefono=request.getParameter("telefono");
 		String inputIndirizzo=request.getParameter("indirizzo");
+		int newCivico;
+		try {
 		String inputCivico=request.getParameter("civico");
-		int newCivico=Integer.parseInt(inputCivico);
+		newCivico=Integer.parseInt(inputCivico);
+		} catch(Exception e) {
+			String errmessage=("Compilare tutti i campi correttamente.");
+			//Redirection to an error page
+			request.setAttribute("msg_error", errmessage);
+		    request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
+		    return;
+		}
 		String inputCitta=request.getParameter("citta");
 		String inputProvincia=request.getParameter("provincia");
 		String inputIva=request.getParameter("iva");
@@ -71,13 +80,7 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 		LocalTime inputEndTime=LocalTime.parse(request.getParameter("end-time"));
 		String [] inputDay=request.getParameterValues("checkbox");
 		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
-		if (inputDay == null) {
-			//did not fill in all the fields
-			String errmessage=("Inserire almeno un giorno lavorativo");
-			//Redirection to an error page
-			request.setAttribute("msg_error", errmessage);
-		    request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
-		}
+		if (inputDay != null)
 		for(int i=0;i<inputDay.length;i++) {
 			
 				giorni.add(DayOfWeek.valueOf(inputDay[i]));

@@ -282,7 +282,7 @@ class DoRegistrazioneAziendaTest extends Mockito{
 		request.setParameter("password", "PizzaPan1");
 		request.setParameter("nome", "PizzaPanini");
 		request.setParameter("indirizzo", "Roma");
-		request.setParameter("civico", " ");
+		request.setParameter("civico", "");
 		request.setParameter("citta", "Montella");
 		request.setParameter("provincia", "AV");
 		request.setParameter("telefono", "3290532742");
@@ -566,7 +566,7 @@ class DoRegistrazioneAziendaTest extends Mockito{
 		request.setParameter("citta", "Montella");
 		request.setParameter("provincia", "AV");
 		request.setParameter("telefono", "3290532742");
-		request.setParameter("iva", "0764352056A");
+		request.setParameter("iva", "07643520563");
 		request.setParameter("start-time", "12:00");
 		request.setParameter("end-time", "15:00");
 		request.setParameter("checkbox", "MONDAY");
@@ -577,6 +577,7 @@ class DoRegistrazioneAziendaTest extends Mockito{
 	
 	@Test
 	public void RegistrazioneAzienda_28() throws ServletException, IOException, SQLException {
+		
 		
 		GestoreUtenteDAOImpl dao=mock(GestoreUtenteDAOImpl.class); 
 		servlet.setGestore(dao);
@@ -590,7 +591,7 @@ class DoRegistrazioneAziendaTest extends Mockito{
 		request.setParameter("citta", "Montella");
 		request.setParameter("provincia", "AV");
 		request.setParameter("telefono", "3290532742");
-		request.setParameter("iva", "0764352056A");
+		request.setParameter("iva", "07643520564");
 		request.setParameter("start-time", "12:00");
 		request.setParameter("end-time", "15:00");
 		request.setParameter("checkbox", "MONDAY");

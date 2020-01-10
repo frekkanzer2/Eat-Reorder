@@ -51,6 +51,15 @@
 				for (ProdottoQuantita product: listOfQtProducts) {
 		%>
 
+	<%
+    	if (request.getAttribute("msg_error") != null){
+    %>
+		<p class="errorText" style="margin-top: 20px;">
+			<%=request.getAttribute("msg_error") %>
+		</p>
+	<% 
+		} 
+	%>
         <!--HERE STARTS THE CARD OF THE PRODUCT-->
         <!--CARD OF THE PRODUCT-->
         <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix" style="overflow: auto;">

@@ -36,6 +36,16 @@
 	<img id="image-home" class="img-fluid d-block mx-auto" src="assets/img/LogomarcoIS%20PNG.png">
 	
 	<%
+    	if (request.getAttribute("msg_confirm") != null){
+    %>
+		<p class="confirmText" style="margin-top: 20px;">
+			<%=request.getAttribute("msg_confirm") %>
+		</p>
+	<% 
+		} 
+	%>
+	
+	<%
     	if (request.getAttribute("msg_error") != null){
     %>
 		<p class="errorText" style="margin-top: 20px;">

@@ -64,8 +64,9 @@ public class DoAggiungiAlCarrello extends HttpServlet {
 				session.setAttribute("carrello", cart);
 				request.getRequestDispatcher("Carrello.jsp").forward(request, response);
 			} else {
-				String errmessage = ("Il prodotto appartiene ad una azienda diversa dai prodotti attualmente nel carrello. Effettua l'ordine oppure elimina"
-						+ "i prodotti attualmente nel carrello");
+				String errmessage = ("Il prodotto appena selezionato &egrave; fornito da una azienda diversa da quella "
+						+ "che fornisce i prodotti attualmente presenti nel carrello. Effettua l'ordine oppure elimina"
+						+ " i prodotti attualmente presenti nel carrello");
 				// Redirection to an error page
 				request.setAttribute("msg_error", errmessage);
 				request.getRequestDispatcher("Carrello.jsp").forward(request, response);

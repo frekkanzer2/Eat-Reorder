@@ -82,10 +82,13 @@
                     <span class = "center-block" style="width: 100%; margin-bottom: 4px;">
                         <!--FORM FOR THE EDITING OF THE QUANTITY-->
                         <!--There's a form to set the new product quantity in the cart-->
-                        <form class="form-inline center-block control-form-qt" action="" method=""">
-                        	<button class="cart-standard-button-restyle" type="submit">Nuova qt.</button>
-                            <!--EDIT WITH SCRIPTLET THE INITIAL INPUT-->
-                            <input type="number" class="custom-border-red border-rounded-medium text-red" name="product-quantity" min="1" max="50" value="<%=product.getQta() %>" style = "width: 40px;">
+                        <form class="form-inline center-block control-form-qt" method="POST" action="DoModificaQuantita">
+                        	<!-- These two following input field are not visible due to send some hidden datas -->
+                        	<input name="productId" class="notDisplayed" value="<%=product.getProdotto().getCodice() %>">
+                        	<input name="companyMail" class="notDisplayed" value="<%=product.getProdotto().getAzienda().getEmail() %>">
+                        	<!-- Visible data here: -->
+                        	<button class="cart-standard-button-restyle" type="submit" style="color: white;">Nuova qt.</button>
+                            <input type="number" class="custom-border-red border-rounded-medium text-red" name="productQuantity" min="1" max="50" value="<%=product.getQta() %>" style = "width: 40px;">
                         </form>
                     </span>
                     <a href="DoRimuoviDalCarrello?id=<%=product.getProdotto().getCodice()%>" class="cart-standard-button-restyle center-block">Rimuovi</a> <!--BUTTON FOR DELETE-->

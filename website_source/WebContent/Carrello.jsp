@@ -8,6 +8,7 @@
 <%!AccountCliente_Bean cliente = null;%>
 <%!Carrello cart = null; %>
 <%!ArrayList<ProdottoQuantita> listOfQtProducts = null; %>
+<%!Float totalPrice = 0F; %>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
 	if (utente == null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) response.sendRedirect("Homepage.jsp");
@@ -43,6 +44,22 @@
         <div class="registration-title">Carrello di <%=cliente.getNome() %></div>
 		<div class="registration-description">Acquista comodamente da casa</div>
         <img class="std-img center-block" src="assets/img/LogomarcoIS%20PNG.png">
+        
+		<!-- IMPLEMENTATION OF THE TOTAL -->        
+        
+        <%
+        	totalPrice = 0F;
+        	if (listOfQtProducts.size() > 0) {
+        		for(ProdottoQuantita pq: listOfQtProducts) {
+        			totalPrice += pq.getProdotto().getPrezzo() * pq.getQta();
+        		}
+        			%>
+        				<div class="report-description"style="margin-bottom:14px;"><b>Totale:</b> <%=totalPrice %></div>
+        			<%        		
+        	}
+        %>
+        
+        <!-- IMPLEMENTATION OF THE TOTAL ENDED -->
         
         <!--GENERATE HERE ALL PRODUCTS IN THE CART-->
 
@@ -100,7 +117,7 @@
 				}
 				
 		%>
-			<a href="#" class="standard-button-restyle center-block">Crea l'ordine</a> <!--BUTTON FOR ORDER-->
+			<a href="./Ordinazione.jsp" class="standard-button-restyle center-block">Crea l'ordine</a> <!--BUTTON FOR ORDER-->
 		<%
 				
 			} else {

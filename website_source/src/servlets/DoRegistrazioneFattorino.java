@@ -25,6 +25,11 @@ import model.dao.GestoreUtenteDAOImpl;
 public class DoRegistrazioneFattorino extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private GestoreUtenteDAO gestore = new GestoreUtenteDAOImpl();
+    
+	public void setGestore(GestoreUtenteDAO gestore) {
+		this.gestore = gestore;
+	}
+        
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -36,7 +41,7 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//getting data from RegistrazioneFattorino.jsp
 		String input_email = request.getParameter("email");
 		String input_password = request.getParameter("password");

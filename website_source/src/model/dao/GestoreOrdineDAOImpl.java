@@ -25,6 +25,7 @@ import org.javatuples.Pair;
 
 import com.sun.org.apache.xerces.internal.impl.dv.xs.DayDV;
 
+import exception.FattorinoNonDisponibileException;
 import interfaces.GestoreOrdineDao;
 import interfaces.GestoreUtenteDAO;
 import model.Carrello;
@@ -71,7 +72,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 		ResultSet set = stmt.executeQuery();
 		ArrayList<Pair<String, String>> listOfEmailFattorino;
 		if (!set.next())
-			throw new Exception("Nessun Fattorino Disponibile");
+			throw new FattorinoNonDisponibileException("Nessun Fattorino Disponibile");
 		else {
 			listOfEmailFattorino = new ArrayList<Pair<String, String>>();
 			listOfEmailFattorino.add(new Pair<String, String>(set.getString("email"), set.getString("nome")));

@@ -32,7 +32,7 @@
 		<img id="image-home" class="img-fluid d-block mx-auto" src="assets/img/LogomarcoIS%20PNG.png">
 		<!--Button to see the orders commited by users-->
 		<div id="container-display-orders" class="center-block">
-			<a href="#" class="btn form-list-button bg-red border-rounded-small">Visualizza consegne</a>
+			<a href="DoVisualizzaConsegne" class="btn form-list-button bg-red border-rounded-small">Visualizza consegne</a>
 		</div>
 	</div>
 	<!-- Script -->

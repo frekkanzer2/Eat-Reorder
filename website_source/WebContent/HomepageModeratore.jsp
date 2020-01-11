@@ -31,19 +31,38 @@
 		<!--IMAGE ON THE HOME-->
 		<img id="image-home" class="img-fluid d-block mx-auto"src="assets/img/LogomarcoIS%20PNG.png">
 		<!--Form for the research-->
-		<form id="ban-form" class="form-horizontal center-block"action="">
+	<%
+    	if (request.getAttribute("msg_confirm") != null){
+    %>
+		<p class="confirmText" style="margin-top: 20px;">
+			<%=request.getAttribute("msg_confirm") %>
+		</p>
+	<% 
+		} 
+	%>
+	
+	<%
+    	if (request.getAttribute("msg_error") != null){
+    %>
+		<p class="errorText" style="margin-top: 20px;">
+			<%=request.getAttribute("msg_error") %>
+		</p>
+	<% 
+		} 
+	%>
+		<form id="ban-form" class="form-horizontal center-block"action="DoBannaAzienda" method="POST">
 			<!--Form group for id order input-->
 			<div class="form-group">
 				<label class="control-label col-sm-5 text-red"for="id_order">ID Ordine</label>
 				<div class="col-sm-12">
-					<input type="text"class="form-control custom-border-yellow"id="id_order"placeholder="Inserisci l'ID dell'ordine">
+					<input type="text"class="form-control custom-border-yellow"name="id-order"placeholder="Inserisci l'ID dell'ordine">
 				</div>
 			</div>
 			<!--Form group for reason to ban-->
 			<div class="form-group">
 				<label class="control-label col-sm-5 text-red"for="reason">Motivazione</label>
 				<div class="col-sm-12">
-					<textarea type="text"class="form-control custom-border-yellow"id="reason"rows="5"placeholder="Inserisci la motivazione del ban"></textarea>
+					<textarea class="form-control custom-border-yellow"name="reason"rows="5"placeholder="Inserisci la motivazione del ban"></textarea>
 				</div>
 			</div>
 			<!--Form group for confirm button-->

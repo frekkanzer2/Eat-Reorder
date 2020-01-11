@@ -41,6 +41,7 @@ import model.bean.Prodotto_Bean;
 public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 	private Connection connect;
+	GestoreUtenteDAO dao = new GestoreUtenteDAOImpl();
 
 	// terminato
 	/**
@@ -65,7 +66,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 			throw new AziendaChiusaException("L'azienda è chiusa adesso e non può evadere il tuo ordine");
 
 		PreparedStatement stmt = connect.prepareStatement(
-				"select fattorino.email, fattorino.nome, giorniLavorativi.giorno, fattorino.orario_inizio, fattorino.orario_fine from fattorino, giorniLavorativi where fattorino.citta_consegna=? and giorniLavorativi.giorno=? and fattorino.orario_inizio< ? and fattorino.orario_fine > ?");
+				"select fattorino.email, fattorino.nome, giorniLavorativi.giorno, fattorino.orario_inizio, fattorino.orario_fine from fattorino, giorniLavorativi where LOWER(fattorino.citta_consegna)=LOWER(?) and giorniLavorativi.giorno=? and fattorino.orario_inizio< ? and fattorino.orario_fine > ?");
 		stmt.setString(1, order.getAzienda().getCitta());
 		stmt.setString(2, x.toString());
 		stmt.setString(3, time.toString());
@@ -321,7 +322,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 			
 			String emCliente = x.getString("email_acquirente");
 
-			GestoreUtenteDAO dao = new GestoreUtenteDAOImpl();
+			
 
 			AccountAzienda_Bean azienda = (AccountAzienda_Bean) dao.dammiUtente(emAzienda);
 			AccountCliente_Bean cliente = (AccountCliente_Bean) dao.dammiUtente(emCliente);

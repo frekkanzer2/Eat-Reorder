@@ -10,6 +10,7 @@
 <%!AccountAzienda_Bean company = null;%>
 <%!LocalTime actualTime = null; %>
 <%!DayOfWeek actualDay = null; %>
+<%!DayOfWeek precDay = null; %>
 <%!LocalDate hiddenDate = null; %>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
@@ -20,6 +21,8 @@
 		actualTime = LocalTime.now();
 		hiddenDate = LocalDate.now();
 		actualDay = hiddenDate.getDayOfWeek();
+		precDay = actualDay.minus(1);
+		System.out.println("actualTime: " + actualTime.toString());
 	}
 %>
 
@@ -48,7 +51,7 @@
 					<input type="text"name="address"class="form-control custom-border-red"placeholder="Indirizzo">
                     <label class="std-label">Note per l'azienda</label>
                     <!--INPUT DELLE NOTE PER L'AZIENDA-->
-                    <textarea type="text"name="notes"class="form-control custom-border-red"rows="5"placeholder="Note per l'azienda"></textarea>
+                    <textarea name="notes"class="form-control custom-border-red"rows="5"placeholder="Note per l'azienda"></textarea>
                     <label class="std-label">Carta di credito</label>
                     <!--INPUT PER LA CARTA DI CREDITO-->
                     <input type="text"name="credit-card"class="form-control custom-border-red"placeholder="XXXX-XXXX-XXXX-XXXX">
@@ -65,30 +68,121 @@
 	%>
                     
                     <%
-                    	if (actualTime.isAfter(company.getOrarioDiApertura()) && actualTime.isBefore(company.getOrarioDiChiusura()) &&
+                    	System.out.println("DEBUG > STARTING TESTS");
+	                    System.out.println("DEBUG > Start Time: " + company.getOrarioDiApertura() + " | End Time: " + company.getOrarioDiChiusura());
+                    	/*
+                    		READ HERE
+                    		BEFORE MIDNIGHT CHECK: ACTUALTIME IS GREATHER THAN START TIME AND IS GREATHER THAN END TIME
+	                    		actualTime.isAfter(company.getOrarioDiApertura()) && actualTime.isAfter(company.getOrarioDiChiusura())
+                    		AFTER MIDNIGHT CHECK: ACTUALTIME IS LOWER THAN START TIME AND IS LOWER THAN END TIME
+	                    		actualTime.isBefore(company.getOrarioDiApertura()) && actualTime.isBefore(company.getOrarioDiChiusura())
+                    	*/
+                    	//Checking if endTime is smaller than startTime
+                    	//Ex: sT 20.00 -> eT 8.00 (next day)
+                    	if (company.getOrarioDiApertura().isAfter(company.getOrarioDiChiusura())){
+                    		System.out.println("DEBUG > START TIME AFTER END TIME");
+                    		if ((actualTime.isAfter(company.getOrarioDiApertura()) && actualTime.isAfter(company.getOrarioDiChiusura()))|| //Checking actualTime before midnight
+                    				(actualTime.isBefore(company.getOrarioDiApertura()) && actualTime.isBefore(company.getOrarioDiChiusura()))){ //Checking actualTime after midnight
+                    			//In that case, actualTime is before 00.00 OR after 00.00
+                    			System.out.println("CHECK IS RIGHT");
+                    			if (actualTime.isBefore(company.getOrarioDiApertura()) && actualTime.isBefore(company.getOrarioDiChiusura())){
+                    				//AFTER MIDNIGHT CASE
+                    				System.out.println("DEBUG > AFTER MIDNIGHT");
+                    				if (company.getGiorniDiApertura().contains(precDay)) {
+                        				%>
+                            				<button type="submit"class="standard-button center-block border-rounded-medium custom-border-red bg-red text-yellow"style="margin-top:20px; margin-bottom: 10px;">Ordina!</button>
+                    					<%
+                        			}
+                    			} else if (actualTime.isAfter(company.getOrarioDiApertura()) && actualTime.isAfter(company.getOrarioDiChiusura())) {
+                    				//BEFORE MIDNIGHT CASE
+                    				System.out.println("DEBUG > BEFORE MIDNIGHT");
+                    				if (company.getGiorniDiApertura().contains(actualDay)) {
+                        				%>
+                            				<button type="submit"class="standard-button center-block border-rounded-medium custom-border-red bg-red text-yellow"style="margin-top:20px; margin-bottom: 10px;">Ordina!</button>
+                    					<%
+                        			}	
+                    			}
+                    		}
+                    	} else if (company.getOrarioDiApertura().compareTo(company.getOrarioDiChiusura()) == 0){
+                    		//company is always open in the day
+                        	%>
+                    			<button type="submit"class="standard-button center-block border-rounded-medium custom-border-red bg-red text-yellow"style="margin-top:20px; margin-bottom: 10px;">Ordina!</button>
+            				<%
+                    	} else if (actualTime.isAfter(company.getOrarioDiApertura()) &&
+                    			actualTime.isBefore(company.getOrarioDiChiusura()) &&
                     			company.getGiorniDiApertura().contains(actualDay)) {
-                    %>
-                    		<button type="submit"class="standard-button center-block border-rounded-medium custom-border-red bg-red text-yellow"style="margin-top:20px; margin-bottom: 10px;">Ordina!</button>
-            		<%
+                    		//STANDARD CHECK
+                    		%>
+                    			<button type="submit"class="standard-button center-block border-rounded-medium custom-border-red bg-red text-yellow"style="margin-top:20px; margin-bottom: 10px;">Ordina!</button>
+            				<%
                     	}
             		%>
             </form>
             <%
-            	if (actualTime.isAfter(company.getOrarioDiApertura()) && actualTime.isBefore(company.getOrarioDiChiusura()) &&
+          		//Checking if endTime is smaller than startTime
+        		//Ex: sT 20.00 -> eT 8.00 (next day)
+        		if (company.getOrarioDiApertura().isAfter(company.getOrarioDiChiusura())){
+        			if ((actualTime.isAfter(company.getOrarioDiApertura()) && actualTime.isAfter(company.getOrarioDiChiusura()))|| //Checking actualTime before midnight
+        					(actualTime.isBefore(company.getOrarioDiApertura()) && actualTime.isBefore(company.getOrarioDiChiusura()))){ //Checking actualTime after midnight
+	        			//In that case, actualTime is before 00.00 OR after 00.00
+        				if (actualTime.isAfter(company.getOrarioDiApertura()) && actualTime.isAfter(company.getOrarioDiChiusura())){
+        					//BEFORE MIDNIGHT CASE
+        	    			if (company.getGiorniDiApertura().contains(actualDay)) {
+                				%>
+        							<div class="report-description">Controlla la tua mail!<br />Riceverai un resoconto dell'ordine via mail</div>
+                   				<%
+        	        		} else {
+        	        			%>
+                    				<div class="report-description" style="margin-top: 22px;">
+                    					<b>
+                   							Non puoi effettuare l'ordine<br />
+                   							L'azienda, attualmente, &egrave; chiusa<br />
+                   							Consulta orari e giorni di apertura
+                   						</b>
+                   					</div>
+                   				<%
+        	        		}
+        	    		} else if (actualTime.isBefore(company.getOrarioDiApertura()) && actualTime.isBefore(company.getOrarioDiChiusura())){
+        	    			//AFTER MIDNIGHT CASE
+        	    			if (company.getGiorniDiApertura().contains(precDay)) {
+                				%>
+        							<div class="report-description">Controlla la tua mail!<br />Riceverai un resoconto dell'ordine via mail</div>
+                   				<%
+        	        		} else {
+        	        			%>
+                    				<div class="report-description" style="margin-top: 22px;">
+                	    				<b>
+	                   						Non puoi effettuare l'ordine<br />
+    	               						L'azienda, attualmente, &egrave; chiusa<br />
+        	           						Consulta orari e giorni di apertura
+            	       					</b>
+                   					</div>
+                   				<%
+        	        		}
+        	    		}
+	        		}
+	        	} else if (company.getOrarioDiApertura().compareTo(company.getOrarioDiChiusura()) == 0){
+    	    		//company is always open in the day
+    	        	%>
+        				<div class="report-description">Controlla la tua mail!<br />Riceverai un resoconto dell'ordine via mail</div>
+                   	<%
+    	    	} else if (actualTime.isAfter(company.getOrarioDiApertura()) &&
+    	    			actualTime.isBefore(company.getOrarioDiChiusura()) &&
             			company.getGiorniDiApertura().contains(actualDay)) {
-            %>
-            		<div class="report-description">Controlla la tua mail!<br />Riceverai un resoconto dell'ordine via mail</div>
-            <%
+            		//STANDARD CHECK
+            		%>
+            			<div class="report-description">Controlla la tua mail!<br />Riceverai un resoconto dell'ordine via mail</div>
+           			<%
             	} else {
             		%>
             			<div class="report-description" style="margin-top: 22px;">
             				<b>
-            					Non puoi effettuare l'ordine<br />
-            					L'azienda, attualmente, &egrave; chiusa<br />
-            					Consulta orari e giorni di apertura
-            				</b>
-            			</div>
-            		<%
+           						Non puoi effettuare l'ordine<br />
+           						L'azienda, attualmente, &egrave; chiusa<br />
+           						Consulta orari e giorni di apertura
+           					</b>
+           				</div>
+           			<%
             	}
             %>
 		</div>

@@ -44,8 +44,8 @@ public class GestoreMail implements GestoreMail_Interface {
 	@Override
 	public void inviaMailOrdine(Ordine_Bean ordine) throws MessagingException {
 		// TODO Auto-generated method stub
-		String bodyMail = "Grazie per l'acquisto!\nID dell'ordine: " + ordine.getCodiceID().toString();
-		GestoreMail.sendMail(ordine.getCliente().getEmail(), "system@gmail.com", "Ordine completato!", "\nI prodotti arriveranno il prima possibile!");
+		GestoreMail.sendMail(ordine.getCliente().getEmail(), "system@gmail.com", "Ordine completato!", 
+				"Grazie per l'acquisto!\nID dell'ordine: " + ordine.getCodiceID().toString() + "\nI prodotti arriveranno il prima possibile!");
 	}
 	
 	

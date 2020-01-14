@@ -1,35 +1,27 @@
 package model.dao;
 
-import java.beans.Statement;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLTimeoutException;
 import java.sql.Savepoint;
+import java.sql.Time;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Random;
-
-import org.dbunit.dataset.sqlloader.SqlLoaderControlDataSet;
 import org.javatuples.Pair;
-
-import com.sun.org.apache.xerces.internal.impl.dv.xs.DayDV;
-
+import org.javatuples.Quartet;
 import exception.AziendaChiusaException;
 import exception.FattorinoNonDisponibileException;
 import interfaces.GestoreOrdineDao;
 import interfaces.GestoreUtenteDAO;
-import model.Carrello;
 import model.DBConnectionPool;
 import model.ProdottoQuantita;
 import model.bean.AccountAzienda_Bean;
@@ -57,43 +49,148 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 		Date date = new Date();
 		DayOfWeek x = DayOfWeek.of(date.getDay());
+		DayOfWeek precDay = x.minus(1);
 		LocalTime time = LocalTime.now().truncatedTo(ChronoUnit.SECONDS);
 
 		AccountAzienda_Bean az = order.getAzienda();
-		if (!az.getGiorniDiApertura().contains(x))
-			throw new AziendaChiusaException("L'azienda è chiusa oggi e non può evadere il tuo ordine");
-		if (time.isAfter(az.getOrarioDiChiusura()) || time.isBefore(az.getOrarioDiApertura()))
-			throw new AziendaChiusaException("L'azienda è chiusa adesso e non può evadere il tuo ordine");
-
-		PreparedStatement stmt = connect.prepareStatement(
-				"select fattorino.email, fattorino.nome, giorniLavorativi.giorno, fattorino.orario_inizio, fattorino.orario_fine from fattorino, giorniLavorativi where LOWER(fattorino.citta_consegna)=LOWER(?) and giorniLavorativi.giorno=? and fattorino.orario_inizio< ? and fattorino.orario_fine > ?");
-		stmt.setString(1, order.getAzienda().getCitta());
-		stmt.setString(2, x.toString());
-		stmt.setString(3, time.toString());
-		stmt.setString(4, time.toString());
-
-		ResultSet set = stmt.executeQuery();
-		ArrayList<Pair<String, String>> listOfEmailFattorino;
-		if (!set.next())
-			throw new FattorinoNonDisponibileException("Nessun Fattorino Disponibile");
-		else {
-			listOfEmailFattorino = new ArrayList<Pair<String, String>>();
-			listOfEmailFattorino.add(new Pair<String, String>(set.getString("email"), set.getString("nome")));
-			while (set.next()) {
-				listOfEmailFattorino.add(new Pair<String, String>(set.getString("email"), set.getString("nome")));
+		
+		//Checking if the company is open
+		//I will not control same HH, because i'm checking if there's an error
+		if (az.getOrarioDiApertura().isAfter(az.getOrarioDiChiusura())) {
+			if (time.isAfter(az.getOrarioDiApertura()) && time.isAfter(az.getOrarioDiChiusura())) {
+				//before midnight check
+				if (!az.getGiorniDiApertura().contains(x))
+					throw new AziendaChiusaException("L'azienda è chiusa oggi e non può evadere il tuo ordine");
+			} else if (time.isBefore(az.getOrarioDiApertura()) && time.isBefore(az.getOrarioDiChiusura())) {
+				//after midnight check
+				if (!az.getGiorniDiApertura().contains(precDay))
+					throw new AziendaChiusaException("L'azienda è chiusa oggi e non può evadere il tuo ordine");
+			} else {
+				//error case
+				throw new AziendaChiusaException("L'azienda è chiusa oggi e non può evadere il tuo ordine");
 			}
-
+		} else if (time.isAfter(az.getOrarioDiApertura()) && time.isBefore(az.getOrarioDiChiusura())) {
+			if (!az.getGiorniDiApertura().contains(x))
+				throw new AziendaChiusaException("L'azienda è chiusa oggi e non può evadere il tuo ordine");
 		}
-
+		//Checking of the company completed
+		
+		//Taking all couriers of the selected city
+		PreparedStatement preStmt = connect.prepareStatement(
+				"select fattorino.email, fattorino.nome, fattorino.orario_inizio, fattorino.orario_fine "
+				+ "from fattorino "
+				+ "where LOWER(fattorino.citta_consegna) = LOWER(?)");
+		preStmt.setString(1, order.getAzienda().getCitta());
+		ResultSet courierSet = preStmt.executeQuery();
+		ArrayList<Quartet<String, String, LocalTime, LocalTime>> courierContainer = null;
+		if (!courierSet.next()) {
+			throw new FattorinoNonDisponibileException("Nessun Fattorino Disponibile");
+		} else {
+			courierContainer = new ArrayList<>();
+			do {
+				Time temp = (Time) courierSet.getObject("orario_inizio");
+				Time temp2 = (Time) courierSet.getObject("orario_fine");
+				courierContainer.add(
+						new Quartet<String, String, LocalTime, LocalTime>(
+								courierSet.getString("email"), 
+								courierSet.getString("nome"), 
+								temp.toLocalTime(),
+								temp2.toLocalTime()
+								)
+						);
+			} while (courierSet.next());
+		}
+		//DECLARING THINGS
+		//this list contains final values
+		ArrayList<Pair<String, String>> listOfEmailFattorino = new ArrayList<Pair<String,String>>();
+		//this PS contains a query to take days for a courier
+		PreparedStatement hs = connect.prepareStatement(
+				"select giorniLavorativi.giorno "
+				+ "from fattorino, giorniLavorativi "
+				+ "where fattorino.email = ?");
+		//Starting checks on HH
+		/*	Quartet structure: email, nome, orario_inizio, orario_fine	*/
+		for (Quartet<String, String, LocalTime, LocalTime> tempRecord : courierContainer) {
+			boolean timeCheckResult = false;
+			boolean afterMidnight = false;
+			/* *
+			 * 	TIME CHECK
+			 * */
+			if (tempRecord.getValue2().isAfter(tempRecord.getValue3())) {
+				//Checking if endTime is smaller than startTime
+				if (time.isAfter(tempRecord.getValue2()) && time.isAfter(tempRecord.getValue3())) {
+					//Before midnight check
+					timeCheckResult = true;
+					afterMidnight = false;
+				} else if (time.isBefore(tempRecord.getValue2()) && time.isBefore(tempRecord.getValue3())) {
+					//After midnight check
+					timeCheckResult = true;
+					afterMidnight = true;
+				}
+			} else if (tempRecord.getValue2().compareTo(tempRecord.getValue3()) == 0) {
+				//Company is always open (same HH)
+				timeCheckResult = true;
+				afterMidnight = false;
+			} else if (time.isAfter(tempRecord.getValue2()) && time.isBefore(tempRecord.getValue3())) {
+				//Standard check
+				timeCheckResult = true;
+				afterMidnight = false;
+			}
+			//Checking if preliminary control on the hour is ok
+			if (timeCheckResult == true) {
+				//taking days for the courier
+				ArrayList<DayOfWeek> workDays = new ArrayList<DayOfWeek>();
+				hs.setString(1, tempRecord.getValue0());
+				ResultSet hsSet = hs.executeQuery();
+				if (hsSet.next()) {
+					String takenDay = (String) hsSet.getObject("giorno");
+					if (takenDay.equalsIgnoreCase("Monday")) {
+						workDays.add(DayOfWeek.MONDAY);
+					} else if (takenDay.equalsIgnoreCase("Tuesday")) {
+						workDays.add(DayOfWeek.TUESDAY);
+					} else if (takenDay.equalsIgnoreCase("Wednesday")) {
+						workDays.add(DayOfWeek.WEDNESDAY);
+					} else if (takenDay.equalsIgnoreCase("Thursday")) {
+						workDays.add(DayOfWeek.THURSDAY);
+					} else if (takenDay.equalsIgnoreCase("Friday")) {
+						workDays.add(DayOfWeek.FRIDAY);
+					} else if (takenDay.equalsIgnoreCase("Saturday")) {
+						workDays.add(DayOfWeek.SATURDAY);
+					} else if (takenDay.equalsIgnoreCase("Sunday")) {
+						workDays.add(DayOfWeek.SUNDAY);
+					}
+				}
+				//checking work day
+				if (afterMidnight == false) {
+					if (workDays.contains(x)) {
+						//OK!
+						listOfEmailFattorino.add(new Pair<String, String>(tempRecord.getValue0(), tempRecord.getValue1()));
+					}
+				}
+				if (afterMidnight == true) {
+					if (workDays.contains(precDay)) {
+						//OK
+						listOfEmailFattorino.add(new Pair<String, String>(tempRecord.getValue0(), tempRecord.getValue1()));
+					}
+				}
+			}
+		}
+		
+		if (listOfEmailFattorino.isEmpty()) {
+			throw new FattorinoNonDisponibileException("Nessun Fattorino Disponibile");
+		}
+		
 		Random randomizer = new Random();
 		Pair<String, String> fattorino = listOfEmailFattorino.get(randomizer.nextInt(listOfEmailFattorino.size()));
 
 		connect.setAutoCommit(false);
 		Savepoint save = connect.setSavepoint();
+		
+		System.out.println("TEST > " + fattorino.getValue0() + " - " + fattorino.getValue1());
 
 		try {
 
-			stmt = connect.prepareStatement(
+			PreparedStatement stmt = connect.prepareStatement(
 					"insert into ordine (indirizzo_consegna, numero_carta, prezzo_totale, note, stato, acquirente, email_acquirente, azienda, email_azienda, fattorino, email_fattorino) values "
 							+ "(?,?,?,?,?,?,?,?,?,?,?)",
 					java.sql.Statement.RETURN_GENERATED_KEYS);

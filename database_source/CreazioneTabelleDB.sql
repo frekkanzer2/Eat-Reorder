@@ -50,7 +50,7 @@ create table Prodotto(
 codice int AUTO_INCREMENT,
 nome varchar(45) not null,
 descrizione varchar(250) not null,
-prezzo decimal not null,
+prezzo decimal(10,2) not null,
 path_immagine varchar(250) not null,
 azienda varchar(40),
 email varchar(100), 
@@ -64,7 +64,8 @@ create table Ordine(
 codice int AUTO_INCREMENT,
 indirizzo_consegna varchar(255) not null,
 numero_carta character(16) not null,
-prezzo_totale decimal not null,
+prezzo_totale decimal(10,2) not null,
+telefono_cliente varchar(10) not null,
 note varchar(150),
 stato varchar(20) not null,
 acquirente varchar(40), 
@@ -101,7 +102,7 @@ on delete cascade,
 primary key(email,id)
 );
 
-create table ProdottoOrdine(
+create table ProdottoQuantita(
 quantita decimal(2) not null,
 prodotto int, foreign key (prodotto) references Prodotto(codice)
 on update cascade 

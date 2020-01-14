@@ -14,12 +14,14 @@ public class Ordine_Bean {
 	private AccountFattorino_Bean fattorino;
 	private AccountCliente_Bean cliente;
 	private List<ProdottoQuantita> prodottiOrdinati;
+	
 	private String indirizzoConsegna;
-
+	private String telefono;
 	private String codiceCarta;
 	private Float prezzoTotal;
 	private String note;
 	private Long codiceID;
+	private int stato;
 
 	/**
 	 * @return the codiceID
@@ -103,7 +105,6 @@ public class Ordine_Bean {
 
 
 
-	private int stato;
 
 	/**
 	 * @return Lista di oggetti ProdottoQuantita
@@ -196,6 +197,20 @@ public class Ordine_Bean {
 	 */
 	public AccountCliente_Bean getCliente() {
 		return cliente;
+	}
+
+	/**
+	 * @return the telefono
+	 */
+	public String getTelefono() {
+		return telefono;
+	}
+
+	/**
+	 * @param telefono the telefono to set
+	 */
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
 	/**

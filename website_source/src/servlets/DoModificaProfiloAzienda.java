@@ -27,6 +27,11 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private GestoreUtenteDAO utenteDao = new GestoreUtenteDAOImpl();
 
+	
+	public void setGestore(GestoreUtenteDAO gestore) {
+		this.utenteDao = gestore;
+	}
+	
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -39,7 +44,7 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Getting data from ModificaProfiloAzienda.jsp
 		HttpSession session = request.getSession();

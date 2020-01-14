@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -25,6 +26,11 @@ public class DoModificaProfiloCliente extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	public void setGestore(GestoreUtenteDAO gestore) {
+		this.utenteDao = gestore;
+	}
+	
     public DoModificaProfiloCliente() {
         super();
         // TODO Auto-generated constructor stub
@@ -33,7 +39,7 @@ public class DoModificaProfiloCliente extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Getting data from ModificaProfiloCliente.jsp
 		HttpSession session = request.getSession();
 		AccountCliente_Bean utenteLoggato= (AccountCliente_Bean)session.getAttribute("utente");
@@ -53,6 +59,7 @@ public class DoModificaProfiloCliente extends HttpServlet {
 						//Confirm the changes
 						utenteDao.aggiornaCliente(newInformation);
 						utenteLoggato.modificaDati(newInformation);
+						
 						request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
 					} else {
 						// did not fill in all the fields

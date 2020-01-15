@@ -198,7 +198,10 @@
 		<div class="registration-description">
 			Provincia:
 			<%=utenteFattorino.getProvinciaConsegna()%></div>
-			<div class="registration-description">
+		<div class="registration-description">
+			Email:
+			<%=utenteFattorino.getEmail()%></div>
+		<div class="registration-description">
 			Orari di consegna:
 			<%=utenteFattorino.getInizioConsegne().toString()%>
 			-

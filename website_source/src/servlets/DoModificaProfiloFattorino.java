@@ -37,7 +37,7 @@ public class DoModificaProfiloFattorino extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Getting data from ModificaProfiloFattorino.jsp
 		HttpSession session = request.getSession();
 		AccountFattorino_Bean utenteLoggato= null;
@@ -64,7 +64,7 @@ public class DoModificaProfiloFattorino extends HttpServlet {
 		LocalTime inputStarTime=LocalTime.parse(request.getParameter("start-time"));
 		LocalTime inputEndTime=LocalTime.parse(request.getParameter("end-time"));
 		String [] inputDay=request.getParameterValues("checkbox");
-		List<DayOfWeek> giorni=new ArrayList<DayOfWeek>();
+		List<DayOfWeek> giorni = new ArrayList<DayOfWeek>();
 		for(int i=0;i<inputDay.length;i++) {
 			
 				giorni.add(DayOfWeek.valueOf(inputDay[i]));
@@ -97,6 +97,10 @@ public class DoModificaProfiloFattorino extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+
+	public void setGestore(GestoreUtenteDAOImpl dao) {
+		this.utenteDao=dao;
 	}
 
 }

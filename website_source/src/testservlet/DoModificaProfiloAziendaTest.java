@@ -1,5 +1,6 @@
 package testservlet;
 
+import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
@@ -214,7 +215,7 @@ class DoModificaProfiloAziendaTest extends Mockito{
 		
 		String errorMessage = "Compilare tutti i campi correttamente.";
 		request.setParameter("nome", "PizzaPanini");
-		request.setParameter("indirizzo", "RomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRoma");
+		request.setParameter("indirizzo", "RomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRomaRoma");
 		request.setParameter("civico", "12");
 		request.setParameter("citta", "Montella");
 		request.setParameter("provincia", "AV");
@@ -375,7 +376,6 @@ class DoModificaProfiloAziendaTest extends Mockito{
 		request.setParameter("citta", "Montella");
 		request.setParameter("provincia", "AV");
 		request.setParameter("telefono", "3290532742");
-		request.setParameter("iva", "07643520563");
 		request.setParameter("password", "PizzaPan1");
 		request.setParameter("start-time", "12:00");
 		request.setParameter("end-time", "15:00");
@@ -878,7 +878,6 @@ class DoModificaProfiloAziendaTest extends Mockito{
 		AccountAzienda_Bean azienda= new AccountAzienda_Bean("pizzapanini@gmail.com", password, nome, indirizzo, civico, citta, provincia, telefono, "07643520563", start_time, end_time, checkbox);
 		request.getSession().setAttribute("utente", azienda);
 		
-		String errorMessage = "Compilare tutti i campi correttamente.";
 		request.setParameter("nome", "PizzaPanini");
 		request.setParameter("indirizzo", "Roma");
 		request.setParameter("civico", "12");
@@ -890,8 +889,18 @@ class DoModificaProfiloAziendaTest extends Mockito{
 		request.setParameter("end-time", "15:00");
 		request.setParameter("checkbox", "MONDAY");
 		servlet.doGet(request, response);
-		String attribute = (String) request.getAttribute("msg_error");
-		assertEquals(errorMessage, attribute);
+				
+		assertEquals(azienda.getNome(), "PizzaPanini");
+		assertEquals(azienda.getVia(), "Roma");
+		assertEquals(azienda.getNumeroCivico(), 12);
+		assertEquals(azienda.getCitta(), "Montella");
+		assertEquals(azienda.getProvincia(), "AV");
+		assertEquals(azienda.getTelefono(), "3290532742");
+		assertEquals(azienda.getPassword(), "PizzaPan1");
+		assertEquals(azienda.getOrarioDiApertura().toString(), "12:00");
+		assertEquals(azienda.getOrarioDiChiusura().toString(), "15:00");
+		assertEquals(azienda.getGiorniDiApertura().contains(DayOfWeek.MONDAY), true);
+		
 	}
 	
 	

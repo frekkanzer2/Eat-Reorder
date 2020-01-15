@@ -68,7 +68,18 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 		String inputTelefono = request.getParameter("telefono");
 		String inputIndirizzo = request.getParameter("indirizzo");
 
-		int inputCivico = Integer.parseInt(request.getParameter("civico"));
+		int newCivico;
+		try {
+		String inputCivico=request.getParameter("civico");
+		newCivico=Integer.parseInt(inputCivico);
+		} catch(Exception e) {
+			String errmessage=("Compilare tutti i campi correttamente.");
+			//Redirection to an error page
+			request.setAttribute("msg_error", errmessage);
+		    request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
+		    return;
+		}
+		
 		String inputCitta = request.getParameter("citta");
 		String inputProvincia = request.getParameter("provincia");
 		LocalTime inputStarTime = LocalTime.parse(request.getParameter("start-time"));
@@ -82,7 +93,7 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 		}
 
 		AccountAzienda_Bean newInformation = new AccountAzienda_Bean(utenteLoggato.getEmail(), inputPassword, inputNome,
-				inputIndirizzo, inputCivico, inputCitta, inputProvincia, inputTelefono, utenteLoggato.getPartitaIva(),
+				inputIndirizzo, newCivico, inputCitta, inputProvincia, inputTelefono, utenteLoggato.getPartitaIva(),
 				inputStarTime, inputEndTime, giorni);
 		// if correct
 		try {

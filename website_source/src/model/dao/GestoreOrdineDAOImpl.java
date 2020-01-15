@@ -206,7 +206,12 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 			stmt.setString(10, fattorino.getValue1());
 			stmt.setString(11, fattorino.getValue0());
 
-			long idOrder = stmt.executeUpdate();
+		 stmt.executeUpdate();
+		 Long idOrder = null;
+		 ResultSet setKeys = stmt.getGeneratedKeys();
+		 if(setKeys.next()) {
+			 idOrder = setKeys.getLong(1);
+		 } 
 			System.out.println(idOrder);
 			order.setCodiceID(idOrder);
 			for (ProdottoQuantita pq : order.getProdottiOrdinati()) {

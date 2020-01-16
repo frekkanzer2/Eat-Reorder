@@ -41,7 +41,7 @@ public class DoBannaAzienda extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		AccountModeratore_Bean user = (AccountModeratore_Bean) session.getAttribute("utente");
@@ -49,24 +49,33 @@ public class DoBannaAzienda extends HttpServlet {
 			response.sendRedirect("Login.jsp");
 			return;
 		}
-		String tempOrderId = request.getParameter("id-order");
-		String banReason = request.getParameter("reason");
-		if (tempOrderId.equalsIgnoreCase("") || banReason.equalsIgnoreCase("")) {
-			String errmessage=("Compila ogni campo");
-			//Redirection to an error page
-			request.setAttribute("msg_error", errmessage);
-		    request.getRequestDispatcher("HomepageModeratore.jsp").forward(request, response);
-		    return;
-		}
-		Long orderId = Long.parseLong(tempOrderId);
+		
 		try {
+			Long orderId = null;
+			String description = null;
+			String tempOrderId = request.getParameter("id-order");
+			if (!tempOrderId.equalsIgnoreCase("")) {
+				try {
+					orderId = Long.parseLong(tempOrderId);
+				} catch (NumberFormatException e) {
+					orderId = -1L;
+				}
+				description = request.getParameter("reason");
+			}
+			if (orderId == null || description == null) {
+				String errmessage = ("Compila ogni campo");
+				// Redirection to an error page
+				request.setAttribute("msg_error", errmessage);
+				request.getRequestDispatcher("HomepageModeratore.jsp").forward(request, response);
+				return;
+			}
 		if (orderManager.controlloEsistenzaOrdine(orderId)) {
 			String errmessage = null;
 			//Order exists CORRECT CASE
 			AccountAzienda_Bean company = userManager.dammiAziendaConOrdine(orderId);
 			userManager.banAzienda(company);
 			try {
-				mailManager.inviaMailBan(company, banReason);
+				mailManager.inviaMailBan(company, description);
 			} catch (MessagingException e) {
 				// TODO Auto-generated catch block
 				errmessage = "Non è stato possibile inviare la mail che notifichi il ban";
@@ -99,5 +108,20 @@ public class DoBannaAzienda extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+
+	public void setGestore(GestoreOrdineDao dao) {
+		this.orderManager = dao;
+	}
+
+	public void setGestore(GestoreMail mail) {
+		this.mailManager=mail;
+		
+	}
+
+	public void setGestore(GestoreUtenteDAO dao) {
+		this.userManager=dao;
+		
+	}
+	
 
 }

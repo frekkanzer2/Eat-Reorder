@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
 
@@ -37,7 +38,7 @@ public class DoModificaProdotto extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 
@@ -62,10 +63,26 @@ public class DoModificaProdotto extends HttpServlet {
 		
 		//prendo i parametri dalla richiesta
 		Long id = Long.parseLong(request.getParameter("id"));
+		
+		Float costo= null;
 		String nome = request.getParameter("nome");
-		Float prezzo = Float.parseFloat(request.getParameter("prezzo").replace(",", "."));
+		String inCost = request.getParameter("costo").replace(",", ".");
 
-		URL path = new URL(request.getParameter("img_path"));
+		try {
+			costo = Float.parseFloat(inCost);
+		} catch (NumberFormatException e) {
+			costo = -1F;
+		}
+		
+		String inPath = request.getParameter("img_path");
+		URL path = null;
+		try {
+			path = new URL(inPath);
+		} catch (MalformedURLException e) {
+			path= new URL("http://");
+		}
+		
+		
 		String descrizione = request.getParameter("descrizione");
 
 		// creo un nuovo prodotto con i dati aggiornati
@@ -75,12 +92,15 @@ public class DoModificaProdotto extends HttpServlet {
 		newProdotto.setAzienda(azienda);
 		newProdotto.setDescrizione(descrizione);
 		newProdotto.setImmagine(path);
-		newProdotto.setPrezzo(prezzo);
-		if (CheckFormato.checkProdotto(nome, path, descrizione, prezzo)) {
+		newProdotto.setPrezzo(costo);
+		if (CheckFormato.checkProdotto(nome, path, descrizione, costo)) {
 			//prendo il prodotto con il codice id dal listino dell'azienda
 			Prodotto_Bean prodInListino = azienda.dammiProdotto(id);
 
 			try {
+				
+				
+				
 				
 				dao.aggiornaProdotto(azienda, newProdotto);
 				prodInListino.modificaDati(newProdotto);
@@ -101,6 +121,10 @@ public class DoModificaProdotto extends HttpServlet {
 			request.setAttribute("msg_error", errmessage);
 			request.getRequestDispatcher("Listino.jsp").forward(request, response);
 		}
+	}
+
+	public void setGestore(GestoreUtenteDAO dao) {
+		this.dao=dao;	
 	}
 
 }

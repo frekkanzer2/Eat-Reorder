@@ -32,7 +32,7 @@ public class DoLogin extends HttpServlet {
 		doPost(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Getting data from JSP Login.jsp
 		String input_email = request.getParameter("email");
@@ -69,6 +69,7 @@ public class DoLogin extends HttpServlet {
 					request.getRequestDispatcher("Login.jsp").forward(request, response);
 				} else {
 					// CASE USER EXISTS (TRUE)
+					
 					AccountUtenteRegistrato_Bean loggedUser = userManager.dammiUtente(input_email);
 					HttpSession newSession = request.getSession();
 					newSession.setAttribute("utente", loggedUser);
@@ -76,7 +77,10 @@ public class DoLogin extends HttpServlet {
 						Carrello cart = new Carrello();
 						newSession.setAttribute("carrello", cart);
 					}
+					
 					response.sendRedirect("Homepage.jsp");
+					
+					
 					return;
 				}
 			}
@@ -86,6 +90,11 @@ public class DoLogin extends HttpServlet {
 			response.sendRedirect("ErrorPage.html");
 		}
 
+	}
+
+	public void setGestore(GestoreUtenteDAOImpl dao) {
+		this.userManager= dao;
+		
 	}
 
 }

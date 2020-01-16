@@ -63,9 +63,10 @@ public class AccountFattorino_Bean extends AccountUtenteRegistrato_Bean {
 		if (newAccountInforma != null) {
 			this.setPassword(newAccountInforma.getPassword());
 
+			this.cognome= newAccountInforma.getCognome();
 			this.nome = newAccountInforma.getNome();
 			this.telefono = newAccountInforma.getTelefono();
-			this.cittaConsegna = newAccountInforma.cittaConsegna;
+			this.cittaConsegna = newAccountInforma.getProvinciaConsegna();
 			this.provinciaConsegna = newAccountInforma.getProvinciaConsegna();
 			this.inizioConsegne = newAccountInforma.getInizioConsegne();
 			this.fineConsegne = newAccountInforma.getFineConsegne();

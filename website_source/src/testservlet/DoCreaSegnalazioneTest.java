@@ -16,6 +16,7 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import interfaces.GestoreMail_Interface;
 import interfaces.GestoreUtenteDAO;
 import model.GestoreMail;
+import model.bean.AccountCliente_Bean;
 import model.dao.GestoreOrdineDAOImpl;
 import model.dao.GestoreUtenteDAOImpl;
 import servlets.DoCreaSegnalazione;
@@ -38,6 +39,9 @@ class DoCreaSegnalazioneTest extends Mockito{
 	public void CreaSegnalazioneAzienda_1() throws SQLException, ServletException, IOException {
 		Long IdOrdine= 5L;
 		
+		AccountCliente_Bean cliente= new AccountCliente_Bean("email", "password", "Mario", "Rossi");
+		request.getSession().setAttribute("utente", cliente);
+		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
 		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);
 		servlet.setGestore(dao);
@@ -55,6 +59,9 @@ class DoCreaSegnalazioneTest extends Mockito{
 	public void CreaSegnalazioneAzienda_2() throws SQLException, ServletException, IOException {
 		Long IdOrdine= 5L;
 		
+		AccountCliente_Bean cliente= new AccountCliente_Bean("email", "password", "Mario", "Rossi");
+		request.getSession().setAttribute("utente", cliente);
+		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
 		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);
 		servlet.setGestore(dao);
@@ -70,6 +77,9 @@ class DoCreaSegnalazioneTest extends Mockito{
 	@Test
 	public void CreaSegnalazioneAzienda_3() throws SQLException, ServletException, IOException {
 		Long IdOrdine= 5L;
+		
+		AccountCliente_Bean cliente= new AccountCliente_Bean("email", "password", "Mario", "Rossi");
+		request.getSession().setAttribute("utente", cliente);
 		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
 		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);
@@ -87,6 +97,9 @@ class DoCreaSegnalazioneTest extends Mockito{
 	public void CreaSegnalazioneAzienda_4() throws SQLException, ServletException, IOException {
 		Long IdOrdine= 5L;
 		
+		AccountCliente_Bean cliente= new AccountCliente_Bean("email", "password", "Mario", "Rossi");
+		request.getSession().setAttribute("utente", cliente);
+		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
 		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);
 		servlet.setGestore(dao);
@@ -102,6 +115,9 @@ class DoCreaSegnalazioneTest extends Mockito{
 	@Test
 	public void CreaSegnalazioneAzienda_5() throws SQLException, ServletException, IOException {
 		Long IdOrdine= 5L;
+		
+		AccountCliente_Bean cliente= new AccountCliente_Bean("email", "password", "Mario", "Rossi");
+		request.getSession().setAttribute("utente", cliente);
 		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
 		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);
@@ -119,6 +135,9 @@ class DoCreaSegnalazioneTest extends Mockito{
 	public void CreaSegnalazioneAzienda_6() throws SQLException, ServletException, IOException {
 		Long IdOrdine= 5L;
 		
+		AccountCliente_Bean cliente= new AccountCliente_Bean("email", "password", "Mario", "Rossi");
+		request.getSession().setAttribute("utente", cliente);
+		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
 		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);
 		servlet.setGestore(dao);
@@ -135,6 +154,9 @@ class DoCreaSegnalazioneTest extends Mockito{
 	public void CreaSegnalazioneAzienda_7() throws Exception {
 		Long IdOrdine= 5L;
 		String descrizione="Problemi riguardo il pacco";
+		
+		AccountCliente_Bean cliente= new AccountCliente_Bean("email", "password", "Mario", "Rossi");
+		request.getSession().setAttribute("utente", cliente);
 		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
 		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);

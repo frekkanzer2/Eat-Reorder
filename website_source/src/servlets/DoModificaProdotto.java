@@ -48,11 +48,11 @@ public class DoModificaProdotto extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// prendo l'account azienda dalla sessione
 		HttpSession session = request.getSession();
 
-		// prendo l'account azienda dalla sessione
 		AccountAzienda_Bean azienda = (AccountAzienda_Bean) session.getAttribute("utente");
 
 		// se non esiste l'account azienda rimando alla pagina di login
@@ -85,22 +85,20 @@ public class DoModificaProdotto extends HttpServlet {
 		
 		String descrizione = request.getParameter("descrizione");
 
-		// creo un nuovo prodotto con i dati aggiornati
-		Prodotto_Bean newProdotto = new Prodotto_Bean();
-		newProdotto.setCodice(id);
-		newProdotto.setNome(nome);
-		newProdotto.setAzienda(azienda);
-		newProdotto.setDescrizione(descrizione);
-		newProdotto.setImmagine(path);
-		newProdotto.setPrezzo(costo);
 		if (CheckFormato.checkProdotto(nome, path, descrizione, costo)) {
 			//prendo il prodotto con il codice id dal listino dell'azienda
+			// creo un nuovo prodotto con i dati aggiornati
+			Prodotto_Bean newProdotto = new Prodotto_Bean();
+			newProdotto.setCodice(id);
+			newProdotto.setNome(nome);
+			newProdotto.setAzienda(azienda);
+			newProdotto.setDescrizione(descrizione);
+			newProdotto.setImmagine(path);
+			newProdotto.setPrezzo(costo);
+			
 			Prodotto_Bean prodInListino = azienda.dammiProdotto(id);
 
 			try {
-				
-				
-				
 				
 				dao.aggiornaProdotto(azienda, newProdotto);
 				prodInListino.modificaDati(newProdotto);

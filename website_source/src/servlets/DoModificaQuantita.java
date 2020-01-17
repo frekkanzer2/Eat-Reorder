@@ -39,7 +39,7 @@ public class DoModificaQuantita extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		AccountCliente_Bean utente = (AccountCliente_Bean) session.getAttribute("utente");
@@ -51,9 +51,19 @@ public class DoModificaQuantita extends HttpServlet {
 		// TODO Auto-generated method stub
 		try {
 			Long idProduct = Long.parseLong(request.getParameter("productId"));
-			Integer newQuantity = Integer.parseInt(request.getParameter("productQuantity"));
+			
+			
+			Integer quantita=null;
+			String newQuantity = request.getParameter("productQuantity");
+			
+			try {
+				quantita = Integer.parseInt(newQuantity);
+			} catch (NumberFormatException e) {
+				quantita = -1;
+			}
+			
 			String companyMail = request.getParameter("companyMail");
-			if (!CheckFormato.checkQuantità(newQuantity)) {
+			if (!CheckFormato.checkQuantità(quantita)) {
 				// The newer quantity is not correct
 				String errmessage = ("La quantità inserita non è corretta");
 				// Redirection to an error page
@@ -63,7 +73,7 @@ public class DoModificaQuantita extends HttpServlet {
 			}
 			AccountAzienda_Bean companyInstance = (AccountAzienda_Bean) manager.dammiUtente(companyMail);
 			Prodotto_Bean askedProduct = companyInstance.dammiProdotto(idProduct);
-			cart.aggiornaQtaCarrello(askedProduct, newQuantity);
+			cart.aggiornaQtaCarrello(askedProduct, quantita);
 			session.setAttribute("carrello", cart);
 			request.getRequestDispatcher("Carrello.jsp").forward(request, response);
 		} catch (Exception e) {
@@ -81,6 +91,11 @@ public class DoModificaQuantita extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+
+	public void setGestore(GestoreUtenteDAO dao) {
+		this.manager=dao;
+		
 	}
 
 }

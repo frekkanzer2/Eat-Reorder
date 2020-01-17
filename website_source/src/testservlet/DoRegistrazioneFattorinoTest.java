@@ -419,7 +419,7 @@ class DoRegistrazioneFattorinoTest extends Mockito{
 		GestoreUtenteDAOImpl dao=mock(GestoreUtenteDAOImpl.class); 
 		servlet.setGestore(dao);
 		
-		String errorMessage = "Registrazione avvenuta. Puoi loggare.";
+		String Message = "Registrazione avvenuta. Puoi loggare.";
 		request.setParameter("email", "Francesco1@gmail.com");
 		request.setParameter("password", "Fattorino");
 		request.setParameter("nome", "Francesco");
@@ -432,7 +432,7 @@ class DoRegistrazioneFattorinoTest extends Mockito{
 		request.setParameter("checkbox", "MONDAY");
 		servlet.doGet(request, response);
 		String attribute = (String) request.getAttribute("msg_confirm");
-		assertEquals(errorMessage, attribute);
+		assertEquals(Message, attribute);
 	}
 
 }

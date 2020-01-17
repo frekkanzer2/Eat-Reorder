@@ -297,19 +297,27 @@ class DoModificaProdottoTest extends Mockito{
 		
 		AccountAzienda_Bean azienda= new AccountAzienda_Bean(email_azienda, null , null, null , 0 , null, null, null, null, null, null, null);
 		Prodotto_Bean prodotto= new Prodotto_Bean();		
-		prodotto.setCodice(15L);
+		prodotto.setCodice(10L);
 		prodotto.setAzienda(azienda);
+		azienda.aggiungiProdotto(prodotto);
 		
 		request.getSession().setAttribute("utente", azienda);
 					
 		GestoreUtenteDAOImpl dao= mock(GestoreUtenteDAOImpl.class);
-		dao.aggiornaProdotto(azienda, prodotto);
+		
 		servlet.setGestore(dao);
-	
+		
+		request.setParameter("id", "10");
 		request.setParameter("nome", "Torta al miele");
 		request.setParameter("descrizione", "Dolce al miele");
 		request.setParameter("costo", "0,70");
 		request.setParameter("img_path", "http://pathimmagine");
-		servlet.doGet(request,response);
+		servlet.doPost(request,response);
+		
+		assertEquals(prodotto.getNome(), "Torta al miele");
+		assertEquals(prodotto.getDescrizione(), "Dolce al miele");
+		assertEquals(prodotto.getPrezzo(), 0.70F);
+		assertEquals(prodotto.getImmagine().toString(), "http://pathimmagine");
+		
 	} 
 }

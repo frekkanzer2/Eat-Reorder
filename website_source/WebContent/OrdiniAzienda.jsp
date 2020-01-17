@@ -58,7 +58,7 @@
 
         <!--CARD OF THE ORDER-->
         <a href="./DoVaiVisualizzaOrdine?idOrdine=<%=order.getCodiceID()%>"> <!--THIS A TAG WILL REDIRECT YOU TO THE ORDER DETAILS-->
-        <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix" style="overflow: auto;">
+        <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix">
             <div class="row">
                 <!--First column contains ID and price-->
                 <div class="col-sm-7">

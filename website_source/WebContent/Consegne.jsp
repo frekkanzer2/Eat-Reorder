@@ -54,8 +54,7 @@
 		%>
 
 		<div id="flip"
-			class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix"
-			style="overflow: auto;">
+			class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix">
 			<div class="row">
 				<!--First column contains ID-->
 				<div class="col-sm-6">

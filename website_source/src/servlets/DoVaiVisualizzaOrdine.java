@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import interfaces.GestoreOrdineDao;
 import model.bean.AccountAzienda_Bean;
 import model.bean.Ordine_Bean;
 import model.dao.GestoreOrdineDAOImpl;
@@ -20,6 +21,7 @@ import model.dao.GestoreOrdineDAOImpl;
 @WebServlet("/DoVaiVisualizzaOrdine")
 public class DoVaiVisualizzaOrdine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	GestoreOrdineDao manager = new GestoreOrdineDAOImpl();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -41,7 +43,6 @@ public class DoVaiVisualizzaOrdine extends HttpServlet {
 			response.sendRedirect("Login.jsp");
 
 		Long id = Long.parseLong(request.getParameter("idOrdine"));
-		GestoreOrdineDAOImpl manager = new GestoreOrdineDAOImpl();
 		Ordine_Bean order = null;
 		try {
 			order = manager.dammiOrdine(id);

@@ -6,11 +6,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import interfaces.GestoreMail_Interface;
 import interfaces.GestoreOrdineDao;
 import model.CheckFormato;
 import model.GestoreMail;
+import model.bean.AccountCliente_Bean;
 import model.dao.GestoreOrdineDAOImpl;
 import model.dao.GestoreUtenteDAOImpl;
 
@@ -37,6 +39,14 @@ public class DoCreaSegnalazione extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		AccountCliente_Bean utenteLoggato= (AccountCliente_Bean)session.getAttribute("utente");
+		
+		if(utenteLoggato==null) {
+			response.sendRedirect("Homepage.jsp");
+			return;
+		}
+		
 		try {
 			Long orderId = null;
 			String description = null;

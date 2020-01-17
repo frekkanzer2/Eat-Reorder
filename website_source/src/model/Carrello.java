@@ -15,7 +15,7 @@ import java.util.Set;
  * prodotto, l'azienda associata al carrello diventa uguale a quella del
  * prodotto aggiunto per primo. Tutti i prodotti aggiunti successivamente
  * dovranno appartenere alla stessa azienda altrimenti non verranno aggiunti.
- * 
+ * Se viene rimosso l'ultimo prodotto presente, l'azienda associata viene posta a null.
  * @author Rosario Gagliardi
  *
  */

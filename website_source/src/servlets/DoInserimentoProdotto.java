@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import interfaces.GestoreUtenteDAO;
+import javafx.scene.shape.Path;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
 
@@ -38,23 +40,36 @@ public class DoInserimentoProdotto extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Getting data from NuovoProdotto.jsp
 		// pick fromthe session the Company
 		HttpSession session = request.getSession();
 		AccountAzienda_Bean utenteloggato = (AccountAzienda_Bean) session.getAttribute("utente");
+		
 		if (utenteloggato == null) {
 			response.sendRedirect("Login.jsp");
 			return;
 		}
-
-		String inProdotto = request.getParameter("nome");
-		String inCost = request.getParameter("costo").replace(",", ".");
 		
-		float costo = Float.parseFloat(inCost);
+		Float costo= null;
+		String inProdotto = request.getParameter("nome");
+		String inCost = request.getParameter("costo").replace(",", ".");	
+		
+		try {
+			costo = Float.parseFloat(inCost);
+		} catch (NumberFormatException e) {
+			costo = -1F;
+		}
+		
 		String inPath = request.getParameter("img_path");
-		URL path = new URL(inPath);
+		URL path = null;
+		try {
+			path = new URL(inPath);
+		} catch (MalformedURLException e) {
+			path= new URL("http://");
+		}
+				
 		String inDescr = request.getParameter("descrizione");
 		try {
 			// use CheckFormato for test the parameter
@@ -95,6 +110,11 @@ public class DoInserimentoProdotto extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+
+	public void setGestore(GestoreUtenteDAO dao) {
+		this.utente=dao;
+		
 	}
 
 }

@@ -677,7 +677,7 @@ public class GestoreUtenteDAOImpl implements GestoreUtenteDAO {
 		ResultSet st = stmt.getGeneratedKeys();
 		st.next();
 		prodotto.setCodice(st.getLong(1));
-
+		
 	}
 
 	// terminato

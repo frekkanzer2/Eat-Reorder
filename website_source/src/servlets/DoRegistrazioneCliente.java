@@ -8,10 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import interfaces.GestoreUtenteDAO;
 import model.CheckFormato;
 import model.bean.AccountCliente_Bean;
+import model.bean.AccountUtenteRegistrato_Bean;
 import model.dao.GestoreUtenteDAOImpl;
 
 /**
@@ -38,9 +40,18 @@ public class DoRegistrazioneCliente extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Getting data from RegistrazioneCliente.jsp
+		HttpSession session = request.getSession();
+
+		AccountUtenteRegistrato_Bean utenteLoggato = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+		// check if the user is logged or not
+		// if is logged
+		if (utenteLoggato != null) {
+			response.sendRedirect("Homepage.jsp");
+			return;
+		}
+		
 		String input_email = request.getParameter("email");
 		String input_password = request.getParameter("password");
 		String input_nome = request.getParameter("nome");

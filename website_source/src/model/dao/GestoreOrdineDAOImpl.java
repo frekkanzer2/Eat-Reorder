@@ -186,8 +186,8 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 			try {
 
 				PreparedStatement stmt = connect.prepareStatement(
-						"insert into ordine (indirizzo_consegna, numero_carta, prezzo_totale, note, stato, acquirente, email_acquirente, azienda, email_azienda, fattorino, email_fattorino) values "
-								+ "(?,?,?,?,?,?,?,?,?,?,?)",
+						"insert into ordine (indirizzo_consegna, numero_carta, prezzo_totale, note, stato, acquirente, email_acquirente, azienda, email_azienda, fattorino, email_fattorino,telefono_cliente) values "
+								+ "(?,?,?,?,?,?,?,?,?,?,?,?)",
 						java.sql.Statement.RETURN_GENERATED_KEYS);
 				stmt.setString(1, order.getIndirizzoConsegna());
 				stmt.setString(2, order.getCodiceCarta());
@@ -200,6 +200,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				stmt.setString(8, order.getAzienda().getNome());
 				stmt.setString(10, fattorino.getValue1());
 				stmt.setString(11, fattorino.getValue0());
+				stmt.setString(12, order.getTelefono());
 
 				stmt.executeUpdate();
 				Long idOrder = null;
@@ -284,6 +285,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				Float prezzoTotale = x.getFloat("prezzo_totale");
 				String note = x.getString("note");
 				String stato = x.getString("stato");
+				String telefono = x.getString("telefono_cliente");
 
 				List<ProdottoQuantita> prodottiOrdinati = new ArrayList<ProdottoQuantita>();
 				PreparedStatement stmt2 = connect.prepareStatement(
@@ -321,6 +323,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				ordine.setNote(note);
 				ordine.setPrezzoTotal(prezzoTotale);
 				ordine.setStato(stato);
+				ordine.setTelefono(telefono);
 
 				lista.add(ordine);
 			}
@@ -348,7 +351,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				Float prezzoTotale = x.getFloat("prezzo_totale");
 				String note = x.getString("note");
 				String stato = x.getString("stato");
-
+				String telefono = x.getString("telefono");
 				String emAzienda = x.getString("email_azienda");
 				String emFattorino = x.getString("email_fattorino");
 				String emCliente = x.getString("email_acquirente");
@@ -395,6 +398,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				ordine.setNote(note);
 				ordine.setPrezzoTotal(prezzoTotale);
 				ordine.setStato(stato);
+				ordine.setTelefono(telefono);
 
 				return ordine;
 			}
@@ -429,6 +433,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				Float prezzoTotale = x.getFloat("prezzo_totale");
 				String note = x.getString("note");
 				String stato = x.getString("stato");
+				String telefono = x.getString("telefono_cliente");
 				String emAzienda = x.getString("email_azienda");
 
 				String emCliente = x.getString("email_acquirente");
@@ -443,6 +448,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				ordine.setNote(note);
 				ordine.setPrezzoTotal(prezzoTotale);
 				ordine.setStato(stato);
+				ordine.setTelefono(telefono);
 
 				lista.add(ordine);
 			}

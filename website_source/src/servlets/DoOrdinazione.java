@@ -61,6 +61,7 @@ public class DoOrdinazione extends HttpServlet {
 		String address = request.getParameter("address");
 		String notes = request.getParameter("notes");
 		String creditCard = request.getParameter("credit-card");
+		String telefono = request.getParameter("telefono");
 		Carrello cart = (Carrello) session.getAttribute("carrello");
 		if(cart==null || cart.isEmpty()) {
 			
@@ -72,6 +73,7 @@ public class DoOrdinazione extends HttpServlet {
 		order.setIndirizzoConsegna(address);
 		order.setNote(notes);
 		order.setCodiceCarta(creditCard);
+		order.setTelefono(telefono);
 		Float prezzoTotal = 0F;
 		for (ProdottoQuantita pq: listOfProducts)
 			prezzoTotal += (pq.getProdotto().getPrezzo()*pq.getQta());

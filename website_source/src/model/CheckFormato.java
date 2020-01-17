@@ -11,10 +11,16 @@ import model.bean.Ordine_Bean;
 /**
  * Classe con metodi statici che consente la verifica dei dati di varie entitא
  * 
- * @author Rosario
+ * 
  *
  */
 public class CheckFormato {
+	
+	/**
+	 * 
+	 * @param cliente
+	 * @return
+	 */
 	public static boolean checkCliente(AccountCliente_Bean cliente) {
 		boolean inputEmail = cliente.getEmail().matches("[a-zA-Z0-9][a-zA-Z0-9\\.]*@([a-zA-Z]+)\\.[a-zA-Z]+");
 		boolean inputPassword = cliente.getPassword().matches("[a-zA-Z0-9]{7,20}");
@@ -78,7 +84,8 @@ public class CheckFormato {
 		boolean inputIndirizzo = ordine.getIndirizzoConsegna().matches("[a-zA-Z 'אטלעש]{1,80}, [0-9]{1,3}");
 		boolean inputCarta = ordine.getCodiceCarta().matches("[0-9]{16}");
 		boolean inputNote = ordine.getNote().matches("[a-zA-Z0-9\\. ,'אטלעש]{0,150}");
-		if (inputIndirizzo == true && inputCarta == true && inputNote == true)
+		boolean inputTelefono = ordine.getTelefono().matches("[0-9]{9,10}");
+		if (inputIndirizzo && inputCarta  && inputNote && inputTelefono)
 			return true;
 		return false;
 	}

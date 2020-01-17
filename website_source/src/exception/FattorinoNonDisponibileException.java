@@ -3,7 +3,7 @@ package exception;
 public class FattorinoNonDisponibileException extends Exception {
 
 	/**
-	 * 
+	 * Eccezione lanciata quando non vi sono fattorini disponibili alla consegna
 	 */
 	private static final long serialVersionUID = 1L;
 

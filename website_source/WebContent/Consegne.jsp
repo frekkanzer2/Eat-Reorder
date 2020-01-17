@@ -99,6 +99,8 @@
 				Cliente:
 				<%=ordine.getCliente().getNome()%>
 				<%=ordine.getCliente().getCognome()%>
+				Telefono:
+				<%=ordine.getTelefono()%>
 				<!--ADD CUSTOMER NAME HERE WITH SCRIPTLET-->
 
 				<!--DO NOT TOUCH THE COMMA!!!-->

@@ -3,7 +3,7 @@ package exception;
 public class AziendaChiusaException extends Exception {
 
 	/**
-	 * 
+	 * Eccezione lanciata quando l'azienda è chiusa
 	 */
 	private static final long serialVersionUID = 1L;
 

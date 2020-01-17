@@ -47,8 +47,13 @@
 			<!--ORDER FORM-->
 			<form class="form-horizontal center-block" action="DoOrdinazione" method="POST">
                     <label class="std-label">Indirizzo di destinazione</label>
+                    
                     <!--INPUT DELL'INDIRIZZO-->
 					<input type="text"name="address"class="form-control custom-border-red"placeholder="Indirizzo">
+					 <label class="std-label">Telefono cliente</label>
+                    
+                    <!--INPUT del Telefono-->
+					<input type="text"name="telefono"class="form-control custom-border-red"placeholder="Telefono">
                     <label class="std-label">Note per l'azienda</label>
                     <!--INPUT DELLE NOTE PER L'AZIENDA-->
                     <textarea name="notes"class="form-control custom-border-red"rows="5"placeholder="Note per l'azienda"></textarea>

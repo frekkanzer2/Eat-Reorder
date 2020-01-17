@@ -17,6 +17,7 @@ import exception.AziendaChiusaException;
 import exception.FattorinoNonDisponibileException;
 import interfaces.GestoreMail_Interface;
 import interfaces.GestoreOrdineDao;
+import interfaces.GestoreUtenteDAO;
 import model.Carrello;
 import model.CheckFormato;
 import model.GestoreMail;
@@ -25,6 +26,7 @@ import model.bean.AccountAzienda_Bean;
 import model.bean.AccountCliente_Bean;
 import model.bean.Ordine_Bean;
 import model.dao.GestoreOrdineDAOImpl;
+import model.dao.GestoreUtenteDAOImpl;
 
 /**
  * Servlet implementation class DoOrdinazione
@@ -46,7 +48,7 @@ public class DoOrdinazione extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mailErrorMessage = null;
 		HttpSession session = request.getSession();
 		AccountCliente_Bean utenteloggato = (AccountCliente_Bean) session.getAttribute("utente");
@@ -130,4 +132,13 @@ public class DoOrdinazione extends HttpServlet {
 		doGet(request, response);
 	}
 
+	public void setGestore(GestoreOrdineDAOImpl dao) {
+		this.manager=dao;
+		
+	}
+
+	public void setGestore(GestoreMail mail) {
+		this.mailManager=mail;
+		
+	}
 }

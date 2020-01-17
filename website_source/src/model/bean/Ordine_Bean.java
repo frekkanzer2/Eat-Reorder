@@ -20,6 +20,7 @@ public class Ordine_Bean {
 	private String codiceCarta;
 	private Float prezzoTotal;
 	private String note;
+	
 	private Long codiceID;
 	private int stato;
 

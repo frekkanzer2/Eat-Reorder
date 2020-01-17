@@ -73,7 +73,7 @@
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="civico" placeholder="Numero civico"
 					pattern="[0-9]{1,3}" value="<%=azienda.getNumeroCivico()%>">
-				<label class="std-label">Citt&agrave</label>
+				<label class="std-label">Citt&agrave;</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="citta" placeholder="Citt&agrave"
@@ -105,7 +105,7 @@
 							value = "MONDAY" id="checkbox-day1">
 							<%} %>
 						<label class="form-check-label"
-							for="checkbox-day1">Luned&igrave</label><br>
+							for="checkbox-day1">Luned&igrave;</label><br>
 						<!--New day-->
 						<%if(giorni.contains(DayOfWeek.TUESDAY)){ %>
 						<input name="checkbox" class="form-check-input" type="checkbox"
@@ -114,7 +114,7 @@
 						<input name="checkbox" class="form-check-input" type="checkbox"
 							value = "TUESDAY" id="checkbox-day2"><%} %>
 						<label class="form-check-label"
-							for="checkbox-day2">Marted&igrave</label><br>
+							for="checkbox-day2">Marted&igrave;</label><br>
 						<!--New day-->
 						<%if(giorni.contains(DayOfWeek.WEDNESDAY)){ %>
 						<input name="checkbox" class="form-check-input" type="checkbox"
@@ -123,7 +123,7 @@
 						<input name="checkbox" class="form-check-input" type="checkbox"
 							value = "WEDNESDAY" id="checkbox-day3" >	<%} %>
 					    <label class="form-check-label"
-							for="checkbox-day3">Mercoled&igrave</label><br>
+							for="checkbox-day3">Mercoled&igrave;</label><br>
 						<!--New day-->
 						<%if(giorni.contains(DayOfWeek.THURSDAY)){ %>
 						<input name="checkbox" class="form-check-input" type="checkbox"
@@ -132,7 +132,7 @@
 						<input name="checkbox" class="form-check-input" type="checkbox"
 							value = "THURSDAY" id="checkbox-day4"><%} %>
 							 <label class="form-check-label"
-							for="checkbox-day4">Gioved&igrave</label>
+							for="checkbox-day4">Gioved&igrave;</label>
 					</div>
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
@@ -143,7 +143,7 @@
 						<input name="checkbox" class="form-check-input" type="checkbox"
 							id="checkbox-day5" value = "FRIDAY">	<%} %>
 						<label class="form-check-label"
-							for="checkbox-day5">Venerd&igrave</label><br>
+							for="checkbox-day5">Venerd&igrave;</label><br>
 						<!--New day-->
 						<%if(giorni.contains(DayOfWeek.SATURDAY)){ %>
 						<input name="checkbox" class="form-check-input" type="checkbox"

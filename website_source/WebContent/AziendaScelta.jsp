@@ -40,8 +40,8 @@
                 <!--APPEND HERE ALL PRODUCT CARDS-->
 				<%for(Prodotto_Bean prod: azienda.getProdotti().values()){ %>
                 <!-- HERE STARTS THE CARD OF THE PRODUCT -->
+                <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix">
                 <a href="DoVisualizzaProdotto?prod=<%=prod.getCodice()%>&azienda=<%=azienda.getEmail()%>"> <!--There is the A tag to make the div clickable-->
-                    <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix">
                         <div class="row">
                             <!--First column that contains img-->
                             <div class="col-sm-3">
@@ -57,8 +57,8 @@
                                 </p>
                             </div>
                         </div>
-                   	</div>
-                </a>
+              		  </a>
+                </div>
                 <%} %>
                 <!--END OF PRODUCT'S CARD-->
     

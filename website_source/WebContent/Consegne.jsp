@@ -41,7 +41,7 @@
 		class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
 		<div class="registration-title">Bentornato,</div>
 		<!--REFACTORIZZARE CON JSP INSERENDO IL NOME DEL FATTORINO-->
-		<div class="registration-description">E&grave; ora di fare
+		<div class="registration-description">&Egrave; ora di fare
 			consegne!</div>
 		<img class="std-img center-block"
 			src="assets/img/LogomarcoIS%20PNG.png">
@@ -54,7 +54,8 @@
 		%>
 
 		<div id="flip"
-			class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix">
+			class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix"
+			onclick="openPanel(<%=ordine.getCodiceID()%>)">
 			<div class="row">
 				<!--First column contains ID-->
 				<div class="col-sm-6">
@@ -78,7 +79,8 @@
 			</div>
 		</div>
 
-		<div id="panel" class="partial-container-form-floating center-block"
+		<div id="panel-<%=ordine.getCodiceID()%>"
+			class="partial-container-form-floating center-block"
 			style="width: 80%; display: none">
 			<div class="registration-title">
 				Consegna n.
@@ -154,26 +156,37 @@
 			<div class="row">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-5">
-					<%
-						if (!ordine.getStato().equals(Ordine_Bean.RITIRATO)) {
-					%>
-					<div class="registration-description">
+						<div class="registration-description">
 						<b>Conferma ritiro</b>
 					</div>
-					<a href="DoSetRitirato?id=<%=ordine.getCodiceID()%>"
-						class="standard-button-restyle center-block">Ritirato</a>
-					<!--BUTTON FOR CONFIRM-->
 					<%
-						}
+						if (ordine.getStato().equals(Ordine_Bean.IN_PREPARAZIONE)) {
 					%>
+					<button onclick="location.href='DoSetRitirato?id=<%=ordine.getCodiceID()%>'"
+						class="standard-button-restyle center-block ">Ritirato</button>
+					<!--BUTTON FOR CONFIRM-->
+					<%}else{ %>
+					<button onclick="location.href='DoSetRitirato?id=<%=ordine.getCodiceID()%>'"
+						class="standard-button-restyle center-block btn-dark" disabled>Ritirato</button>
+					<!--BUTTON FOR CONFIRM-->
+					
+					<%} %>
 				</div>
 				<div class="col-sm-5">
+					
 					<div class="registration-description">
 						<b>Conferma consegna</b>
 					</div>
-					<a href="DoSetConsegnato?id=<%=ordine.getCodiceID()%>"
-						class="standard-button-restyle center-block">Consegnato</a>
+					<%if(ordine.getStato().equals(Ordine_Bean.RITIRATO)) {%>
+					<button onclick="location.href='DoSetConsegnato?id=<%=ordine.getCodiceID()%>'"
+						class="standard-button-restyle center-block">Consegnato</button>
 					<!--BUTTON FOR CONFIRM-->
+					<%}else{ %>
+					<button onclick="location.href='DoSetConsegnato?id=<%=ordine.getCodiceID()%>'"
+						class="standard-button-restyle center-block btn-dark" disabled>Consegnato</button>
+					<!--BUTTON FOR CONFIRM-->
+					
+					<%} %>
 				</div>
 
 			</div>
@@ -186,11 +199,9 @@
 	</div>
 	<script src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#flip").click(function() {
-				$("#panel").slideToggle("slow");
-			});
-		});
+		function openPanel(id){
+				$("#panel-"+id).slideToggle("slow");
+		}
 	</script>
 </body>
 

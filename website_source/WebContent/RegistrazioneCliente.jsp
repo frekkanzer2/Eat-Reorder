@@ -35,10 +35,10 @@
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
-				<input class="custom-border-red border-rounded-small form-control input-style-login" type="email" name="email" placeholder="Email" id="email" pattern="[a-zA-Z0-9][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
-					<input class="custom-border-red border-rounded-small form-control input-style-login" type="password" maxlength="20" name="password" placeholder="Password" id="password" pattern="[a-zA-Z0-9]{7,20}">
-				<input class="custom-border-red border-rounded-small form-control input-style-login" type="nome" name="nome" placeholder="Nome" id="nome" pattern="[a-zA-Z 'àèìòù]{4,45}">
-					 <input class="custom-border-red border-rounded-small form-control input-style-login" type="cognome" name="cognome" placeholder="Cognome" id="cognome" pattern="[a-zA-Z 'àèìòù]{4,45}">
+				<input class="custom-border-red border-rounded-small form-control input-style-login" type="email" name="email" placeholder="Email" id="email" pattern="[a-zA-Z0-9][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+" >
+					<input class="custom-border-red border-rounded-small form-control input-style-login" type="password" maxlength="20" name="password" placeholder="Password" id="password" pattern="[a-zA-Z0-9]{7,20}" title="a vincenzo piace il broccolo">
+				<input class="custom-border-red border-rounded-small form-control input-style-login" type="text" name="nome" placeholder="Nome" id="nome" pattern="[a-zA-Z 'àèìòù]{4,45}">
+					 <input class="custom-border-red border-rounded-small form-control input-style-login" type="text" name="cognome" placeholder="Cognome" id="cognome" pattern="[a-zA-Z 'àèìòù]{4,45}">
 					<p class="errorText" style="margin-top: 20px;">
 					<%
             			if (request.getAttribute("msg_error") != null){

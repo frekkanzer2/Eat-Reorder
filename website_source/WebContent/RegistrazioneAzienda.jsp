@@ -61,21 +61,21 @@
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day1" value="MONDAY">
-						<label class="form-check-label"for="checkbox-day1">Luned&igrave</label><br>
+						<label class="form-check-label"for="checkbox-day1">Luned&igrave;</label><br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox" id="checkbox-day2" value="TUESDAY">
-						<label class="form-check-label"for="checkbox-day2">Marted&igrave</label><br>
+						<label class="form-check-label"for="checkbox-day2">Marted&igrave;</label><br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox" id="checkbox-day3" value="WEDNESDAY">
-						<label class="form-check-label"for="checkbox-day3">Mercoled&igrave</label><br>
+						<label class="form-check-label"for="checkbox-day3">Mercoled&igrave;</label><br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day4" value="THURSDAY">
-						<label class="form-check-label"for="checkbox-day4">Gioved&igrave</label>
+						<label class="form-check-label"for="checkbox-day4">Gioved&igrave;</label>
 					</div>
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day5" value="FRIDAY">
-						<label class="form-check-label"for="checkbox-day5">Venerd&igrave</label><br>
+						<label class="form-check-label"for="checkbox-day5">Venerd&igrave;</label><br>
 						<!--New day-->
 						<input name="checkbox" class="form-check-input"type="checkbox"id="checkbox-day6" value="SATURDAY">
 						<label class="form-check-label"for="checkbox-day6">Sabato</label><br>

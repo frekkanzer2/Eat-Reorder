@@ -33,9 +33,9 @@
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
 				<label class="std-label">Email</label>
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email"pattern="[a-zA-Z0-9][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email">
 				<label class="std-label">Password</label>
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password">
 				<p class="errorText" style="margin-top: 20px;">
 					<%
             			if (request.getAttribute("msg_error") != null){

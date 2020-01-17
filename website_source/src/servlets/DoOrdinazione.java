@@ -104,10 +104,12 @@ public class DoOrdinazione extends HttpServlet {
 			System.err.println("ERROR DETECTED");
 			e2.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
+			return;
 		} catch (Exception e3) {
 			System.err.println("ERROR DETECTED");
 			e3.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
+			return;
 		}
 		cart.svuota();
 		session.setAttribute("carrello", cart);

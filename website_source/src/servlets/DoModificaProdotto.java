@@ -66,7 +66,7 @@ public class DoModificaProdotto extends HttpServlet {
 		
 		Float costo= null;
 		String nome = request.getParameter("nome");
-		String inCost = request.getParameter("costo").replace(",", ".");
+		String inCost = request.getParameter("prezzo").replace(",", ".");
 
 		try {
 			costo = Float.parseFloat(inCost);

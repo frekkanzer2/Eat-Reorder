@@ -2,7 +2,7 @@
   "id": "d84b6dff-d714-4bc9-ae35-d32352f12df4",
   "version": "2.0",
   "name": "testing2",
-  "url": "http://localhost:8080/EatAndReorder_Source/DoVaiModificaProdotto?idProdotto=3",
+  "url": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
   "tests": [{
     "id": "2e17ef16-c4ca-40c3-a36a-4883e2b05358",
     "name": "TC_RFA2.1-ModificaQuantitàProdotto_1",
@@ -4297,6 +4297,1759 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "6e48f80b-8618-4bef-9279-71708ed00d42",
+    "name": "TC_RFA3-Ordinazione_1",
+    "commands": [{
+      "id": "9ed184d1-7d4a-41b7-aa5e-4df6ca5c69b5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c0aadfb-0375-4e4c-8fc0-a5149a9083f7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a3ad7956-ae6c-4cec-935e-c1bba7e57c39",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53ef038a-3651-4df1-a7e7-8fb757314d92",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d4e6942-955d-4642-abc9-53fe814448e8",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ac7724f-6dbc-43ac-ad17-710d1978be2b",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3450534980"
+    }, {
+      "id": "342330eb-ea08-4f34-aa8c-d2f7da06daab",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "293400d3-8927-4299-8e26-86035a2e16a6",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup"
+    }, {
+      "id": "58d427e5-79f3-4d91-829a-1e461494fbf9",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fab21bf2-7d2d-4aed-8bf2-f0fa1ff0ed80",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092983210348423"
+    }, {
+      "id": "f034fd19-cbbc-4a80-becf-60aecb0177b0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8724cef2-cc92-4ec2-98ff-726efa301fac",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "88049d76-c32f-4c4b-af92-c351d38fdceb",
+    "name": "TC_RFA3-Ordinazione_2",
+    "commands": [{
+      "id": "ba490860-e41b-4013-a958-2262f576859d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a2bc7d3-cefb-46c7-a641-9f3ba638297c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3382e9bf-098a-40fb-bafd-3fa3d0039531",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb2636e0-99e7-4655-b0c3-987847d9de31",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma, 20Roma, 20Roma, 20Roma, 20Roma, 20"
+    }, {
+      "id": "522e6479-09ef-4a13-b3ef-f34773ede256",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "003d8d2d-85ef-4ec0-b89b-cf97e60e26de",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3450534980"
+    }, {
+      "id": "b2bbca9d-9481-499c-9a5c-6ee4ee349e73",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1c29161-4838-4813-b2e4-4faa655770a9",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup"
+    }, {
+      "id": "59561723-a007-4925-a974-ab8b96fc78a9",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26d6275d-eb21-416b-ae3d-fb8b1bc05852",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092983210348423"
+    }, {
+      "id": "7143dad7-8f76-41f6-bd8e-0f9da7b20e75",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3363f27c-ef94-417b-9f1a-ebea1ec54af6",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "d437bb0c-6deb-4b6b-a2c2-f911bda9499d",
+    "name": "TC_RFA3-Ordinazione_3",
+    "commands": [{
+      "id": "e51cc9fa-9ad1-4edb-ab0a-711567730495",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6f780f9-ed51-4c3b-84d8-eacc46ce01c4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d994a8c8-a20c-4c7b-8276-c9982f051462",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd40af36-b823-438d-b7b5-323e29a744f2",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma&,20"
+    }, {
+      "id": "177c2e87-a902-46e5-bf29-792d232264f5",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c6387e7-0664-42dd-9146-7d60657b8d04",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3450534980"
+    }, {
+      "id": "c5671604-4462-482f-ba2b-3428a80018a1",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf7e60ea-bd79-4058-a3b9-bd1fbeab5c5e",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup"
+    }, {
+      "id": "34e21769-549a-4219-9067-c7c71eb70d47",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8a7dc8e-2d4d-43ef-b011-3fe8d43d4583",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092983210348423"
+    }, {
+      "id": "1515c966-585b-42ef-9c26-5c0ff012e577",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "26e1612e-8cd4-46ff-a7af-db29237c1c0f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "4d162509-ef87-488d-8b00-6ca594336d9b",
+    "name": "TC_RFA3-Ordinazione_4",
+    "commands": [{
+      "id": "e25770c3-a705-4fa1-8b99-08680f0ae416",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9dffa8fb-bafe-42d1-b19a-669271b8e71c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "98f0c72d-70e1-424a-af68-2218b98d21d5",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "960fb81a-bcf8-4006-ba73-2cec4673e8e0",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma, 20"
+    }, {
+      "id": "f56ccf86-073b-4e92-b1ff-cb72f257465b",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2b922c4-f6df-4b62-a907-958f27c54437",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3450534980"
+    }, {
+      "id": "5ca292a9-3a07-463e-9003-872f876c6d05",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c5b177a-0bd1-42d6-a6ad-0cf9a498909e",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup"
+    }, {
+      "id": "851ca229-c2a9-402e-89f2-15606eb5d42e",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e63a77f-f2bf-4aba-958e-aee892dbb942",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092"
+    }, {
+      "id": "fb63ccc2-00d0-49a2-a3ac-ef8015024f8b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d47989b-4fec-4ae3-a423-e2a2dc4f994e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "a5b7a2a1-0bcf-4eb6-9b2d-51d2872221cd",
+    "name": "TC_RFA3-Ordinazione_5",
+    "commands": [{
+      "id": "50c817e9-83b2-47ce-a12d-270467c37c0d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2771af05-5d82-4982-903d-f13d5a875461",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a3a2fbfc-ad25-40de-aa0d-8b5bceb57269",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39cdc4c9-c352-47da-8d80-3d1c332e7afb",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma, 20"
+    }, {
+      "id": "33242880-324e-4699-b2eb-4ca58c3d3b63",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18e939db-e2cc-4015-b694-a9a7b4f99ab1",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3450534980"
+    }, {
+      "id": "63f3b645-c0bd-48fa-af2f-a5688ae9bb76",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ed68624-c52e-467d-a3ff-a0472b4a3ad0",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup"
+    }, {
+      "id": "c605cf08-e586-4e80-b02d-bde272283ac6",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a42a99f9-9543-4ad1-98bb-65fc0a793ffb",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "30929832103484233092983210348423"
+    }, {
+      "id": "d5911aee-80db-418a-805d-40367226547a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7b9e417-05f1-481c-9960-2831e879fa8f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "62a58e3c-ef8d-4146-8ffc-4c83b0bd6b7f",
+    "name": "TC_RFA3-Ordinazione_6",
+    "commands": [{
+      "id": "8805fcfa-4a67-4f4c-b5fd-500d2af65600",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d3048ba7-96b7-4b9d-978e-3b0ea184629b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea61ed52-66c5-4be4-91b8-f1f4bcbbdec1",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7827c54-8cfb-4b0f-b5d9-459f433dd9e1",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma, 20"
+    }, {
+      "id": "9183503b-d8b8-41be-9008-d8df2ce47941",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a44d1e6-57a4-44f9-8ef6-e1406afa8a2b",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3450534980"
+    }, {
+      "id": "cda826f3-a191-4718-b3dc-3f1a1b795bde",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "31bf7347-e1f5-4aae-9c39-f8c080749a89",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup"
+    }, {
+      "id": "92ab7e58-c0a0-488e-95b4-7ffcdc4f3ffa",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c327a160-1702-4efa-94d9-9d9de0da8fa4",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092&983#103484*"
+    }, {
+      "id": "b5050d48-4e32-4fbb-b302-ba236171d180",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "512cf84f-f13f-4a6f-89bf-467ffe1ec29a",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "d6eacbbe-880a-4025-9b0e-1687addee9cf",
+    "name": "TC_RFA3-Ordinazione_7",
+    "commands": [{
+      "id": "9a6908aa-2a1b-4241-8a22-2a69b90d4fd7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4878b2f7-b1f7-43ca-a758-a14ee2f2ef78",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "49247e82-e818-4d1d-9f4b-00194a249838",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5134db11-83f9-4b26-8bad-a3d8b02c7146",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma, 20"
+    }, {
+      "id": "6369faf6-990a-4334-aa49-dfb9b152f5f5",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "192b68c0-2af2-49d5-ae77-73faecdbb799",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3450534980"
+    }, {
+      "id": "0918d894-9f1c-4cd9-97f1-d5f846a2952c",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "88161bb1-1663-4ff8-83e2-5bd95fc03f64",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup"
+    }, {
+      "id": "f59c4a88-e699-49b4-9d58-3e859dfedf70",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ab95f71-5690-4656-a20d-85cc37e6d792",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092983210348423"
+    }, {
+      "id": "07cae7fa-1e66-4dc5-a7bb-a9b3a22db3a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "53736b77-fd06-4c81-8c08-b4edcba31d01",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "bac7cb41-98aa-4744-9bf1-c68b37cb29f4",
+    "name": "TC_RFA3-Ordinazione_8",
+    "commands": [{
+      "id": "f3c2366e-0133-4e7d-b512-7fdf2d0dd257",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9fa3432f-779f-4831-a52f-adc6be534cb9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e59b3dd3-8247-4cf2-8b95-5ca8be09448d",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0de6eb4-690b-4bc1-a1a1-f87b65e7440e",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma, 20"
+    }, {
+      "id": "f57b419a-d17b-48a3-88df-05b88742f2bd",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6edab2ed-c08d-4a3a-aa6d-a11a355a81c6",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3450534980"
+    }, {
+      "id": "e6f80c3d-82d6-44c5-a52b-75ee7fadb006",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9bdc066-a665-46d6-a33d-b2e896c06e05",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup&&&&"
+    }, {
+      "id": "d9bb4985-f356-4fe6-a42a-53a0b650adb7",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd050da1-3a3e-4143-ad64-b5e7d23781ea",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092983210348423"
+    }, {
+      "id": "294382ab-bc14-4129-8e81-896cd09a81f5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4b9e1b4-f35c-4db5-86e1-260b18395f92",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "36c30731-2c95-4e1f-83e0-45ecc70c8632",
+    "name": "TC_RFA3-Ordinazione_9",
+    "commands": [{
+      "id": "5b4f58ce-4172-4590-8de6-2957dd9a792b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "faca085c-0e85-4728-8d89-dcbf35281443",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2b76f8fa-d795-4dab-bf3b-88613dd3cfd9",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1970ee5-a159-48ae-9357-1faef2f60439",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma, 20"
+    }, {
+      "id": "6bbbc1ef-9874-4263-9d33-6bff1f56f396",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "24e920c8-5d33-40b2-919d-ae93ffc9491c",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3450"
+    }, {
+      "id": "a5285b99-57a5-4c08-b989-74326d86eb2a",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cecba14-919d-4c1f-ba1d-8334713b235e",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup"
+    }, {
+      "id": "20a93708-1eba-4f9b-9255-868cb96f82b9",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "493d5d26-d855-4a66-af27-d3dc36df2148",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092983210348423"
+    }, {
+      "id": "3bd4a318-f3d8-48ac-b20c-59db5917e082",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e62081c-3b11-456c-9d4c-6b6d707b0e1c",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "57563115-80f7-4e64-ba6a-c3971122aefd",
+    "name": "TC_RFA3-Ordinazione_10",
+    "commands": [{
+      "id": "297f26a8-4e2c-4cfd-8d78-b7536e4d1bd5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "754deddf-d6c4-443d-aa5b-4735dd3caaea",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "968bc63f-07d5-441c-886c-ae0fa9088d78",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55085710-f757-432b-9f51-e8cb69634db2",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma, 20"
+    }, {
+      "id": "8c2c4974-2e04-457c-aa92-d3c01cacdedd",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7531b1c-5183-4009-8d49-e6c1d6559541",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "34505349803450534980"
+    }, {
+      "id": "3b1861b7-ce53-4e53-a436-7eaec761a293",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61a3536b-733f-42c8-9635-dc8a3748ba3a",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup"
+    }, {
+      "id": "e24a86f2-63b1-4c49-aec2-cdf0f819e8e7",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d329050-bea2-4021-aa03-29c57308c3df",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092983210348423"
+    }, {
+      "id": "c8a45e5e-54bd-4deb-bb58-e398e9eea380",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f49f760-4d85-45c4-8e0d-02e746f03e51",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "78619ec5-26a4-42f3-aca3-88372e911836",
+    "name": "TC_RFA3-Ordinazione_11",
+    "commands": [{
+      "id": "ce5e0322-d600-4fc3-b6a6-3dd630153b07",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ce7b86d-3a7d-42cc-b62f-26556f00a833",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "219fe30d-c61e-4bc8-a1d8-0e3df0fa28a6",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "acd0ab55-3888-40bd-9b23-54ccafe7e7d7",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma, 20"
+    }, {
+      "id": "f6cd8fc1-ccf5-44d4-a452-3dce6065e5a4",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8bb7671-a537-4ea3-b170-c9f3a5e5419e",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "345053498&"
+    }, {
+      "id": "6a2f489e-b2f2-411a-bfd3-796c89863658",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c098de65-5182-4353-8711-bce83655af55",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup"
+    }, {
+      "id": "09fdd5c8-6254-4384-83e4-0417a945ffb7",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ae0b0d2-eb86-42aa-8014-0bf2ca0a758f",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092983210348423"
+    }, {
+      "id": "91d1d515-5c13-480b-8684-3e830673006f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "78f35075-e14e-47c3-8dba-0f8af2e8d65d",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//div[@id='container-report']/form/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Dati nell'ordine non corretti"
+    }]
+  }, {
+    "id": "d1f61901-b518-46e7-8d74-fade2d085913",
+    "name": "TC_RFA3-Ordinazione_12",
+    "commands": [{
+      "id": "09a6c572-92fd-46d4-a74f-6df3db217d49",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6154a676-ac67-4a2c-aab5-b5be49fd8a27",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cedf5b71-06fb-4ecd-a4fa-2474bc21e7bb",
+      "comment": "",
+      "command": "click",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef3fba95-6a0a-40d2-9f4e-4970cbd84647",
+      "comment": "",
+      "command": "type",
+      "target": "name=address",
+      "targets": [
+        ["name=address", "name"],
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='address']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Roma, 20"
+    }, {
+      "id": "7e167880-1de4-4787-b152-c5ed729235d1",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b0beec8-fe6a-40a2-89a8-87e365ec13e8",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefono",
+      "targets": [
+        ["name=telefono", "name"],
+        ["css=.form-control:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='telefono']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3450534980"
+    }, {
+      "id": "ba3b84b5-5ecc-4d27-849e-feceb674163d",
+      "comment": "",
+      "command": "click",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8cfa1550-606e-4476-a665-8b185c11da57",
+      "comment": "",
+      "command": "type",
+      "target": "name=notes",
+      "targets": [
+        ["name=notes", "name"],
+        ["css=.form-control:nth-child(9)", "css:finder"],
+        ["xpath=//textarea[@name='notes']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "aggiunta ketchup"
+    }, {
+      "id": "6dcb07d2-34b3-4e40-9ec9-f24243c17251",
+      "comment": "",
+      "command": "click",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8877081e-cbe2-4434-b899-004b8663ce75",
+      "comment": "",
+      "command": "type",
+      "target": "name=credit-card",
+      "targets": [
+        ["name=credit-card", "name"],
+        ["css=.form-control:nth-child(12)", "css:finder"],
+        ["xpath=//input[@name='credit-card']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "3092983210348423"
+    }, {
+      "id": "182b835c-e459-4060-9673-0ff64387ef4f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ordina!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4ddaa03-3360-4170-8c00-9a4798b02386",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=order-status",
+      "targets": [
+        ["id=order-status", "id"],
+        ["css=.product-card-container > #order-status", "css:finder"],
+        ["xpath=//div[@id='order-status']", "xpath:attributes"],
+        ["xpath=//div[3]/div[3]", "xpath:position"]
+      ],
+      "value": "Stato dell'ordine: In preparazione"
+    }]
   }],
   "suites": [{
     "id": "f3299079-1b75-42e9-97c0-37d92c2263aa",
@@ -4306,6 +6059,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["http://localhost:8080/EatAndReorder_Source/Carrello.jsp", "http://localhost:8080/EatAndReorder_Source/NuovoProdotto.jsp", "http://localhost:8080/EatAndReorder_Source/DoVaiModificaProdotto?idProdotto=3"],
+  "urls": ["http://localhost:8080/EatAndReorder_Source/Carrello.jsp", "http://localhost:8080/EatAndReorder_Source/NuovoProdotto.jsp", "http://localhost:8080/EatAndReorder_Source/DoVaiModificaProdotto?idProdotto=3", "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp"],
   "plugins": []
 }

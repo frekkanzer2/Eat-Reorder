@@ -86,17 +86,19 @@
 
 			<!--Edit everything with scriptlets-->
 			<div class="registration-description">
-				Fattorino:
+				<span style="color: grey;"> Fattorino: </span>
 				<%=fattorino.getNome()%>
 				<!--ADD COURIER NAME HERE WITH SCRIPTLET-->
 				<%=fattorino.getCognome()%>
 				<!--ADD COURIER SURNAME HERE WITH SCRIPTLET-->
 			</div>
 			<div class="registration-description">
-				Cliente:
+				<span style="color: grey;"> Cliente: </span>
 				<%=ordine.getCliente().getNome()%>
 				<%=ordine.getCliente().getCognome()%>
-				Telefono:
+			</div>
+			<div class="registration-description">
+				<span style="color: grey;"> Cellulare Cliente: </span>
 				<%=ordine.getTelefono()%>
 				<!--ADD CUSTOMER NAME HERE WITH SCRIPTLET-->
 
@@ -105,35 +107,34 @@
 				<!--ADD CUSTOMER PHONE HERE WITH SCRIPTLET-->
 			</div>
 			<div class="registration-description">
-				Azienda:
+				<span style="color: grey;"> Azienda: </span>
 				<%=ordine.getAzienda().getNome()%>
 				<!--ADD COMPANY NAME HERE WITH SCRIPTLET-->
-				,
+				
 				<!--DO NOT TOUCH THE COMMA!!!-->
 				<%=ordine.getAzienda().getTelefono()%>
 				<!--ADD CUSTOMER PHONE HERE WITH SCRIPTLET-->
 			</div>
 			<hr />
-			<div class="registration-description">
+			<div class="registration-description" style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">
 				<b>Ritirare al seguente indirizzo</b>
 			</div>
 			<div class="registration-description">
-				<%=ordine.getAzienda().getCitta()%>
-				, (<%=ordine.getAzienda().getProvincia()%>)
+				<%=ordine.getAzienda().getCitta()%>, (<%=ordine.getAzienda().getProvincia()%>)
 				<!--ADD ORDER SENDER CITY HERE WITH SCRIPTLET-->
 				<br />
 				<%=ordine.getAzienda().getVia()%>,
 				<%=ordine.getAzienda().getNumeroCivico()%>
 				<!--ADD ORDER SENDER ADDRESS HERE WITH SCRIPTLET-->
 			</div>
-			<div class="registration-description">
+			<div class="registration-description" style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">
 				<b>Consegnare al seguente indirizzo</b>
 			</div>
 			<div class="registration-description">
 				<%=ordine.getIndirizzoConsegna()%>
 			</div>
 			<hr />
-			<div class="registration-description">
+			<div class="registration-description" style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">
 				<b>Note del cliente</b>
 			</div>
 			<div class="registration-description">
@@ -142,17 +143,17 @@
 				<!--ADD ORDER NOTES HERE WITH SCRIPTLET-->
 			</div>
 			<hr />
-			<div class="registration-description">
+			<div class="registration-description" style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">
 				<b>Stato dell'ordine</b>
 			</div>
-			<div class="registration-description">
+			<div class="registration-description" style="color:orange; font-size: 50px; text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">
 				<%=ordine.getStato()%>
 				<!--ADD ORDER STATUS HERE WITH SCRIPTLET-->
 			</div>
 			<div class="row">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-5">
-						<div class="registration-description">
+						<div class="registration-description" style="font-size: 22px; text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;"">
 						<b>Conferma ritiro</b>
 					</div>
 					<%
@@ -170,7 +171,7 @@
 				</div>
 				<div class="col-sm-5">
 					
-					<div class="registration-description">
+					<div class="registration-description" style="font-size: 22px; text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;"">
 						<b>Conferma consegna</b>
 					</div>
 					<%if(ordine.getStato().equals(Ordine_Bean.RITIRATO)) {%>

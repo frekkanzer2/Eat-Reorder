@@ -92,7 +92,7 @@ public class CheckFormato {
 
 	public static boolean checkProdotto(String prodotto, URL img, String descrizione, double prezzo) {
 		boolean inputProdotto = prodotto.matches("[a-zA-Z 'אטלעש]{1,45}");
-		boolean inputDescrizione = descrizione.matches("[a-zA-Z0-9\\. 'אטלעש]{10,250}");
+		boolean inputDescrizione = descrizione.matches("[a-zA-Z0-9\\. ,'אטלעש]{10,250}");
 		String inImg = img.toString();
 		boolean inputImg = inImg.matches(
 				"(?:([A-Za-z]+):)?(\\/{0,3})([0-9.\\-A-Za-z]+)(?::(\\d+))?(?:\\/([^?#]*))?(?:\\?([^#]*))?(?:#(.*))?");

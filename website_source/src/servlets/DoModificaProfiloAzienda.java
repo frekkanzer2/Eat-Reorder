@@ -76,7 +76,7 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 			String errmessage=("Compilare tutti i campi correttamente.");
 			//Redirection to an error page
 			request.setAttribute("msg_error", errmessage);
-		    request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
+		    request.getRequestDispatcher("ModificaProfiloAzienda.jsp").forward(request, response);
 		    return;
 		}
 		
@@ -109,7 +109,7 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 				String errMessage = ("Compilare tutti i campi correttamente.");
 				// Redirection to an error page
 				request.setAttribute("msg_error", errMessage);
-				request.getRequestDispatcher("ModificaProfiloCliente.jsp").forward(request, response);
+				request.getRequestDispatcher("ModificaProfiloAzienda.jsp").forward(request, response);
 			}
 		} catch (SQLException e) {
 			System.err.println("ERROR DETECTED");

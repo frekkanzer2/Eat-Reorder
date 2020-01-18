@@ -1,4 +1,4 @@
-package model.dao;
+package testDao;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -32,7 +32,19 @@ import model.bean.Prodotto_Bean;
 public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 	private Connection connect;
-	GestoreUtenteDAO dao = new GestoreUtenteDAOImpl();
+	GestoreUtenteDAO dao;
+
+	public GestoreOrdineDAOImpl(Connection connect, GestoreUtenteDAO dao) {
+		super();
+		this.connect = connect;
+		this.dao = dao;
+	}
+
+	public GestoreOrdineDAOImpl(Connection conn, GestoreUtenteDAOImpl us) {
+		// TODO Auto-generated constructor stub
+		this.connect = conn;
+		this.dao = us;
+	}
 
 	// terminato
 	/**
@@ -45,7 +57,6 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 	public void creaOrdine(Ordine_Bean order)
 			throws SQLException, AziendaChiusaException, FattorinoNonDisponibileException {
 		if (order != null) {
-			connect = DBConnectionPool.getConnection();
 
 			Date date = new Date();
 			DayOfWeek x = DayOfWeek.of(date.getDay());
@@ -98,8 +109,8 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 			// this list contains final values
 			ArrayList<Pair<String, String>> listOfEmailFattorino = new ArrayList<Pair<String, String>>();
 			// this PS contains a query to take days for a courier
-			PreparedStatement hs = connect.prepareStatement("select giorniLavorativi.giorno "
-					+ "from giorniLavorativi " + "where email = ?");
+			PreparedStatement hs = connect
+					.prepareStatement("select giorniLavorativi.giorno " + "from giorniLavorativi " + "where email = ?");
 			// Starting checks on HH
 			/* Quartet structure: email, nome, orario_inizio, orario_fine */
 			for (Quartet<String, String, LocalTime, LocalTime> tempRecord : courierContainer) {
@@ -243,7 +254,6 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 	public boolean controlloEsistenzaOrdine(Long idOrdine) throws SQLException {
 
 		if (idOrdine != null) {
-			connect = DBConnectionPool.getConnection();
 
 			PreparedStatement stmt = connect.prepareStatement("select * from Ordine where Ordine.codice=?");
 			stmt.setLong(1, idOrdine);
@@ -268,7 +278,6 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 	 */
 	public List<Ordine_Bean> dammiOrdiniPreparazione(AccountAzienda_Bean azienda) throws SQLException {
 		if (azienda != null) {
-			connect = DBConnectionPool.getConnection();
 
 			PreparedStatement stmt = connect
 					.prepareStatement("select * from Ordine where email_azienda = ? and stato = ?");
@@ -336,7 +345,6 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 	public Ordine_Bean dammiOrdine(Long idOrdine) throws SQLException {
 
 		if (idOrdine != null) {
-			connect = DBConnectionPool.getConnection();
 
 			PreparedStatement stmt = connect.prepareStatement("select * from Ordine where Ordine.codice=?");
 			stmt.setLong(1, idOrdine);
@@ -350,12 +358,11 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				Float prezzoTotale = x.getFloat("prezzo_totale");
 				String note = x.getString("note");
 				String stato = x.getString("stato");
+				System.out.println(stato + "IN DAO");
 				String telefono = x.getString("telefono_cliente");
 				String emAzienda = x.getString("email_azienda");
 				String emFattorino = x.getString("email_fattorino");
 				String emCliente = x.getString("email_acquirente");
-
-				GestoreUtenteDAO dao = new GestoreUtenteDAOImpl();
 
 				AccountAzienda_Bean azienda = (AccountAzienda_Bean) dao.dammiUtente(emAzienda);
 				AccountFattorino_Bean fattorino = (AccountFattorino_Bean) dao.dammiUtente(emFattorino);
@@ -396,13 +403,21 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				ordine.setIndirizzoConsegna(indirizzoConsegna);
 				ordine.setNote(note);
 				ordine.setPrezzoTotal(prezzoTotale);
-				ordine.setStato(stato);
+				if (stato.equals(Ordine_Bean.CONSEGNATO)) {
+
+					ordine.setStato(Ordine_Bean.RITIRATO);
+					ordine.setStato(Ordine_Bean.CONSEGNATO);
+				} else {
+					ordine.setStato(stato);
+				}
+
 				ordine.setTelefono(telefono);
 
 				return ordine;
 			}
 		}
 		return null;
+
 	}
 
 	// terminato
@@ -415,7 +430,6 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 	public List<Ordine_Bean> dammiConsegne(AccountFattorino_Bean fattorino) throws SQLException {
 
 		if (fattorino != null) {
-			connect = DBConnectionPool.getConnection();
 
 			PreparedStatement stmt = connect
 					.prepareStatement("select * from Ordine where email_fattorino = ? and (stato = ? or stato = ?)");
@@ -446,13 +460,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				ordine.setIndirizzoConsegna(indirizzoConsegna);
 				ordine.setNote(note);
 				ordine.setPrezzoTotal(prezzoTotale);
-				if (stato.equals(Ordine_Bean.CONSEGNATO)) {
-
-					ordine.setStato(Ordine_Bean.RITIRATO);
-					ordine.setStato(Ordine_Bean.CONSEGNATO);
-				} else {
-					ordine.setStato(stato);
-				}
+				ordine.setStato(stato);
 				ordine.setTelefono(telefono);
 
 				lista.add(ordine);
@@ -466,8 +474,6 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 	// terminato
 	public void ordineSetRitirato(Long idOrdine) throws SQLException {
 
-		connect = DBConnectionPool.getConnection();
-
 		PreparedStatement stmt = connect.prepareStatement("update Ordine set Ordine.stato=? where Ordine.codice=?");
 		stmt.setString(1, Ordine_Bean.RITIRATO);
 		stmt.setLong(2, idOrdine);
@@ -479,8 +485,6 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 	// terminato
 
 	public void ordineSetConsegnato(Long idOrdine) throws SQLException {
-
-		connect = DBConnectionPool.getConnection();
 
 		PreparedStatement stmt = connect.prepareStatement("update Ordine set Ordine.stato=? where Ordine.codice=?");
 		stmt.setString(1, Ordine_Bean.CONSEGNATO);

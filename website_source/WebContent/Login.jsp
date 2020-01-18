@@ -34,7 +34,7 @@
 			<div class="form-group">
 				<span></span>
 				<label class="std-label">Email</label>
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="email"placeholder="Email">
 				<label class="std-label">Password</label>
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password">
 				<p class="errorText" style="margin-top: 20px;">

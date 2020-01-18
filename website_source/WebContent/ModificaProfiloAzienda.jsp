@@ -57,37 +57,37 @@
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="nome" placeholder="Nome dell'attivit&agrave"
-					pattern="[a-zA-Z 'àèìòù]{3,40}" value="<%=azienda.getNome()%>">
+					 value="<%=azienda.getNome()%>">
 				<label class="std-label">Telefono</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="telefono" placeholder="Telefono"
-					pattern="[0-9]{9,10}" value="<%=azienda.getTelefono()%>">
+					 value="<%=azienda.getTelefono()%>">
 				<label class="std-label">Indirizzo</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="indirizzo" placeholder="Indirizzo"
-					pattern="[a-zA-Z 'àèìòù]{3,80}" value="<%=azienda.getVia()%>">
+					 value="<%=azienda.getVia()%>">
 				<label class="std-label">Numero civico</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="civico" placeholder="Numero civico"
-					pattern="[0-9]{1,3}" value="<%=azienda.getNumeroCivico()%>">
+					 value="<%=azienda.getNumeroCivico()%>">
 				<label class="std-label">Citt&agrave;</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="citta" placeholder="Citt&agrave"
-					pattern="[a-zA-Z 'àèìòù]{4,45}" value="<%=azienda.getCitta()%>">
+					 value="<%=azienda.getCitta()%>">
 				<label class="std-label">Provincia</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="text" name="provincia" placeholder="Provincia"
-					pattern="[a-zA-Z]{2}" value="<%=azienda.getProvincia()%>">
+					 value="<%=azienda.getProvincia()%>">
 				<label class="std-label">Password</label>
 				<input
 					class="custom-border-red border-rounded-small form-control input-style-login"
 					type="password" name="password" placeholder="Password"
-					pattern="[a-zA-Z0-9]{7,20}" value="<%=azienda.getPassword()%>">
+					 value="<%=azienda.getPassword()%>">
 				<hr />
 				<!--List of checkboxes-->
 				<%Set<DayOfWeek> giorni = azienda.getGiorniDiApertura();%>

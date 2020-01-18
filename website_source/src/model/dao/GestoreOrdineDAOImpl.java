@@ -99,7 +99,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 			ArrayList<Pair<String, String>> listOfEmailFattorino = new ArrayList<Pair<String, String>>();
 			// this PS contains a query to take days for a courier
 			PreparedStatement hs = connect.prepareStatement("select giorniLavorativi.giorno "
-					+ "from fattorino, giorniLavorativi " + "where fattorino.email = ?");
+					+ "from giorniLavorativi " + "where email = ?");
 			// Starting checks on HH
 			/* Quartet structure: email, nome, orario_inizio, orario_fine */
 			for (Quartet<String, String, LocalTime, LocalTime> tempRecord : courierContainer) {
@@ -134,7 +134,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 					ArrayList<DayOfWeek> workDays = new ArrayList<DayOfWeek>();
 					hs.setString(1, tempRecord.getValue0());
 					ResultSet hsSet = hs.executeQuery();
-					if (hsSet.next()) {
+					while (hsSet.next()) {
 						String takenDay = (String) hsSet.getObject("giorno");
 						if (takenDay.equalsIgnoreCase("Monday")) {
 							workDays.add(DayOfWeek.MONDAY);

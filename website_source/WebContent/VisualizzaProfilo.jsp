@@ -86,13 +86,13 @@
 			if (utenteCliente != null && utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) {
 		%>
 		<div class="registration-description">
-			Nome:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;"> Nome: </span>
 			<%=utenteCliente.getNome()%></div>
 		<div class="registration-description">
-			Cognome:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Cognome: </span>
 			<%=utenteCliente.getCognome()%></div>
 		<div class="registration-description">
-			Email:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Email: </span>
 			<%=utenteCliente.getEmail()%></div>
 		<%
 			}
@@ -101,35 +101,39 @@
 		<%
 			if (utenteAzienda != null && utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) {
 		%>
-		<div class="registration-description">
-			Nome:
+		<div class="registration-description" >
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Nome:</span>
 			<%=utenteAzienda.getNome()%></div>
 		<div class="registration-description">
-			Telefono:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Telefono:</span>
 			<%=utenteAzienda.getTelefono()%></div>
 		<div class="registration-description">
-			Indirizzo:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Indirizzo:</span>
 			<%=utenteAzienda.getVia()%>,
 			<%=utenteAzienda.getNumeroCivico()%></div>
 		<div class="registration-description">
+<<<<<<< HEAD
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Citt&agrave:</span>
+=======
 			Citt&agrave;:
+>>>>>>> 7fb5f5169fc6eda2b2bf096bebdf844f3a749bef
 			<%=utenteAzienda.getCitta()%></div>
 		<div class="registration-description">
-			Provincia:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Provincia:</span>
 			<%=utenteAzienda.getProvincia()%></div>
 		<div class="registration-description">
-			Partita IVA:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Partita IVA:</span>
 			<%=utenteAzienda.getPartitaIva()%></div>
 		<div class="registration-description">
-			Email:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Email:</span>
 			<%=utenteAzienda.getEmail()%></div>
 		<div class="registration-description">
-			Orari di apertura:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Orari di apertura:</span>
 			<%=utenteAzienda.getOrarioDiApertura().toString()%>
 			-
 			<%=utenteAzienda.getOrarioDiChiusura().toString()%></div>
 		<div class="registration-description">
-			Aperto nei giorni:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Aperto nei giorni:</span>
 			<%
 			Set<DayOfWeek> days = utenteAzienda.getGiorniDiApertura();
 				if (days.contains(DayOfWeek.MONDAY)) {
@@ -184,30 +188,34 @@
 			if (utenteFattorino != null && utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) {
 		%>
 		<div class="registration-description">
-			Nome:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Nome: </span>
 			<%=utenteFattorino.getNome()%></div>
 		<div class="registration-description">
-			Cognome:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Cognome: </span>
 			<%=utenteFattorino.getCognome()%></div>
 		<div class="registration-description">
-			Telefono:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Telefono: </span>
 			<%=utenteFattorino.getTelefono()%></div>
 		<div class="registration-description">
+<<<<<<< HEAD
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Citt&agrave: </span>
+=======
 			Citt&agrave;:
+>>>>>>> 7fb5f5169fc6eda2b2bf096bebdf844f3a749bef
 			<%=utenteFattorino.getCittaConsegna()%></div>
 		<div class="registration-description">
-			Provincia:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Provincia: </span>
 			<%=utenteFattorino.getProvinciaConsegna()%></div>
 		<div class="registration-description">
-			Email:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Email: </span>
 			<%=utenteFattorino.getEmail()%></div>
 		<div class="registration-description">
-			Orari di consegna:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Orari di consegna: </span>
 			<%=utenteFattorino.getInizioConsegne().toString()%>
 			-
 			<%=utenteFattorino.getFineConsegne().toString()%></div>
 		<div class="registration-description">
-			Disponibile nei giorni:
+			<span style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">Disponibile nei giorni: </span>
 			<%
 			Set<DayOfWeek> days = utenteFattorino.getGiorniDiConsegna();
 				if (days.contains(DayOfWeek.MONDAY)) {

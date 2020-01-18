@@ -47,8 +47,26 @@
 			<!--ORDER FORM-->
 			<form class="form-horizontal center-block" action="DoOrdinazione" method="POST"onsubmit="return checkOrdine();">
                     <label class="std-label">Indirizzo di destinazione</label>
+                    <span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Es. Roma, 26</span></span>
                     
                     <!--INPUT DELL'INDIRIZZO-->
+<<<<<<< HEAD
+					<input type="text"name="address"class="form-control custom-border-red"placeholder="Indirizzo">
+					 	<label class="std-label">Telefono cliente</label>
+						<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Esattamente 10 numeri</span></span>
+                    
+	                    <!--INPUT del Telefono-->
+						<input type="text"name="telefono"class="form-control custom-border-red"placeholder="Telefono">
+	                    <label class="std-label">Note per l'azienda</label>
+	                    <span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> E' possibile lasciarlo anche vuoto</span></span>
+	                    <!--INPUT DELLE NOTE PER L'AZIENDA-->
+	                    <textarea name="notes"class="form-control custom-border-red"rows="5"placeholder="Note per l'azienda"></textarea>
+	                    <label class="std-label">Carta di credito</label>
+	                    <span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Esattamente 16 numeri</span></span>
+	                    <!--INPUT PER LA CARTA DI CREDITO-->
+	                    <input type="text"name="credit-card"class="form-control custom-border-red"placeholder="XXXX-XXXX-XXXX-XXXX">
+	                    <!--PULSANTE DI SUBMIT-->
+=======
 					<input type="text"id="indirizzo"name="address"class="form-control custom-border-red"placeholder="Indirizzo"pattern="[a-zA-Z 'אטלעש]{1,80}, [0-9]{1,3}">
 					 <label class="std-label">Telefono cliente</label>
                     
@@ -61,6 +79,7 @@
                     <!--INPUT PER LA CARTA DI CREDITO-->
                     <input id="carta"type="text"name="credit-card"class="form-control custom-border-red"placeholder="XXXX-XXXX-XXXX-XXXX"pattern="[0-9]{16}">
                     <!--PULSANTE DI SUBMIT-->
+>>>>>>> 7fb5f5169fc6eda2b2bf096bebdf844f3a749bef
                     
     <%
     	if (request.getAttribute("msg_error") != null){

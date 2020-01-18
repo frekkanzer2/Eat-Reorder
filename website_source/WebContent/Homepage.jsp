@@ -35,7 +35,15 @@
 	<!--IMAGE ON THE HOME-->
 	<img id="image-home" class="img-fluid d-block mx-auto" src="assets/img/LogomarcoIS%20PNG.png">
 	
-	<%
+	<!--Form for the research-->
+	<form action="DoRicercaAzienda" method="POST">
+	<div class="d-flex justify-content-center" style="height: 100%;">
+		<input id="search-field" name="ricerca" class="form-control-sm d-inline" type="search" placeholder="Inserisci la citt&agrave; dell'azienda che desideri ricercare">
+		<button class="standard-button border-rounded-small custom-border-red" type="submit">Cerca</button>
+	</div>
+	</form>
+	
+		<%
     	if (request.getAttribute("msg_confirm") != null){
     %>
 		<p class="confirmText" style="margin-top: 20px;">
@@ -54,14 +62,6 @@
 	<% 
 		} 
 	%>
-	
-	<!--Form for the research-->
-	<form action="DoRicercaAzienda" method="POST">
-	<div class="d-flex justify-content-center" style="height: 100%;">
-		<input id="search-field" name="ricerca" class="form-control-sm d-inline" type="search" placeholder="Inserisci la citt&agrave;">
-		<button class="standard-button border-rounded-small custom-border-red" type="submit">Cerca</button>
-	</div>
-	</form>
 	
 </div>
 <!-- Script -->

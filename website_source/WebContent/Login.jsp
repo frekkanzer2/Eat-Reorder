@@ -32,8 +32,14 @@
 			<img id="image-login-form" src="assets/img/LogomarcoIS%20PNG.png">
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
+				<span></span>
 				<label class="std-label">Email</label>
+<<<<<<< HEAD
+				
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email"pattern="[a-zA-Z0-9][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
+=======
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"placeholder="Email">
+>>>>>>> 7fb5f5169fc6eda2b2bf096bebdf844f3a749bef
 				<label class="std-label">Password</label>
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password">
 				<p class="errorText" style="margin-top: 20px;">

@@ -62,7 +62,7 @@
 	</div>
 	<!--DIV that contains the link to the report of a company-->
 	<div id="container-report-order" class="custom-text-right">
-		<a href="Segnalazione.jsp">Segnala un problema con un ordine</a>
+		<a href="Segnalazione.jsp" id="problema">Segnala un problema con un ordine</a>
 	</div>
 	<!-- Script -->
 	<script src="assets/js/jquery.min.js"></script>

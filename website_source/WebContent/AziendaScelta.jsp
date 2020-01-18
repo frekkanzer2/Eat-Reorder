@@ -42,6 +42,14 @@
                 <!-- HERE STARTS THE CARD OF THE PRODUCT -->
                 <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix">
                 <a href="DoVisualizzaProdotto?prod=<%=prod.getCodice()%>&azienda=<%=azienda.getEmail()%>"> <!--There is the A tag to make the div clickable-->
+<<<<<<< HEAD
+                    <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix">
+=======
+<<<<<<< HEAD
+=======
+                    <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix" style="overflow: auto;">
+>>>>>>> parent of 2e20a9b... Rimosso overflow auto dalle JSP
+>>>>>>> 7fb5f5169fc6eda2b2bf096bebdf844f3a749bef
                         <div class="row">
                             <!--First column that contains img-->
                             <div class="col-sm-3">

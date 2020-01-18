@@ -446,7 +446,13 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				ordine.setIndirizzoConsegna(indirizzoConsegna);
 				ordine.setNote(note);
 				ordine.setPrezzoTotal(prezzoTotale);
-				ordine.setStato(stato);
+				if (stato.equals(Ordine_Bean.CONSEGNATO)) {
+
+					ordine.setStato(Ordine_Bean.RITIRATO);
+					ordine.setStato(Ordine_Bean.CONSEGNATO);
+				} else {
+					ordine.setStato(stato);
+				}
 				ordine.setTelefono(telefono);
 
 				lista.add(ordine);

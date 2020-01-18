@@ -5783,21 +5783,21 @@
     "id": "09dcb0d1-efac-4bf2-a4f4-7e90bc1bd828",
     "name": "TC_RFU1.2-RegistrazioneAzienda_13",
     "commands": [{
-      "id": "851d6d0c-2d3b-4508-9cf1-1bc40638bf74",
+      "id": "fe76d466-b653-4b7f-8ddd-dffff5939cdf",
       "comment": "",
       "command": "open",
       "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
       "targets": [],
       "value": ""
     }, {
-      "id": "110dd6dc-6194-4a46-9f22-38e58c19a89c",
+      "id": "057ee327-2001-4e6c-863f-9f490781c6e2",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1920x1040",
+      "target": "697x735",
       "targets": [],
       "value": ""
     }, {
-      "id": "a061ea83-8239-43d9-abea-a3de7296a05f",
+      "id": "61bb0e94-c212-4ed7-973f-66352437acec",
       "comment": "",
       "command": "click",
       "target": "id=email",
@@ -5810,7 +5810,7 @@
       ],
       "value": ""
     }, {
-      "id": "e2697c3a-cde6-43a5-8b75-01278b3b7a0e",
+      "id": "2ccf6798-1706-4414-b09c-030ac06c12e9",
       "comment": "",
       "command": "type",
       "target": "id=email",
@@ -5823,7 +5823,7 @@
       ],
       "value": "pizzapanini@gmail.com"
     }, {
-      "id": "eedf0a9a-96b8-4254-a4da-c169d020a798",
+      "id": "226c0a33-171e-43a4-9244-acfdd5980757",
       "comment": "",
       "command": "click",
       "target": "id=password",
@@ -5836,7 +5836,7 @@
       ],
       "value": ""
     }, {
-      "id": "608cd299-4884-4ad0-85f5-8dfac2635e9e",
+      "id": "cc5f9210-4972-4201-a00f-ad9e52401666",
       "comment": "",
       "command": "type",
       "target": "id=password",
@@ -5849,7 +5849,7 @@
       ],
       "value": "PizzaPan1"
     }, {
-      "id": "d20e4cf4-2593-4aec-b0f5-30ba9c6f45a5",
+      "id": "4e2651f6-5ba2-441c-b03b-01f1be490349",
       "comment": "",
       "command": "click",
       "target": "id=nome",
@@ -5862,7 +5862,7 @@
       ],
       "value": ""
     }, {
-      "id": "4b68716b-59ed-41b3-8ff5-e5edf2ec46e6",
+      "id": "d126886c-7ed6-4a4d-b966-3d3222516b3c",
       "comment": "",
       "command": "type",
       "target": "id=nome",
@@ -5875,7 +5875,7 @@
       ],
       "value": "PizzaPanini"
     }, {
-      "id": "76e5fb76-d039-4f0b-9ee9-c6b73e3b1163",
+      "id": "9828a467-e981-4867-800e-99b11adc1256",
       "comment": "",
       "command": "click",
       "target": "id=telefono",
@@ -5888,7 +5888,7 @@
       ],
       "value": ""
     }, {
-      "id": "99d537a0-7595-458d-b0ba-ac67239486de",
+      "id": "29387ada-9b0a-4091-9c1a-9b8aa3bfd144",
       "comment": "",
       "command": "type",
       "target": "id=telefono",
@@ -5901,7 +5901,7 @@
       ],
       "value": "3290532742"
     }, {
-      "id": "138607f7-6ab3-426c-aacb-b59119a8895e",
+      "id": "0e157570-ba77-4b12-b862-1e92a97b39ef",
       "comment": "",
       "command": "click",
       "target": "id=indirizzo",
@@ -5914,7 +5914,7 @@
       ],
       "value": ""
     }, {
-      "id": "2f67eedc-f0ea-4447-a4d6-f36e8d2cec98",
+      "id": "18e13787-4fd5-492a-a285-0d52b68eaade",
       "comment": "",
       "command": "type",
       "target": "id=indirizzo",
@@ -5927,31 +5927,7 @@
       ],
       "value": "Roma"
     }, {
-      "id": "661d140b-0333-4193-91f0-82b94e9143db",
-      "comment": "",
-      "command": "click",
-      "target": "id=civico",
-      "targets": [
-        ["id=civico", "id"],
-        ["name=civico", "name"],
-        ["xpath=//input[@id='civico']", "xpath:attributes"],
-        ["xpath=//input[6]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "eeec964c-8ca2-4e4b-8872-749054b81243",
-      "comment": "",
-      "command": "type",
-      "target": "id=civico",
-      "targets": [
-        ["id=civico", "id"],
-        ["name=civico", "name"],
-        ["xpath=//input[@id='civico']", "xpath:attributes"],
-        ["xpath=//input[6]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "c495dfe7-f02b-4326-98c1-1fe8ab2675be",
+      "id": "5f83ab37-f5ef-4bdc-8579-04d9b2ddf1d2",
       "comment": "",
       "command": "click",
       "target": "name=citta",
@@ -5962,7 +5938,7 @@
       ],
       "value": ""
     }, {
-      "id": "9aaed06f-2268-495b-9cf8-4a54fc406e3b",
+      "id": "1379261b-a501-4094-9e4f-3531bed30bb0",
       "comment": "",
       "command": "type",
       "target": "name=citta",
@@ -5973,7 +5949,7 @@
       ],
       "value": "Montella"
     }, {
-      "id": "d7a1debe-4aff-4f19-a135-ce8791611658",
+      "id": "eebc9d23-ad8a-4a99-b010-0f5834938e93",
       "comment": "",
       "command": "click",
       "target": "name=provincia",
@@ -5984,7 +5960,7 @@
       ],
       "value": ""
     }, {
-      "id": "2784ee39-f6eb-4f38-8c29-b912862ff282",
+      "id": "54c0bc7a-ad56-4db5-89d5-45e22574a22d",
       "comment": "",
       "command": "type",
       "target": "name=provincia",
@@ -5995,7 +5971,7 @@
       ],
       "value": "AV"
     }, {
-      "id": "8260a00e-1f90-4e40-aadb-e8069dd8f290",
+      "id": "73b06d51-3dc5-458f-81a7-7787c6540a7c",
       "comment": "",
       "command": "click",
       "target": "id=iva",
@@ -6008,7 +5984,7 @@
       ],
       "value": ""
     }, {
-      "id": "eb2a0b64-8db1-4de4-b055-5da93754354f",
+      "id": "3e35f3bf-04bf-4740-8967-3c689238a1fa",
       "comment": "",
       "command": "type",
       "target": "id=iva",
@@ -6021,59 +5997,7 @@
       ],
       "value": "07643520563"
     }, {
-      "id": "e41af134-3eb9-4de8-9314-d8b55dda3613",
-      "comment": "",
-      "command": "mouseDownAt",
-      "target": "css=html",
-      "targets": [
-        ["css=html", "css:finder"],
-        ["xpath=//html", "xpath:position"]
-      ],
-      "value": "682,1065"
-    }, {
-      "id": "84c3d0a5-f760-4f6b-af12-affba46bf2a0",
-      "comment": "",
-      "command": "mouseMoveAt",
-      "target": "css=html",
-      "targets": [
-        ["css=html", "css:finder"],
-        ["xpath=//html", "xpath:position"]
-      ],
-      "value": "682,1065"
-    }, {
-      "id": "dd20cc01-1982-4648-8a68-8d012439ff9b",
-      "comment": "",
-      "command": "mouseUpAt",
-      "target": "css=html",
-      "targets": [
-        ["css=html", "css:finder"],
-        ["xpath=//html", "xpath:position"]
-      ],
-      "value": "682,1065"
-    }, {
-      "id": "30e3ceed-a12c-44fe-8073-0134b7ab3353",
-      "comment": "",
-      "command": "click",
-      "target": "css=html",
-      "targets": [
-        ["css=html", "css:finder"],
-        ["xpath=//html", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "df385851-bb2f-425a-87ae-15c336e2f0e2",
-      "comment": "",
-      "command": "type",
-      "target": "id=civico",
-      "targets": [
-        ["id=civico", "id"],
-        ["name=civico", "name"],
-        ["xpath=//input[@id='civico']", "xpath:attributes"],
-        ["xpath=//input[6]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "dca362f0-b752-4284-9604-e4cd2cf20019",
+      "id": "4685e1d9-c355-45d4-a02d-d8d5d3b5b3f0",
       "comment": "",
       "command": "click",
       "target": "css=.form-list-button",
@@ -6085,7 +6009,7 @@
       ],
       "value": ""
     }, {
-      "id": "7c02dbeb-5a00-461e-850d-5ba1e6c40189",
+      "id": "84064bbe-c10c-47b4-8606-adb7e19735de",
       "comment": "",
       "command": "assertElementPresent",
       "target": "css=.errorText",
@@ -6094,7 +6018,7 @@
         ["xpath=//p", "xpath:position"],
         ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Compilare tutti i campi correttamente"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "e1d73603-26fd-41b9-a5c1-cf7189d8cfbc",
@@ -6377,18 +6301,6 @@
         ["xpath=//html", "xpath:position"]
       ],
       "value": ""
-    }, {
-      "id": "152126ae-375f-48b3-9522-56c05508bcde",
-      "comment": "",
-      "command": "type",
-      "target": "id=civico",
-      "targets": [
-        ["id=civico", "id"],
-        ["name=civico", "name"],
-        ["xpath=//input[@id='civico']", "xpath:attributes"],
-        ["xpath=//input[6]", "xpath:position"]
-      ],
-      "value": "8d2"
     }, {
       "id": "0d7310e7-15a4-45ac-9fca-dd087318e686",
       "comment": "",
@@ -6720,6 +6632,3810 @@
       "value": ""
     }, {
       "id": "f66aa50c-e0bf-4118-a597-7d5e8dc5feed",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "bdc450f8-fd9d-441f-94f4-f186298d5589",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_16",
+    "commands": [{
+      "id": "e0bfc92b-bb01-4c03-bcae-4ddc800eb1c7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e770fed9-a464-48f6-9f58-295cd1fe9314",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48278f18-4385-49f7-a4f6-ed1826970453",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "436757de-7152-4cc3-ac3b-137c32b46e2d",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "dbd4362d-3e09-4807-8c0f-0a52dfae30ef",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3420dd4-6858-454b-8e08-930f6f3a4451",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "2172264a-67c2-4e1d-b78a-4c46186ecd6d",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d4abe06-7738-4132-b387-d050734df156",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "1ce7a54a-c194-49ef-adf3-bd2770890b43",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "045167e0-f051-4d9c-b661-2946500ed0af",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "3290532742"
+    }, {
+      "id": "4a1b6abd-ee1f-475a-b801-d24a6357c74e",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "816fbc98-3184-4855-9153-1a9aa6f2c43e",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma"
+    }, {
+      "id": "8530b295-b29c-44e9-b83f-2a2d2364fe2e",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bec5f29-ba80-4e1d-9578-21be23ce4459",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "8d2"
+    }, {
+      "id": "8aae3572-64a5-476a-be1f-c3f725003666",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85b82e30-eeb7-4e4c-b632-a3933a964580",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella"
+    }, {
+      "id": "bd0e09cd-b6e2-48a5-bebc-733b5138fe1c",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a76408cd-eaaa-4de9-82cc-1eeb12702710",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "AV"
+    }, {
+      "id": "6a50f274-7fbb-4158-b361-0ca2984a5a27",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4214ff93-5abf-454c-9484-5a6d8631a711",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "07643520563"
+    }, {
+      "id": "91d3ed08-b87c-42de-a44d-492c907de5fe",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "74ea4a1a-3d3b-4190-aeec-ff8ab7431d2d",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "09c1eaff-1490-4cab-a9da-62b89978051e",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "e2881176-5f26-47d1-bd1a-eb4905787e0a",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2034bbb3-eda1-4697-926e-d1b9fae4640b",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "8d2"
+    }, {
+      "id": "313bdee9-511e-4f45-8a86-af40a98da9ab",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "73e5fb2f-4a74-4371-be34-6c60df9dfa6e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "6bef9b0a-f3cf-4aa6-af6e-84b34a786d2d",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_17",
+    "commands": [{
+      "id": "0bd8a8ac-a081-4d7c-aeaf-2582af998f75",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aa2fed8b-b733-4675-83b3-cff10c70d2de",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e40771a-6c29-4ec4-91da-6063321bb7ee",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "218f019a-e21b-4a24-98de-1f91b1075b81",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "043ded95-5904-4bef-bac1-1461f091be73",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87bee68e-f25c-4ec0-83f0-4e46285047a0",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "47e68dac-77fd-48f4-9aed-d7511aa383cf",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f165de61-f40b-433a-b493-621b9cece58b",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "dd130a8a-61d3-46b0-ba4c-ac1493617af9",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9cc0f51c-1f38-45f9-9fae-24fe3ecb0e2c",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "3290532742"
+    }, {
+      "id": "24cb49ec-eb2a-48fc-b3a1-4283d246bd7e",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "015a57ea-e53e-4a4e-9990-8453d37cebef",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma821"
+    }, {
+      "id": "26b3a621-dd83-488d-b75d-f4a9970af56e",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "966f0a33-0c73-4e33-9042-dd26c1a0204e",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "a9f29b08-2e82-4751-ad03-f222e7306440",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34569a1f-4f55-42c2-bde3-462fd9626c2e",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "MontellaMontellaMontellaMontellaMontellaMontellaMontellaMontellaMontellaMontella"
+    }, {
+      "id": "ba87e019-ddcf-44ac-a2d5-2c8f525b4648",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cd11b4e-e591-4b2a-9cf2-1c07dcee17df",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "AV"
+    }, {
+      "id": "d9151a4e-993f-4949-8e1d-c45479d1cc9b",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f76a0fff-8491-46af-9a1b-157b1f28a16d",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "07643520563"
+    }, {
+      "id": "68969f84-b5cb-42a7-8fe7-4128b66511f9",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "9c8ea805-aa06-4ea2-a968-da983645d85c",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "af972516-c62c-4d24-b259-9cbbca31ed51",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "f98d0438-9c40-40ad-aae5-6d7c7e8b1f66",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa28a744-192c-4cf2-b0dc-881877ac1a3e",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "dba2a056-376e-4679-9d0a-b14d50d8db4d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "10dfd9c2-f390-4f5f-82e9-9750df22850b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "673fac53-f393-4a46-84fb-de3cf22a12cd",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_18",
+    "commands": [{
+      "id": "58dc079f-dec5-4aa1-bafd-06d0a4a4b68a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7be3e994-e59d-43c5-bf24-a7564cce897f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26c29d0d-5166-4466-9547-3b6abc231e9a",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e944bd4d-fb15-418e-a59c-53f265d711a3",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "c445536b-56c2-4805-8901-1a34e9855b22",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c1461ce-65d5-4e53-bf20-a7db5bddbab5",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "b1e5fbd0-9dc6-48e2-a296-ee2d6a070b6b",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ea2895f-2204-427b-b72f-c151f9a9b47f",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "7b0f7cb0-18fb-43bd-8e96-87a2478d5e8f",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7e3387d-e98e-4a53-9559-30dca2009559",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "3290532742"
+    }, {
+      "id": "41c9377a-fcf4-44ff-ae39-58520fb24392",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44b65e25-ad58-4232-90d5-eb180eed15ed",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma821"
+    }, {
+      "id": "ac34381f-fe04-47aa-84c3-753e98d47680",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5fcdbea0-8772-4f5e-b253-9fd8c9193231",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "333fcea6-bce3-485f-bdea-915e55cfde20",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ccfe1b2f-1792-45f1-a1e8-33e6bbe59900",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella821"
+    }, {
+      "id": "6951818c-b3ff-46f4-9f11-9ad6b76ae61f",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "baa4199e-285c-472d-a6fe-aadcd0566f61",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "AV"
+    }, {
+      "id": "c95f4393-d822-4f83-985f-7e50c3a1edaf",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9cef1176-e734-4c88-a815-2bc2709923aa",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "07643520563"
+    }, {
+      "id": "35ff05f6-fc27-4f5c-ac8a-bd3d0fadb8d0",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "478f31a4-23a1-4bd3-b927-46a8681f8031",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "e5b4c0b8-6546-401c-943f-1ed326f4f13b",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "3c9249d5-4b28-4323-948b-9a3ce5091802",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fea651c3-3a88-4328-bb5c-9a2dea97ede7",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "f0796aeb-af69-41b5-a52c-e34e3fa5a781",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "82f1c766-0df4-4ca3-b8c5-9ee33c39a100",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "6d3557f6-c498-4bd4-b80e-9635ccefc651",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_19",
+    "commands": [{
+      "id": "9a9654ca-5bd5-4683-bcee-b8a6da7fcd81",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8450543f-8abd-4b1a-9d0c-287bf0e2d333",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "63326265-6c39-47b1-8818-e000ada7b2b8",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b52657b-de34-4428-ba27-f3a50d87512c",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "573bf956-e7be-4278-9230-58cabc5b09bc",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "555159ef-d7de-4609-962d-e5247bb14ef5",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "ff5dd0ad-58d3-4063-a946-75611ea1ebd1",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b54839b-5e0c-46ba-beda-99e1cb8a442f",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "09f0a020-809c-4e0e-bd2c-d78bbac988ad",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "42508811-ebbe-4762-af8f-8ea714ccb1f3",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "3290532742"
+    }, {
+      "id": "22582024-1d28-4cef-8ef2-d713250d458e",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cec95ab-cf18-4e87-bb3e-2024df77e642",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma821"
+    }, {
+      "id": "ee2b63ed-afe3-44ee-8276-49ed034b0d53",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f59e470-0c93-4d5a-aac0-0e52960184dd",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "6ea219c8-9c2d-48d2-b6ea-3283f60971e1",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8599ff7-5786-4ec1-863a-ef6b99b88bd7",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella821"
+    }, {
+      "id": "84945c75-7a54-4eda-abbb-3f5327d98330",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad54cf6d-db06-46fc-9c58-58414dced6d5",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "AVAVAVAV"
+    }, {
+      "id": "212ed904-f360-43d5-98e7-7431d3203c7d",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9799b1b2-2b85-47a0-b254-3b36a3a26244",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "07643520563"
+    }, {
+      "id": "80c8a001-5514-404c-a35c-c8e0c932f4cb",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "e055d83e-0f95-4f63-90c5-8f7214e9f74d",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "a13ab6ac-0455-4def-985f-6a0d1ffc9c26",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "c9a058a3-c039-4856-bba0-f39987b50c77",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6681451a-fa24-4b05-aad4-2dabb3de8b53",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "1c8755c7-7519-4f01-89a3-bea5f6110f1b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "235939c9-2de0-4444-ab98-bc0b760803b9",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "d02d9a78-0a58-45a8-af4d-b45b5057245f",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_20",
+    "commands": [{
+      "id": "208fa7d1-3860-4fa5-88e4-a999771b40b4",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "383eed1c-28c9-434d-ae49-aa6c272b832c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ad50b82-d1c1-4737-8e2d-5c62d9068b0a",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2aceda32-ca7b-4b41-8746-3fa17e172182",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "c3210c8c-ebb2-4d4c-97df-c6bb41435b0a",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c962e977-41d0-486d-a077-c72cf02d2f93",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "2ae3b0a9-eb41-4ec2-8396-515cee9cea33",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c085e5f-2778-4bc8-a976-5bd79b426b43",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "598a06f6-07df-43d3-9935-237e451b3d4b",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55ee6ab1-8989-4a6c-b1c6-ee8f018d9da2",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "3290532742"
+    }, {
+      "id": "980edbb0-fefd-461e-a477-2404712213e0",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "17e44125-714f-428b-96dd-89fbc9e50528",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma821"
+    }, {
+      "id": "e1de0ad8-8143-434b-bbcf-5e650ebb9d59",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7c184a8-65b5-4f0b-9c64-c3707f7f84c2",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "cf2b9bea-c24b-4acb-bf9c-4665a439edec",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7846210-822f-46f4-b446-43527d0d3135",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella821"
+    }, {
+      "id": "23452d98-4d16-458e-b918-d9f4d9afa70b",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "133cb9c7-4ff3-4873-a6b5-d44d6d374201",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "A"
+    }, {
+      "id": "783ea71b-8f98-4421-a7ea-e4773245d73e",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5cbd396e-bb12-4195-a427-2fef400e33b1",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "07643520563"
+    }, {
+      "id": "9fa7f1de-b6c1-40bd-b573-e23d021ce9c7",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "712ef5d6-a8ed-48e6-8122-0b55d7774bef",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "c2705bb0-e378-4d7a-8cea-807aa6d78c6c",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "8ea0c716-b558-4d6e-8b9f-90e9317d8a87",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d19d943c-abb1-4730-a650-94f369fe1a84",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "035f9325-6389-4983-827f-27bdab04bc69",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9ed04a9-3bd1-4cc6-b91f-20554634b734",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "c5aa4f2a-cf57-44e9-a88a-3abe11736731",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_21",
+    "commands": [{
+      "id": "3ec2dc38-110e-4467-b265-6667e9c8630e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e80853bb-101a-4727-b95c-61e850ddb554",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ad15cbde-63ea-4bd1-b0f5-04cbe918a23e",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eec48d39-ba83-451d-8f65-aea20963e0eb",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "966eb51d-b7f4-4473-908c-019bb40e1f33",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8bd4110-da89-4812-8670-099818087db2",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "7d829072-1856-4b13-b497-ae4359edf065",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa1adcf2-2e36-4133-b9ba-930ca1f1adb2",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "0e5278c6-f78b-42ad-8405-722eca592af3",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b4b4f0e-e6c2-4946-beaf-1d396e08aef5",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "3290532742"
+    }, {
+      "id": "e1149eb1-2bdb-42c0-80cd-75411fbd5eb9",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44784f8e-090f-408e-90e3-17dc9cc57b22",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma821"
+    }, {
+      "id": "5934e024-a667-4983-ab04-e9943d5cff0f",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fec94af7-ed6f-4cf8-8470-1bcf68d1a61b",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "d2fc8659-419a-48f5-9107-15d5b86bff9e",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c43fbe54-d50d-4b3f-a835-84647292afaa",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella"
+    }, {
+      "id": "7f1b481e-eb5e-49d1-bf55-9d00d919be44",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a4fe853-18a7-40ea-b011-55687c27b4fd",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "A2"
+    }, {
+      "id": "b6be5cca-6a6e-449b-9f31-05199c5d5fac",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "240c637c-1bd6-4c2b-8d23-61c3258de1b8",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "07643520563"
+    }, {
+      "id": "f4b284dd-2717-444a-89c7-a3646eca06f5",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "6ac8bc5c-002b-4584-a135-49b8701c1a83",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "678fbe82-7632-4561-b3f9-eed61c23700d",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "4d8dcc6b-a0c3-4522-bbc4-b44071de469a",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d51366d6-bc1e-457a-a8c5-fecc0986d3b2",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "e1a8e778-9937-4838-90fb-2ec0a707209b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "594998e1-b879-41b9-85c3-8a88f452c8ed",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "5d7e9c4e-49f7-4797-9a26-684ca8433682",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_22",
+    "commands": [{
+      "id": "4d955347-26af-470d-9310-9e543517a025",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "49a98014-e096-4c73-a3b9-c3b54a9b1b14",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "11edcb16-ddbb-4003-abf0-9d6c2cc39eeb",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ca273c8-81fa-48ba-aab9-c7313c55c822",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "e6051a1e-3e95-49aa-a7c5-9bd2e1056cc3",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6416867c-9523-48cd-8393-58b6231e7acf",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "ab541412-79a4-4d90-871d-220e5bac2f08",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee8af537-af85-459e-897a-3c85f5ce671a",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "4f232e10-dcb2-4826-8b65-07f69b3579f5",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0663718e-e8ee-49a9-a0e9-f7884a86a255",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "3290"
+    }, {
+      "id": "a20681e1-8697-4802-820e-637faf619dec",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "68cbba6a-f036-4b70-9d73-6ea79d6977a0",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma821"
+    }, {
+      "id": "110c58b7-130e-4aac-ab8a-ba9ea53b7f56",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75246417-dc56-4faf-a34a-9c70e4ecc8bc",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "19b6dcde-f0a1-459e-a10d-64f1a0ec5759",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85d70a5b-3212-4d7e-bb63-07a94818a2da",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella"
+    }, {
+      "id": "819f13bb-7667-4d07-af1b-59f0441ba201",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4f3403c-e11c-4f96-a6d5-a3ad734ec9ec",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "AV"
+    }, {
+      "id": "9dd3bc10-f6a0-45cc-911b-20a1fe0c3ca6",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43a44ec2-cc18-4d84-95d4-b171c887e84a",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "07643520563"
+    }, {
+      "id": "a82ca57e-08d2-4c5e-b9dc-877b1d53f1b1",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "7e2d1f38-8ab5-4114-aad7-a37e22822322",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "23133441-e81f-4104-9571-4c39f4fc5aec",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "decac516-62be-4726-ab98-e68f9c7d31da",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "392a3c7f-c36f-4fac-a018-d6ce7c0688b3",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "3570dc5a-3e8f-43cd-b2c2-5be75798bf9a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac32358c-7d4b-4264-8e38-06c86b2b1777",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "320d2c05-85d2-480d-918e-18cdb4a7ed6a",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_23",
+    "commands": [{
+      "id": "9daa89e2-03ce-4897-b675-fee088c35828",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c9f00b93-b4ce-4993-a664-ea9af9bcd357",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b8df9d00-d923-4578-b1fb-4fc404675c1b",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c334e50-dfdd-48e7-978e-378cf9debed6",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "f00e4f4c-0ecc-4180-b103-0545ffbbe41f",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "79921f26-e899-487f-ae41-f4b419a0eed8",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "daa78493-0d2d-48d2-8ff2-22f4fd262112",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfa79487-fb4d-4276-a6c7-4febb0e4ede0",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "8a6e6ef9-9f73-47a6-af5a-06d542c7c92f",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8ea3102-1421-4cbb-befd-53564ba73e14",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "32905327423290532742"
+    }, {
+      "id": "0a96c43c-eca1-46b0-9423-0d81c304d172",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b2ac678-b43c-4f1c-95af-9546532afea0",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma821"
+    }, {
+      "id": "4a147a1b-f154-4eed-a029-769b5ecdc3ae",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c6317be-d134-4b89-b093-9eb77378c525",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "236871ad-b442-4937-aaaa-18aeebbf7829",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e70e38ea-6b3a-42d8-ba49-2b7af97fec26",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella"
+    }, {
+      "id": "3d7bfb5a-f67c-4bc4-aa70-40809e6baf18",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea6a093f-76f0-4044-9a2c-0df5146be91d",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "AV"
+    }, {
+      "id": "5271ac93-19ce-48ec-8e3b-6dadd0ee2dde",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26d50b8c-9035-4897-8fd9-6a7e904ea3b6",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "07643520563"
+    }, {
+      "id": "2ee05a25-d4f0-42fd-b723-b030a0608ec6",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "9b311f6a-2199-41c3-a0ea-e3cf1d4ec9d0",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "6398fe50-3264-4ee1-bbe2-8645388adc75",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "0686b93d-5afa-4f4c-841c-a9d7d6311f8f",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c47677bb-bff7-4724-a69d-d9758b2c66c5",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "1fa354af-80f1-4ae6-90f3-077dd2aaf9b7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "af9e8d81-2d4a-4055-ac70-ed5e42c35f59",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "b1194347-4baa-4051-89d6-f40cd71fe01d",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_24",
+    "commands": [{
+      "id": "52b7b679-ddaf-4474-8c59-a3f3f8d44d38",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d094a07b-befa-43cb-ac85-9ec76acd1795",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "798bcc0d-5623-4192-83e4-93bc0a859c91",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41b16546-d2ca-447b-9f22-c9e2afd1b7ed",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "12a2dc37-fd21-4834-95df-17d3f0973855",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c18f349-cff3-48f5-a1b9-e5c81325cce7",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "104fd265-af2e-4069-9115-789a0169a2e0",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "be0fc812-b63c-41a9-98b2-e999acf8f1db",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "b73bff75-37f0-4d38-8e1b-a4515deab47f",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0805c32-6214-4084-bf47-e38eb21be504",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "32b0a42c91"
+    }, {
+      "id": "ff3ac3a8-7c52-4cbc-9af4-66b1360ee9e9",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "669b628d-5a12-4de6-b3c2-94ec6608f2ef",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma821"
+    }, {
+      "id": "04f3062b-4f11-4831-8dd1-59c0ab3ce3fc",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f5de658-3978-4ea5-954c-652f21ea78cd",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "6940f638-98b3-44a1-b157-e1c4490c7be8",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "14915a08-0a2f-4516-9751-281096459a39",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella"
+    }, {
+      "id": "b8093b23-eb92-4d99-a124-952878d370a3",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "22c78eb2-98b3-4cdf-a068-3fffbbd6e278",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "AV"
+    }, {
+      "id": "8acb6664-8f39-46d3-977e-15396b1ff5a8",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37c5c1fd-aca0-48bf-94ff-739824d0ecdf",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "07643520563"
+    }, {
+      "id": "dde10780-c301-40ef-9c21-4f78914e13ea",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "4959dc8d-e579-4c65-8682-008f6951c6c9",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "24192050-5d53-4e0b-864d-17d4f7920f07",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "1ec55eb5-8d2e-43b6-9113-2a8680976520",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e3117c4-a704-44fb-bac4-e55d613e87d7",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "c0243d03-12c6-4cf0-886c-703c566bfb2a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "34342494-dd67-44ee-bdd3-3a072b2cc8a4",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "a21469b6-2886-4548-a305-24134fc84494",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_25",
+    "commands": [{
+      "id": "62a6bb74-a260-45f8-92cd-b84cb847b137",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6fe0c210-5d1a-4dfa-b0cb-2c4ff0809035",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9bde797a-83fb-4300-ba54-d50cac8711db",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a98eabaf-ccdf-4b3f-a9ac-71c435baec7c",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "514d84ff-8ee3-41be-a8e6-4aeec4e2d7ed",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba646db3-1c4d-4d78-ac8c-d0f6868fcca3",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "6b2cd2a4-0714-4dac-8833-beff9585022c",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18c5d2ce-bea1-4854-aa9d-e2bdbbd98d91",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "e9f2e5c3-0fdc-4bda-a7e5-7ae0920eb413",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fc4795f-ea4c-483c-8357-2782fe279b85",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "3290532742"
+    }, {
+      "id": "78bfdb60-b428-47b2-9358-da4c0ba1b875",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ca52109-7d4b-474f-8371-70a553b0214d",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma821"
+    }, {
+      "id": "f201f426-55fa-4667-baa7-ea770b7dc2eb",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "876e5a37-94b6-4e4d-adb9-5113659b37f8",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "003e09e4-14da-4c51-8b05-a39a6680672a",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "154e436a-fc10-4a76-9a84-048a49379e67",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella"
+    }, {
+      "id": "d0c83c9a-444d-43bb-aeeb-9e7c81b92749",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdca3df8-7393-4645-8490-5a30782ac4ea",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "AV"
+    }, {
+      "id": "53be5b2d-6c66-425b-ae10-6c1cbb1de7dc",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a933865a-2633-4129-a90a-829d7e49b883",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "0764"
+    }, {
+      "id": "16ee9ab6-0a11-4e6a-b239-3a6b5850eea3",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "e3307c29-d9ff-4c2c-8d9f-019e2fa9992e",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "fe6eecdb-33e7-40f0-a019-ef9d4e300049",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "bae863b7-dd8e-4ddc-893a-09de896bce12",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98265882-d539-4ac5-bac9-57adbc200495",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "ee015223-bba3-4732-99b9-63ffbad57008",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a63a10a0-0c56-4889-9286-f66813558cd6",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "f4173355-a924-4dc7-a305-31f9d21e098e",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_26",
+    "commands": [{
+      "id": "53ed950a-594f-4830-a7b0-ea6f702d6411",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a3fbb001-ff5f-4651-b0fc-1bd6feac039d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5104b62-2110-4178-821a-8605ec95e9e2",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdac200f-02bb-4bca-9b08-b45c12db4e2b",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "d0609cdc-e8f2-4793-a4d0-bf640ba7d597",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f21876b-6470-4a8d-a0c3-2a41359e0936",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "bec2fdd7-9712-4c56-a92a-3426e1f3b5ad",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4eaec43f-d4aa-4d3c-98d7-f175d54f4329",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "28f177fa-72f0-4afb-aa81-e2d3e5cffd57",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d15b4909-6e53-4300-bbf1-627ebc33bfdd",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "3290532742"
+    }, {
+      "id": "332475a6-a10c-4d7e-a55d-61ffd9e57ef6",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "05a31e8b-b964-4358-9790-104a5e9a7321",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma"
+    }, {
+      "id": "2da1e5fb-522f-40ef-a570-dc0a5c7b5f8c",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "508f3597-d96c-4ab7-9332-8c8db5307c03",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "c45f2be3-18b4-4a53-858e-e55b131741b3",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d7285ed-3f00-463c-9de5-48ae874e57e7",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella"
+    }, {
+      "id": "cad2d52c-b072-4ee3-a20d-710e8e29909c",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c488b733-493b-4454-9fd3-ef9d55ff17ed",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "AV"
+    }, {
+      "id": "2ca7560f-c9bb-433d-a016-52d3455549c8",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d0fbc5b-9d6c-4bc8-ba49-1f44e6c9c1c8",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "0764352056307643520563"
+    }, {
+      "id": "920ac18c-0c0f-4698-ae17-f167d8de32bc",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "55668378-6a1b-4025-965a-f8fb43858cdb",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "5dd8092a-048a-4682-8277-157bdc053417",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "2f428f71-6d56-4ad2-a875-47d650773b44",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cfd5cda8-e925-4fd2-960e-1a8c8b76e6af",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "e2165c27-cffb-45c7-9fd5-9117e47cae4c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "caa6a1b4-dad2-4213-9f52-5dc51ed5070c",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
+      ],
+      "value": "Compilare tutti i campi correttamente"
+    }]
+  }, {
+    "id": "91349cd9-08b3-4996-8030-dd1c793fa3df",
+    "name": "TC_RFU1.2-RegistrazioneAzienda_27",
+    "commands": [{
+      "id": "cd022db3-19f0-4fc6-bd03-9994357e5156",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/RegistrazioneAzienda.jsp?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ed91680-98d2-447d-b10c-4593aebdf576",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a1d72bed-1a6b-460d-a517-67d359951e30",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de0aaa48-d4f8-4f2b-b3e5-4606041d6f60",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pizzapanini@gmail.com"
+    }, {
+      "id": "51ab9958-631e-4f1d-aa96-643ff2a47bee",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "73bd5e4b-ba53-44ca-bdfc-6f3f48eae4e7",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "PizzaPan1"
+    }, {
+      "id": "35336e87-1fa9-4ffc-a93f-08335e50d079",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "29841116-bbd4-4006-b0e3-89c36a04aff9",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "PizzaPanini"
+    }, {
+      "id": "d7290478-1587-4aa9-9fcb-abb06835d7d1",
+      "comment": "",
+      "command": "click",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23a729d8-3a2c-4b9e-badd-214c4eff17e7",
+      "comment": "",
+      "command": "type",
+      "target": "id=telefono",
+      "targets": [
+        ["id=telefono", "id"],
+        ["name=telefono", "name"],
+        ["css=#telefono", "css:finder"],
+        ["xpath=//input[@id='telefono']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "3290532742"
+    }, {
+      "id": "b685f463-6a29-43e7-9a25-a3f722f54c84",
+      "comment": "",
+      "command": "click",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "346756d6-027a-4731-b417-e2137edba2eb",
+      "comment": "",
+      "command": "type",
+      "target": "id=indirizzo",
+      "targets": [
+        ["id=indirizzo", "id"],
+        ["name=indirizzo", "name"],
+        ["css=#indirizzo", "css:finder"],
+        ["xpath=//input[@id='indirizzo']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Roma"
+    }, {
+      "id": "7ddfa4cb-b703-4703-b3b9-73c6a8c3ca25",
+      "comment": "",
+      "command": "click",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "47144678-1355-4594-af0b-3f806338b3b4",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "bf6622c2-9b3c-4e59-a024-4f3690f03735",
+      "comment": "",
+      "command": "click",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f07f1b0-d720-42f1-a6fd-8c9f38edcc4b",
+      "comment": "",
+      "command": "type",
+      "target": "name=citta",
+      "targets": [
+        ["name=citta", "name"],
+        ["xpath=(//input[@id='civico'])[2]", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Montella"
+    }, {
+      "id": "bfe2108a-ccc1-4fae-9051-f52f39938ddc",
+      "comment": "",
+      "command": "click",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e82893f-b1c1-4746-954c-f943c89f88cc",
+      "comment": "",
+      "command": "type",
+      "target": "name=provincia",
+      "targets": [
+        ["name=provincia", "name"],
+        ["xpath=(//input[@id='civico'])[3]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "AV"
+    }, {
+      "id": "12ac3ea8-eccd-43e7-8b3e-65b2653914d1",
+      "comment": "",
+      "command": "click",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cfad170-9f19-49a6-a521-3b857c50b57d",
+      "comment": "",
+      "command": "type",
+      "target": "id=iva",
+      "targets": [
+        ["id=iva", "id"],
+        ["name=iva", "name"],
+        ["css=#iva", "css:finder"],
+        ["xpath=//input[@id='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "0764352056307643520563"
+    }, {
+      "id": "1c964ead-8b15-49cd-ac93-525246b185e9",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "3059e2b9-89e6-4266-87d5-5be89f5c443a",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "5634ef46-e256-41f7-adaa-080c34e50807",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "682,1065"
+    }, {
+      "id": "178a2e1f-47b9-41ab-8787-8d48dfb9f9a1",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "15ff69d8-d1ea-4c9f-9ec5-c2aad000035d",
+      "comment": "",
+      "command": "type",
+      "target": "id=civico",
+      "targets": [
+        ["id=civico", "id"],
+        ["name=civico", "name"],
+        ["xpath=//input[@id='civico']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "28d32097-2f14-4ce7-900b-bbca7aa0f4bf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-list-button",
+      "targets": [
+        ["css=.form-list-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "af60d38a-6d8d-4f26-819a-d3a6c84dd93f",
       "comment": "",
       "command": "assertElementPresent",
       "target": "css=.errorText",

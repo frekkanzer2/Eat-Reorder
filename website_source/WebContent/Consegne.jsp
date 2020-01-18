@@ -37,16 +37,10 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--External container-->
-	<div
-		class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
+	<div class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
 		<div class="registration-title">Bentornato,</div>
 		<!--REFACTORIZZARE CON JSP INSERENDO IL NOME DEL FATTORINO-->
-<<<<<<< HEAD
-		<div class="registration-description">E' ora di fare
-=======
-		<div class="registration-description">&Egrave; ora di fare
->>>>>>> 7fb5f5169fc6eda2b2bf096bebdf844f3a749bef
-			consegne!</div>
+		<div class="registration-description">&Egrave; ora di fare consegne!</div>
 		<img class="std-img center-block"
 			src="assets/img/LogomarcoIS%20PNG.png">
 
@@ -57,13 +51,7 @@
 			for (Ordine_Bean ordine : ordini) {
 		%>
 
-		<div id="flip"
-			class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix"
-<<<<<<< HEAD
-			onclick="openPanel(<%=ordine.getCodiceID()%>)">
-=======
-			style="overflow: auto;">
->>>>>>> parent of 2e20a9b... Rimosso overflow auto dalle JSP
+		<div id="flip" class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix" onclick="openPanel(<%=ordine.getCodiceID()%>)">
 			<div class="row">
 				<!--First column contains ID-->
 				<div class="col-sm-6">

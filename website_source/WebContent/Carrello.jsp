@@ -79,7 +79,7 @@
 	%>
         <!--HERE STARTS THE CARD OF THE PRODUCT-->
         <!--CARD OF THE PRODUCT-->
-        <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix" style="overflow: auto;">
+        <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix">
             <div class="row">
                 <!--First column that contains title and price-->
                 <div id="major-padding-column" class="col-sm-8">

@@ -57,13 +57,8 @@
         <!--HERE STARTS THE CARD OF THE ORDER-->
 
         <!--CARD OF THE ORDER-->
-<<<<<<< HEAD
         <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix">
         <a href="./DoVaiVisualizzaOrdine?idOrdine=<%=order.getCodiceID()%>"> <!--THIS A TAG WILL REDIRECT YOU TO THE ORDER DETAILS-->
-=======
-        <a href="./DoVaiVisualizzaOrdine?idOrdine=<%=order.getCodiceID()%>"> <!--THIS A TAG WILL REDIRECT YOU TO THE ORDER DETAILS-->
-        <div class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix" style="overflow: auto;">
->>>>>>> parent of 2e20a9b... Rimosso overflow auto dalle JSP
             <div class="row">
                 <!--First column contains ID and price-->
                 <div class="col-sm-7">

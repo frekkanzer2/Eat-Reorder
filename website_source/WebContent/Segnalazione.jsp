@@ -28,7 +28,7 @@
 				<!--Form group for id order input-->
 				<div class="form-group">
 					<div class="col-sm-12">
-						<input type="text"class="form-control custom-border-red"name="id-order"placeholder="Inserisci l'ID dell'ordine"pattern="[0-9]+">
+						<input type="text"class="form-control custom-border-red"name="id-order"placeholder="Inserisci l'ID dell'ordine">
 					</div>
 				</div>
 				<!--Form group for reason to ban (problemi con regular expression-->

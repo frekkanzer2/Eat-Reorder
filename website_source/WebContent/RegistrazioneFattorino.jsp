@@ -45,25 +45,25 @@
 			<div class="form-group">
 					<label class="std-label">Email</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Es. Mario.Rossi@gmail.com</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"id="email"placeholder="Email"pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"id="email"placeholder="Email">
 					<label class="std-label">Password</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Almeno 7 caratteri alfanumerici</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"id="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"id="password"placeholder="Password">
 					<label class="std-label">Nome</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Almeno 4 caratteri</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"id="nome"placeholder="Nome"pattern="[a-zA-Z 'àèìòù]{3,40}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"id="nome"placeholder="Nome">
 					<label class="std-label">Cognome</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Almeno 4 caratteri</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="cognome"id="cognome"placeholder="Cognome"pattern="[a-zA-Z 'àèìòù]{3,40}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="cognome"id="cognome"placeholder="Cognome">
 					<label class="std-label">Telefono</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Esattamente 10 caratteri</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="telefono"id="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="telefono"id="telefono"placeholder="Telefono">
 					<label class="std-label">Citta di Consegna</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Almeno 5 caratteri</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="citta"id="citta"placeholder="Citt&agrave di consegna"pattern="[a-zA-Z 'àèìòù]{4,45}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="citta"id="citta"placeholder="Citt&agrave di consegna">
 					<label class="std-label">Provincia di Consegna</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Esattamente 2 caratteri</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="provincia"id="provincia"placeholder="Provincia di consegna" pattern="[a-zA-Z]{2}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text" name="provincia"id="provincia"placeholder="Provincia di consegna">
 				<hr />
 				<!--List of checkboxes-->
 				<div class="custom-text-centered text-red"style="margin-top:-6px;margin-bottom:6px;">Giorni lavorativi</div>

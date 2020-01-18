@@ -37,16 +37,16 @@
 			<div class="form-group">
 					<span><label class="std-label">Email</label></span>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Es. mario.rossi@gmail.com</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login" type="email" name="email" placeholder="Email" id="email" pattern="[a-zA-Z0-9][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
+					<input class="custom-border-red border-rounded-small form-control input-style-login" type="email" name="email" placeholder="Email" id="email">
 					<label class="std-label">Password</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50"> Almeno 7 caratteri alfanumerci</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login" type="password" maxlength="20" name="password" placeholder="Password" id="password" pattern="[a-zA-Z0-9]{7,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login" type="password" maxlength="20" name="password" placeholder="Password" id="password">
 					<label class="std-label">Nome</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50"> Almeno 4 lettere</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login" type="nome" name="nome" placeholder="Nome" id="nome" pattern="[a-zA-Z 'àèìòù]{4,45}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login" type="nome" name="nome" placeholder="Nome" id="nome">
 					<label class="std-label">Cognome</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50"> Almeno 4 lettere</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login" type="cognome" name="cognome" placeholder="Cognome" id="cognome" pattern="[a-zA-Z 'àèìòù]{4,45}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login" type="cognome" name="cognome" placeholder="Cognome" id="cognome">
 					<p class="errorText" style="margin-top: 20px;">
 					<%
             			if (request.getAttribute("msg_error") != null){

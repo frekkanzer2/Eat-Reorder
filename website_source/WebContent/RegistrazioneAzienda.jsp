@@ -47,31 +47,31 @@
 			<div class="form-group">
 					<label class="std-label">Email</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Es. pizza.panini@gmail.com</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"id="email"placeholder="Email"pattern="[a-zA-Z][a-zA-Z0-9\.]*@([a-zA-Z]+)\.[a-zA-Z]+">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="email"name="email"id="email"placeholder="Email">
 					<label class="std-label">Password</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Almeno 7 caratteri alfanumerici</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"id="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"id="password"placeholder="Password">
 					<label class="std-label">Nome</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Almeno 4 caratteri</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"id="nome"placeholder="Nome dell'attivit&agrave"pattern="[a-zA-Z 'àèìòù]{3,40}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"id="nome"placeholder="Nome dell'attivit&agrave">
 					<label class="std-label">Telefono</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> 10 Caratteri numerici</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="telefono"id="telefono"placeholder="Telefono"pattern="[0-9]{9,10}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="telefono"id="telefono"placeholder="Telefono">
 					<label class="std-label">Indirizzo</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Es. Via Roma</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="indirizzo"id="indirizzo"placeholder="Indirizzo"pattern="[a-zA-Z 'àèìòù]{3,80}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="indirizzo"id="indirizzo"placeholder="Indirizzo">
 					<label class="std-label">Civico</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Massimo 3 numeri</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="number"name="civico"id="civico"placeholder="Numero civico"pattern="[0-9]{1,3}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="number"name="civico"id="civico"placeholder="Numero civico">
 					<label class="std-label">Citta</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Almeno 5 caratteri</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="citta"id="civico"placeholder="Citt&agrave"pattern="[a-zA-Z 'àèìòù]{4,45}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="citta"id="civico"placeholder="Citt&agrave">
 					<label class="std-label">Provincia</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Esattamente 2 caratteri</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="provincia"id="civico"placeholder="Provincia"pattern="[a-zA-Z]{2}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="provincia"id="civico"placeholder="Provincia">
 					<label class="std-label">Partita Iva</label>
 					<span class="_0av1W9 ps6S3V BpPaLl ccsMLn PbG-b5 yuD_c0 _0qBygh _92Azvw"><svg class="dx-icon lny_1rAju" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.8 15h-1.6v-7h1.6zm.1-8.2h-1.8V7h1.8z"></path></svg><span class="suggerimenti" class="VcCaWc O82Ha7 UnzkRv P6b3OO febL1w s9pfnb _0Pob50" style="text-align: right;"> Esattamente 11 Caratteri numerici</span></span>
-					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="iva"id="iva"placeholder="Partita IVA"pattern="[0-9]{11}">
+					<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="iva"id="iva"placeholder="Partita IVA">
 				<hr />
 				<!--List of checkboxes-->
 				<div class="custom-text-centered text-red"style="margin-top:-6px; margin-bottom:6px;">Giorni lavorativi</div>

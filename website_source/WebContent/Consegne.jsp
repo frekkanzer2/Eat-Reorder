@@ -55,7 +55,11 @@
 
 		<div id="flip"
 			class="bg-yellow custom-border-red border-rounded-small padding-medium card-spacing-fix"
+<<<<<<< HEAD
 			onclick="openPanel(<%=ordine.getCodiceID()%>)">
+=======
+			style="overflow: auto;">
+>>>>>>> parent of 2e20a9b... Rimosso overflow auto dalle JSP
 			<div class="row">
 				<!--First column contains ID-->
 				<div class="col-sm-6">

@@ -73,6 +73,7 @@ class DoOrdinazioneTest extends Mockito {
 		request.setParameter("address", "");
 		request.setParameter("notes", "aggiunta ketchup");
 		request.setParameter("credit-card", "3092983210348423");
+		request.setParameter("telefono", "3450534980");
 		
 		servlet.doGet(request,response);
 		String attribute= (String) request.getAttribute("msg_error");
@@ -112,6 +113,7 @@ class DoOrdinazioneTest extends Mockito {
 		request.setParameter("address", "Roma, 20Roma, 20Roma, 20Roma, 20Roma, 20");
 		request.setParameter("notes", "aggiunta ketchup");
 		request.setParameter("credit-card", "3092983210348423");
+		request.setParameter("telefono", "3450534980");
 		
 		servlet.doGet(request,response);
 		String attribute= (String) request.getAttribute("msg_error");
@@ -151,6 +153,7 @@ class DoOrdinazioneTest extends Mockito {
 		request.setParameter("address", "Roma&, 20");
 		request.setParameter("notes", "aggiunta ketchup");
 		request.setParameter("credit-card", "3092983210348423");
+		request.setParameter("telefono", "3450534980");
 		
 		servlet.doGet(request,response);
 		String attribute= (String) request.getAttribute("msg_error");
@@ -190,6 +193,7 @@ class DoOrdinazioneTest extends Mockito {
 		request.setParameter("address", "Roma, 20");
 		request.setParameter("notes", "aggiunta ketchup");
 		request.setParameter("credit-card", "3092");
+		request.setParameter("telefono", "3450534980");
 		
 		servlet.doGet(request,response);
 		String attribute= (String) request.getAttribute("msg_error");
@@ -229,6 +233,7 @@ class DoOrdinazioneTest extends Mockito {
 		request.setParameter("address", "Roma, 20");
 		request.setParameter("notes", "aggiunta ketchup");
 		request.setParameter("credit-card", "30929832103484233092983210348423");
+		request.setParameter("telefono", "3450534980");
 		
 		servlet.doGet(request,response);
 		String attribute= (String) request.getAttribute("msg_error");
@@ -268,6 +273,7 @@ class DoOrdinazioneTest extends Mockito {
 		request.setParameter("address", "Roma, 20");
 		request.setParameter("notes", "aggiunta ketchup");
 		request.setParameter("credit-card", "3092&983#103484*");
+		request.setParameter("telefono", "3450534980");
 		
 		servlet.doGet(request,response);
 		String attribute= (String) request.getAttribute("msg_error");
@@ -307,6 +313,7 @@ class DoOrdinazioneTest extends Mockito {
 		request.setParameter("address", "Roma, 20");
 		request.setParameter("notes", "aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup aggiunta ketchup");
 		request.setParameter("credit-card", "3092983210348423");
+		request.setParameter("telefono", "3450534980");
 		
 		servlet.doGet(request,response);
 		String attribute= (String) request.getAttribute("msg_error");
@@ -346,15 +353,132 @@ class DoOrdinazioneTest extends Mockito {
 		request.setParameter("address", "Roma, 20");
 		request.setParameter("notes", "aggiunta ketchup&&&&");
 		request.setParameter("credit-card", "3092983210348423");
+		request.setParameter("telefono", "3450534980");
 		
 		servlet.doGet(request,response);
 		String attribute= (String) request.getAttribute("msg_error");
 		assertEquals(errmessage, attribute);	
 	}
 	
-	
 	@Test
 	public void Ordinazione_9() throws SQLException, ServletException, IOException {
+
+		String email_azienda="pizzapanini@gmail.com";
+		
+		AccountAzienda_Bean azienda= new AccountAzienda_Bean(email_azienda, null , null, null , 0 , null, null, null, null, null, null, null);
+		Prodotto_Bean prodotto= new Prodotto_Bean();
+		prodotto.setCodice(10L);
+		prodotto.setAzienda(azienda);
+		prodotto.setNome("Torta al miele");
+		prodotto.setDescrizione("Dolce al miele");
+		prodotto.setPrezzo(0.70F);
+		prodotto.setImmagine( new URL("http://pathimmagine"));
+		
+		Carrello cart= new Carrello();
+		cart.aggiungiProdotto(prodotto);
+		
+		
+		AccountCliente_Bean cliente= new AccountCliente_Bean("m.dellobuono@libero.it", "password", "Mario", "Rossi");
+	
+		
+		request.getSession().setAttribute("utente", cliente);
+		request.getSession().setAttribute("carrello", cart);
+			
+		
+		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);	
+		servlet.setGestore(dao);
+		
+		String errmessage="Dati nell'ordine non corretti";
+		request.setParameter("address", "Roma, 20");
+		request.setParameter("notes", "aggiunta ketchup&&&&");
+		request.setParameter("credit-card", "3092983210348423");
+		request.setParameter("telefono", "3450");
+		
+		servlet.doGet(request,response);
+		String attribute= (String) request.getAttribute("msg_error");
+		assertEquals(errmessage, attribute);	
+	}
+	
+	@Test
+	public void Ordinazione_10() throws SQLException, ServletException, IOException {
+
+		String email_azienda="pizzapanini@gmail.com";
+		
+		AccountAzienda_Bean azienda= new AccountAzienda_Bean(email_azienda, null , null, null , 0 , null, null, null, null, null, null, null);
+		Prodotto_Bean prodotto= new Prodotto_Bean();
+		prodotto.setCodice(10L);
+		prodotto.setAzienda(azienda);
+		prodotto.setNome("Torta al miele");
+		prodotto.setDescrizione("Dolce al miele");
+		prodotto.setPrezzo(0.70F);
+		prodotto.setImmagine( new URL("http://pathimmagine"));
+		
+		Carrello cart= new Carrello();
+		cart.aggiungiProdotto(prodotto);
+		
+		
+		AccountCliente_Bean cliente= new AccountCliente_Bean("m.dellobuono@libero.it", "password", "Mario", "Rossi");
+	
+		
+		request.getSession().setAttribute("utente", cliente);
+		request.getSession().setAttribute("carrello", cart);
+			
+		
+		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);	
+		servlet.setGestore(dao);
+		
+		String errmessage="Dati nell'ordine non corretti";
+		request.setParameter("address", "Roma, 20");
+		request.setParameter("notes", "aggiunta ketchup&&&&");
+		request.setParameter("credit-card", "3092983210348423");
+		request.setParameter("telefono", "34505349803450534980");
+		
+		servlet.doGet(request,response);
+		String attribute= (String) request.getAttribute("msg_error");
+		assertEquals(errmessage, attribute);	
+	}
+	
+	@Test
+	public void Ordinazione_11() throws SQLException, ServletException, IOException {
+
+		String email_azienda="pizzapanini@gmail.com";
+		
+		AccountAzienda_Bean azienda= new AccountAzienda_Bean(email_azienda, null , null, null , 0 , null, null, null, null, null, null, null);
+		Prodotto_Bean prodotto= new Prodotto_Bean();
+		prodotto.setCodice(10L);
+		prodotto.setAzienda(azienda);
+		prodotto.setNome("Torta al miele");
+		prodotto.setDescrizione("Dolce al miele");
+		prodotto.setPrezzo(0.70F);
+		prodotto.setImmagine( new URL("http://pathimmagine"));
+		
+		Carrello cart= new Carrello();
+		cart.aggiungiProdotto(prodotto);
+		
+		
+		AccountCliente_Bean cliente= new AccountCliente_Bean("m.dellobuono@libero.it", "password", "Mario", "Rossi");
+	
+		
+		request.getSession().setAttribute("utente", cliente);
+		request.getSession().setAttribute("carrello", cart);
+			
+		
+		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);	
+		servlet.setGestore(dao);
+		
+		String errmessage="Dati nell'ordine non corretti";
+		request.setParameter("address", "Roma, 20");
+		request.setParameter("notes", "aggiunta ketchup&&&&");
+		request.setParameter("credit-card", "3092983210348423");
+		request.setParameter("telefono", "345053498&");
+		
+		servlet.doGet(request,response);
+		String attribute= (String) request.getAttribute("msg_error");
+		assertEquals(errmessage, attribute);	
+	}
+	
+	@Test
+	public void Ordinazione_12() throws SQLException, ServletException, IOException {
 
 		String email_azienda="pizzapanini@gmail.com";
 		
@@ -387,6 +511,7 @@ class DoOrdinazioneTest extends Mockito {
 		request.setParameter("address", "Roma, 20");
 		request.setParameter("notes", "aggiunta ketchup");
 		request.setParameter("credit-card", "3092983210348423");
+		request.setParameter("telefono", "3450534980");
 		
 		servlet.doGet(request,response);
 		Ordine_Bean order = (Ordine_Bean) request.getAttribute("watchingOrder");

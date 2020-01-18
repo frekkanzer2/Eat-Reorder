@@ -112,7 +112,7 @@
 			<%=utenteAzienda.getVia()%>,
 			<%=utenteAzienda.getNumeroCivico()%></div>
 		<div class="registration-description">
-			Citt&agrave:
+			Citt&agrave;:
 			<%=utenteAzienda.getCitta()%></div>
 		<div class="registration-description">
 			Provincia:
@@ -193,7 +193,7 @@
 			Telefono:
 			<%=utenteFattorino.getTelefono()%></div>
 		<div class="registration-description">
-			Citt&agrave:
+			Citt&agrave;:
 			<%=utenteFattorino.getCittaConsegna()%></div>
 		<div class="registration-description">
 			Provincia:

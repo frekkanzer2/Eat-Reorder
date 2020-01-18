@@ -45,21 +45,21 @@
 			<div class="report-title" style="margin-bottom: 10px;">Ci siamo quasi...</div>
 			<div class="report-description"style="margin-bottom:14px;">Compila i campi per completare l'ordine!</div>
 			<!--ORDER FORM-->
-			<form class="form-horizontal center-block" action="DoOrdinazione" method="POST">
+			<form class="form-horizontal center-block" action="DoOrdinazione" method="POST"onsubmit="return checkOrdine();">
                     <label class="std-label">Indirizzo di destinazione</label>
                     
                     <!--INPUT DELL'INDIRIZZO-->
-					<input type="text"name="address"class="form-control custom-border-red"placeholder="Indirizzo">
+					<input type="text"id="indirizzo"name="address"class="form-control custom-border-red"placeholder="Indirizzo"pattern="[a-zA-Z 'אטלעש]{1,80}, [0-9]{1,3}">
 					 <label class="std-label">Telefono cliente</label>
                     
                     <!--INPUT del Telefono-->
-					<input type="text"name="telefono"class="form-control custom-border-red"placeholder="Telefono">
+					<input type="text"id="telefono"name="telefono"class="form-control custom-border-red"placeholder="Telefono"pattern="[0-9]{9,10}">
                     <label class="std-label">Note per l'azienda</label>
                     <!--INPUT DELLE NOTE PER L'AZIENDA-->
                     <textarea name="notes"class="form-control custom-border-red"rows="5"placeholder="Note per l'azienda"></textarea>
                     <label class="std-label">Carta di credito</label>
                     <!--INPUT PER LA CARTA DI CREDITO-->
-                    <input type="text"name="credit-card"class="form-control custom-border-red"placeholder="XXXX-XXXX-XXXX-XXXX">
+                    <input id="carta"type="text"name="credit-card"class="form-control custom-border-red"placeholder="XXXX-XXXX-XXXX-XXXX"pattern="[0-9]{16}">
                     <!--PULSANTE DI SUBMIT-->
                     
     <%
@@ -192,5 +192,17 @@
             %>
 		</div>
 	</div>
+	<script type="text/javascript">
+		function checkOrdine() {
+			var indirizzo = document.getElementById("indirizzo");
+			var telefono = document.getElementById("telefono");
+			var carta = document.getElementById("carta");
+			if (indirizzo.value == "" || telefono.value == "" || carta.value == "") {
+				alert("ATTENZIONE! Errore nella validazione dei campi!")
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>

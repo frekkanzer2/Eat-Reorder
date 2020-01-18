@@ -47,15 +47,15 @@
 			<!--Form group that contains fields and confirm button-->
 			<div class="form-group">
 				<label class="std-label">Nome</label>
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="nome"name="nome"placeholder="Nome"pattern="[a-zA-Z 'àèìòù]{3,40}" value="<%=fattorino.getNome()%>">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="nome"placeholder="Nome"pattern="[a-zA-Z 'àèìòù]{3,40}" value="<%=fattorino.getNome()%>">
 				<label class="std-label">Cognome</label>
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="cognome"name="cognome"placeholder="Cognome"pattern="[a-zA-Z 'àèìòù]{3,40}" value="<%=fattorino.getCognome()%>">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="cognome"placeholder="Cognome"pattern="[a-zA-Z 'àèìòù]{3,40}" value="<%=fattorino.getCognome()%>">
 				<label class="std-label">Telefono</label>
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="telefono"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}" value="<%=fattorino.getTelefono()%>">
-				<label class="std-label">Citt&agrave</label>
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="citta"name="citta"placeholder="Citt&agrave di consegna"pattern="[a-zA-Z 'àèìòù]{4,45}" value="<%=fattorino.getCittaConsegna()%>">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="telefono"placeholder="Telefono"pattern="[0-9]{9,10}" value="<%=fattorino.getTelefono()%>">
+				<label class="std-label">Citt&agrave;</label>
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="citta"placeholder="Citt&agrave di consegna"pattern="[a-zA-Z 'àèìòù]{4,45}" value="<%=fattorino.getCittaConsegna()%>">
 				<label class="std-label">Provincia</label>
-				<input class="custom-border-red border-rounded-small form-control input-style-login"type="provincia"name="provincia"placeholder="Provincia di consegna"pattern="[a-zA-Z]{2}" value="<%=fattorino.getProvinciaConsegna()%>">
+				<input class="custom-border-red border-rounded-small form-control input-style-login"type="text"name="provincia"placeholder="Provincia di consegna"pattern="[a-zA-Z]{2}" value="<%=fattorino.getProvinciaConsegna()%>">
 				<label class="std-label">Password</label>
 				<input class="custom-border-red border-rounded-small form-control input-style-login"type="password"name="password"placeholder="Password"pattern="[a-zA-Z0-9]{7,20}" value="<%=fattorino.getPassword()%>">
 				<hr />
@@ -75,7 +75,7 @@
 							value = "MONDAY" id="checkbox-day1">
 							<%} %>
 						<label class="form-check-label"
-							for="checkbox-day1">Luned&igrave</label><br>
+							for="checkbox-day1">Luned&igrave;</label><br>
 						<!--New day-->
 						<%if(giorni.contains(DayOfWeek.TUESDAY)){ %>
 						<input name="checkbox" class="form-check-input" type="checkbox"
@@ -84,7 +84,7 @@
 						<input name="checkbox" class="form-check-input" type="checkbox"
 							value = "TUESDAY" id="checkbox-day2"><%} %>
 						<label class="form-check-label"
-							for="checkbox-day2">Marted&igrave</label><br>
+							for="checkbox-day2">Marted&igrave;</label><br>
 						<!--New day-->
 						<%if(giorni.contains(DayOfWeek.WEDNESDAY)){ %>
 						<input name="checkbox" class="form-check-input" type="checkbox"
@@ -93,7 +93,7 @@
 						<input name="checkbox" class="form-check-input" type="checkbox"
 							value = "WEDNESDAY" id="checkbox-day3" >	<%} %>
 					    <label class="form-check-label"
-							for="checkbox-day3">Mercoled&igrave</label><br>
+							for="checkbox-day3">Mercoled&igrave;</label><br>
 						<!--New day-->
 						<%if(giorni.contains(DayOfWeek.THURSDAY)){ %>
 						<input name="checkbox" class="form-check-input" type="checkbox"
@@ -102,7 +102,7 @@
 						<input name="checkbox" class="form-check-input" type="checkbox"
 							value = "THURSDAY" id="checkbox-day4"><%} %>
 							 <label class="form-check-label"
-							for="checkbox-day4">Gioved&igrave</label>
+							for="checkbox-day4">Gioved&igrave;</label>
 					</div>
 					<div class="col-sm-6 list-of-checkboxes">
 						<!--New day-->
@@ -113,7 +113,7 @@
 						<input name="checkbox" class="form-check-input" type="checkbox"
 							id="checkbox-day5" value = "FRIDAY">	<%} %>
 						<label class="form-check-label"
-							for="checkbox-day5">Venerd&igrave</label><br>
+							for="checkbox-day5">Venerd&igrave;</label><br>
 						<!--New day-->
 						<%if(giorni.contains(DayOfWeek.SATURDAY)){ %>
 						<input name="checkbox" class="form-check-input" type="checkbox"

@@ -46,7 +46,7 @@
 			<input class="custom-border-red border-rounded-small form-control input-style-login"id="prezzo"type="text"name="costo"placeholder="Prezzo del piatto"pattern="[0-9]+,[0-9]{2}">
             <label class="std-label">Consigliamo di inserire un'immagine quadrata</label>
             <input class="custom-border-red border-rounded-small form-control input-style-login"id="img"type="text"name="img_path"placeholder="URL dell'immagine da caricare" pattern="(?:([A-Za-z]+):)?(\\/{0,3})([0-9.\\-A-Za-z]+)(?::(\\d+))?(?:\\/([^?#]*))?(?:\\?([^#]*))?(?:#(.*))?">
-            <textarea type="text"class="custom-border-red border-rounded-small form-control input-style-login"id="description"name="descrizione"rows="3"placeholder="Descrizione del piatto" pattern="[a-zA-Z0-9\\. 'àèìòù]{10,250}"></textarea>
+            <textarea class="custom-border-red border-rounded-small form-control input-style-login"id="description"name="descrizione"rows="3"placeholder="Descrizione del piatto"></textarea>
             <button class="btn form-list-button bg-red border-rounded-small"type="submit">Conferma</button>
 		</form>
 	</div>
@@ -58,7 +58,8 @@
 			var nome = document.getElementById("nome");
 			var prezzo = document.getElementById("prezzo");
 			var img = document.getElementById("img");
-			if (nome.value == ""||prezzo.value==""||img.value=="") {
+			var desc=document.getElementById()
+			if (nome.value == ""||prezzo.value==""||img.value==""||desc.value == "") {
 				alert("ATTENZIONE! Errore nella validazione dei campi!")
 				return false;
 			}

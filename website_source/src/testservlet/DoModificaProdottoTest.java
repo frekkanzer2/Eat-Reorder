@@ -58,7 +58,7 @@ class DoModificaProdottoTest extends Mockito{
 		request.setParameter("id", "10");
 		request.setParameter("nome", "");
 		request.setParameter("descrizione", "Dolce al miele");
-		request.setParameter("costo", "0,70");
+		request.setParameter("prezzo", "0,70");
 		request.setParameter("img_path", "http://pathimmagine");
 		
 		servlet.doGet(request,response);
@@ -90,7 +90,7 @@ class DoModificaProdottoTest extends Mockito{
 		request.setParameter("id", "10");
 		request.setParameter("nome", "Torta al miele con passata di zucchero bianco raro");
 		request.setParameter("descrizione", "Dolce al miele");
-		request.setParameter("costo", "0,70");
+		request.setParameter("prezzo", "0,70");
 		request.setParameter("img_path", "http://pathimmagine");
 		
 		servlet.doGet(request,response);
@@ -122,7 +122,7 @@ class DoModificaProdottoTest extends Mockito{
 		request.setParameter("id", "10");
 		request.setParameter("nome", "Torta al miele2");
 		request.setParameter("descrizione", "Dolce al miele");
-		request.setParameter("costo", "0,70");
+		request.setParameter("prezzo", "0,70");
 		request.setParameter("img_path", "http://pathimmagine");
 		
 		servlet.doGet(request,response);
@@ -154,7 +154,7 @@ class DoModificaProdottoTest extends Mockito{
 		request.setParameter("id", "10");
 		request.setParameter("nome", "Torta al miele");
 		request.setParameter("descrizione", "Dol");
-		request.setParameter("costo", "0,70");
+		request.setParameter("prezzo", "0,70");
 		request.setParameter("img_path", "http://pathimmagine");
 		
 		servlet.doGet(request,response);
@@ -186,7 +186,7 @@ class DoModificaProdottoTest extends Mockito{
 		request.setParameter("id", "10");
 		request.setParameter("nome", "Torta al miele");
 		request.setParameter("descrizione", "Dolcealmielensaidhsauodhaudijbashdbjashkdbsaoudjsanodsjdoasdnoasdnosajdnsaojdnsjaondsjndsojadnjaosndoasdnjaosdajsdboadbjsabdhasidbaishdbaishbdaisdbihabdshaisbdodhaudijbashdbjashkdbsaoudjsanodsjdoasdnoasdnosajdnsaojdnsjaondsjndsojadnjaosndoasdnjaosdajsdboadbjsabdhasidbaishdbaishbdaisdbihabdshaisbd");
-		request.setParameter("costo", "0,70");
+		request.setParameter("prezzo", "0,70");
 		request.setParameter("img_path", "http://pathimmagine");
 		
 		servlet.doGet(request,response);
@@ -218,7 +218,7 @@ class DoModificaProdottoTest extends Mockito{
 		request.setParameter("id", "10");
 		request.setParameter("nome", "Torta al miele");
 		request.setParameter("descrizione", "Dolce al miele &");
-		request.setParameter("costo", "0,70");
+		request.setParameter("prezzo", "0,70");
 		request.setParameter("img_path", "http://pathimmagine");
 		
 		servlet.doGet(request,response);
@@ -250,7 +250,7 @@ class DoModificaProdottoTest extends Mockito{
 		request.setParameter("id", "10");
 		request.setParameter("nome", "Torta al miele");
 		request.setParameter("descrizione", "Dolce al miele");
-		request.setParameter("costo", "&");
+		request.setParameter("prezzo", "&");
 		request.setParameter("img_path", "http://pathimmagine");
 		
 		servlet.doGet(request,response);
@@ -282,7 +282,7 @@ class DoModificaProdottoTest extends Mockito{
 		request.setParameter("id", "10");
 		request.setParameter("nome", "Torta al miele");
 		request.setParameter("descrizione", "Dolce al miele");
-		request.setParameter("costo", "&");
+		request.setParameter("prezzo", "&");
 		request.setParameter("img_path", "htt://");
 		
 		servlet.doGet(request,response);
@@ -310,7 +310,7 @@ class DoModificaProdottoTest extends Mockito{
 		request.setParameter("id", "10");
 		request.setParameter("nome", "Torta al miele");
 		request.setParameter("descrizione", "Dolce al miele");
-		request.setParameter("costo", "0,70");
+		request.setParameter("prezzo", "0,70");
 		request.setParameter("img_path", "http://pathimmagine");
 		servlet.doPost(request,response);
 		

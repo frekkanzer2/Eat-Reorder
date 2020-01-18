@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.SQLTimeoutException;
 import java.sql.Savepoint;
 import java.sql.Time;
 import java.time.DayOfWeek;
@@ -100,7 +99,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 			ArrayList<Pair<String, String>> listOfEmailFattorino = new ArrayList<Pair<String, String>>();
 			// this PS contains a query to take days for a courier
 			PreparedStatement hs = connect.prepareStatement("select giorniLavorativi.giorno "
-					+ "from fattorino, giorniLavorativi " + "where fattorino.email = ?");
+					+ "from giorniLavorativi " + "where email = ?");
 			// Starting checks on HH
 			/* Quartet structure: email, nome, orario_inizio, orario_fine */
 			for (Quartet<String, String, LocalTime, LocalTime> tempRecord : courierContainer) {
@@ -135,7 +134,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 					ArrayList<DayOfWeek> workDays = new ArrayList<DayOfWeek>();
 					hs.setString(1, tempRecord.getValue0());
 					ResultSet hsSet = hs.executeQuery();
-					if (hsSet.next()) {
+					while (hsSet.next()) {
 						String takenDay = (String) hsSet.getObject("giorno");
 						if (takenDay.equalsIgnoreCase("Monday")) {
 							workDays.add(DayOfWeek.MONDAY);
@@ -212,7 +211,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				order.setCodiceID(idOrder);
 				for (ProdottoQuantita pq : order.getProdottiOrdinati()) {
 					stmt = connect
-							.prepareStatement("insert into prodottoordine (quantita,prodotto,ordine) values (?,?,?)");
+							.prepareStatement("insert into prodottoquantita (quantita,prodotto,ordine) values (?,?,?)");
 					stmt.setInt(1, pq.getQta());
 					stmt.setLong(2, pq.getProdotto().getCodice());
 					stmt.setLong(3, idOrder);
@@ -289,7 +288,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 				List<ProdottoQuantita> prodottiOrdinati = new ArrayList<ProdottoQuantita>();
 				PreparedStatement stmt2 = connect.prepareStatement(
-						"SELECT * FROM eatreorder.prodottoordine join prodotto on prodotto.codice = prodottoordine.prodotto and prodottoordine.ordine = ?;");
+						"SELECT * FROM eatreorder.prodottoquantita join prodotto on prodotto.codice = prodottoquantita.prodotto and prodottoquantita.ordine = ?;");
 				stmt2.setLong(1, idOrdine);
 				ResultSet set = stmt2.executeQuery();
 
@@ -351,7 +350,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 				Float prezzoTotale = x.getFloat("prezzo_totale");
 				String note = x.getString("note");
 				String stato = x.getString("stato");
-				String telefono = x.getString("telefono");
+				String telefono = x.getString("telefono_cliente");
 				String emAzienda = x.getString("email_azienda");
 				String emFattorino = x.getString("email_fattorino");
 				String emCliente = x.getString("email_acquirente");
@@ -364,7 +363,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 				List<ProdottoQuantita> prodottiOrdinati = new ArrayList<ProdottoQuantita>();
 				PreparedStatement stmt2 = connect.prepareStatement(
-						"SELECT * FROM eatreorder.prodottoordine join prodotto on prodotto.codice = prodottoordine.prodotto and prodottoordine.ordine = ?;");
+						"SELECT * FROM eatreorder.prodottoquantita join prodotto on prodotto.codice = prodottoquantita.prodotto and prodottoquantita.ordine = ?;");
 				stmt2.setLong(1, idOrdine);
 				ResultSet set = stmt2.executeQuery();
 
@@ -463,9 +462,9 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 		connect = DBConnectionPool.getConnection();
 
-		PreparedStatement stmt = connect.prepareStatement("update Ordine set Ordine.stato=?");
+		PreparedStatement stmt = connect.prepareStatement("update Ordine set Ordine.stato=? where Ordine.codice=?");
 		stmt.setString(1, Ordine_Bean.RITIRATO);
-
+		stmt.setLong(2, idOrdine);
 		stmt.executeUpdate();
 
 		return;
@@ -477,8 +476,9 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 
 		connect = DBConnectionPool.getConnection();
 
-		PreparedStatement stmt = connect.prepareStatement("update Ordine set Ordine.stato=?");
+		PreparedStatement stmt = connect.prepareStatement("update Ordine set Ordine.stato=? where Ordine.codice=?");
 		stmt.setString(1, Ordine_Bean.CONSEGNATO);
+		stmt.setLong(2, idOrdine);
 
 		stmt.executeUpdate();
 

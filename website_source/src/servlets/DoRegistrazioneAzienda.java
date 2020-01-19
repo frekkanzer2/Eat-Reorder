@@ -95,6 +95,7 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 					String errmessage = ("Email già presente.");
 					request.setAttribute("msg_error", errmessage);
 					request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
+					return;
 				}//create new company account
 				 else {
 					
@@ -102,7 +103,8 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 					String confirmMessage=("Registrazione avvenuta. Puoi loggare.");
 					//Confirm the registration
 					request.setAttribute("msg_confirm", confirmMessage);
-				      	request.getRequestDispatcher("Homepage.jsp").forward(request, response);
+				    request.getRequestDispatcher("Homepage.jsp").forward(request, response);
+				    return;
 			    }
 		      }else{
 					//did not fill in all the fields
@@ -110,6 +112,7 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 					//Redirection to an error page
 					request.setAttribute("msg_error", errmessage);
 				    request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
+				    return;
 			  }
 		}catch (SQLException e) {
 					System.err.println("ERROR DETECTED");

@@ -74,6 +74,7 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 			// Redirection to an error page
 			request.setAttribute("msg_error", errmessage);
 			request.getRequestDispatcher("RegistrazioneAzienda.jsp").forward(request, response);
+			return;
 		}
 		for (int i = 0; i < day.length; i++) {
 
@@ -91,6 +92,7 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 					String errmessage = ("Email già presente.");
 					request.setAttribute("msg_error", errmessage);
 					request.getRequestDispatcher("RegistrazioneFattorino.jsp").forward(request, response);
+					return;
 				} // create new delivery man account
 				else {
 
@@ -99,7 +101,7 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 					// Confirm the registration
 					request.setAttribute("msg_confirm", confirmMessage);
 					request.getRequestDispatcher("Homepage.jsp").forward(request, response);
-
+					return;
 				}
 			} else {
 				// did not fill in all the fields
@@ -107,6 +109,7 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 				// Redirection to an error page
 				request.setAttribute("msg_error", errmessage);
 				request.getRequestDispatcher("RegistrazioneFattorino.jsp").forward(request, response);
+				return;
 			}
 		} catch (SQLException e) {
 			System.err.println("ERROR DETECTED");

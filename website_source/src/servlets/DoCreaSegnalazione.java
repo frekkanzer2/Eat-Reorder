@@ -85,7 +85,7 @@ public class DoCreaSegnalazione extends HttpServlet {
 					String confirmMessage = ("Email inviata correttamente!");
 					// Confirm the registration
 					request.setAttribute("msg_confirm", confirmMessage);
-					request.getRequestDispatcher("Homepage.jsp").forward(request, response);
+					request.getRequestDispatcher("HomepageCliente.jsp").forward(request, response);
 					return;
 				}
 			} else {

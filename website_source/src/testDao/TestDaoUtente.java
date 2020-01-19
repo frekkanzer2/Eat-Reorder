@@ -33,7 +33,7 @@ class TestDaoUtente extends Mockito {
 	@BeforeEach
 	void setUpConnection() throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/eatreorder?serverTimezone="
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/eatreordertesting?serverTimezone="
 				+ TimeZone.getDefault().getID() + "&useSSL=false&allowPublicKeyRetrieval=true", "root", "password");
 	}
 

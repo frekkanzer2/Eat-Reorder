@@ -38,7 +38,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--External container-->
 	<div class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
-		<div class="registration-title">Bentornato, <%=fattorino.getNome()%></div>
+		<div class="registration-title">Bentornato <%=fattorino.getNome()%>,</div>
 		<!--REFACTORIZZARE CON JSP INSERENDO IL NOME DEL FATTORINO-->
 		<div class="registration-description">&Egrave; ora di fare consegne!</div>
 		<img class="std-img center-block"

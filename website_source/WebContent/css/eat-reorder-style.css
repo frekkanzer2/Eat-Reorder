@@ -1117,7 +1117,7 @@ A:hover, A:link A:visited, A:active{
     }
 
     .registration-title{
-        color: var(--preset_color_red);
+        color: var(--color_white);
         text-align: center;
         font-size: 18px;
         font-weight: bold;
@@ -1125,11 +1125,29 @@ A:hover, A:link A:visited, A:active{
     }
     
     .registration-description{
-        color: var(--preset_color_red);
+        color: var(--color_white);
         text-align: center;
         font-size: 14px;
         margin-bottom: 8px;
     }
+    
+    #problema {
+		text-decoration: none;
+		color: white;
+		font-size: 20px;
+	    text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;
+		font-style: italic;
+		font-weight: bold;
+	}
+
+	#problema:hover {
+		text-decoration: none;
+		color: lime;
+		font-size: 20px;
+	    text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;
+		font-style: italic;
+		font-weight: bold;
+	}
 
     .container-form-floating{
         margin-top:30px;
@@ -1170,7 +1188,7 @@ A:hover, A:link A:visited, A:active{
     }
 
     .report-title{
-        color: var(--preset_color_red);
+        color: var(--color_white);
         text-align: center;
         font-size: 14px;
         margin-bottom: 3px;
@@ -1178,7 +1196,7 @@ A:hover, A:link A:visited, A:active{
     }
     
     .report-description{
-        color: var(--preset_color_red);
+        color: var(--color_white);
         text-align: center;
         font-size: 12px;
         margin-bottom: 8px;
@@ -1250,7 +1268,7 @@ A:hover, A:link A:visited, A:active{
         border: solid 1px var(--preset_color_red);
         background-color: var(--preset_color_yellow);
         text-align: center;
-        color: var(--preset_color_red)!important;
+        color: var(--color_white);
         font-size: 22px;
         border-radius: 6px!important;
         font-weight: bold;
@@ -1301,7 +1319,7 @@ A:hover, A:link A:visited, A:active{
     }
 
     .registration-title{
-        color: var(--preset_color_red);
+        color: var(--color_white);
         text-align: center;
         font-size: 14px;
         font-weight: bold;
@@ -1309,7 +1327,7 @@ A:hover, A:link A:visited, A:active{
     }
     
     .registration-description{
-        color: var(--preset_color_red);
+        color: var(--color_white);
         text-align: center;
         font-size: 14px;
         margin-bottom: 8px;
@@ -1339,7 +1357,7 @@ A:hover, A:link A:visited, A:active{
         padding-right: 16px;
         padding-top: 20%;
         margin: 0px;
-        color: var(--preset_color_red);
+        color: white;
         font-weight: bold;
         text-align: right;
         font-size: 16px;

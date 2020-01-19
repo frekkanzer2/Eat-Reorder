@@ -2,7 +2,7 @@
   "id": "d84b6dff-d714-4bc9-ae35-d32352f12df4",
   "version": "2.0",
   "name": "testing2",
-  "url": "http://localhost:8080/EatAndReorder_Source/ModificaProfiloFattorino.jsp",
+  "url": "http://localhost:8080/EatAndReorder_Source/HomepageModeratore.jsp",
   "tests": [{
     "id": "2e17ef16-c4ca-40c3-a36a-4883e2b05358",
     "name": "TC_RFA2.1-ModificaQuantitàProdotto_1",
@@ -29372,6 +29372,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["http://localhost:8080/EatAndReorder_Source/Carrello.jsp", "http://localhost:8080/EatAndReorder_Source/NuovoProdotto.jsp", "http://localhost:8080/EatAndReorder_Source/DoVaiModificaProdotto?idProdotto=3", "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp", "http://localhost:8080/EatAndReorder_Source/Login.jsp", "http://localhost:8080/EatAndReorder_Source/ModificaProfiloCliente.jsp", "http://localhost:8080/EatAndReorder_Source/ModificaProfiloAzienda.jsp", "http://localhost:8080/EatAndReorder_Source/ModificaProfiloFattorino.jsp"],
+  "urls": ["http://localhost:8080/EatAndReorder_Source/Carrello.jsp", "http://localhost:8080/EatAndReorder_Source/NuovoProdotto.jsp", "http://localhost:8080/EatAndReorder_Source/DoVaiModificaProdotto?idProdotto=3", "http://localhost:8080/EatAndReorder_Source/Ordinazione.jsp", "http://localhost:8080/EatAndReorder_Source/Login.jsp", "http://localhost:8080/EatAndReorder_Source/ModificaProfiloCliente.jsp", "http://localhost:8080/EatAndReorder_Source/ModificaProfiloAzienda.jsp", "http://localhost:8080/EatAndReorder_Source/ModificaProfiloFattorino.jsp", "http://localhost:8080/EatAndReorder_Source/HomepageModeratore.jsp"],
   "plugins": []
 }

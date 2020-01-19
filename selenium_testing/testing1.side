@@ -16303,6 +16303,493 @@
       ],
       "value": "Formato dei dati non valido"
     }]
+  }, {
+    "id": "eeec5048-dc2c-4b58-95d0-345a63fcda0c",
+    "name": "TC_RFU5-GestisciSegnalazioneAzienda_1",
+    "commands": [{
+      "id": "90b4bfd9-dd47-42a6-a052-9fec55bac9dc",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/HomepageModeratore.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15257933-8f2c-4b38-8196-4dda409203cb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f13e7694-2853-4337-a6de-4f28fd8c1e5f",
+      "comment": "",
+      "command": "click",
+      "target": "name=id-order",
+      "targets": [
+        ["name=id-order", "name"],
+        ["css=.form-group:nth-child(1) .form-control", "css:finder"],
+        ["xpath=//input[@name='id-order']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3f9c192-4768-4389-8765-a979f68f7dfc",
+      "comment": "",
+      "command": "type",
+      "target": "name=id-order",
+      "targets": [
+        ["name=id-order", "name"],
+        ["css=.form-group:nth-child(1) .form-control", "css:finder"],
+        ["xpath=//input[@name='id-order']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8107c6a5-48d1-43d8-805d-599b91e2fb9b",
+      "comment": "",
+      "command": "click",
+      "target": "name=reason",
+      "targets": [
+        ["name=reason", "name"],
+        ["css=.form-group:nth-child(2) .form-control", "css:finder"],
+        ["xpath=//textarea[@name='reason']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56579f4a-a820-4bdb-91eb-9da06785f735",
+      "comment": "",
+      "command": "type",
+      "target": "name=reason",
+      "targets": [
+        ["name=reason", "name"],
+        ["css=.form-group:nth-child(2) .form-control", "css:finder"],
+        ["xpath=//textarea[@name='reason']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Problemi riguardo il pacco"
+    }, {
+      "id": "7e3f3060-ad65-4215-9a0b-970fceef4e80",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ban')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1193525b-c3b2-4a5e-a34d-ccc6a1e4d28b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compila ogni campo')]", "xpath:innerText"]
+      ],
+      "value": "Compila ogni campo"
+    }]
+  }, {
+    "id": "d163fe8a-ece6-43e3-8ee2-73f7733b26c3",
+    "name": "TC_RFU5-GestisciSegnalazioneAzienda_2",
+    "commands": [{
+      "id": "81d8248f-d56b-47ac-9de5-c1e376008ec4",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/HomepageModeratore.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ae0d2e4a-0584-4e96-a17e-27e1250e0336",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ee218e56-e493-4694-91ba-856b36a5632a",
+      "comment": "",
+      "command": "click",
+      "target": "name=id-order",
+      "targets": [
+        ["name=id-order", "name"],
+        ["css=.form-group:nth-child(1) .form-control", "css:finder"],
+        ["xpath=//input[@name='id-order']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1038b084-ebbe-4f02-aa63-31d887bab3fb",
+      "comment": "",
+      "command": "type",
+      "target": "name=id-order",
+      "targets": [
+        ["name=id-order", "name"],
+        ["css=.form-group:nth-child(1) .form-control", "css:finder"],
+        ["xpath=//input[@name='id-order']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "&"
+    }, {
+      "id": "d734e02c-59c8-43d9-b790-9a77b1c96805",
+      "comment": "",
+      "command": "click",
+      "target": "name=reason",
+      "targets": [
+        ["name=reason", "name"],
+        ["css=.form-group:nth-child(2) .form-control", "css:finder"],
+        ["xpath=//textarea[@name='reason']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "be0cacf8-15a3-4c11-b341-eea5d9d45e68",
+      "comment": "",
+      "command": "type",
+      "target": "name=reason",
+      "targets": [
+        ["name=reason", "name"],
+        ["css=.form-group:nth-child(2) .form-control", "css:finder"],
+        ["xpath=//textarea[@name='reason']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Problemi riguardo il pacco"
+    }, {
+      "id": "457b18d0-51bd-4e7f-af32-99079726409d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ban')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "730156cb-ad18-46c5-98f9-3f4d979c95d3",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compila ogni campo')]", "xpath:innerText"]
+      ],
+      "value": "Compila ogni campo"
+    }]
+  }, {
+    "id": "0ee55abc-6cec-431b-a3fc-d6513cce6ba5",
+    "name": "TC_RFU5-GestisciSegnalazioneAzienda_4",
+    "commands": [{
+      "id": "4a9536ab-61dc-411d-b4ab-ab986449ed59",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/HomepageModeratore.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "738356bb-a093-4b8d-af0b-9296697d3dc8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "190bbb52-bc4e-4b7b-acc4-71c0916abe45",
+      "comment": "",
+      "command": "click",
+      "target": "name=id-order",
+      "targets": [
+        ["name=id-order", "name"],
+        ["css=.form-group:nth-child(1) .form-control", "css:finder"],
+        ["xpath=//input[@name='id-order']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd2ead3a-adb8-4a04-9632-11d09dc43264",
+      "comment": "",
+      "command": "type",
+      "target": "name=id-order",
+      "targets": [
+        ["name=id-order", "name"],
+        ["css=.form-group:nth-child(1) .form-control", "css:finder"],
+        ["xpath=//input[@name='id-order']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "8b4f5bc2-f3ae-4204-8f5f-e5fcdf49f6e3",
+      "comment": "",
+      "command": "click",
+      "target": "name=reason",
+      "targets": [
+        ["name=reason", "name"],
+        ["css=.form-group:nth-child(2) .form-control", "css:finder"],
+        ["xpath=//textarea[@name='reason']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02e57736-0803-4a0f-8394-da32fe48d5a9",
+      "comment": "",
+      "command": "type",
+      "target": "name=reason",
+      "targets": [
+        ["name=reason", "name"],
+        ["css=.form-group:nth-child(2) .form-control", "css:finder"],
+        ["xpath=//textarea[@name='reason']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Problemi riguardo il pacco"
+    }, {
+      "id": "22783720-1c55-4a36-94dd-dd1ff326e282",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ban')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7148842-7628-4bc7-a293-dcee1bdfd78b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.confirmText",
+      "targets": [
+        ["css=.confirmText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Azienda bannata con successo!')]", "xpath:innerText"]
+      ],
+      "value": "Azienda bannata con successo!"
+    }]
+  }, {
+    "id": "75b6de7a-c5c0-4ec2-9af4-3c01dab89d24",
+    "name": "TC_RFU5-GestisciSegnalazioneAzienda_3",
+    "commands": [{
+      "id": "be4098a0-6ef1-4b6d-b75c-9ee5a27a97b2",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/HomepageModeratore.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "29e20b45-0acc-42bf-b48a-158c5a810fad",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ae3f1d0-56f1-4366-aa4a-b9914d4c9b6f",
+      "comment": "",
+      "command": "click",
+      "target": "name=id-order",
+      "targets": [
+        ["name=id-order", "name"],
+        ["css=.form-group:nth-child(1) .form-control", "css:finder"],
+        ["xpath=//input[@name='id-order']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec7d9513-9cdc-419c-846f-7631c8f7e2be",
+      "comment": "",
+      "command": "type",
+      "target": "name=id-order",
+      "targets": [
+        ["name=id-order", "name"],
+        ["css=.form-group:nth-child(1) .form-control", "css:finder"],
+        ["xpath=//input[@name='id-order']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "555"
+    }, {
+      "id": "84b718b6-7868-4b6f-a9b7-00f4fcf818dd",
+      "comment": "",
+      "command": "click",
+      "target": "name=reason",
+      "targets": [
+        ["name=reason", "name"],
+        ["css=.form-group:nth-child(2) .form-control", "css:finder"],
+        ["xpath=//textarea[@name='reason']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd142e35-275f-4d4f-9375-4a4d976946e8",
+      "comment": "",
+      "command": "type",
+      "target": "name=reason",
+      "targets": [
+        ["name=reason", "name"],
+        ["css=.form-group:nth-child(2) .form-control", "css:finder"],
+        ["xpath=//textarea[@name='reason']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Problemi riguardo il pacco"
+    }, {
+      "id": "6b2aad0f-af4f-4049-a7dd-652d77743940",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='ban-form']/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ban')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad5302a2-b3b5-4041-a42a-0b0dca0f4187",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Compila ogni campo')]", "xpath:innerText"]
+      ],
+      "value": "Compila ogni campo"
+    }]
+  }, {
+    "id": "f5fe4cb2-14b7-4c7d-8261-83c89248f8b7",
+    "name": "TC_RFU4-CreaSegnalazioneAzienda_7",
+    "commands": [{
+      "id": "acc3b444-11c8-467e-80c1-73990f614ed6",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EatAndReorder_Source/HomepageCliente.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "788bfe98-bcc2-4574-81f8-db4cb7c938e1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf8d85e3-1af7-44c0-9566-8ebafa659674",
+      "comment": "",
+      "command": "click",
+      "target": "id=problema",
+      "targets": [
+        ["id=problema", "id"],
+        ["linkText=Segnala un problema con un ordine", "linkText"],
+        ["css=#problema", "css:finder"],
+        ["xpath=//a[contains(text(),'Segnala un problema con un ordine')]", "xpath:link"],
+        ["xpath=//a[@id='problema']", "xpath:attributes"],
+        ["xpath=//div[@id='container-report-order']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Segnalazione.jsp')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Segnala un problema con un ordine')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "575fe99d-575f-44eb-a0e4-2a7126c6d7c4",
+      "comment": "",
+      "command": "click",
+      "target": "name=id-order",
+      "targets": [
+        ["name=id-order", "name"],
+        ["css=.form-group:nth-child(1) .form-control", "css:finder"],
+        ["xpath=//input[@name='id-order']", "xpath:attributes"],
+        ["xpath=//form[@id='report-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11300ac3-df1b-4f9c-91fd-52e613ecfd8e",
+      "comment": "",
+      "command": "type",
+      "target": "name=id-order",
+      "targets": [
+        ["name=id-order", "name"],
+        ["css=.form-group:nth-child(1) .form-control", "css:finder"],
+        ["xpath=//input[@name='id-order']", "xpath:attributes"],
+        ["xpath=//form[@id='report-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "6550a2cd-d0c2-4aa4-ad13-928d40358a5e",
+      "comment": "",
+      "command": "click",
+      "target": "name=reason",
+      "targets": [
+        ["name=reason", "name"],
+        ["css=.form-group:nth-child(2) .form-control", "css:finder"],
+        ["xpath=//textarea[@name='reason']", "xpath:attributes"],
+        ["xpath=//form[@id='report-form']/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "496fae74-2475-4e6e-bc50-25c72bf59c9d",
+      "comment": "",
+      "command": "type",
+      "target": "name=reason",
+      "targets": [
+        ["name=reason", "name"],
+        ["css=.form-group:nth-child(2) .form-control", "css:finder"],
+        ["xpath=//textarea[@name='reason']", "xpath:attributes"],
+        ["xpath=//form[@id='report-form']/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Problemi con l'ordine"
+    }, {
+      "id": "d2673497-a8a7-4686-951e-2c90e2130da4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.standard-button",
+      "targets": [
+        ["css=.standard-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='report-form']/div[3]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Invia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8899669-bed3-42e3-8f68-ebb9dc693e14",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.confirmText",
+      "targets": [
+        ["css=.confirmText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Email inviata correttamente!')]", "xpath:innerText"]
+      ],
+      "value": "Email inviata correttamente!"
+    }]
   }],
   "suites": [{
     "id": "e602d7cf-a624-47b6-a3ee-3b5de7efd198",

@@ -12,6 +12,7 @@ import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -46,9 +47,14 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 			throws SQLException, AziendaChiusaException, FattorinoNonDisponibileException {
 		if (order != null) {
 			connect = DBConnectionPool.getConnection();
-
+			DayOfWeek x;
 			Date date = new Date();
-			DayOfWeek x = DayOfWeek.of(date.getDay());
+			int day = date.getDay();
+			if (day == 0)
+				x = DayOfWeek.SUNDAY;
+			else
+				x = DayOfWeek.of(date.getDay());
+
 			DayOfWeek precDay = x.minus(1);
 			LocalTime time = LocalTime.now().truncatedTo(ChronoUnit.SECONDS);
 
@@ -98,8 +104,8 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 			// this list contains final values
 			ArrayList<Pair<String, String>> listOfEmailFattorino = new ArrayList<Pair<String, String>>();
 			// this PS contains a query to take days for a courier
-			PreparedStatement hs = connect.prepareStatement("select giorniLavorativi.giorno "
-					+ "from giorniLavorativi " + "where email = ?");
+			PreparedStatement hs = connect
+					.prepareStatement("select giorniLavorativi.giorno " + "from giorniLavorativi " + "where email = ?");
 			// Starting checks on HH
 			/* Quartet structure: email, nome, orario_inizio, orario_fine */
 			for (Quartet<String, String, LocalTime, LocalTime> tempRecord : courierContainer) {

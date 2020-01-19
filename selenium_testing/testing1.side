@@ -11848,9 +11848,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "200b6200-779a-4752-b138-78f9ae01b12b",
@@ -12071,9 +12071,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "632f3cf7-0a2c-42a4-9e88-f30ffc5504db",
@@ -12294,9 +12294,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "86016ac2-6208-468c-8bf8-ac402752af69",
@@ -12517,9 +12517,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "f91fac6d-8793-47ef-979a-16f850e25bfc",
@@ -12740,9 +12740,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "72540363-3cf6-4182-85a8-9f3f08e52dd3",
@@ -12963,9 +12963,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "3ff6330b-bc67-464e-ae1b-76c9935396e9",
@@ -13186,9 +13186,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "15919640-1e85-4227-aab8-1eac09743110",
@@ -13409,9 +13409,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "0a6adba8-8968-48b3-a88c-0e1354233adc",
@@ -13632,9 +13632,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "e6ca14f4-9d1f-451b-b360-f6b2c02fffd8",
@@ -13855,9 +13855,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "94d638fe-6110-4237-bfde-05bd99850ce0",
@@ -14078,9 +14078,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "4d7ac209-504e-494f-93bb-1a04cb3ccd36",
@@ -14301,9 +14301,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "6be6461e-54cd-4204-a935-9d30fbfb6e17",
@@ -14524,9 +14524,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "66ed94f6-7dec-4f39-9cae-29b1a8f27166",
@@ -14747,9 +14747,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "cddb4d6f-7730-482d-8e02-ea4936395226",
@@ -14970,9 +14970,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "1ba69b01-5866-42cd-909b-ee63b81f9385",
@@ -15193,9 +15193,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "32d4a040-01b6-4448-9194-40332961be60",
@@ -15416,9 +15416,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }, {
     "id": "c221e688-45d8-44c9-8849-6c6aaa7b2beb",
@@ -15639,9 +15639,9 @@
       "targets": [
         ["css=.errorText", "css:finder"],
         ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
+        ["xpath=//p[contains(.,'Compilare tutti i campi correttamente.')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Compilare tutti i campi correttamente."
     }]
   }],
   "suites": [{

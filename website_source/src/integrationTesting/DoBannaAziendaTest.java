@@ -3,7 +3,10 @@ package integrationTesting;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.TimeZone;
 
 import javax.mail.MessagingException;
 import javax.servlet.ServletException;
@@ -27,6 +30,7 @@ class DoBannaAziendaTest extends Mockito{
 	private MockHttpServletRequest request;
 	private MockHttpServletResponse response;
 	private DoBannaAzienda servlet;
+	Connection conn;
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -34,6 +38,9 @@ class DoBannaAziendaTest extends Mockito{
 		request= new MockHttpServletRequest();
 		response= new MockHttpServletResponse();
 		servlet= new DoBannaAzienda();
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/eatreordertesting?serverTimezone="
+				+ TimeZone.getDefault().getID() + "&useSSL=false&allowPublicKeyRetrieval=true", "root", "password");
 	}
 	
 	@Test

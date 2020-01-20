@@ -97,7 +97,7 @@
 					<p id="product-name" class="title-in-card">
 						<%=prodotto.getNome()%><!--Sample title, use scriptlet also here!-->
 					</p>
-					<p id="product-description" class="description-in-card">
+					<p id="product-description" class="description-in-card" style = "word-wrap: break-word;">
 						<%=prodotto.getDescrizione()%>
 						<!--Sample description, use scriptlet also here!-->
 					</p>

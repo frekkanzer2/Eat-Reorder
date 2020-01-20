@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
         <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!--Custom imports-->
         <link rel="stylesheet" href="css/eat-reorder-style.css">
     </head>
@@ -69,5 +70,6 @@
 	    <script src="assets/js/jquery.min.js"></script>
 	    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     </body>
+    <%@include file="Footer.html"%>
 </html>
         

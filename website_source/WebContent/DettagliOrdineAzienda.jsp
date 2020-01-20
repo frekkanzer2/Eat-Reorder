@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
 <link rel="stylesheet" href="assets/css/styles.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 </head>
@@ -87,7 +88,7 @@
     <% 
 		}
 	%>
-
+<%@include file="Footer.html"%>
 </body>
 
 </html>

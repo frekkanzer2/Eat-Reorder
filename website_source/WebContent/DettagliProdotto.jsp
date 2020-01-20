@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Custom imports-->
     <link rel="stylesheet" href="css/eat-reorder-style.css">
 </head>
@@ -23,7 +24,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 	<div class="center-block">
 		<!--DIV THAT CONTAINS PRODUCT DETAILS-->
-		<div class="custom-border-red generic-form-style partial-container-form-floating">
+		<div class="custom-border-red partial-container-form-floating login-form-style">
             <!--EDIT THE TITLE OF THE PRODUCT WITH SCRIPTLET-->
             <div class="registration-title"><%=prodotto.getNome()%><!--Add PRODUCT TITLE here with scriptlet--></div>
             <!--PRODUCT IMAGE-->
@@ -43,5 +44,6 @@
 	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<%@include file="Footer.html"%>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package testDao;
+package integrationTesting;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -57,6 +57,7 @@ public class GestoreOrdineDAOImpl implements GestoreOrdineDao {
 	public void creaOrdine(Ordine_Bean order)
 			throws SQLException, AziendaChiusaException, FattorinoNonDisponibileException {
 		if (order != null) {
+
 			DayOfWeek x;
 			Date date = new Date();
 			int day = date.getDay();

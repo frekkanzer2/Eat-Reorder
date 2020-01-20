@@ -1,11 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%!AccountUtenteRegistrato_Bean utente = null;%>
-<%!AccountCliente_Bean cliente = null;%>
+
 <%
+	AccountUtenteRegistrato_Bean utente = null;
+	AccountCliente_Bean cliente = null;
+	Boolean canContinue = true;
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente == null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) response.sendRedirect("Homepage.jsp");
-	cliente = (AccountCliente_Bean) utente;
+	if (utente == null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) {
+		response.sendRedirect("Homepage.jsp");
+		canContinue = false;
+	}
+	if (canContinue) {
+		cliente = (AccountCliente_Bean) utente;
+	}
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +36,9 @@
 <!--Start of body-->
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	<%
+		if (canContinue) {
+	%>
 	<!--Form for registration-->
 	<div class="container-form-floating">
 		<form class="custom-border-red login-form-style" action="DoModificaProfiloCliente" method="post"onsubmit="return checkModifica();">
@@ -51,6 +62,9 @@
 			</div>
 		</form>
 	</div>
+	<%
+		}
+	%>
 	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>

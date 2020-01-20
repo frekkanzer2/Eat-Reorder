@@ -5,13 +5,23 @@
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%!Ordine_Bean order = null; %>
+	
 <%
+	Boolean canContinue = true;
+	Ordine_Bean order = null;
 	AccountUtenteRegistrato_Bean user = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (user == null || !user.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
+	if (user == null || !user.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) {
+		canContinue = false;
 		response.sendRedirect("Homepage.jsp");
-	else order = (Ordine_Bean) request.getAttribute("ordineSelezionato");
+	} else {
+		order = (Ordine_Bean) request.getAttribute("ordineSelezionato");
+	}
+	if (order == null && canContinue) {
+		canContinue = false;
+		response.sendRedirect("Homepage.jsp");
+	}
 %>
+
 <!DOCTYPE html>
 <html>
 
@@ -34,7 +44,7 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<% 
-		if (order != null) {
+		if (order != null && canContinue) {
 	%>
     <!--External container-->
     <div class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">

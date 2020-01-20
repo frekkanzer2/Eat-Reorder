@@ -1,11 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%!AccountUtenteRegistrato_Bean utente = null;%>
-<%!Prodotto_Bean piattoSelezionato = null;%>
+
 <%
+	Boolean canContinue = true;
+	Prodotto_Bean piattoSelezionato = null;	
+	AccountUtenteRegistrato_Bean utente = null;
     utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
     piattoSelezionato = (Prodotto_Bean) request.getAttribute("piattoSelezionato");
-	if (utente==null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda) || piattoSelezionato == null) response.sendRedirect("Homepage.jsp");
+    if (utente == null || piattoSelezionato == null){
+    	response.sendRedirect("Homepage.jsp");
+    	canContinue = false;
+    }
+    if (utente != null && canContinue){
+    	if (!utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)){
+    		response.sendRedirect("Homepage.jsp");
+        	canContinue = false;
+    	}
+    }
 %>
+
 <!DOCTYPE html>
 <html>
 
@@ -33,6 +45,9 @@
 <body>
     <jsp:include page="header.jsp"></jsp:include>
     <!--DIV that contains the image and the searchbar-->
+    <%
+    	if (canContinue) {
+    %>
 	<div class="container-form-floating">
 		<!--Form for the research-->
 		<form method="POST" class="custom-border-red partial-container-form-floating login-form-style" action="DoModificaProdotto" onsubmit="return checkProdotto();">
@@ -52,6 +67,9 @@
             <button class="btn form-list-button bg-red border-rounded-small"type="submit">Conferma</button>
 		</form>
 	</div>
+	<%
+    	}
+	%>
 	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>

@@ -4,19 +4,25 @@
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 <%@page import="model.bean.AccountCliente_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%!AccountUtenteRegistrato_Bean utente = null;%>
-<%!AccountCliente_Bean cliente = null;%>
-<%!Carrello cart = null; %>
-<%!ArrayList<ProdottoQuantita> listOfQtProducts = null; %>
-<%!Float totalPrice = 0F; %>
-<%
-	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente == null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) response.sendRedirect("Homepage.jsp");
-	cliente = (AccountCliente_Bean) utente;
-	cart = (Carrello) session.getAttribute("carrello");
-	listOfQtProducts = new ArrayList<>(cart.getProdotti());
-%>
 
+<%
+	AccountUtenteRegistrato_Bean utente = null;
+	AccountCliente_Bean cliente = null;
+	Carrello cart = null;
+	ArrayList<ProdottoQuantita> listOfQtProducts = null;
+	Float totalPrice = 0F;
+	Boolean canContinue = true;
+	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+	if (utente == null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) {
+		response.sendRedirect("Homepage.jsp");
+		canContinue = false;
+	}
+	if (canContinue) {
+		cliente = (AccountCliente_Bean) utente;
+		cart = (Carrello) session.getAttribute("carrello");
+		listOfQtProducts = new ArrayList<>(cart.getProdotti());
+	}
+%>
 
 <!DOCTYPE html>
 <html>
@@ -40,6 +46,9 @@
 
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	<%
+		if (cliente != null && canContinue) {
+	%>
     <!--External container-->
     <div class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
         <div class="registration-title">Carrello di <%=cliente.getNome() %></div>
@@ -132,6 +141,9 @@
 		%>
 
     </div>
+    <%
+		}
+	%>
 <%@include file="Footer.html"%>
 </body>
 

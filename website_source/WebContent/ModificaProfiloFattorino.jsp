@@ -4,13 +4,21 @@
 <%@page import="model.bean.AccountFattorino_Bean"%>
 <%@page import="java.time.DayOfWeek"%>
 <%@page import="java.util.Set"%>
-<%!AccountUtenteRegistrato_Bean utente = null;%>
-<%!AccountFattorino_Bean fattorino = null;%>
+
 <%
-	utente=(AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if(utente==null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) response.sendRedirect("Homepage.jsp");
-	fattorino = (AccountFattorino_Bean) utente;
+	AccountUtenteRegistrato_Bean utente = null;
+	AccountFattorino_Bean fattorino = null;
+	Boolean canContinue = true;
+	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+	if (utente == null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) {
+		response.sendRedirect("Homepage.jsp");
+		canContinue = false;
+	}
+	if (canContinue) {
+		fattorino = (AccountFattorino_Bean) utente;
+	}
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +38,9 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--Form for registration-->
+	<%
+		if (canContinue) {
+	%>
 	<div class="container-form-floating">
 		<form class="custom-border-red login-form-style" method="post" action="DoModificaProfiloFattorino"onsubmit="return checkModifica();">
 			<div class="registration-title">Modifica il tuo profilo</div>
@@ -154,6 +165,9 @@
 			</div>
 		</form>
 	</div>
+	<%
+		}
+	%>
 	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>

@@ -2,7 +2,9 @@
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente==null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) response.sendRedirect("Homepage.jsp");
+	if (utente==null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)){
+		response.sendRedirect("Homepage.jsp");
+	}
 %>
 <!DOCTYPE html>
 <html>

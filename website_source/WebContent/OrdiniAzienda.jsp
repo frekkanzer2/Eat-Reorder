@@ -5,21 +5,25 @@
 <%@page import="model.bean.AccountAzienda_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%!AccountAzienda_Bean azienda = null;%>
-<%!ArrayList<Ordine_Bean> listOfOrders = null;%>
-<%!GestoreOrdineDAOImpl orderManager = null;%>
-<%!Integer counter = null; %>
+	
 <%
+	AccountAzienda_Bean azienda = null;
+	ArrayList<Ordine_Bean> listOfOrders = null;
+	GestoreOrdineDAOImpl orderManager = null;
+	Integer counter = null;
+	Boolean canContinue = true;
 	AccountUtenteRegistrato_Bean user = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (user == null || !user.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
+	if (user == null || !user.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) {
 		response.sendRedirect("Homepage.jsp");
-	else {
+		canContinue = false;
+	} else {
 		azienda = (AccountAzienda_Bean) user;
 		orderManager = new GestoreOrdineDAOImpl();
 		listOfOrders = new ArrayList<>(orderManager.dammiOrdiniPreparazione(azienda));
 		counter = 0;
 	}
 %>
+
 <!DOCTYPE html>
 <html>
 
@@ -42,6 +46,9 @@
 
 <body>
     <!--External container-->
+    <%
+    	if (canContinue) {
+    %>
     <div class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
         <div class="registration-title">Ordini di <%=azienda.getNome() %></div> <!--REFACTORIZZARE CON JSP INSERENDO IL NOME DELL'AZIENDA-->
 		<div class="registration-description">Visualizza le ordinazioni per la tua azienda</div>
@@ -101,6 +108,11 @@
         %>
 
     </div>
+    
+    <%
+    	}
+    %>
+    
 <%@include file="Footer.html"%>
 </body>
 

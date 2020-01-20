@@ -4,7 +4,25 @@
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
-<%AccountAzienda_Bean azienda = (AccountAzienda_Bean)request.getAttribute("azienda");%>
+<%
+	Boolean canContinue = true;
+	AccountUtenteRegistrato_Bean utente=(AccountUtenteRegistrato_Bean)session.getAttribute("utente");
+	AccountAzienda_Bean azienda = null;
+	if(utente != null)
+		if(utente.getTipo().equalsIgnoreCase(AccountUtenteRegistrato_Bean.Azienda) ||
+				utente.getTipo().equalsIgnoreCase(AccountUtenteRegistrato_Bean.Fattorino) ||
+				utente.getTipo().equalsIgnoreCase(AccountUtenteRegistrato_Bean.Moderatore)) {
+			response.sendRedirect("Homepage.jsp");
+			canContinue = false;
+		}
+	if (canContinue){
+		azienda = (AccountAzienda_Bean)request.getAttribute("azienda");
+		if(azienda == null) {
+			response.sendRedirect("Homepage.jsp");
+			canContinue = false;
+		}	
+	}
+%>
 
 <!DOCTYPE html>
 <html>
@@ -30,6 +48,10 @@
             
             <!--PER COMPILARE, È NECESSARIO AVER SCELTO UN'AZIENDA DALLA SELEZIONE NELLA PAGINA Ricerca-->
             <!--UTILIZZARE SCRIPTLET-->
+            
+            <%
+            	if (azienda != null && canContinue) {
+            %>
             
             <div class="registration-title"><%=azienda.getNome()%><!--INSERT COMPANY NAME HERE--></div>
             <div class="registration-description" style="margin-bottom: 12px;">Listino dei prodotti<!--DO NOT CHANGE HERE--></div>
@@ -64,6 +86,10 @@
                 <!--END OF PRODUCT'S CARD-->
     
             </div>
+			
+			<%
+            	}
+			%>
 			
 	    </div>
 	    <!-- Script -->

@@ -1,6 +1,27 @@
+<%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 <%@page import="model.bean.Prodotto_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8"%>
-<%Prodotto_Bean prodotto = (Prodotto_Bean) request.getAttribute("prodotto"); %>
+
+<%
+	Boolean canContinue = true;
+	Prodotto_Bean prodotto = null;
+	AccountUtenteRegistrato_Bean utente=(AccountUtenteRegistrato_Bean)session.getAttribute("utente");
+	if(utente != null)
+		if(utente.getTipo().equalsIgnoreCase(AccountUtenteRegistrato_Bean.Azienda) ||
+				utente.getTipo().equalsIgnoreCase(AccountUtenteRegistrato_Bean.Fattorino) ||
+				utente.getTipo().equalsIgnoreCase(AccountUtenteRegistrato_Bean.Moderatore)) {
+			response.sendRedirect("Homepage.jsp");
+			canContinue = false;
+		}
+	if (canContinue) {
+		prodotto = (Prodotto_Bean) request.getAttribute("prodotto");
+		if (prodotto == null){
+			response.sendRedirect("Homepage.jsp");
+			canContinue = false;
+		}
+	}
+%>
+
 <!DOCTYPE html>
 <html>
 
@@ -22,6 +43,9 @@
 
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+	<%
+		if (prodotto != null && canContinue) {
+	%>
 	<div class="center-block">
 		<!--DIV THAT CONTAINS PRODUCT DETAILS-->
 		<div class="custom-border-red partial-container-form-floating login-form-style">
@@ -41,6 +65,9 @@
             <a class="btn form-list-button bg-red border-rounded-small text-white" href="DoAggiungiAlCarrello?id=<%=prodotto.getCodice()%>&azienda=<%=prodotto.getAzienda().getEmail()%>">Aggiungi al carrello</a>
         </div>
 	</div>
+	<%
+		}
+	%>
 	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>

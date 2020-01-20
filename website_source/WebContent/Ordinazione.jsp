@@ -5,24 +5,32 @@
 <%@page import="model.Carrello"%>
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%!AccountUtenteRegistrato_Bean utente = null;%>
-<%!Carrello cart = null;%>
-<%!AccountAzienda_Bean company = null;%>
-<%!LocalTime actualTime = null; %>
-<%!DayOfWeek actualDay = null; %>
-<%!DayOfWeek precDay = null; %>
-<%!LocalDate hiddenDate = null; %>
+
 <%
+	AccountUtenteRegistrato_Bean utente = null;
+	Carrello cart = null;
+	AccountAzienda_Bean company = null;
+	LocalTime actualTime = null;
+	DayOfWeek actualDay = null;
+	DayOfWeek precDay = null;
+	LocalDate hiddenDate = null;
+	Boolean canContinue = true;
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if(utente==null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) response.sendRedirect("Homepage.jsp");
-	else {
+	if(utente==null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) {
+		response.sendRedirect("Homepage.jsp");
+		canContinue = false;
+	} else {
 		cart = (Carrello) session.getAttribute("carrello");
 		company = (AccountAzienda_Bean) cart.getCurrentAzienda();
-		actualTime = LocalTime.now();
-		hiddenDate = LocalDate.now();
-		actualDay = hiddenDate.getDayOfWeek();
-		precDay = actualDay.minus(1);
-		System.out.println("actualTime: " + actualTime.toString());
+		if (company == null && canContinue){
+			response.sendRedirect("Homepage.jsp");
+			canContinue = false;
+		} else {
+			actualTime = LocalTime.now();
+			hiddenDate = LocalDate.now();
+			actualDay = hiddenDate.getDayOfWeek();
+			precDay = actualDay.minus(1);
+		}
 	}
 %>
 
@@ -41,6 +49,9 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	<%
+		if (canContinue) {
+	%>
 	<div class="container-form-floating">
 		<div id="container-report"class="custom-border-red bg-yellow center-block border-rounded-large">
 			<div class="report-title" style="margin-bottom: 10px;">Ci siamo quasi...</div>
@@ -197,6 +208,9 @@
             %>
 		</div>
 	</div>
+	<%
+		}
+	%>
 	<script type="text/javascript">
 		function checkOrdine() {
 			var indirizzo = document.getElementById("indirizzo");

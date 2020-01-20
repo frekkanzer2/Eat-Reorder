@@ -4,15 +4,25 @@
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%!AccountUtenteRegistrato_Bean user = null;%>
 
 <%
+	AccountUtenteRegistrato_Bean user = null;
+	AccountFattorino_Bean fattorino = null;
+	List<Ordine_Bean> ordini = null;
+	Boolean canContinue = true;
 	user = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
 	if (user == null || !user.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) {
 		response.sendRedirect("Homepage.jsp");
+		canContinue = false;
 	}
-	AccountFattorino_Bean fattorino = (AccountFattorino_Bean) user;
-	List<Ordine_Bean> ordini = (List<Ordine_Bean>) request.getAttribute("ordini");
+	if (canContinue){
+		fattorino = (AccountFattorino_Bean) user;
+		ordini = (List<Ordine_Bean>) request.getAttribute("ordini");
+		if (ordini == null) {
+			response.sendRedirect("Homepage.jsp");
+			canContinue = false;
+		}
+	}
 %>
 
 <!DOCTYPE html>
@@ -37,6 +47,9 @@
 
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	<%
+		if (fattorino != null && canContinue) {
+	%>
 	<!--External container-->
 	<div class="product-card-container partial-container-form-floating center-block custom-border-red border-rounded-small bg-yellow-alt">
 		<div class="registration-title">Bentornato <%=fattorino.getNome()%>,</div>
@@ -195,6 +208,9 @@
 		<!--END OF ORDER'S CARD-->
 
 	</div>
+	<%
+		}
+	%>
 	<script src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript">
 		function openPanel(id){

@@ -2,18 +2,27 @@
 <%@page import="java.util.List"%>
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%!AccountUtenteRegistrato_Bean utente = null;%>
+
 <%
+	AccountUtenteRegistrato_Bean utente = null;
+	List<AccountAzienda_Bean> aziende = null;
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente == null) {
-	} else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda))
-		response.sendRedirect("HomepageAzienda.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino))
-		response.sendRedirect("HomepageFattorino.jsp");
-	else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore))
-		response.sendRedirect("HomepageModeratore.jsp");
-		
-	List<AccountAzienda_Bean> aziende = (List<AccountAzienda_Bean>) request.getAttribute("aziende");%>
+	Boolean canContinue = true;
+	if (utente != null){
+		if (!utente.getTipo().equalsIgnoreCase(AccountUtenteRegistrato_Bean.Cliente)) {
+			response.sendRedirect("Homepage.jsp");
+			canContinue = false;
+		}
+	}
+	if (canContinue) {
+		aziende = (List<AccountAzienda_Bean>) request.getAttribute("aziende");
+		if (aziende == null) {
+			response.sendRedirect("Homepage.jsp");
+			canContinue = false;
+		}
+	}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +42,10 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<%%>
+
+	<%
+		if (canContinue) {
+	%>
 
     <!--THERE ARE SOME CARDS ON THE DIV CONTAINER-->
     <!--FOR EACH COMPANY FOUND WITH THE SEARCH ENGINE, YOU HAVE TO CREATE A CARD WITH TAG "A" AND SOME CLASSES (LOOK EXAMPLE)-->
@@ -51,7 +63,11 @@
     <br>
     <br>
     <br>
-
+	
+	<%
+		}
+	%>
+	
     <!-- Script -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

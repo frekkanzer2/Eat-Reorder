@@ -2,9 +2,12 @@
 	pageEncoding="ISO-8859-1"%>
 <%!AccountUtenteRegistrato_Bean utente = null;%>
 <%
+	Boolean canContinue = true;
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-	if (utente == null)
+	if (utente == null || utente.getTipo().equalsIgnoreCase(AccountUtenteRegistrato_Bean.Moderatore)) {
 		response.sendRedirect("Homepage.jsp");
+		canContinue = false;
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -32,11 +35,13 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	<%
+		if (canContinue) {
+	%>
 	<!--Display info-->
 	<%!AccountCliente_Bean utenteCliente = null;%>
 	<%!AccountAzienda_Bean utenteAzienda = null;%>
 	<%!AccountFattorino_Bean utenteFattorino = null;%>
-	<%!AccountModeratore_Bean utenteModeratore = null;%>
 	<div class="container-form-floating">
 		<!-- CASE CLIENTE -->
 		<%
@@ -68,14 +73,7 @@
 		<%
 				}
 		%>
-		<!-- CASE MODERATORE -->
 		<%
-				if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore)) {
-					utenteModeratore = (AccountModeratore_Bean) utente;
-		%>
-					<div class="registration-title">Benvenuto Moderatore</div>
-		<%
-				}
 			}
 		%>
 		<!--Image on the form-->
@@ -258,17 +256,12 @@
 		<%
 			}
 		%>
-		<!-- CASE MODERATORE -->
-		<%
-			if (utenteModeratore != null && utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore)) {
-		%>
-		<div class="registration-description">
-			Email:
-			<%=utenteModeratore.getEmail()%></div>
-		<%
-			}
-		%>
 	</div>
+	
+	<%
+		}
+	%>
+	
 	<!-- Script -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>

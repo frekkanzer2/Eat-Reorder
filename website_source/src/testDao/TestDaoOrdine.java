@@ -58,6 +58,11 @@ class TestDaoOrdine extends Mockito {
 		Set<DayOfWeek> array = new HashSet<DayOfWeek>();
 		array.add(DayOfWeek.SATURDAY);
 		array.add(DayOfWeek.SUNDAY);
+		array.add(DayOfWeek.MONDAY);
+		array.add(DayOfWeek.TUESDAY);
+		array.add(DayOfWeek.WEDNESDAY);
+		array.add(DayOfWeek.THURSDAY);
+		array.add(DayOfWeek.FRIDAY);
 		when(azienda.getGiorniDiApertura()).thenReturn(array);
 		AccountCliente_Bean cliente = mock(AccountCliente_Bean.class);
 		when(cliente.getNome()).thenReturn("Rosario");

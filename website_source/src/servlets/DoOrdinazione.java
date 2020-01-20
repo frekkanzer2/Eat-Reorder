@@ -141,7 +141,7 @@ public class DoOrdinazione extends HttpServlet {
 		doGet(request, response);
 	}
 
-	public void setGestore(GestoreOrdineDAOImpl dao) {
+	public void setGestore(GestoreOrdineDao dao) {
 		this.manager=dao;
 		
 	}

@@ -42,8 +42,18 @@ public class DoAggiungiAlCarrello extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		AccountUtenteRegistrato_Bean utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-		if (utente == null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) {
+		AccountCliente_Bean utente = null;
+		
+		try {
+			utente = (AccountCliente_Bean) session.getAttribute("utente");
+		} catch (Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}
+		
+		if (utente == null) {
 			response.sendRedirect("Login.jsp");
 			return;
 		}
@@ -51,7 +61,14 @@ public class DoAggiungiAlCarrello extends HttpServlet {
 		if (cart == null) {
 			cart = new Carrello();
 		}
-		Long id = Long.parseLong(request.getParameter("id"));
+		Long id = null;
+		try {
+			id = Long.parseLong(request.getParameter("id"));
+		} catch (Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+		}
 		String emailString = request.getParameter("azienda");
 
 		try {
@@ -73,10 +90,11 @@ public class DoAggiungiAlCarrello extends HttpServlet {
 				return;
 			}
 
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
+			return;
 		}
 
 	}

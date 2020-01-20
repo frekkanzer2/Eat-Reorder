@@ -49,7 +49,6 @@ public class DoVisualizzaListinoAzienda extends HttpServlet {
 				response.sendRedirect("HomepageModeratore.jsp");
 				return;
 			}
-
 		}
 		
 		String emailAzienda = request.getParameter("id");
@@ -57,10 +56,12 @@ public class DoVisualizzaListinoAzienda extends HttpServlet {
 			AccountAzienda_Bean listinoAzienda = (AccountAzienda_Bean) dao.dammiUtente(emailAzienda);
 			request.setAttribute("azienda", listinoAzienda);
 			request.getRequestDispatcher("AziendaScelta.jsp").forward(request,response);
+			return;
 		} catch (SQLException e) {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
+			return;
 		}
 		
 	}

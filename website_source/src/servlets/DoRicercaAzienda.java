@@ -51,7 +51,6 @@ public class DoRicercaAzienda extends HttpServlet {
 				response.sendRedirect("HomepageModeratore.jsp");
 				return;
 			}
-
 		}
 		
 		String citta = request.getParameter("ricerca");
@@ -63,16 +62,13 @@ public class DoRicercaAzienda extends HttpServlet {
 			List<AccountAzienda_Bean> aziende = dao.dammiListaAziende(citta);
 			request.setAttribute("aziende", aziende);
 			request.getRequestDispatcher("Ricerca.jsp").forward(request, response);
+			return;
 		} catch (SQLException e) {
-
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
 			return;// TODO Auto-generated catch block
-		
 		}
-		
-
 	}
 
 	/**

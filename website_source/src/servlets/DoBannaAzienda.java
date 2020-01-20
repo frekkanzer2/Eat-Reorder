@@ -17,6 +17,7 @@ import interfaces.GestoreUtenteDAO;
 import model.GestoreMail;
 import model.bean.AccountAzienda_Bean;
 import model.bean.AccountModeratore_Bean;
+import model.bean.AccountUtenteRegistrato_Bean;
 import model.dao.GestoreOrdineDAOImpl;
 import model.dao.GestoreUtenteDAOImpl;
 
@@ -44,7 +45,14 @@ public class DoBannaAzienda extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		AccountModeratore_Bean user = (AccountModeratore_Bean) session.getAttribute("utente");
+		AccountModeratore_Bean user = null;
+		try {
+			user = (AccountModeratore_Bean) session.getAttribute("utente");
+		}catch(Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+		}
 		if (user == null) {
 			response.sendRedirect("Login.jsp");
 			return;

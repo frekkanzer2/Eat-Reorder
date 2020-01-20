@@ -49,10 +49,18 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 		// Getting data from RegistrazioneCliente.jsp
 		HttpSession session = request.getSession();
 		
-		AccountUtenteRegistrato_Bean utenteLoggato=(AccountUtenteRegistrato_Bean)session.getAttribute("utente");
-		//check if the user is logged or not
-		//if is logged 
-		if(utenteLoggato!=null) {
+		//Checking if already logged
+		AccountUtenteRegistrato_Bean alreadyExistsUser = null;
+		try {
+			alreadyExistsUser = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+		}
+		catch(Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}	
+		if (alreadyExistsUser != null) {
 			response.sendRedirect("Homepage.jsp");
 			return;
 		}
@@ -115,9 +123,10 @@ public class DoRegistrazioneAzienda extends HttpServlet {
 				    return;
 			  }
 		}catch (SQLException e) {
-					System.err.println("ERROR DETECTED");
-					e.printStackTrace();
-					response.sendRedirect("ErrorPage.html");
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
 		}
 	}
 

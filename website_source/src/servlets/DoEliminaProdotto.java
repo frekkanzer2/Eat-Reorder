@@ -42,9 +42,17 @@ public class DoEliminaProdotto extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		AccountAzienda_Bean azienda = null;
 
 		// prendo l'account azienda dalla sessione
-		AccountAzienda_Bean azienda = (AccountAzienda_Bean) session.getAttribute("utente");
+		try {
+			azienda = (AccountAzienda_Bean) session.getAttribute("utente");
+		} catch (Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}
 
 		// se non esiste l'account azienda rimando alla pagina di login
 		if (azienda == null) {
@@ -53,23 +61,17 @@ public class DoEliminaProdotto extends HttpServlet {
 		}
 		
 		Long idProdotto = Long.parseLong(request.getParameter("idProdotto"));
-		
 		Prodotto_Bean prodottoAzienda = azienda.dammiProdotto(idProdotto);
 		try {
-			
 			dao.rimuoviProdotto(azienda, prodottoAzienda);
 			azienda.rimuoviProdotto(prodottoAzienda);
 			request.getRequestDispatcher("Listino.jsp").forward(request, response);
 		} catch (SQLException e) {
-
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
 			return;
 		}
-		
-		
-		
 		
 	}
 

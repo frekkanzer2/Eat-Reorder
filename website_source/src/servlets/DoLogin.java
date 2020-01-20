@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import interfaces.GestoreUtenteDAO;
 import model.dao.GestoreUtenteDAOImpl;
 import model.Carrello;
+import model.bean.AccountAzienda_Bean;
 import model.bean.AccountUtenteRegistrato_Bean;
 
 /**
@@ -34,6 +35,25 @@ public class DoLogin extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		
+		//Checking if already logged
+		AccountUtenteRegistrato_Bean alreadyExistsUser = null;
+		try {
+			alreadyExistsUser = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+		}
+		catch(Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+		}
+		
+		if (alreadyExistsUser != null) {
+			response.sendRedirect("Homepage.jsp");
+			return;
+		}
+		
 		// Getting data from JSP Login.jsp
 		String input_email = request.getParameter("email");
 		String input_password = request.getParameter("password");
@@ -47,6 +67,7 @@ public class DoLogin extends HttpServlet {
 				// Redirection to an error page
 				request.setAttribute("msg_error", errmessage);
 				request.getRequestDispatcher("Login.jsp").forward(request, response);
+				return;
 			}
 			// Checking if the user is banned
 			isUserBanned = userManager.controllaBan(input_email);
@@ -67,20 +88,18 @@ public class DoLogin extends HttpServlet {
 					// Redirection to an error page
 					request.setAttribute("msg_error", errmessage);
 					request.getRequestDispatcher("Login.jsp").forward(request, response);
+					return;
 				} else {
 					// CASE USER EXISTS (TRUE)
 					
 					AccountUtenteRegistrato_Bean loggedUser = userManager.dammiUtente(input_email);
-					HttpSession newSession = request.getSession();
-					newSession.setAttribute("utente", loggedUser);
+					session.setAttribute("utente", loggedUser);
 					if (loggedUser.getTipo().contentEquals(AccountUtenteRegistrato_Bean.Cliente)) {
 						Carrello cart = new Carrello();
-						newSession.setAttribute("carrello", cart);
+						session.setAttribute("carrello", cart);
 					}
 					
 					response.sendRedirect("Homepage.jsp");
-					
-					
 					return;
 				}
 			}
@@ -88,6 +107,7 @@ public class DoLogin extends HttpServlet {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
+			return;
 		}
 
 	}

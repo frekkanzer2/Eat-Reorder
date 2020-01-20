@@ -37,16 +37,23 @@ public class DoVisualizzaConsegne extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		HttpSession session = request.getSession();
-		AccountUtenteRegistrato_Bean user = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-		if(user==null || !user.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)){
+		AccountFattorino_Bean user = null;
+		try {
+			user = (AccountFattorino_Bean) session.getAttribute("utente");
+		} catch (Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}
+		if (user==null){
 			response.sendRedirect("Homepage.jsp");
 			return;
 		}
-		
-		AccountFattorino_Bean fattorino = (AccountFattorino_Bean) user;
 		try {
-			List<Ordine_Bean> ordini =  dao.dammiConsegne(fattorino);
+			List<Ordine_Bean> ordini =  dao.dammiConsegne(user);
 			request.setAttribute("ordini", ordini);
 			request.getRequestDispatcher("Consegne.jsp").forward(request, response);
 			return;
@@ -54,6 +61,7 @@ public class DoVisualizzaConsegne extends HttpServlet {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
+			return;
 		}
 		
 	}

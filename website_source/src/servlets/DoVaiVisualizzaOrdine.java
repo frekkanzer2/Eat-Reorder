@@ -35,12 +35,21 @@ public class DoVaiVisualizzaOrdine extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
-		AccountAzienda_Bean azienda = (AccountAzienda_Bean) session.getAttribute("utente");
 		
-		if(azienda==null)
+		HttpSession session = request.getSession();
+		AccountAzienda_Bean azienda = null;
+		try {
+			azienda = (AccountAzienda_Bean) session.getAttribute("utente");
+		} catch(Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}
+		if (azienda==null) {
 			response.sendRedirect("Login.jsp");
+			return;
+		}
 
 		Long id = Long.parseLong(request.getParameter("idOrdine"));
 		Ordine_Bean order = null;

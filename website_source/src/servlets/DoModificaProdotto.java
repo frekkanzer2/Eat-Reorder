@@ -41,7 +41,6 @@ public class DoModificaProdotto extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
-
 	}
 
 	/**
@@ -53,8 +52,16 @@ public class DoModificaProdotto extends HttpServlet {
 		// prendo l'account azienda dalla sessione
 		HttpSession session = request.getSession();
 
-		AccountAzienda_Bean azienda = (AccountAzienda_Bean) session.getAttribute("utente");
-
+		AccountAzienda_Bean azienda = null;
+		try {
+			azienda = (AccountAzienda_Bean) session.getAttribute("utente");	
+		} catch(Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}
+		
 		// se non esiste l'account azienda rimando alla pagina di login
 		if (azienda == null) {
 			response.sendRedirect("Login.jsp");
@@ -82,7 +89,6 @@ public class DoModificaProdotto extends HttpServlet {
 			path= new URL("http://");
 		}
 		
-		
 		String descrizione = request.getParameter("descrizione");
 
 		if (CheckFormato.checkProdotto(nome, path, descrizione, costo)) {
@@ -99,18 +105,16 @@ public class DoModificaProdotto extends HttpServlet {
 			Prodotto_Bean prodInListino = azienda.dammiProdotto(id);
 
 			try {
-				
 				dao.aggiornaProdotto(azienda, newProdotto);
 				prodInListino.modificaDati(newProdotto);
 				request.getRequestDispatcher("Listino.jsp").forward(request, response);
+				return;
 			} catch (SQLException e) {
-
 				System.err.println("ERROR DETECTED");
 				e.printStackTrace();
 				response.sendRedirect("ErrorPage.html");
 				return;
 			}
-
 
 		} else {
 			// errore con il formato dei parametri
@@ -118,6 +122,7 @@ public class DoModificaProdotto extends HttpServlet {
 			// Redirection to an error page
 			request.setAttribute("msg_error", errmessage);
 			request.getRequestDispatcher("Listino.jsp").forward(request, response);
+			return;
 		}
 	}
 

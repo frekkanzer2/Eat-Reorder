@@ -45,7 +45,16 @@ public class DoInserimentoProdotto extends HttpServlet {
 		// Getting data from NuovoProdotto.jsp
 		// pick fromthe session the Company
 		HttpSession session = request.getSession();
-		AccountAzienda_Bean utenteloggato = (AccountAzienda_Bean) session.getAttribute("utente");
+		AccountAzienda_Bean utenteloggato = null;
+		
+		try {
+			utenteloggato = (AccountAzienda_Bean) session.getAttribute("utente");
+		}
+		catch(Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+		}
 		
 		if (utenteloggato == null) {
 			response.sendRedirect("Login.jsp");

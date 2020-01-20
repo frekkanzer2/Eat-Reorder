@@ -39,18 +39,26 @@ public class DoVaiModificaProdotto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		AccountAzienda_Bean azienda = (AccountAzienda_Bean) session.getAttribute("utente");
-		
-		if(azienda==null)
+		AccountAzienda_Bean azienda = null;
+		try {
+			azienda = (AccountAzienda_Bean) session.getAttribute("utente");
+		} catch(Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}
+		if(azienda==null) {
 			response.sendRedirect("Login.jsp");
+			return;
+		}
 		
 		Long id = Long.parseLong(request.getParameter("idProdotto"));
 		Prodotto_Bean prodotto = azienda.dammiProdotto(id);
 		
 		request.setAttribute("piattoSelezionato", prodotto);
 		request.getRequestDispatcher("ModificaProdotto.jsp").forward(request, response);
-				
-		
+		return;
 		
 	}
 

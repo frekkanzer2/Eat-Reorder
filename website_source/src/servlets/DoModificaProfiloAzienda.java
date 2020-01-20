@@ -53,9 +53,10 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 		try {
 			utenteLoggato = (AccountAzienda_Bean) session.getAttribute("utente");
 		} // not Company get to Homepage
-		catch (ClassCastException e) {
+		catch (Exception e) {
+			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
-			response.sendRedirect("Homepage.jsp");
+			response.sendRedirect("ErrorPage.html");
 			return;
 		}
 
@@ -104,12 +105,14 @@ public class DoModificaProfiloAzienda extends HttpServlet {
 				utenteDao.aggiornaAzienda(newInformation);
 				utenteLoggato.modificaDati(newInformation);
 				request.getRequestDispatcher("VisualizzaProfilo.jsp").forward(request, response);
+				return;
 			} else {
 				// did not fill in all the fields
 				String errMessage = ("Compilare tutti i campi correttamente.");
 				// Redirection to an error page
 				request.setAttribute("msg_error", errMessage);
 				request.getRequestDispatcher("ModificaProfiloAzienda.jsp").forward(request, response);
+				return;
 			}
 		} catch (SQLException e) {
 			System.err.println("ERROR DETECTED");

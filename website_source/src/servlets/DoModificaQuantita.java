@@ -42,7 +42,17 @@ public class DoModificaQuantita extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		AccountCliente_Bean utente = (AccountCliente_Bean) session.getAttribute("utente");
+		
+		AccountCliente_Bean utente = null;
+		
+		try {
+			utente = (AccountCliente_Bean) session.getAttribute("utente");
+		} catch (Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}
 		if (utente == null) {
 			response.sendRedirect("Login.jsp");
 			return;
@@ -51,11 +61,8 @@ public class DoModificaQuantita extends HttpServlet {
 		// TODO Auto-generated method stub
 		try {
 			Long idProduct = Long.parseLong(request.getParameter("productId"));
-			
-			
 			Integer quantita=null;
 			String newQuantity = request.getParameter("productQuantity");
-			
 			try {
 				quantita = Integer.parseInt(newQuantity);
 			} catch (NumberFormatException e) {
@@ -76,6 +83,7 @@ public class DoModificaQuantita extends HttpServlet {
 			cart.aggiornaQtaCarrello(askedProduct, quantita);
 			session.setAttribute("carrello", cart);
 			request.getRequestDispatcher("Carrello.jsp").forward(request, response);
+			return;
 		} catch (Exception e) {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();

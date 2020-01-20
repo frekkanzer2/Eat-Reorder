@@ -40,9 +40,15 @@ public class DoCreaSegnalazione extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		AccountCliente_Bean utenteLoggato= (AccountCliente_Bean)session.getAttribute("utente");
+		AccountCliente_Bean utenteLoggato = null;
 		
-		if(utenteLoggato==null) {
+		try {
+			utenteLoggato = (AccountCliente_Bean)session.getAttribute("utente");
+		} catch (Exception e) {
+			
+		}
+		
+		if (utenteLoggato==null) {
 			response.sendRedirect("Homepage.jsp");
 			return;
 		}

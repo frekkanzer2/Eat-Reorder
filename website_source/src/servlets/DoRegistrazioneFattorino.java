@@ -49,10 +49,17 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		AccountUtenteRegistrato_Bean utenteLoggato = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-		// check if the user is logged or not
-		// if is logged
-		if (utenteLoggato != null) {
+		//Checking if already logged
+		AccountUtenteRegistrato_Bean alreadyExistsUser = null;
+		try {
+			alreadyExistsUser = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+		}
+		catch(Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+		}	
+		if (alreadyExistsUser != null) {
 			response.sendRedirect("Homepage.jsp");
 			return;
 		}
@@ -88,7 +95,6 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 					return;
 				} // create new delivery man account
 				else {
-
 					gestore.registrazioneFattorino(nuovo);
 					String confirmMessage = ("Registrazione avvenuta. Puoi loggare.");
 					// Confirm the registration
@@ -108,6 +114,7 @@ public class DoRegistrazioneFattorino extends HttpServlet {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
+			return;
 		}
 	}
 

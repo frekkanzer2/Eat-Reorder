@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Carrello;
 import model.bean.AccountAzienda_Bean;
+import model.bean.AccountCliente_Bean;
 import model.bean.AccountUtenteRegistrato_Bean;
 import model.bean.Prodotto_Bean;
 
@@ -36,9 +37,20 @@ public class DoRimuoviDalCarrello extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		HttpSession session = request.getSession();
-		AccountUtenteRegistrato_Bean utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-		if (utente == null || !utente.getTipo().equals(AccountUtenteRegistrato_Bean.Cliente)) {
+		
+		AccountCliente_Bean utente = null;
+		try {
+			utente = (AccountCliente_Bean) session.getAttribute("utente");
+		} catch (Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}
+		
+		if (utente == null) {
 			response.sendRedirect("Login.jsp");
 			return;
 		}
@@ -53,7 +65,7 @@ public class DoRimuoviDalCarrello extends HttpServlet {
 		cart.rimuoviProdotto(prodMock);
 		session.setAttribute("carrello", cart);
 		request.getRequestDispatcher("Carrello.jsp").forward(request, response);
-
+		return;
 	}
 
 	/**

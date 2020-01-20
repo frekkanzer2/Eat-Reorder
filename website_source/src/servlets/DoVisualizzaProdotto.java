@@ -37,17 +37,21 @@ public class DoVisualizzaProdotto extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
+		
 		AccountUtenteRegistrato_Bean utente = (AccountUtenteRegistrato_Bean) request.getAttribute("utente");
 		if (utente == null) {
 		} else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Azienda)) {
 			response.sendRedirect("HomepageAzienda.jsp");
-			return;}
+			return;
+		}
 		else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Fattorino)) {
 			response.sendRedirect("HomepageFattorino.jsp");
-			return;}
+			return;
+		}
 		else if (utente.getTipo().equals(AccountUtenteRegistrato_Bean.Moderatore)) {
 			response.sendRedirect("HomepageModeratore.jsp");
-			return;}
+			return;
+		}
 		
 		String email = request.getParameter("azienda");
 		Long id = Long.parseLong(request.getParameter("prod"));
@@ -57,10 +61,12 @@ public class DoVisualizzaProdotto extends HttpServlet {
 			Prodotto_Bean prodotto = azienda.dammiProdotto(id);
 			request.setAttribute("prodotto", prodotto);
 			request.getRequestDispatcher("DettagliProdotto.jsp").forward(request, response);
+			return;
 		} catch (SQLException e) {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
+			return;
 		}
 		
 	}

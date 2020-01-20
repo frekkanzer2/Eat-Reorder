@@ -43,11 +43,19 @@ public class DoRegistrazioneCliente extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Getting data from RegistrazioneCliente.jsp
 		HttpSession session = request.getSession();
-
-		AccountUtenteRegistrato_Bean utenteLoggato = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
-		// check if the user is logged or not
-		// if is logged
-		if (utenteLoggato != null) {
+		
+		//Checking if already logged
+		AccountUtenteRegistrato_Bean alreadyExistsUser = null;
+		try {
+			alreadyExistsUser = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
+		}
+		catch(Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}	
+		if (alreadyExistsUser != null) {
 			response.sendRedirect("Homepage.jsp");
 			return;
 		}
@@ -69,7 +77,6 @@ public class DoRegistrazioneCliente extends HttpServlet {
 					return;
 				} // create new client account
 				else {
-
 					gestore.registrazioneCliente(nuovo);
 					String confirmMessage = ("Registrazione avvenuta. Puoi loggare.");
 					// Confirm the registration
@@ -89,6 +96,7 @@ public class DoRegistrazioneCliente extends HttpServlet {
 			System.err.println("ERROR DETECTED");
 			e.printStackTrace();
 			response.sendRedirect("ErrorPage.html");
+			return;
 		}
 	}
 

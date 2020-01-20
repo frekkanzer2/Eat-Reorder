@@ -51,20 +51,25 @@ public class DoOrdinazione extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mailErrorMessage = null;
 		HttpSession session = request.getSession();
-		AccountCliente_Bean utenteloggato = (AccountCliente_Bean) session.getAttribute("utente");
-		if (utenteloggato == null) {
+		AccountCliente_Bean user = null;
+		try {
+			user = (AccountCliente_Bean) session.getAttribute("utente");
+		} catch (Exception e) {
+			System.err.println("ERROR DETECTED");
+			e.printStackTrace();
+			response.sendRedirect("ErrorPage.html");
+			return;
+		}
+		if (user == null) {
 			response.sendRedirect("Login.jsp");
 			return;
 		}
-		
-		AccountCliente_Bean user = (AccountCliente_Bean) utenteloggato;
 		String address = request.getParameter("address");
 		String notes = request.getParameter("notes");
 		String creditCard = request.getParameter("credit-card");
 		String telefono = request.getParameter("telefono");
 		Carrello cart = (Carrello) session.getAttribute("carrello");
 		if(cart==null || cart.isEmpty()) {
-			
 			response.sendRedirect("Carrello.jsp");
 			return;
 		}

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Custom imports-->
     <link rel="stylesheet" href="css/eat-reorder-style.css">
     <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
@@ -28,7 +29,7 @@
     <!--DIV that contains the image and the searchbar-->
 	<div class="center-block">
 		<!--Form for the research-->
-		<form class="custom-border-red generic-form-style partial-container-form-floating" method="POST" action="DoInserimentoProdotto"onsubmit="return checkProdotto();">
+		<form class="custom-border-red partial-container-form-floating login-form-style" method="POST" action="DoInserimentoProdotto"onsubmit="return checkProdotto();">
             <div class="registration-title">Inserisci un nuovo piatto!</div>
             <!--IMAGE ON THE HOME-->
             <img id="image-home" class="img-fluid d-block mx-auto"src="assets/img/LogomarcoIS%20PNG.png">
@@ -73,6 +74,7 @@
 			return true;
 		}
 	</script>
+	<%@include file="Footer.html"%>
 </body>
 
 </html>

@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
 <link rel="stylesheet" href="assets/css/styles.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 </head>
@@ -146,7 +147,7 @@
 			<div class="registration-description" style="text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">
 				<b>Stato dell'ordine</b>
 			</div>
-			<div class="registration-description" style="color:orange; font-size: 50px; text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">
+			<div class="registration-description" style="color:orange; font-size: 30px; text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;">
 				<%=ordine.getStato()%>
 				<!--ADD ORDER STATUS HERE WITH SCRIPTLET-->
 			</div>
@@ -200,6 +201,7 @@
 				$("#panel-"+id).slideToggle("slow");
 		}
 	</script>
+	<%@include file="Footer.html"%>
 </body>
 
 </html>

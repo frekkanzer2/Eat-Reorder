@@ -79,7 +79,7 @@ body{
     padding: 30px;
 }
 #details-img{
-    width: 300px;
+    width: 230px;
     margin-top: 10px;
     margin-bottom: 15px;
 }
@@ -102,6 +102,16 @@ body{
 	clear:left!important;
 	text-align: center!important;
 	color: red!important;
+}
+
+.errorTextSegnalazione{
+	clear:left!important;
+	text-align: center!important;
+	color: red!important;
+	font-size: 20px;
+	text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;
+	font-style: italic;
+	font-weight: bold;
 }
 
 .confirm{
@@ -234,16 +244,16 @@ body{
     background-color: var(--preset_color_yellow_secondary)!important;
     opacity: 1;
     filter: blur(0px);
-    margin-right: 0px!important;
     width: 400px;
     border-radius: 5px;
     padding-top: 30px;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 25px;
-    position: absolute;
+    transform: translateX(-50%);
+    position: relative;
     left: 50%;
-    margin-left: -200px!important;
+    right: 50%;
 }
 
 .suggerimenti {
@@ -256,15 +266,16 @@ body{
     opacity: 1;
     filter: blur(0px);
     margin-right: 0px!important;
-    width: 800px;
+    width: 600px;
     border-radius: 5px;
     padding-top: 30px;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 25px;
-    position: absolute;
+    transform: translateX(-50%);
+    position: relative;
     left: 50%;
-    margin-left: -400px!important;
+    right: 50%;
 }
 
 .container-form-floating{
@@ -503,10 +514,19 @@ A{
 
 A:hover, A:link A:visited, A:active{
     text-decoration: none;
-    color: blue;
+    color: white;
 }
 
 #problema {
+	text-decoration: none;
+	color: white;
+	font-size: 25px;
+    text-shadow: 1px 0px 1px #2e2b2b, 0px 1px 1px #2e2b2b, 2px 1px 1px #2e2b2b, 1px 2px 1px #2e2b2b, 3px 2px 1px #2e2b2b, 2px 3px 1px #2e2b2b, 4px 3px 1px #2e2b2b, 3px 4px 1px #2e2b2b, 5px 4px 1px #2e2b2b, 4px 5px 1px #2e2b2b, 6px 5px 1px #2e2b2b, 5px 6px 1px #2e2b2b, 7px 6px 1px #2e2b2b;
+	font-style: italic;
+	font-weight: bold;
+}
+
+#segnala {
 	text-decoration: none;
 	color: white;
 	font-size: 25px;
@@ -524,6 +544,86 @@ A:hover, A:link A:visited, A:active{
 	font-weight: bold;
 }
 
+#footer {
+	background-color: #2a2a2a;
+	margin-top: 100px;
+	color: white;
+}
+
+/*******************SOCIAL NETWORK*******************/
+
+.segment-one h3{
+    letter-spacing: 3px; 
+   
+}
+
+.segment-two h3{
+    letter-spacing: 3px; 
+    
+}
+
+.segment-one img{
+    margin: 15px 0;
+}
+
+.segment-one h3:before{
+    content: '|';
+    color: #df612f;
+    padding-right: 10px;
+}
+
+.segment-two h3:before{
+    content: '|';
+    color: #df612f;
+    padding-right: 10px;
+}
+
+.segment-three h3:before{
+    content: '|';
+    color: #df612f;
+    padding-right: 10px;
+}
+
+
+.segment-two ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.segment-two ul li{
+    border-bottom: 1px solid grey;
+    line-height: 40px;
+}
+
+.segment-two ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.segment-two ul li a:hover{
+    color: #df612f;
+}
+
+.segment-three a{
+    background-color: #494848;
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.segment-three a i{
+    font-size: 25px;
+    color: var(--color_white);
+    padding-top: 11px;
+    padding-left: 12px;
+}
+
+.segment-three a:hover i{
+    color: #df612f;
+}
 
 
 /*******************MEDIA QUERIES*******************/
@@ -675,7 +775,7 @@ A:hover, A:link A:visited, A:active{
 @media (max-width: 768px){
 
     #buttons-column-edits{
-        padding-left: 0px;
+        padding-left: 15px;
     }
 
     #cart-buttons-column-edits{
@@ -1104,16 +1204,12 @@ A:hover, A:link A:visited, A:active{
         background-color: var(--preset_color_yellow_secondary)!important;
         opacity: 1;
         filter: blur(0px);
-        margin-right: 0px!important;
         width: 300px;
         border-radius: 5px;
         padding-top: 25px;
         padding-left: 35px;
         padding-right: 35px;
         padding-bottom: 20px;
-        position: absolute;
-        left: 50%;
-        margin-left: -150px!important;
     }
 
     .registration-title{
@@ -1287,9 +1383,6 @@ A:hover, A:link A:visited, A:active{
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 25px;
-        position: absolute;
-        left: 50%;
-        margin-left: -150px!important;
     }
 
     #details-img{
@@ -1377,7 +1470,7 @@ A:hover, A:link A:visited, A:active{
         padding-bottom: 25px;
         position: absolute;
         left: 50%;
-        margin-left: -125px!important;
+        margin-left: -115px!important;
     }
 
 }

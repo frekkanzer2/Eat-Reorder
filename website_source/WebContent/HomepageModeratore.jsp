@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
 <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--Custom imports-->
 <link rel="stylesheet" href="css/eat-reorder-style.css">
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
@@ -44,7 +45,7 @@
 	<%
     	if (request.getAttribute("msg_error") != null){
     %>
-		<p class="errorText" style="margin-top: 20px;">
+		<p class="errorTextSegnalazione" style="margin-top: 20px;">
 			<%=request.getAttribute("msg_error") %>
 		</p>
 	<% 
@@ -53,14 +54,14 @@
 		<form id="ban-form" class="form-horizontal center-block"action="DoBannaAzienda" method="POST">
 			<!--Form group for id order input-->
 			<div class="form-group">
-				<label class="control-label col-sm-5 text-red"for="id_order">ID Ordine</label>
+				<label id="segnala" class="control-label col-sm-5 text-red" for="id_order">ID Ordine</label>
 				<div class="col-sm-12">
 					<input type="text"class="form-control custom-border-yellow"name="id-order"placeholder="Inserisci l'ID dell'ordine">
 				</div>
 			</div>
 			<!--Form group for reason to ban-->
 			<div class="form-group">
-				<label class="control-label col-sm-5 text-red"for="reason">Motivazione</label>
+				<label id="segnala" class="control-label col-sm-5 text-red"for="reason">Motivazione</label>
 				<div class="col-sm-12">
 					<textarea class="form-control custom-border-yellow"name="reason"rows="5"placeholder="Inserisci la motivazione del ban"></textarea>
 				</div>
@@ -76,5 +77,6 @@
 	<!-- SCRIPT -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<%@include file="Footer.html"%>
 </body>
 </html>

@@ -1,11 +1,16 @@
+<%@page import="model.dao.GestoreUtenteDAOImpl"%>
+<%@page import="interfaces.GestoreUtenteDAO"%>
 <%@page import="model.bean.AccountAzienda_Bean"%>
 <%@page import="java.util.List"%>
 <%@page import="model.bean.AccountUtenteRegistrato_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
+<%!GestoreUtenteDAO manager = new GestoreUtenteDAOImpl();%>
+
 <%
 	AccountUtenteRegistrato_Bean utente = null;
 	List<AccountAzienda_Bean> aziende = null;
+	Integer counter = 0;
 	utente = (AccountUtenteRegistrato_Bean) session.getAttribute("utente");
 	Boolean canContinue = true;
 	if (utente != null){
@@ -45,6 +50,7 @@
 
 	<%
 		if (canContinue) {
+			counter = 0;
 	%>
 
     <!--THERE ARE SOME CARDS ON THE DIV CONTAINER-->
@@ -55,12 +61,15 @@
 	<%
 		if (aziende.size() > 0) {
 			for (AccountAzienda_Bean az: aziende) {
+				if (!manager.controllaBan(az.getEmail())) {
 	%>
-        		<!--HERE STARTS THE CARD-->
-        		<a class = "company-presentation-card center-block card-spacing-fix" href="DoVisualizzaListinoAzienda?id=<%=az.getEmail()%>">
-		            <%=az.getNome()%> <!--CHANGE NAME WITH COMPANY NAME WITH SCRIPTLET-->
-        		</a>
+	        		<!--HERE STARTS THE CARD-->
+    	    		<a class = "company-presentation-card center-block card-spacing-fix" href="DoVisualizzaListinoAzienda?id=<%=az.getEmail()%>">
+			            <%=az.getNome()%> <!--CHANGE NAME WITH COMPANY NAME WITH SCRIPTLET-->
+        			</a>
     <%
+    				counter += 1;
+				}
     		}
 		} else {
 			//No company found in the research
@@ -72,6 +81,17 @@
 			<%
 			
 		}
+	
+		if (counter == 0 && aziende.size() > 0) {
+			
+			%>
+				<div class = "company-presentation-card center-block card-spacing-fix">
+					Nessuna azienda trovata
+    			</div>
+			<%
+			
+		}
+	
     %> <!--HERE ENDS THE CARD-->
 
     </div>

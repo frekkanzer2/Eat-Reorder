@@ -38,13 +38,10 @@ class DoBannaAziendaTest extends Mockito{
 	
 	@Test
 	public void GestisciSegnalazioneAzienda_1() throws SQLException, ServletException, IOException {
-		Long IdOrdine= 5L;
 		
-		//AccountAzienda_Bean azienda= new AccountAzienda_Bean(email_azienda, null , null, null , 0 , null, null, null, null, null, null, null);
 		AccountModeratore_Bean moderatore= new AccountModeratore_Bean("email_moderatore", "pass_moderatore", 5L);
 		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
-		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);
 		servlet.setGestore(dao);
 		
 		request.getSession().setAttribute("utente", moderatore);
@@ -59,13 +56,10 @@ class DoBannaAziendaTest extends Mockito{
 	
 	@Test
 	public void GestisciSegnalazioneAzienda_2() throws SQLException, ServletException, IOException {
-		Long IdOrdine= 5L;
 		
-		//AccountAzienda_Bean azienda= new AccountAzienda_Bean(email_azienda, null , null, null , 0 , null, null, null, null, null, null, null);
 		AccountModeratore_Bean moderatore= new AccountModeratore_Bean("email_moderatore", "pass_moderatore", 5L);
 		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
-		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);
 		servlet.setGestore(dao);
 		
 		request.getSession().setAttribute("utente", moderatore);
@@ -80,13 +74,10 @@ class DoBannaAziendaTest extends Mockito{
 	
 	@Test
 	public void GestisciSegnalazioneAzienda_3() throws SQLException, ServletException, IOException {
-		Long IdOrdine= 5L;
 		
-		//AccountAzienda_Bean azienda= new AccountAzienda_Bean(email_azienda, null , null, null , 0 , null, null, null, null, null, null, null);
 		AccountModeratore_Bean moderatore= new AccountModeratore_Bean("email_moderatore", "pass_moderatore", 5L);
 		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
-		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);
 		servlet.setGestore(dao);
 		
 		request.getSession().setAttribute("utente", moderatore);
@@ -101,27 +92,19 @@ class DoBannaAziendaTest extends Mockito{
 	
 	@Test
 	public void GestisciSegnalazioneAzienda_4() throws SQLException, ServletException, IOException, MessagingException {
-		Long IdOrdine= 5L;
-		String email_azienda= "pizzapanini@gmail.com";
-		String descrizioneban= "la tua azienda è stata bannata";
 		
-		AccountAzienda_Bean azienda= new AccountAzienda_Bean(email_azienda, null , null, null , 0 , null, null, null, null, null, null, null);
+		Long idOrdine=5L;
+		
 		AccountModeratore_Bean moderatore= new AccountModeratore_Bean("email_moderatore", "pass_moderatore", 5L);
 		
 		GestoreOrdineDAOImpl dao= mock(GestoreOrdineDAOImpl.class);
-		when(dao.controlloEsistenzaOrdine(IdOrdine)).thenReturn(true);
+		when(dao.controlloEsistenzaOrdine(idOrdine)).thenReturn(true);
 		servlet.setGestore(dao);
 		
-		GestoreUtenteDAOImpl az= mock(GestoreUtenteDAOImpl.class);
-		az.dammiAziendaConOrdine(IdOrdine);
-		servlet.setGestore(az);
-		
-		GestoreUtenteDAOImpl ban= mock(GestoreUtenteDAOImpl.class);
-		ban.banAzienda(azienda);
-		servlet.setGestore(ban);
-		
+		GestoreUtenteDAOImpl dao2= mock(GestoreUtenteDAOImpl.class);
+		servlet.setGestore(dao2);
+			
 		GestoreMail mail= mock(GestoreMail.class);
-		mail.inviaMailBan(azienda, descrizioneban);
 		servlet.setGestore(mail);
 		
 		request.getSession().setAttribute("utente", moderatore);

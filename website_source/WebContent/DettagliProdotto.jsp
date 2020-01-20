@@ -55,7 +55,7 @@
             <!--Change with scriptlet image's src-->
             <img id="details-img" class="img-fluid d-block mx-auto custom-border-red border-rounded-large" src="<%=prodotto.getImmagine().toString()%>">
             <!--DETAILS (CHANGE ALSO HERE!!!)-->
-            <div class="registration-description">
+            <div class="registration-description" style = "word-wrap: break-word;">
                 <!--Add PRODUCT DESCRIPTION here with scriptlet-->
                <%=prodotto.getDescrizione() %>
             </div>

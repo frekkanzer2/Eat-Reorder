@@ -52,12 +52,27 @@
 
     <!--CONTAINER THAT CONTAINS ALL CARDS-->
     <div class = "partial-container-form-floating">
-	<%for(AccountAzienda_Bean az: aziende){ %>
-        <!--HERE STARTS THE CARD-->
-        <a class = "company-presentation-card center-block card-spacing-fix" href="DoVisualizzaListinoAzienda?id=<%=az.getEmail()%>">
-            <%=az.getNome()%> <!--CHANGE NAME WITH COMPANY NAME WITH SCRIPTLET-->
-        </a>
-       <%} %> <!--HERE ENDS THE CARD-->
+	<%
+		if (aziende.size() > 0) {
+			for (AccountAzienda_Bean az: aziende) {
+	%>
+        		<!--HERE STARTS THE CARD-->
+        		<a class = "company-presentation-card center-block card-spacing-fix" href="DoVisualizzaListinoAzienda?id=<%=az.getEmail()%>">
+		            <%=az.getNome()%> <!--CHANGE NAME WITH COMPANY NAME WITH SCRIPTLET-->
+        		</a>
+    <%
+    		}
+		} else {
+			//No company found in the research
+			
+			%>
+				<div class = "company-presentation-card center-block card-spacing-fix">
+					Nessuna azienda trovata
+        		</div>
+			<%
+			
+		}
+    %> <!--HERE ENDS THE CARD-->
 
     </div>
     <br>

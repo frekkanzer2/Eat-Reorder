@@ -2933,6 +2933,17 @@
         ["xpath=//button[contains(.,'Registrati')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "6d5fd1ec-d05d-419a-8291-c32f7602c4bf",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.errorText",
+      "targets": [
+        ["css=.errorText", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Email già presente.')]", "xpath:innerText"]
+      ],
+      "value": "Email già presente"
     }]
   }, {
     "id": "70d0dc5e-2ed2-4f82-9268-cd40dd08a246",
@@ -11404,7 +11415,7 @@
         ["xpath=//p", "xpath:position"],
         ["xpath=//p[contains(.,'Inserire almeno un giorno lavorativo')]", "xpath:innerText"]
       ],
-      "value": "Inserire almeno un giorno lavorativo"
+      "value": "Email già presente"
     }]
   }, {
     "id": "22c9794a-94f1-4a80-81dc-1c985fedf98d",
